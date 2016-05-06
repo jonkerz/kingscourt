@@ -12,6 +12,7 @@ gem 'turbolinks', '~> 5.x'
 gem 'jbuilder', '~> 2.0'
 
 gem 'bower-rails', '~> 0.10.0'
+gem 'slim-rails'
 
 group :development do
   gem 'web-console'

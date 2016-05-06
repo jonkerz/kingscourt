@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'bower-rails', '~> 0.10.0'
 gem 'slim-rails'
+gem 'angular-rails-templates'
 
 group :development do
   gem 'web-console'

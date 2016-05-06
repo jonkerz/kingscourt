@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title King's Court - Dominion Kingdom Generator
+    =javascript_include_tag "application"
+    =csrf_meta_tags
+
+  body ng-app="KingsCourt"
+    ng-include src="'navigation.html'"
+    div ------------ Content ------------
+    =yield
+    div ------------ End content ------------
+    div ------------ Footer ------------

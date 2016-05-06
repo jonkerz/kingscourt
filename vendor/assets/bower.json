@@ -2,6 +2,18 @@
   "name": "dsl-generated dependencies",
   "dependencies": {
     "angular": "~1.4.0",
-    "angular-route": "~1.4.0"
+    "angular-route": "~1.4.0",
+    "angular-animate": "~1.4.0",
+    "angular-ui-bootstrap-bower": "~0.13.0",
+    "angular-resource": "~1.4.0",
+    "bootstrap": "~3.3.4",
+    "jquery": "~2.1.4",
+    "angular-utils-pagination": "~0.8.2",
+    "autofill-event": "~1.0.0",
+    "checklist-model": "~0.2.4",
+    "lodash": "~3.9.3",
+    "angular-growl-v2": "~0.7.4",
+    "angular-sanitize": "~1.4.0",
+    "ngstorage": "~0.3.4"
   }
 }

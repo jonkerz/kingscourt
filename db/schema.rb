@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160506113235) do
+ActiveRecord::Schema.define(version: 20160507065809) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -35,6 +35,22 @@ ActiveRecord::Schema.define(version: 20160506113235) do
     t.string   "card_type"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "kingdom_cards", force: :cascade do |t|
+    t.integer  "kingdom_id"
+    t.integer  "card_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["card_id"], name: "index_kingdom_cards_on_card_id"
+    t.index ["kingdom_id"], name: "index_kingdom_cards_on_kingdom_id"
+  end
+
+  create_table "kingdoms", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

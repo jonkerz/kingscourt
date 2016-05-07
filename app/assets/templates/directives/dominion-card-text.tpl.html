@@ -1,6 +1,6 @@
 <div class="angular-hovercard">
   <span class="angular-hovercard-label" ng-mouseenter="showCard = true" ng-mouseleave="showCard = false">{{::cardName}}</span>
   <div class="angular-hovercard-detail" ng-class="{'angular-hovercard-active': showCard}">
-		<img width="110" ng-src="assets/images/cards/{{::cardName|replaceSpaces}}.jpg" />
+		<img width="110" ng-src="cards/{{::cardName|replaceSpaces}}.jpg" />
   </div>
 </div>

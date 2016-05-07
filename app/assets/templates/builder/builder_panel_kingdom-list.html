@@ -1,13 +1,13 @@
 <div class="ui-widget-header cards-droppable" droppable ng-controller="ModalCtrl">
   <h5><i class="fi-check"></i> Kingdom Cards ({{kingdom.cards.length}})</h5>
-  <div class="animate btn btn-primary btn-block " ng-repeat="card in kingdom.cards" data-index="{{$index}}" data-card="{{::card}}"  draggable><img class="card-label-cost-image" ng-src="assets/images/icons/16px-Coin{{::card.cost}}.png" /> {{::card.name}} <img class="card-label-expansion-image" ng-src="assets/images/icons/{{::card.expansion}}.png"  />
+  <div class="animate btn btn-primary btn-block " ng-repeat="card in kingdom.cards" data-index="{{$index}}" data-card="{{::card}}"  draggable><img class="card-label-cost-image" ng-src="icons/16px-Coin{{::card.cost}}.png" /> {{::card.name}} <img class="card-label-expansion-image" ng-src="icons/{{::card.expansion}}.png"  />
   </div>
   <div ng-show="!kingdom.cards.length">Empty</div>
 </div>
 
 <div class="ui-widget-header banned-cards-droppable" droppable ng-controller="ModalCtrl">
   <h5><i class="fi-lock"></i> Banned Cards ({{kingdom.bannedCards.length}})</h5>
-  <div class="animate btn btn-danger btn-block " ng-repeat="card in kingdom.bannedCards" data-index="{{$index}}" data-card="{{::card}}" draggable><img class="card-label-cost-image" ng-src="assets/images/icons/16px-Coin{{::card.cost}}.png"  /> {{card.name}} <img class="card-label-expansion-image" ng-src="assets/images/icons/{{::card.expansion}}.png" />
+  <div class="animate btn btn-danger btn-block " ng-repeat="card in kingdom.bannedCards" data-index="{{$index}}" data-card="{{::card}}" draggable><img class="card-label-cost-image" ng-src="icons/16px-Coin{{::card.cost}}.png"  /> {{card.name}} <img class="card-label-expansion-image" ng-src="icons/{{::card.expansion}}.png" />
   </div>
   <div ng-show="!kingdom.bannedCards.length">Empty</div>
 </div>

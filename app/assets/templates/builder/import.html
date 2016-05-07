@@ -6,12 +6,12 @@
         </textarea>
         <div id="Kingdom" droppable ng-cloak>
           <div class="animate black_card shadow" ng-repeat="card in kingdom.cards" ng-dblclick="kingdom.removeCard(card)">
-            <img class="card_image" width="110" ng-src="assets/images/cards/{{card.image}}" />
+            <img class="card_image" width="110" ng-src="cards/{{card.image}}" />
           </div>
 
           <div data-ng-show="kingdom.cards.length < 10">
             <div ng-repeat="a in range(10 - kingdom.cards.length) track by $index"  class="black_card shadow" >
-              <img class="card_image" width="110" ng-src="assets/images/cards/Randomizer.jpg" />
+              <img class="card_image" width="110" ng-src="cards/Randomizer.jpg" />
             </div>
           </div>
         </div>

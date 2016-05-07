@@ -27,7 +27,7 @@ angular.module('Dominion.Config', [
   $tooltipProvider.options animation: false
 
 .config (paginationTemplateProvider) ->
-  paginationTemplateProvider.setPath 'app/common/directives/dir-pagination.tpl.html'
+  paginationTemplateProvider.setPath 'directives/dir-pagination.tpl.html'
 
 .config ($resourceProvider) ->
   $resourceProvider.defaults.stripTrailingSlashes = false
@@ -41,11 +41,11 @@ angular.module('Dominion.Config', [
 .config ($routeProvider) ->
   $routeProvider.when '/',
     title: 'Generator'
-    templateUrl: 'app/components/builder/views/generator.html'
+    templateUrl: 'app/components/builder/generator.html'
 
   .when '/builder',
     title: 'Builder'
-    templateUrl: 'app/components/builder/views/builder.html'
+    templateUrl: 'app/components/builder/builder.html'
 
   .when '/kingdoms/:id',
     title: 'Kingdoms'
@@ -95,6 +95,6 @@ angular.module('Dominion.Config', [
 
   .when '/import',
     title: 'Import'
-    templateUrl: 'app/components/builder/views/import.html'
+    templateUrl: 'app/components/builder/import.html'
 
-  .otherwise templateUrl: 'app/common/views/404.html'
+  .otherwise templateUrl: 'app/common/404.html'

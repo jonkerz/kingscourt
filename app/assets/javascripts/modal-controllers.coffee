@@ -11,7 +11,7 @@ angular.module('Dominion.Common')
     scope.params = card: card
 
     modalInstance = $modal.open
-      templateUrl: 'app/common/views/card-modal.html'
+      templateUrl: 'app/common/card-modal.html'
       controller: 'CardModalInstanceCtrl'
       size: 'sm'
       scope: scope
@@ -21,7 +21,7 @@ angular.module('Dominion.Common')
     scope.params = card: card
 
     modalInstance = $modal.open
-      templateUrl: 'app/common/views/card-modal.html'
+      templateUrl: 'app/common/card-modal.html'
       controller: 'BuilderCardModalInstanceCtrl'
       size: 'sm'
       scope: scope

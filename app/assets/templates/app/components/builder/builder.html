@@ -6,10 +6,10 @@
       <ng-include src="'app/components/alerts/_alert-box.html'"></ng-include>
     </div>
     <div class="well clearfix" ng-show="tab=='randomizer-tab'">
-      <ng-include src="'app/components/builder/views/builder_panel_controls.html'"></ng-include>
+      <ng-include src="'app/components/builder/builder_panel_controls.html'"></ng-include>
     </div>
     <div class="well clearfix">
-      <ng-include src="'app/components/builder/views/builder_panel_kingdom-list.html'"></ng-include>
+      <ng-include src="'app/components/builder/builder_panel_kingdom-list.html'"></ng-include>
     </div>
   </div>
 
@@ -25,10 +25,10 @@
       </ul>
       <div id="my-tab-content" class="tab-content white-bg">
         <div ng-if="tab=='randomizer-tab'" class="tab-pane fade in active clearfix" id="randomizer-tab">
-          <ng-include src="'app/components/builder/views/builder_tab_randomizer.html'"></ng-include>
+          <ng-include src="'app/components/builder/builder_tab_randomizer.html'"></ng-include>
         </div>
         <div ng-if="tab=='by-name-tab'" class="tab-pane fade" id="by-name-tab">
-          <ng-include src="'app/components/builder/views/builder_tab_by-name.html'"></ng-include>
+          <ng-include src="'app/components/builder/builder_tab_by-name.html'"></ng-include>
         </div>
       </div>
     </div>
@@ -39,11 +39,11 @@
       <ng-include src="'app/components/alerts/_alert-box.html'"></ng-include>
     </div>
     <div class="well clearfix hidden-xs hidden-sm"  ng-show="tab=='randomizer-tab'">
-      <ng-include src="'app/components/builder/views/builder_panel_controls.html'"></ng-include>
+      <ng-include src="'app/components/builder/builder_panel_controls.html'"></ng-include>
     </div>
     <div class="well clearfix hidden-xs hidden-sm">
-      <ng-include src="'app/components/builder/views/builder_panel_kingdom-list.html'"></ng-include>
+      <ng-include src="'app/components/builder/builder_panel_kingdom-list.html'"></ng-include>
     </div>
-    <ng-include src="'app/components/builder/views/_panel_save.html'"></ng-include>
+    <ng-include src="'app/components/builder/_panel_save.html'"></ng-include>
   </div>
 </div>

@@ -4,7 +4,7 @@ angular.module("Dominion.Builder")
   restrict: "E"
   replace: true
   scope: true
-  templateUrl: "app/components/builder/directives/attribute-radio-directive.tpl.html"
+  templateUrl: "directives/attribute-radio-directive.tpl.html"
 
   link: (scope, element, attrs) ->
     scope.displayName = attrs.displayName

@@ -5,6 +5,6 @@ angular.module('Dominion.Common')
     title: '@'
     collapsed: '@'
   transclude: true
-  templateUrl: 'app/common/directives/panel-collapse.tpl.html'
+  templateUrl: 'directives/panel-collapse.tpl.html'
   link: (scope, element, attrs) ->
     scope.panelId = _.uniqueId 'panel'

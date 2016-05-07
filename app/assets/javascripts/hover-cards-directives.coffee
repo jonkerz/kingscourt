@@ -1,7 +1,7 @@
 angular.module('Dominion.Common')
 .directive 'hoverCard', ->
   restrict: 'E'
-  templateUrl: 'app/common/directives/dominion-card-text.tpl.html'
+  templateUrl: 'directives/dominion-card-text.tpl.html'
   scope:
     cardName: '@'
     cardImage: '@'
@@ -10,7 +10,7 @@ angular.module('Dominion.Common')
 
 .directive 'hoverCardImage', ->
   restrict: 'E'
-  templateUrl: 'app/common/directives/dominion-card-image.tpl.html'
+  templateUrl: 'directives/dominion-card-image.tpl.html'
   scope:
     cardName: '@'
     cardImage: '@'
@@ -19,7 +19,7 @@ angular.module('Dominion.Common')
 
 .directive 'hoverCardZoom', ->
   restrict: 'E'
-  templateUrl: 'app/common/directives/dominion-card-zoom.tpl.html'
+  templateUrl: 'directives/dominion-card-zoom.tpl.html'
   scope:
     cardName: '@'
     cardImage: '@'

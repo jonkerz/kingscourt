@@ -1,4 +1,4 @@
-angular.module('Dominion')
+angular.module('KingsCourt')
 .controller 'KingdomCtrl', ($scope, AuthService, AlertsService, APIService, API_KINGDOMS_PER_PAGE, ExpansionSelectorService) ->
   $scope.authService = AuthService
   $scope.expansionSelectorService = ExpansionSelectorService

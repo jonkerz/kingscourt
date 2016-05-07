@@ -1,8 +1,8 @@
-angular.module('Dominion')
+angular.module('KingsCourt')
 .constant 'API_SERVER', 'http://127.0.0.1:5000/api/'
 .constant 'API_KINGDOMS_PER_PAGE', 5
 
-angular.module('Dominion')
+angular.module('KingsCourt')
 .constant 'APP_CONFIG',
   'CARD_MIN_COST': 0
   'CARD_MAX_COST': 8

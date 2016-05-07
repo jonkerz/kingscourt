@@ -1,4 +1,4 @@
-angular.module('Dominion')
+angular.module('KingsCourt')
 
 .controller 'BuilderCtrl', ($scope, APIService, DeckService, ExpansionSelectorService, RandomizerService, AlertsService, KingdomService) ->
   $scope.randomizerService = RandomizerService # min_cost & max_cost

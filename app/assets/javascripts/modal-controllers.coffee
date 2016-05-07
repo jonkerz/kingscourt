@@ -1,4 +1,4 @@
-angular.module('Dominion')
+angular.module('KingsCourt')
 .controller 'ModalCtrl', ($rootScope, $scope, $modal, $log) ->
   $scope.openLogin = ->
     modalInstance = $modal.open

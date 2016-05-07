@@ -1,4 +1,4 @@
-angular.module('Dominion')
+angular.module('KingsCourt')
 .controller 'CardBroswerCtrl', ($scope, $http, ExpansionSelectorService, CardService, API_SERVER) ->
 
   $scope.expansionSelectorService = ExpansionSelectorService

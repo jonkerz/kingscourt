@@ -1,4 +1,4 @@
-angular.module('Dominion')
+angular.module('KingsCourt')
 .factory 'CardService', ($http, Cards) ->
   new class CardService
     constructor: -> @cards = Cards

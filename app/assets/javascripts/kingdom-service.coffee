@@ -42,7 +42,7 @@ class Kingdom
 
   idIsBanned: (id) -> !!_(@bannedCards).find id: id
 
-angular.module('Dominion')
+angular.module('KingsCourt')
 
 .factory 'KingdomService', ($injector) ->
   new class KingdomService

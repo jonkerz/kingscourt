@@ -1,4 +1,4 @@
-angular.module('Dominion')
+angular.module('KingsCourt')
 
 .factory 'ExpansionSelectorService', ->
   new class ExpansionSelectorService

@@ -1,4 +1,4 @@
-angular.module('Dominion')
+angular.module('KingsCourt')
 .factory 'AlertsService', (growl) ->
   new class AlertsService
     constructor: -> @alerts = []
@@ -16,6 +16,6 @@ angular.module('Dominion')
 
     closeAlert: (index) -> @alerts.splice index, 1
 
-angular.module('Dominion')
+angular.module('KingsCourt')
 .controller 'AlertsCtrl', ($scope, AlertsService) ->
   $scope.alertsService = AlertsService

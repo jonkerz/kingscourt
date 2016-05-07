@@ -1,4 +1,4 @@
-angular.module('Dominion')
+angular.module('KingsCourt')
 .factory 'APIService', ($resource, $http, $q, API_SERVER, CardService) ->
   new class APIService
     deserialize_cards = (cards) -> _.map cards, (card_id) -> CardService.getCardById parseInt card_id, 10

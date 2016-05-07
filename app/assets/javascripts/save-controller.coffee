@@ -1,4 +1,4 @@
-angular.module('Dominion')
+angular.module('KingsCourt')
 .controller 'SaveCtrl', ($scope, AlertsService, APIService, AuthService) ->
   $scope.authService = AuthService
   $scope.editingKingdom = !!$scope.kingdom.id? if $scope.kingdom

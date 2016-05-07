@@ -1,4 +1,4 @@
-angular.module('Dominion')
+angular.module('KingsCourt')
 .factory 'AuthService', ($rootScope, $http, $q, API_SERVER, AlertsService, $localStorage) ->
   new class AuthService
     constructor: ->

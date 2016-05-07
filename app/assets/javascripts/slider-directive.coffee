@@ -1,4 +1,4 @@
-angular.module('Dominion')
+angular.module('KingsCourt')
 .directive 'slider', ->
   restrict: 'A'
   scope:

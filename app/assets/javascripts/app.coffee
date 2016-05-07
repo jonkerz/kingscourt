@@ -9,10 +9,10 @@ angular.element(document).ready ->
     for card in cards
       card.image = (card.name).replace(RegExp(' ', 'g'), '_').replace(/'/g, '') + '.jpg'
 
-    Dominion.constant 'Cards', cards
-    angular.bootstrap document, ['Dominion']
+    KingsCourt.constant 'Cards', cards
+    angular.bootstrap document, ['KingsCourt']
 
-Dominion = angular.module 'Dominion', [
+KingsCourt = angular.module 'KingsCourt', [
   'templates'
   'ngResource'
   'ngRoute'
@@ -24,7 +24,7 @@ Dominion = angular.module 'Dominion', [
   'ui.bootstrap'
 ]
 
-Dominion.run ($location, $rootScope) ->
+KingsCourt.run ($location, $rootScope) ->
   $rootScope.$on '$routeChangeSuccess', (event, currentRoute, previousRoute) ->
     baseTitle = "King's Court - Dominion Kingdom Generator"
     if currentRoute.title?

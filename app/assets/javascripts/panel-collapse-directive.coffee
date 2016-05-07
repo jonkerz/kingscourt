@@ -1,4 +1,4 @@
-angular.module('Dominion')
+angular.module('KingsCourt')
 .directive 'panelCollapse', ->
   restrict: 'E'
   scope:

@@ -3,8 +3,6 @@
     <span ng-if="authService.username == kingdom.username">
       <input type="text" class="form-control input-small" placeholder="Kingdom Name" ng-model="kingdom.name">
       <textarea class="form-control input-small" rows="2" placeholder="Description" ng-model="kingdom.description"></textarea>
-      <input name="public" ng-value="true" ng-model="kingdom.public" type="radio">Public
-      <input name="public" ng-value="false" ng-model="kingdom.public" type="radio">Private Kingdom
     </span>
     <span ng-if="authService.username != kingdom.username">
       <h4>{{kingdom.name}}</h4>

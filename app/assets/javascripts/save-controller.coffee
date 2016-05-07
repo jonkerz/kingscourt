@@ -8,7 +8,6 @@ angular.module('Dominion.Common')
       name: $scope.kingdom.name
       cards: $scope.kingdom.getAllCardIds()
       kingdom_description: $scope.kingdom.description
-      published: $scope.kingdom.public
 
     console.log "in save, data:", data
 
@@ -22,7 +21,6 @@ angular.module('Dominion.Common')
       name: kingdom.name
       cards: kingdom.getAllCardIds()
       kingdom_description: kingdom.description
-      published: kingdom.public
 
     APIService.kingdoms.update { id: kingdom.id }, data, (data) ->
       console.log 'patched', data

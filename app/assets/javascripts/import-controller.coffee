@@ -24,8 +24,6 @@ Chemistry Lesson: Alchemist, Golem, Philosopher's Stone, University, Bureaucrat,
       name: $scope.kingdom.name
       cards: $scope.kingdom.getAllCardIds()
       kingdom_description: $scope.kingdom.description
-      published: $scope.kingdom.public
-
     #console.log "in save, data:", data
 
     APIService.kingdoms.save data, (data) -> console.log "saved"
@@ -114,9 +112,7 @@ Chemistry Lesson: Alchemist, Golem, Philosopher's Stone, University, Bureaucrat,
     builderKingdom.cards = generatorKingdom.cards
     builderKingdom.name = generatorKingdom.name
     builderKingdom.description = generatorKingdom.description
-    builderKingdom.public = generatorKingdom.public
     generatorKingdom.cards = []
     generatorKingdom.name = ''
     generatorKingdom.description = ''
-    generatorKingdom.public = true
     $location.path 'builder'

@@ -8,7 +8,6 @@ class Kingdom
     @cards = []
     @name = 'Kingdom  ' + Math.random().toString(36).replace(/[^a-z]+/g, '').substr 0, 5
     @description = ''
-    @public = true
     @bannedCards = []
 
   removeCard: (card) -> @cards.splice _(@cards).findIndex(card), 1

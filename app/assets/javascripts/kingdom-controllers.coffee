@@ -110,7 +110,6 @@ angular.module('Dominion.KingdomBrowser', ['angularUtils.directives.dirPaginatio
       $scope.kingdom.description = kingdom.description
       $scope.kingdom.username = kingdom.username
       $scope.kingdom.created = kingdom.created
-      $scope.kingdom.public = kingdom.published
 
       $scope.contentLoaded = true
 

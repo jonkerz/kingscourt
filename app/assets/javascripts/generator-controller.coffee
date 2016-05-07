@@ -14,12 +14,10 @@ angular.module('Dominion.Builder')
     builderKingdom.cards = generatorKingdom.cards
     builderKingdom.name = generatorKingdom.name
     builderKingdom.description = generatorKingdom.description
-    builderKingdom.public = generatorKingdom.public
 
     generatorKingdom.cards = []
     generatorKingdom.name = ''
     generatorKingdom.description = ''
-    generatorKingdom.public = true
 
     $location.path 'builder'
 

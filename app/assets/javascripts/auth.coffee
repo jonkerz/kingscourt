@@ -1,0 +1,1 @@
+angular.module('Dominion.Auth', ['ngStorage', 'Dominion.API.Config', 'Dominion.Alerts'])

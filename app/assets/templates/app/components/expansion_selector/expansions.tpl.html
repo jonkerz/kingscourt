@@ -1,0 +1,24 @@
+<div class="row" ng-controller="ExpansionSelectorCtrl">
+  <div class="col-md-12 well-t expansions hidden-xs">
+    <div class="btn-group nocheck">
+      <label ng-repeat="expansion in expansionSelectorService.expansionNames" class="btn btn-primary btn-sm " ng-class='{"active": expansionSelectorService.isExpansionActive(expansion.id)}'>
+        <input type="checkbox" checklist-model="expansionSelectorService.selectedExpansions" checklist-value="expansion.id"> {{expansion.text}}
+      </label>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-default btn-sm" ng-click="expansionSelectorService.checkAllExpansions()">All</button>
+      <button class="btn btn-default btn-sm" ng-click="expansionSelectorService.uncheckAllExpansions()">None</button>
+    </div>
+  </div>
+
+  <div class="col-md-12 well-t expansions visible-xs">
+    <div class="btn-group nocheck" style="margin-bottom:15px">
+      <label ng-repeat="expansion in expansionSelectorService.expansionNames" class="col-xs-4 btn btn-primary btn-sm " ng-class='{"active": expansionSelectorService.isExpansionActive(expansion.id)}'>
+      <input type="checkbox" checklist-model="expansionSelectorService.selectedExpansions" checklist-value="expansion.id"> {{expansion.text}}
+      </label>
+      <button class="visible-xs col-xs-4 btn btn-default btn-sm" ng-click="expansionSelectorService.checkAllExpansions()">All</button>
+      <button class="visible-xs col-xs-4 btn btn-default btn-sm" ng-click="expansionSelectorService.uncheckAllExpansions()">None</button>
+    </div>
+  </div>
+</div>

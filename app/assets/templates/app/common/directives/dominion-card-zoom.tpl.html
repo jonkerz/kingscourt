@@ -1,0 +1,8 @@
+<div class="angular-hovercard" ng-mouseenter="showCard = true" ng-mouseleave="showCard = false">
+  <div class="angular-hovercard-detail" ng-class="{'angular-hovercard-active': showCard}">
+    <img style="border:2px #f00 solid;" twidth="210" ng-src="assets/images/cards/{{cardImage}}" />
+  </div>
+  <span class="thumbnail animate card-border-radius angular-hovercard" >
+    <img ng-src="assets/images/cards/{{cardImage}}">
+  </span>
+</div>

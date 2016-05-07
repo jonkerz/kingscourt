@@ -1,0 +1,163 @@
+/* jQuery-UI */
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus, .ui-widget-content, .ui-widget-header, .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  background-image: none;
+}
+.ui-draggable, .card-box, .attribute-display-name {
+  font-variant: small-caps;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+.ui-widget-header {
+  margin-bottom: 15px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+/* Bootstrap */
+.form-control, .btn {
+  margin-bottom: 4px;
+}
+.expansions .btn-group button, .expansions .btn-group label {
+  margin-bottom: 0;
+}
+.expansions > .btn input[type="radio"], .expansions > .btn-group > .btn input[type="radio"], .expansions > .btn input[type="checkbox"], .expansions > .btn-group > .btn input[type="checkbox"] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
+.navbar-nav li .badge {
+  margin-top: 19.5px;
+  margin-right: 10px;
+}
+ul.pagination {
+  margin-top: 0;
+}
+.nav-tabs > li > a:hover {
+  cursor: pointer;
+}
+.btn, .btn:focus, .btn:active, .btn:hover {
+  border: 0;
+  border-image-width: 0;
+}
+.tab-content {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+.nav-tabs {
+  margin-bottom: -1;
+}
+.navbar-nav {
+  font-size: 110%;
+}
+.navbar-right {
+  font-size: 100%;
+}
+.thumbnail {
+  margin: 0;
+}
+.list-group-item {
+  padding-bottom: 10px;
+}
+
+/* Bootstrap custom css */
+.slider {
+  margin-bottom: 15px;
+}
+.well-t {
+  background-color: rgba(245, 245, 245, 0);
+  border: 0;
+}
+.label-inline {
+  margin-right: 2px;
+  display: inline-block
+}
+.btn-lnk, .btn-lnk:active, .btn-lnk:focus {
+  border-width: 0;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  border: 0px;
+  -webkit-box-sizing: none;
+  box-sizing: none;
+  background-color: transparent;
+}
+.col-xs-20p {
+  width: 20%;
+  float: left;
+}
+@media (min-width: 768px) {
+  .col-sm-20p {
+    width: 20%;
+    float: left;
+  }
+}
+@media (min-width: 992px) {
+  .col-md-20p {
+    width: 20%;
+    float: left;
+  }
+}
+@media (min-width: 1200px) {
+  .col-lg-20p {
+    width: 20%;
+    float: left;
+  }
+}
+.col-xs-10p {
+  width: 10%;
+  float: left;
+}
+@media (min-width: 768px) {
+  .col-sm-10p {
+    width: 10%;
+    float: left;
+  }
+}
+@media (min-width: 992px) {
+  .col-md-10p {
+    width: 10%;
+    float: left;
+  }
+}
+@media (min-width: 1200px) {
+  .col-lg-10p {
+    width: 10%;
+    float: left;
+  }
+}
+.padding-10 {
+  padding: 10px;
+}
+.padding-0 {
+  padding: 2px;
+}
+.white-bg {
+  background-color: #fff;
+}
+.well-bg {
+  background-color: #ECF0F1
+}
+.transparent-bg {
+  background-color: none;
+  background-color: #ECF0F1
+}
+.modal-open, .modal.face, .modal-backdrop.fade {
+  overflow: auto;
+}
+.modal-backdrop{
+  bottom: 0
+}
+.modal-backdrop {
+  bottom: 0;
+  position: fixed;
+}
+body.modal-open {
+  overflow: inherit;
+  padding-right: inherit !important;
+}
+input[type=radio]{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

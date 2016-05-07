@@ -1,0 +1,1 @@
+angular.module('Dominion.Common', ['Dominion.Filters', 'Dominion.API', 'Dominion.Auth', 'Dominion.ExpansionSelector', 'Dominion.Alerts'])

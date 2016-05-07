@@ -1,0 +1,19 @@
+.panel-heading:not(.collapsed) h4 a:after {
+  font-family: 'FontAwesome';
+  content: "\f077"; /* fa-chevron-up */
+  float: right;
+}
+.panel-heading.collapsed h4 a:after {
+  font-family: 'FontAwesome';
+  content: "\f078"; /* fa-chevron-down */
+  float: right;
+}
+
+.panel-heading h4 {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.panel-heading h4 a {
+  text-decoration: none !important;
+}

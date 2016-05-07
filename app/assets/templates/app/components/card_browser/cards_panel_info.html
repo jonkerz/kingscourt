@@ -1,0 +1,15 @@
+<div ng-if="selectedCard" >
+	<div class="animate black_card shadow animate">
+		<img class="card_image" width="180" ng-src="assets/images/cards/{{selectedCard.image}}"/>
+	</div><br><br><br><br><br><br><br><br><br><br><br>
+	{{selectedCard.name}}<br>
+	Expansion: <img ng-src="assets/images/icons/{{selectedCard.expansion}}.png" width="16" height="16"/><br><br>
+	"{{selectedCard.text}}"
+	<img ng-src="assets/images/icons/16px-Coin{{selectedCard.cost}}.png"/>
+</div>
+
+<div ng-if="!selectedCard">
+	<div class="animate black_card shadow animate">
+		<img class="card_image" width="180" ng-src="assets/images/cards/Randomizer.jpg"/>
+	</div>
+</div>

@@ -1,0 +1,1 @@
+angular.module('Dominion.Builder', ['angularUtils.directives.dirPagination', 'Dominion.Alerts', 'Dominion.Auth', 'Dominion.Config', 'Dominion.API', 'Dominion.CardResource', 'Dominion.Common'])

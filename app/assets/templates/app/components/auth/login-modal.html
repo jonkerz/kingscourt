@@ -1,0 +1,23 @@
+<div class="modal-body">
+  <div ng-controller="AuthCtrl">
+    <h4>Login</h4>
+    <p class="text-danger" ng-show="loginError">{{ loginError }}</p>
+    <form ng-submit="login()">
+      <input type="text" class="form-control" ng-model="loginUsername" placeholder="Username">
+      <input type="password" class="form-control" ng-model="loginPassword" placeholder="Password">
+      <input type="submit" class="btn btn-primary" value="Login">
+      <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </form>
+
+    <h4>Register</h4>
+    <p class="text-danger" ng-show="registerError">
+      {{ registerError }}
+    </p>
+    <form ng-submit="register()">
+      <input type="text" class="form-control" ng-model="registerUsername" placeholder="Username">
+      <input type="password" class="form-control" ng-model="registerPassword" placeholder="Password">
+      <input type="submit" class="btn btn-primary" value="Register">
+      <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </form>
+  </div>
+</div>

@@ -77,6 +77,14 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-screenshot (1.0.12)
+      capybara (>= 1.0, < 3)
+      launchy
+    capybara-webkit (1.11.1)
+      capybara (>= 2.3.0, < 2.8.0)
+      json
+    childprocess (0.5.9)
+      ffi (~> 1.0, >= 1.0.11)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -136,6 +144,8 @@ GEM
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     listen (3.0.7)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9.7)
@@ -215,6 +225,7 @@ GEM
       rspec-mocks (~> 3.1.0)
       rspec-support (~> 3.1.0)
     rspec-support (3.1.2)
+    rubyzip (1.2.0)
     sass (3.4.22)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -222,6 +233,10 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    selenium-webdriver (2.53.0)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.0)
+      websocket (~> 1.0)
     slim (3.0.6)
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
@@ -255,6 +270,7 @@ GEM
       activemodel (>= 4.2)
       debug_inspector
       railties (>= 4.2)
+    websocket (1.2.3)
     websocket-driver (0.6.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -268,6 +284,8 @@ DEPENDENCIES
   activeadmin!
   angular-rails-templates
   bower-rails (~> 0.10.0)
+  capybara-screenshot
+  capybara-webkit
   coffee-rails (~> 4.1.0)
   cucumber-rails
   database_cleaner
@@ -278,6 +296,7 @@ DEPENDENCIES
   rails (>= 5.0.0.beta4, < 5.1)
   rspec-rails
   sass-rails (~> 5.0)
+  selenium-webdriver
   slim-rails
   spring
   spring-watcher-listen (~> 2.0.0)

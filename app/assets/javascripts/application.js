@@ -19,8 +19,6 @@
 //= require angular-ui-bootstrap-bower/ui-bootstrap-tpls.js
 //= require angular-sanitize/angular-sanitize
 //= require angular-utils-pagination/dirPagination
-//= require app
-//= require app-config
 
 //= require_tree ./ng-app
 

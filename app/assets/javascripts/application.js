@@ -22,7 +22,12 @@
 
 //= require_tree ./ng-app
 
-//= require jquery-ui.1.11.2.custom.min
+//= require jquery-ui/core
+//= require jquery-ui/widget
+//= require jquery-ui/mouse
+//= require jquery-ui/draggable
+//= require jquery-ui/droppable
+//= require jquery-ui/slider
 
 //= require_tree ../templates
 // require_tree .

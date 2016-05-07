@@ -1,4 +1,4 @@
-angular.module('Dominion.Auth')
+angular.module('Dominion')
 .factory 'AuthService', ($rootScope, $http, $q, API_SERVER, AlertsService, $localStorage) ->
   new class AuthService
     constructor: ->

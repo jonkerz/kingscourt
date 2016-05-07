@@ -1,4 +1,4 @@
-angular.module('Dominion.API', ['ngResource', 'Dominion.API.Config', 'Dominion.CardResource'])
+angular.module('Dominion')
 .factory 'APIService', ($resource, $http, $q, API_SERVER, CardService) ->
   new class APIService
     deserialize_cards = (cards) -> _.map cards, (card_id) -> CardService.getCardById parseInt card_id, 10

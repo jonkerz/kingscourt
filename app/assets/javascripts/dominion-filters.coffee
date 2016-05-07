@@ -1,4 +1,4 @@
-angular.module('Dominion.Filters', [])
+angular.module('Dominion')
 
 .filter 'expansionToString', ->
   ExpansionEnum =

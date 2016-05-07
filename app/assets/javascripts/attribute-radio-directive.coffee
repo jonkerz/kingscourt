@@ -1,4 +1,4 @@
-angular.module("Dominion.Builder")
+angular.module("Dominion")
 
 .directive "attributeRadio", ->
   restrict: "E"

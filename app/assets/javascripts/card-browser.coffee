@@ -1,1 +1,0 @@
-angular.module('Dominion.CardBrowser', ['angularUtils.directives.dirPagination', 'Dominion.API.Config', 'Dominion.CardResource', 'Dominion.ExpansionSelector'])

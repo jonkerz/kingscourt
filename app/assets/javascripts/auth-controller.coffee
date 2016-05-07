@@ -1,4 +1,4 @@
-angular.module('Dominion.Auth')
+angular.module('Dominion')
 .controller 'AuthCtrl', ($scope, AuthService) ->
   $scope.register = ->
     username = $scope.registerUsername

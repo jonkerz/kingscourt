@@ -1,4 +1,4 @@
-angular.module("Dominion.Builder")
+angular.module("Dominion")
 
 .directive "draggable", ->
   restrict: "A"

@@ -1,4 +1,4 @@
-angular.module("Dominion.Builder")
+angular.module("Dominion")
 
 .factory "RandomizerService", (APP_CONFIG) ->
   new class RandomizerService

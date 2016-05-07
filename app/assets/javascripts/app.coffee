@@ -14,15 +14,14 @@ angular.element(document).ready ->
 
 Dominion = angular.module 'Dominion', [
   'templates'
-  'ui.bootstrap'
+  'ngResource'
+  'ngRoute'
   'ngSanitize'
-  'Dominion.Builder'
-  'Dominion.KingdomBrowser'
-  'Dominion.CardBrowser'
-  'Dominion.Interceptors'
-  'Dominion.Common'
-  'Dominion.Navbar'
-  'Dominion.Config'
+  'ngStorage'
+  'angular-growl'
+  'angularUtils.directives.dirPagination'
+  'checklist-model'
+  'ui.bootstrap'
 ]
 
 Dominion.run ($location, $rootScope) ->

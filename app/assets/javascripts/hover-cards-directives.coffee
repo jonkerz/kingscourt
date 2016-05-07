@@ -1,4 +1,4 @@
-angular.module('Dominion.Common')
+angular.module('Dominion')
 .directive 'hoverCard', ->
   restrict: 'E'
   templateUrl: 'directives/dominion-card-text.tpl.html'

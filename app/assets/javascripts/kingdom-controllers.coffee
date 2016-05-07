@@ -1,4 +1,4 @@
-angular.module('Dominion.KingdomBrowser', ['angularUtils.directives.dirPagination', 'Dominion.Auth', 'Dominion.Alerts', 'Dominion.API', 'Dominion.ExpansionSelector'])
+angular.module('Dominion')
 .controller 'KingdomCtrl', ($scope, AuthService, AlertsService, APIService, API_KINGDOMS_PER_PAGE, ExpansionSelectorService) ->
   $scope.authService = AuthService
   $scope.expansionSelectorService = ExpansionSelectorService

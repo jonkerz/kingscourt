@@ -1,4 +1,4 @@
-angular.module('Dominion.Interceptors')
+angular.module('Dominion')
 .factory 'AuthInterceptor', ($rootScope, $q, $localStorage, $location, AlertsService) ->
   request: (config) ->
     config.headers = config.headers or {}

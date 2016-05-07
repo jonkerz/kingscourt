@@ -1,4 +1,4 @@
-angular.module('Dominion.CardResource', [])
+angular.module('Dominion')
 .factory 'CardService', ($http, Cards) ->
   new class CardService
     constructor: -> @cards = Cards

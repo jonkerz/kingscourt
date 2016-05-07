@@ -1,4 +1,4 @@
-angular.module('Dominion.Navbar', ['Dominion.Auth'])
+angular.module('Dominion')
 
 .controller 'NavbarCtrl', ($scope, $location, AuthService) ->
   $scope.isActive = (viewLocation) -> viewLocation is $location.path()

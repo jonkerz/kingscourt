@@ -1,4 +1,4 @@
-angular.module("Dominion.Builder")
+angular.module("Dominion")
 
 .directive "costSlider", (RandomizerService, APP_CONFIG) ->
   restrict: "A"

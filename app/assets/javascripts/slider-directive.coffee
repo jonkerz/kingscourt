@@ -1,4 +1,4 @@
-angular.module('Dominion.CardBrowser')
+angular.module('Dominion')
 .directive 'slider', ->
   restrict: 'A'
   scope:

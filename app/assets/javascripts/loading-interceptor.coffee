@@ -1,4 +1,4 @@
-angular.module('Dominion.Interceptors')
+angular.module('Dominion')
 .factory 'LoadingInterceptor', ($q, $timeout) ->
   request: (config) ->
     angular.element('.loading-spinner').show()

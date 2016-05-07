@@ -1,4 +1,4 @@
-angular.module('Dominion.Common')
+angular.module('Dominion')
 .controller 'SaveCtrl', ($scope, AlertsService, APIService, AuthService) ->
   $scope.authService = AuthService
   $scope.editingKingdom = !!$scope.kingdom.id? if $scope.kingdom

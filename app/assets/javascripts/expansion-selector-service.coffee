@@ -1,4 +1,4 @@
-angular.module('Dominion.ExpansionSelector', ['checklist-model'])
+angular.module('Dominion')
 
 .factory 'ExpansionSelectorService', ->
   new class ExpansionSelectorService

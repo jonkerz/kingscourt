@@ -1,4 +1,4 @@
-angular.module('Dominion.Builder')
+angular.module('Dominion')
 
 .controller 'GeneratorCtrl', ($http, $scope, $location, ExpansionSelectorService, DeckService, AlertsService, KingdomService) ->
   $scope.expansionSelectorService = ExpansionSelectorService

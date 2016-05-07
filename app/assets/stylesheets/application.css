@@ -12,5 +12,6 @@
  *
  *= require_tree ./copied_vendor_css
  *= require_tree ./copied
+ *= require_tree ./directives
  *= require_self
  */

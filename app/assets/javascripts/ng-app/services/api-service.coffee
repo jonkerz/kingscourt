@@ -14,7 +14,7 @@ angular.module('KingsCourt')
         kingdom.cards = deserialize_cards kingdom.cards
       return transformedData
 
-    kingdoms: $resource "#{API_SERVER}kingdoms/:id/", { id: '@id' },
+    kingdoms: $resource "api/v1/kingdoms/:id/", { id: '@id' },
       query:
         isArray: false
         transformResponse: deserialize_cards_in_all_kingdoms

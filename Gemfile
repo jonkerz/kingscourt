@@ -14,6 +14,7 @@ gem 'bower-rails', '~> 0.10.0'
 gem 'slim-rails'
 gem 'angular-rails-templates'
 gem 'activeadmin', github: 'activeadmin'
+gem 'active_model_serializers'
 
 group :development do
   gem 'web-console'

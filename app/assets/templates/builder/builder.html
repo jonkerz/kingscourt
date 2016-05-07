@@ -1,15 +1,15 @@
-<ng-include src="'app/components/expansion_selector/expansions.tpl.html'"></ng-include>
+<ng-include src="'expansion_selector/expansions.tpl.html'"></ng-include>
 
 <div class="row" ng-controller="BuilderCtrl" ng-cloak>
   <div class="col-md-3 hidden-md hidden-lg">
     <div class="well-t clearfix ">
-      <ng-include src="'app/components/alerts/_alert-box.html'"></ng-include>
+      <ng-include src="'alerts/_alert-box.html'"></ng-include>
     </div>
     <div class="well clearfix" ng-show="tab=='randomizer-tab'">
-      <ng-include src="'app/components/builder/builder_panel_controls.html'"></ng-include>
+      <ng-include src="'builder/builder_panel_controls.html'"></ng-include>
     </div>
     <div class="well clearfix">
-      <ng-include src="'app/components/builder/builder_panel_kingdom-list.html'"></ng-include>
+      <ng-include src="'builder/builder_panel_kingdom-list.html'"></ng-include>
     </div>
   </div>
 
@@ -25,10 +25,10 @@
       </ul>
       <div id="my-tab-content" class="tab-content white-bg">
         <div ng-if="tab=='randomizer-tab'" class="tab-pane fade in active clearfix" id="randomizer-tab">
-          <ng-include src="'app/components/builder/builder_tab_randomizer.html'"></ng-include>
+          <ng-include src="'builder/builder_tab_randomizer.html'"></ng-include>
         </div>
         <div ng-if="tab=='by-name-tab'" class="tab-pane fade" id="by-name-tab">
-          <ng-include src="'app/components/builder/builder_tab_by-name.html'"></ng-include>
+          <ng-include src="'builder/builder_tab_by-name.html'"></ng-include>
         </div>
       </div>
     </div>
@@ -36,14 +36,14 @@
 
   <div class="col-md-3">
     <div class="well-t clearfix hidden-xs hidden-sm">
-      <ng-include src="'app/components/alerts/_alert-box.html'"></ng-include>
+      <ng-include src="'alerts/_alert-box.html'"></ng-include>
     </div>
     <div class="well clearfix hidden-xs hidden-sm"  ng-show="tab=='randomizer-tab'">
-      <ng-include src="'app/components/builder/builder_panel_controls.html'"></ng-include>
+      <ng-include src="'builder/builder_panel_controls.html'"></ng-include>
     </div>
     <div class="well clearfix hidden-xs hidden-sm">
-      <ng-include src="'app/components/builder/builder_panel_kingdom-list.html'"></ng-include>
+      <ng-include src="'builder/builder_panel_kingdom-list.html'"></ng-include>
     </div>
-    <ng-include src="'app/components/builder/_panel_save.html'"></ng-include>
+    <ng-include src="'builder/_panel_save.html'"></ng-include>
   </div>
 </div>

@@ -2,7 +2,7 @@ angular.module('Dominion.Common')
 .controller 'ModalCtrl', ($rootScope, $scope, $modal, $log) ->
   $scope.openLogin = ->
     modalInstance = $modal.open
-      templateUrl: 'app/components/auth/login-modal.html'
+      templateUrl: 'auth/login-modal.html'
       controller: 'ModalInstanceCtrl'
       size: 'sm'
 
@@ -11,7 +11,7 @@ angular.module('Dominion.Common')
     scope.params = card: card
 
     modalInstance = $modal.open
-      templateUrl: 'app/common/card-modal.html'
+      templateUrl: 'card-modal.html'
       controller: 'CardModalInstanceCtrl'
       size: 'sm'
       scope: scope
@@ -21,7 +21,7 @@ angular.module('Dominion.Common')
     scope.params = card: card
 
     modalInstance = $modal.open
-      templateUrl: 'app/common/card-modal.html'
+      templateUrl: 'card-modal.html'
       controller: 'BuilderCardModalInstanceCtrl'
       size: 'sm'
       scope: scope

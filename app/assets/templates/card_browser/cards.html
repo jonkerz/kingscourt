@@ -1,4 +1,4 @@
-<ng-include src="'app/components/expansion_selector/expansions.tpl.html'"></ng-include>
+<ng-include src="'expansion_selector/expansions.tpl.html'"></ng-include>
 
 <div class="row" ng-controller="CardBroswerCtrl" ng-cloak>
   <div class="col-md-9 ">
@@ -16,19 +16,19 @@
         <div class="col-md-12">
           <div id="triple" ng-if="displayMode=='labels'">
             <div class="col-xs-12 col-sm-6 col-md-4" dir-paginate="card in all_cards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage: 'all_cards'" current-page="currentPage" pagination-id="all_cards" ng-click="setSelectedCard(card)">
-              <div ng-include src="'app/common/card-label.tpl.html'"></div>
+              <div ng-include src="'card-label.tpl.html'"></div>
             </div>
           </div>
 
           <div ng-if="displayMode=='images'">
               <div dir-paginate="card in all_cards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage" current-page="currentPage" pagination-id="all_cards" ng-click="setSelectedCard(card)">
-                  <div ng-include src="'app/common/card-image.tpl.html'"></div>
+                  <div ng-include src="'card-image.tpl.html'"></div>
               </div>
           </div>
 
           <div ng-if="displayMode=='ascii'">
               <div dir-paginate="card in all_cards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage: 'all_cards'" current-page="currentPage" pagination-id="all_cards" ng-click="setSelectedCard(card)">
-                  <div ng-include src="'app/common/card-text.tpl.html'"></div>
+                  <div ng-include src="'card-text.tpl.html'"></div>
               </div>
           </div>
 
@@ -40,7 +40,7 @@
 
   <div class="col-md-3">
     <div class="well clearfix">
-      <ng-include src="'app/components/card_browser/cards_panel_info.html'"></ng-include>
+      <ng-include src="'card_browser/cards_panel_info.html'"></ng-include>
     </div>
 
     <div class="well">

@@ -41,60 +41,60 @@ angular.module('Dominion.Config', [
 .config ($routeProvider) ->
   $routeProvider.when '/',
     title: 'Generator'
-    templateUrl: 'app/components/builder/generator.html'
+    templateUrl: 'builder/generator.html'
 
   .when '/builder',
     title: 'Builder'
-    templateUrl: 'app/components/builder/builder.html'
+    templateUrl: 'builder/builder.html'
 
   .when '/kingdoms/:id',
     title: 'Kingdoms'
-    templateUrl: 'app/components/kingdom_browser/kingdom-detail.html'
+    templateUrl: 'kingdom_browser/kingdom-detail.html'
 
   .when '/kingdoms/:id/:string',
     title: '###'
-    templateUrl: 'app/components/kingdom_browser/kingdom-detail.html'
+    templateUrl: 'kingdom_browser/kingdom-detail.html'
 
   .when '/cards',
     title: 'Browse Cards'
-    templateUrl: 'app/components/card_browser/cards.html'
+    templateUrl: 'card_browser/cards.html'
 
   .when '/kingdoms',
     title: 'Browse Kingdoms'
-    templateUrl: 'app/components/kingdom_browser/kingdoms.html'
+    templateUrl: 'kingdom_browser/kingdoms.html'
     reloadOnSearch: false
     controller: 'PublicKingdomsCtrl'
 
   .when '/my_kingdoms',
     title: 'My Kingdoms'
-    templateUrl: 'app/components/kingdom_browser/kingdoms.html'
+    templateUrl: 'kingdom_browser/kingdoms.html'
     reloadOnSearch: false
     controller: 'MyKingdomsCtrl'
 
   .when '/:username/kingdoms',
     title: 'User Kingdoms'
-    templateUrl: 'app/components/kingdom_browser/kingdoms.html'
+    templateUrl: 'kingdom_browser/kingdoms.html'
     reloadOnSearch: false
     controller: 'UserKingdomsCtrl'
 
   .when '/my_favorites',
     title: 'My Favorites'
-    templateUrl: 'app/components/kingdom_browser/kingdoms.html'
+    templateUrl: 'kingdom_browser/kingdoms.html'
     reloadOnSearch: false
     controller: 'MyFavoriteKingdomsCtrl'
 
   .when '/:username/favorites',
     title: 'User Favorites'
-    templateUrl: 'app/components/kingdom_browser/kingdoms.html'
+    templateUrl: 'kingdom_browser/kingdoms.html'
     reloadOnSearch: false
     controller: 'FavoriteKingdomsCtrl'
 
   .when '/kings_court',
     title: "King's Court"
-    templateUrl: 'app/common/kings-court.html'
+    templateUrl: 'kings-court.html'
 
   .when '/import',
     title: 'Import'
-    templateUrl: 'app/components/builder/import.html'
+    templateUrl: 'builder/import.html'
 
-  .otherwise templateUrl: 'app/common/404.html'
+  .otherwise templateUrl: '404.html'

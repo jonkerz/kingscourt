@@ -16,6 +16,9 @@
 //= require angular-sanitize/angular-sanitize
 //= require ngstorage/ngStorage
 
+//= require angular-cookie/angular-cookie
+//= require ng-token-auth/dist/ng-token-auth
+
 //= require angular-ui-bootstrap-bower/ui-bootstrap-tpls.js
 //= require angular-sanitize/angular-sanitize
 //= require angular-utils-pagination/dirPagination

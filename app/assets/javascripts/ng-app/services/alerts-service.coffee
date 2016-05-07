@@ -15,7 +15,3 @@ angular.module('KingsCourt')
     clearAlerts: -> @alerts.splice 0, @alerts.length
 
     closeAlert: (index) -> @alerts.splice index, 1
-
-angular.module('KingsCourt')
-.controller 'AlertsCtrl', ($scope, AlertsService) ->
-  $scope.alertsService = AlertsService

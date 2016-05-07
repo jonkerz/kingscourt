@@ -27,6 +27,3 @@ angular.module('KingsCourt')
     uncheckAllExpansions: ->  @selectedExpansions = []
 
     noExpansionsSelected: -> @selectedExpansions.length == 0 #TODO: remove?
-
-.controller 'ExpansionSelectorCtrl', ($scope, ExpansionSelectorService) ->
-  $scope.expansionSelectorService = ExpansionSelectorService

@@ -1,6 +1,7 @@
 # TODO
 module Api::V1
   class KingdomsController < ApiController
+    before_action :authenticate_user!, only: [:show]
     def index
       kingdom = KingdomSerializer.new Kingdom.first, root: false
       json = {

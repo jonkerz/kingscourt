@@ -1,23 +1,45 @@
 <div class="modal-body">
-  <div ng-controller="AuthCtrl">
+  <div>
     <h4>Login</h4>
     <p class="text-danger" ng-show="loginError">{{ loginError }}</p>
-    <form ng-submit="login()">
-      <input type="text" class="form-control" ng-model="loginUsername" placeholder="Username">
-      <input type="password" class="form-control" ng-model="loginPassword" placeholder="Password">
-      <input type="submit" class="btn btn-primary" value="Login">
-      <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+
+    <form ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}" ng-if="!user.signedIn">
+      <div class="form-group">
+        <label for="login-email">Email address</label>
+        <input type="email" class="form-control" id="login-email" ng-model="loginForm.email" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <label for="login-password">Password</label>
+        <input type="password" class="form-control" id="login-password" ng-model="loginForm.password" placeholder="Password">
+      </div>
+      <button type="submit" class="btn btn-primary btn-sm">Login</button>
+      <button class="btn btn-warning btn-sm" ng-click="cancel()">Cancel</button>
     </form>
 
     <h4>Register</h4>
     <p class="text-danger" ng-show="registerError">
       {{ registerError }}
     </p>
-    <form ng-submit="register()">
-      <input type="text" class="form-control" ng-model="registerUsername" placeholder="Username">
-      <input type="password" class="form-control" ng-model="registerPassword" placeholder="Password">
-      <input type="submit" class="btn btn-primary" value="Register">
-      <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+
+    <form ng-submit="submitRegistration(registrationForm)" role="form" ng-init="registrationForm = {}">
+      <div class="form-group">
+        <label>email</label>
+        <input type="email" name="email" ng-model="registrationForm.email" required="required" class="form-control"/>
+      </div>
+
+      <div class="form-group">
+        <label>password</label>
+        <input type="password" name="password" ng-model="registrationForm.password" required="required" class="form-control"/>
+      </div>
+
+      <div class="form-group">
+        <label>password confirmation</label>
+        <input type="password" name="password_confirmation" ng-model="registrationForm.password_confirmation" required="required" class="form-control"/>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-sm">Register</button>
+      <button class="btn btn-warning btn-sm" ng-click="cancel()">Cancel</button>
     </form>
+
   </div>
 </div>

@@ -1,5 +1,5 @@
 <div class="navbar navbar-default navbar-static-top" role="navigation" ng-controller="NavbarCtrl" ng-cloak>
-  <div class="container" ng-controller="AuthCtrl">
+  <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed " data-toggle="collapse" data-target=".navbar-collapse">
         <div class="three-bars">
@@ -24,16 +24,16 @@
         <li class="loading-spinner"> <!-- .navbar-text, .navbar-btn / etc. to vertically align -->
             <a class="fa fa-refresh fa-spin"></a>
         </li>
-        <li  ng-show="authService.loggedIn" ng-class="{ active: isActive('/my_kingdoms')}"><a href="#!/my_kingdoms">My Kingdoms</a>
+        <li  ng-show="user.signedIn" ng-class="{ active: isActive('/my_kingdoms')}"><a href="#!/my_kingdoms">My Kingdoms</a>
         </li>
-        <li class="dropdown" ng-show="authService.loggedIn">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-user"></span> {{authService.username}} <span class="caret"></span></a>
+        <li class="dropdown" ng-show="user.signedIn">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-user"></span> {{user.email}} <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a  href="#!/my_favorites">Favorites</a></li>
-            <li><a  ng-click="logout()">Logout</a></li>
+            <li><a href="#!/my_favorites">Favorites</a></li>
+            <li><a ng-click="signOut()">Logout</a></li>
           </ul>
         </li>
-        <li ng-hide="authService.loggedIn" ng-controller="ModalCtrl">
+        <li ng-hide="user.signedIn" ng-controller="ModalCtrl">
           <a adata-toggle="collapse" adata-target=".navbar-collapse" href="" ng-click="openLogin()">Login/Register</a>
         </li>
       </ul>

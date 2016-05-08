@@ -1,16 +1,12 @@
 # TODO
 class KingdomSerializer < ActiveModel::Serializer
-  attributes :id, :name, :created, :cards,
+  attributes :id, :name, :created_at, :cards,
     :kingdom_description, :slug, :username, :description,
     :expansions, :favorites_count
 
   private
     def cards
       object.cards.pluck :id
-    end
-
-    def created
-      object.created_at
     end
 
     def slug

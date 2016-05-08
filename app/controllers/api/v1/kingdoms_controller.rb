@@ -22,7 +22,7 @@ module Api::V1
 
     def create
       kingdom = Kingdom.new kingdom_params
-      kingdom.user = current_user || User.second
+      kingdom.user = current_user
       kingdom.card_ids = params[:card_ids]
       kingdom.save!
       render json: :ok

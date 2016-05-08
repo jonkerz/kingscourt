@@ -8,7 +8,7 @@
       <h4>{{kingdom.name}}</h4>
       <p>Description: {{kingdom.kingdom_description || 'None'}}</p>
       <p>Creator: <a ng-href="#!/{{kingdom.username}}/kingdoms">{{kingdom.username}}</a></p>
-      <p>Created: {{kingdom.created | date:'dd MMMM yyyy' }}</p>
+      <p>Created: {{kingdom.created_at | date:'dd MMMM yyyy' }}</p>
     </span>
 
     <button class='btn btn-success btn-md col-xs-12' ng-click="openInBuilder()">Open in Builder</button>

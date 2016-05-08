@@ -14,7 +14,7 @@ angular.module('KingsCourt')
       $scope.kingdom.cards = kingdom.cards
       $scope.kingdom.description = kingdom.description
       $scope.kingdom.username = kingdom.username
-      $scope.kingdom.created = kingdom.created
+      $scope.kingdom.created_at = kingdom.created_at
 
       $scope.contentLoaded = true
 

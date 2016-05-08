@@ -4,6 +4,8 @@ angular.module('KingsCourt')
     $scope: $scope
 
   # TODO
+  $scope.kingdom_params = username: 'ehehhehehe'
+
+  # TODO
   username = $auth.retrieveData("auth_headers").uid
   $scope.subtitle = "Browsing #{username}'s kingdoms"
-  $scope.pageChanged 1

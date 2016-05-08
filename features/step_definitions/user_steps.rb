@@ -6,8 +6,9 @@ Then /^I should see the login modal$/ do
   expect(page).to have_css(".modal-content")
 end
 
-Given(/^there is a user$/) do
-  User.create email: "king@example.com", password: "secret123"
+Given /^there is a user$/ do
+  User.create email: "king@example.com",
+    password: "secret123", name: "Joffre"
 end
 
 Given /^I am logged in$/ do # TODO

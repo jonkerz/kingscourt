@@ -14,7 +14,7 @@ class KingdomSerializer < ActiveModel::Serializer
     end
 
     def username
-      "jonkerz"
+      object.user.name
     end
 
     def kingdom_description

@@ -5,6 +5,6 @@ angular.module('KingsCourt')
   $controller 'KingdomCtrl',
     $scope: $scope
 
-  $scope.username_faves = AuthService.username
+  # TODO
+  $scope.kingdom_params = username: 'ehehhehehe'
   $scope.subtitle = "Browsing #{$scope.username_faves}'s favorite kingdoms"
-  $scope.pageChanged 1

@@ -1,5 +1,5 @@
 angular.module('KingsCourt')
-.controller 'KingdomCtrl', ($scope, AuthService, AlertsService, APIService, API_KINGDOMS_PER_PAGE, ExpansionSelectorService) ->
+.controller 'KingdomCtrl', ($scope, AuthService, AlertsService, APIService, ExpansionSelectorService, CardService) ->
   $scope.authService = AuthService
   $scope.expansionSelectorService = ExpansionSelectorService
   $scope.username = null
@@ -7,10 +7,20 @@ angular.module('KingsCourt')
   $scope.kingdoms = []
   $scope.totalKingdoms = 'not set'
   $scope.totalKingdomsAll = 0
-  $scope.kingdomsPerPage = API_KINGDOMS_PER_PAGE
   $scope.displayMode = 'images'
-  $scope.pagination = current: 1
 
+  # TODO DRY
+  $scope.deserializeKingdoms = (data) ->
+    for kingdom in data
+      kingdom.cards = deserializeCards kingdom.cards
+    data
+
+  deserializeCards = (cards) ->
+    _.map cards, (card_id) -> CardService.getCardById parseInt card_id, 10
+
+  $scope.kingdoms_url = '/api/v1/kingdoms?format=json'
+
+  ### TODO
   getResultsPage = (pageNumber) ->
     params =
       page: pageNumber
@@ -28,9 +38,10 @@ angular.module('KingsCourt')
       $scope.kingdoms = kingdoms
       $scope.totalKingdoms = data.count
       $scope.totalKingdomsAll = data.count_all
+  ###
 
-  $scope.pageChanged = (newPage) -> getResultsPage newPage
-
+  # TODO
+  ###
   $scope.toggleFavorite = (kingdom) ->
     return if $scope.isSaving
 
@@ -49,3 +60,4 @@ angular.module('KingsCourt')
         kingdom.favorites_count++
         kingdom.favorite = not kingdom.favorite
         $scope.isSaving = false
+  ###

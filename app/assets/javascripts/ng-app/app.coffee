@@ -21,6 +21,7 @@ KingsCourt = angular.module 'KingsCourt', [
   'angularUtils.directives.dirPagination'
   'checklist-model'
   'ng-token-auth'
+  'bgf.paginateAnything'
   'ui.bootstrap'
 ]
 

@@ -1,19 +1,23 @@
 # TODO
+
 module Api::V1
   class KingdomsController < ApiController
     before_action :set_kingdom, only: [:show, :update]
     before_action :authenticate_user!, except: [:index, :show]
+    include CleanPagination
 
     def index
-      kingdoms = ActiveModel::ArraySerializer.new(Kingdom.all, each_serializer: KingdomSerializer)
-      json = {
-        count: 6,
-        next: "http://localhost:3000/api/v1/kingdoms/?expansions=2_5_6_7_8_9&page=2",
-        previous: nil,
-        count_all: 10,
-        results: kingdoms
-      }
-      render json: json
+      kingdoms = if params[:username]
+                  user = User.find_by(name: params[:username])
+                  Kingdom.where(user: user)
+                else
+                  Kingdom.all
+                end
+
+      max_per_page = 100
+      paginate kingdoms.count, max_per_page do |limit, offset|
+        render json: kingdoms.limit(limit).offset(offset)
+      end
     end
 
     def show

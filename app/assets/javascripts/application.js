@@ -23,6 +23,9 @@
 //= require angular-sanitize/angular-sanitize
 //= require angular-utils-pagination/dirPagination
 
+//= require angular-paginate-anything/dist/paginate-anything
+//= require angular-paginate-anything/dist/paginate-anything-tpls
+
 //= require_tree ./ng-app
 
 //= require jquery-ui/core

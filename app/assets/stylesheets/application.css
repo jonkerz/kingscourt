@@ -15,3 +15,8 @@
  *= require_tree ./directives
  *= require_self
  */
+
+/* TODO */
+.per-page {
+  display: none;
+}

@@ -21,3 +21,7 @@ end
 When /^I follow "([^"]*)"$/ do |link|
   click_link link
 end
+
+When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |field, text|
+  fill_in field, with: text
+end

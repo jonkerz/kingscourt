@@ -1,9 +1,9 @@
 angular.module('KingsCourt')
-.factory 'AuthInterceptor', ($rootScope, $q, $localStorage, $location, AlertsService) ->
+.factory 'AuthInterceptor', ($rootScope, $q, AlertsService) ->
   request: (config) ->
     config.headers = config.headers or {}
-    if $localStorage.token
-      config.headers.Authorization = 'Token ' + $localStorage.token
+    headers = $rootScope.getHeaders()
+    config.headers = headers if headers
     return config
 
   responseError: (response) ->

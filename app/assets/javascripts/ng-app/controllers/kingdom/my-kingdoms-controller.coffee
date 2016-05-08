@@ -1,8 +1,9 @@
 angular.module('KingsCourt')
-.controller 'MyKingdomsCtrl', ($scope, $controller, AuthService) ->
+.controller 'MyKingdomsCtrl', ($scope, $controller, $auth) ->
   $controller 'KingdomCtrl',
     $scope: $scope
 
-  $scope.username = AuthService.username
-  $scope.subtitle = "Browsing #{$scope.username}'s kingdoms"
+  # TODO
+  username = $auth.retrieveData("auth_headers").uid
+  $scope.subtitle = "Browsing #{username}'s kingdoms"
   $scope.pageChanged 1

@@ -1,11 +1,11 @@
 <panel-collapse title="Save Kingdom" collapsed="true" >
-  <p ng-hide="authService.loggedIn"  ng-controller="SaveCtrl" >
+  <p ng-hide="user.signedIn" ng-controller="SaveCtrl" >
     <span ng-controller="ModalCtrl">
       You must be logged in to save kingdoms, please <a href="" ng-click="openLogin()">login</a>, or <a href="" ng-click="openLogin()">register</a> an account.
     </span>
   </p>
 
-  <div ng-show="authService.loggedIn" ng-controller="SaveCtrl" ng-controller="SaveCtrl">
+  <div ng-show="user.signedIn" ng-controller="SaveCtrl" ng-controller="SaveCtrl">
     <input type="text" class="form-control input-small" placeholder="Kingdom Name" ng-model="kingdom.name">
     <textarea class="form-control input-small" rows="2" placeholder="Description" ng-model="kingdom.description"></textarea>
     <button class='btn btn-success btn-md col-xs-12' ng-click="save()">Save Kingdom</button>

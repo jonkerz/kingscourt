@@ -20,10 +20,13 @@ KingsCourt = angular.module 'KingsCourt', [
   'angular-growl'
   'angularUtils.directives.dirPagination'
   'checklist-model'
+  'ng-token-auth'
   'ui.bootstrap'
 ]
 
-KingsCourt.run ($location, $rootScope) ->
+KingsCourt.run ($location, $rootScope, $auth) ->
+  $rootScope.getHeaders = -> $auth.retrieveData('auth_headers')
+
   $rootScope.$on '$routeChangeSuccess', (event, currentRoute, previousRoute) ->
     baseTitle = "King's Court - Dominion Kingdom Generator"
     if currentRoute.title?

@@ -11,6 +11,10 @@ And /^(?:I pause|PAUSE)$/ do
   STDIN.getc
 end
 
+Given /^WAIT/ do
+  sleep 1
+end
+
 Given /^PENDING/ do
   pending
 end

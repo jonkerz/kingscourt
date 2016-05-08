@@ -6,9 +6,10 @@ Then /^I should see the login modal$/ do
   expect(page).to have_css(".modal-content")
 end
 
-Given /^there is a user$/ do
-  User.create email: "king@example.com",
-    password: "secret123", username: "Joffre"
+Given /^there is a user(?: named "([^"]+)")?$/ do |name|
+  name ||= "Joffre"
+  User.create email: "#{name.downcase}@example.com",
+    password: "secret123", username: name
 end
 
 Given /^I am logged in$/ do # TODO
@@ -19,7 +20,7 @@ end
 
 When /^I login in via the web interface$/ do
   step 'I follow "Login/Register"'
-  step 'I fill in "login-email" with "king@example.com"'
+  step 'I fill in "login-email" with "joffre@example.com"'
   step 'I fill in "login-password" with "secret123"'
   step 'I press "Login"'
 end

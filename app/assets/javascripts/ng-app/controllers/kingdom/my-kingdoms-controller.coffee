@@ -1,11 +1,7 @@
 angular.module('KingsCourt')
-.controller 'MyKingdomsCtrl', ($scope, $controller, $auth) ->
+.controller 'MyKingdomsCtrl', ($scope, $controller) ->
   $controller 'KingdomCtrl',
     $scope: $scope
 
-  # TODO
-  $scope.kingdom_params = username: 'ehehhehehe'
-
-  # TODO
-  username = $auth.retrieveData("auth_headers").uid
-  $scope.subtitle = "Browsing #{username}'s kingdoms"
+  $scope.kingdom_params = my_kingdoms: true
+  $scope.subtitle = "Browsing my kingdoms"

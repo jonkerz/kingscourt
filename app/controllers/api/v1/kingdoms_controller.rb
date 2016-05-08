@@ -7,12 +7,7 @@ module Api::V1
     include CleanPagination
 
     def index
-      kingdoms = if params[:username]
-                  user = User.find_by(username: params[:username])
-                  Kingdom.where(user: user)
-                else
-                  Kingdom.all
-                end
+      kingdoms = build_results
 
       max_per_page = 100
       paginate kingdoms.count, max_per_page do |limit, offset|
@@ -40,6 +35,17 @@ module Api::V1
     private
       def set_kingdom
         @kingdom = Kingdom.find params[:id]
+      end
+
+      def build_results
+        if params[:my_kingdoms]
+          Kingdom.where(user: current_user)
+        elsif params[:username]
+          user = User.find_by(username: params[:username])
+          Kingdom.where(user: user)
+        else
+          Kingdom.all
+        end
       end
 
       def kingdom_params

@@ -5,8 +5,5 @@ angular.module('KingsCourt')
     $scope: $scope
 
   $scope.username = $routeParams.username
-
-  $scope.kingdom_params =
-    username: $scope.username
-
+  $scope.kingdom_params = username: $scope.username
   $scope.subtitle = "Browsing #{$scope.username}'s kingdoms"

@@ -1,3 +1,4 @@
+@javascript
 Feature: Kingdom generator
   Background:
     Given I am on the home page
@@ -10,3 +11,13 @@ Feature: Kingdom generator
     When I press "Generate!"
     Then I should see 10 face up cards
     And I should see 0 face down cards
+
+  Scenario: Saving a generated kingdom
+    Given I am logged in
+    And the are some cards [TODO]
+    When I press "Generate!"
+    And I open the "Save Kingdom" panel
+    And I wait
+    When I press "Save Kingdom"
+    Then I should see "Messages"
+    Then I should see "Saved"

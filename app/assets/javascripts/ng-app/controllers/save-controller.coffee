@@ -6,10 +6,9 @@ angular.module('KingsCourt')
   $scope.save = ->
     data =
       name: $scope.kingdom.name
-      cards: $scope.kingdom.getAllCardIds()
-      kingdom_description: $scope.kingdom.description
-
-    console.log "in save, data:", data
+      #card_ids: $scope.kingdom.getAllCardIds() # TODO
+      card_ids: [1,2,3]
+      description: $scope.kingdom.description
 
     APIService.kingdoms.save data, (data) ->
       AlertsService.addAlert "Saved <a href=\"#!/kingdoms/#{data.id}/#{data.slug}/\">#{data.name}</a>.", 'success'
@@ -19,8 +18,9 @@ angular.module('KingsCourt')
 
     data =
       name: kingdom.name
-      cards: kingdom.getAllCardIds()
-      kingdom_description: kingdom.description
+      #card_ids: kingdom.getAllCardIds() # TODO
+      card_ids: [1,2,3]
+      description: kingdom.description
 
     APIService.kingdoms.update { id: kingdom.id }, data, (data) ->
       console.log 'patched', data

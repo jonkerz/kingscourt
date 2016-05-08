@@ -96,6 +96,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
+    colorize (0.7.7)
     concurrent-ruby (1.0.2)
     cucumber (2.3.3)
       builder (>= 2.1.2)
@@ -309,6 +310,7 @@ DEPENDENCIES
   capybara-screenshot
   capybara-webkit
   coffee-rails (~> 4.1.0)
+  colorize
   cucumber-rails
   database_cleaner
   devise_token_auth

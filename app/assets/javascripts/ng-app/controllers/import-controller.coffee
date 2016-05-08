@@ -23,7 +23,7 @@ Chemistry Lesson: Alchemist, Golem, Philosopher's Stone, University, Bureaucrat,
     data =
       name: $scope.kingdom.name
       cards: $scope.kingdom.getAllCardIds()
-      kingdom_description: $scope.kingdom.description
+      description: $scope.kingdom.description
     #console.log "in save, data:", data
 
     APIService.kingdoms.save data, (data) -> console.log "saved"

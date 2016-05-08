@@ -16,6 +16,7 @@ gem 'angular-rails-templates'
 gem 'activeadmin', github: 'activeadmin'
 gem 'active_model_serializers'
 gem 'devise_token_auth'
+gem 'colorize'
 
 group :development do
   gem 'web-console'

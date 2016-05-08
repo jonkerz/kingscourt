@@ -8,6 +8,12 @@ Then /^I should see (\d+) face up cards$/ do |number|
   expect(cards.size - facedown_cards.size).to eq number
 end
 
+Given /^the are some cards \[TODO\]$/ do # TODO
+  ["Chapel", "Milita", "Village"].each do |name|
+    Card.create! name: name
+  end
+end
+
 def facedown_cards
   all :xpath, "//img[contains(@src, 'Randomizer.jpg')]"
 end

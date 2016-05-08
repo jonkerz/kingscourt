@@ -25,3 +25,7 @@ end
 When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |field, text|
   fill_in field, with: text
 end
+
+When /^I open the "([^"]*)" panel$/ do |title|
+  find("h4.panel-title > a", text: title).click
+end

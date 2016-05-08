@@ -10,6 +10,15 @@ Given(/^there is a user$/) do
   User.create email: "king@example.com", password: "secret123"
 end
 
+Given /^I am logged in$/ do # TODO
+  step 'there is a user'
+  step 'I am on the home page'
+  step 'I follow "Login/Register"'
+  step 'I fill in "login-email" with "king@example.com"'
+  step 'I fill in "login-password" with "secret123"'
+  step 'I press "Login"'
+end
+
 When(/^I click outside of the modal$/) do
   first(".modal").click
 end

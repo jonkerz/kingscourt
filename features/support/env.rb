@@ -13,6 +13,7 @@ end
 
 Capybara.save_and_open_page_path = "tmp/capybara"
 Capybara::Screenshot.prune_strategy = :keep_last_run
+Capybara::Screenshot.webkit_options = { width: 1024, height: 768 }
 
 Capybara::Webkit.configure do |config|
   config.block_unknown_urls

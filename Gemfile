@@ -33,6 +33,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'capybara-webkit'
   gem 'capybara-screenshot'
+  gem 'shoulda-matchers'
 end
 
 group :development, :test do

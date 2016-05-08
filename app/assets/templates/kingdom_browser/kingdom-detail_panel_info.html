@@ -11,7 +11,7 @@
       <p>Created: {{kingdom.created_at | date:'dd MMMM yyyy' }}</p>
     </span>
 
-    <button class='btn btn-success btn-md col-xs-12' ng-click="openInBuilder()">Open in Builder</button>
+    <!-- TODO <button class='btn btn-success btn-md col-xs-12' ng-click="openInBuilder()">Open in Builder</button>-->
     <button ng-controller="SaveCtrl" class='btn btn-success btn-md col-xs-12' ng-if="authService.username == kingdom.username" ng-click="update()" type="button">Update</button>
     <button class='btn btn-danger btn-md col-xs-12' ng-if="authService.username == kingdom.username" ng-click="deleteKingdom(kingdom.id)" type="button">Delete</button>
   </div>

@@ -8,7 +8,7 @@ module Api::V1
 
     def index
       kingdoms = if params[:username]
-                  user = User.find_by(name: params[:username])
+                  user = User.find_by(username: params[:username])
                   Kingdom.where(user: user)
                 else
                   Kingdom.all

@@ -8,7 +8,7 @@ end
 
 Given /^there is a user$/ do
   User.create email: "king@example.com",
-    password: "secret123", name: "Joffre"
+    password: "secret123", username: "Joffre"
 end
 
 Given /^I am logged in$/ do # TODO

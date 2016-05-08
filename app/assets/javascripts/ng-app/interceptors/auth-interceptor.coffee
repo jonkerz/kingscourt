@@ -2,8 +2,7 @@ angular.module('KingsCourt')
 .factory 'AuthInterceptor', ($rootScope, $q, AlertsService) ->
   request: (config) ->
     config.headers = config.headers or {}
-    headers = $rootScope.getHeaders()
-    config.headers = headers if headers
+    _.assign config.headers, $rootScope.getHeaders()
     return config
 
   responseError: (response) ->

@@ -19,7 +19,7 @@ angular.module('KingsCourt')
 
     unselected: -> _.difference @all, @selected
 
-    isActive: (id) -> _.contains @selecteds, id
+    isActive: (id) -> _.contains @selected, id
 
     checkAll: -> @selected = @all.slice 0
 

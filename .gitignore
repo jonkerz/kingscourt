@@ -12,7 +12,9 @@
 !/tmp/.keep
 .byebug_history
 
-# Bower
+# Generated
+public/assets/**
+## Bower
 /vendor/assets/bower_components
 /vendor/assets/bower.json
 

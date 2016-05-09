@@ -17,6 +17,24 @@ GIT
       sass-rails
       sprockets (< 4)
 
+GIT
+  remote: git://github.com/lynndylanhurley/devise_token_auth.git
+  revision: 10863b31270b31cec72a07e1a195aa21686ede2b
+  branch: master
+  specs:
+    devise_token_auth (0.1.37)
+      devise (> 3.5.2, < 4.1)
+      rails (< 6)
+
+GIT
+  remote: git://github.com/rails-api/active_model_serializers.git
+  revision: 2b4989935130732d59d7cc1b6228d4a447dd5071
+  specs:
+    active_model_serializers (0.10.0.rc5)
+      actionpack (>= 4.0)
+      activemodel (>= 4.0)
+      railties (>= 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -43,8 +61,6 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    active_model_serializers (0.9.5)
-      activemodel (>= 3.2)
     activejob (5.0.0.beta4)
       activesupport (= 5.0.0.beta4)
       globalid (>= 0.3.6)
@@ -124,9 +140,6 @@ GEM
       railties (>= 4.1.0, < 5.1)
       responders
       warden (~> 1.2.3)
-    devise_token_auth (0.1.37)
-      devise (> 3.5.2, < 4.1)
-      rails (< 6)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.6.0)
@@ -177,6 +190,9 @@ GEM
     multi_json (1.12.0)
     multi_test (0.1.2)
     mysql2 (0.4.4)
+    ngannotate-rails (1.2.2)
+      execjs
+      rails (>= 3.1)
     nio4r (1.2.1)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
@@ -308,7 +324,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_model_serializers
+  active_model_serializers!
   activeadmin!
   angular-rails-templates
   bower-rails (~> 0.10.0)
@@ -319,11 +335,12 @@ DEPENDENCIES
   colorize
   cucumber-rails
   database_cleaner
-  devise_token_auth
+  devise_token_auth!
   jbuilder (~> 2.0)
   jquery-rails
   listen (~> 3.0.5)
   mysql2
+  ngannotate-rails
   pry
   puma (~> 3.0)
   quiet_assets

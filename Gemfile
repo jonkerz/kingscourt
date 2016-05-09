@@ -13,11 +13,17 @@ gem 'bower-rails', '~> 0.10.0'
 gem 'slim-rails'
 gem 'angular-rails-templates'
 gem 'activeadmin', github: 'activeadmin'
-gem 'active_model_serializers'
-gem 'devise_token_auth'
+gem 'active_model_serializers',
+  github: "rails-api/active_model_serializers"
+  # http://stackoverflow.com/questions/34507596/undefined-method-config-for-activemodelserializer
+gem 'devise_token_auth',
+  github: "lynndylanhurley/devise_token_auth",
+  branch: "master"
+  # https://github.com/lynndylanhurley/devise_token_auth/issues/500
 gem 'colorize'
 gem 'clean_pagination'
 gem 'mysql2'
+gem 'ngannotate-rails'
 
 group :development do
   gem 'web-console'

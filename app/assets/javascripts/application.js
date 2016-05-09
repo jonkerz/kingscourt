@@ -36,4 +36,3 @@
 //= require jquery-ui/slider
 
 //= require_tree ../templates
-// require_tree .

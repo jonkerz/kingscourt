@@ -5,7 +5,7 @@ angular.module('KingsCourt')
       _.map cards, (cardId) -> Card.getCardById parseInt cardId, 10
 
     deserializeKingdom = (data, _header) ->
-      transformedData = angular.fromJson data
+      transformedData = angular.fromJson(data)["kingdom"]
       transformedData.cards = deserializeCards transformedData.cards
       transformedData
 

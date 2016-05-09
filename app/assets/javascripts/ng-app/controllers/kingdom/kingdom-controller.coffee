@@ -7,9 +7,9 @@ angular.module('KingsCourt')
 
   # TODO DRY
   $scope.deserializeKingdoms = (data) ->
-    for kingdom in data
+    for kingdom in data.kingdoms
       kingdom.cards = deserializeCards kingdom.cards
-    data
+    data.kingdoms
 
   deserializeCards = (cards) ->
     _.map cards, (cardId) -> Card.getCardById parseInt cardId, 10

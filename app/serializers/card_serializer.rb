@@ -20,6 +20,7 @@ class CardSerializer < ActiveModel::Serializer
   end
 
   def card_attributes
+    return unless object.card_attributes.present?
     object.card_attributes.split(",")
   end
 end

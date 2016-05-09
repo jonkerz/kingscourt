@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 ruby '2.2.2'
 
 gem 'rails', '>= 5.0.0.beta4', '< 5.1'
-gem 'sqlite3'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -18,6 +17,7 @@ gem 'active_model_serializers'
 gem 'devise_token_auth'
 gem 'colorize'
 gem 'clean_pagination'
+gem 'mysql2'
 
 group :development do
   gem 'web-console'

@@ -19,3 +19,6 @@
 # Card assets
 /public/cards
 /public/cards_large
+
+# Stuff
+/config/database.yml

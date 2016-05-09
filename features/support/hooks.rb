@@ -20,7 +20,7 @@ AfterStep '@single_step' do
   single_step
 end
 
-if ENV['SINGLE_STEP']
+if ENV['SINGLE_STEP'] || ENV['SS']
   AfterStep do
     single_step
   end

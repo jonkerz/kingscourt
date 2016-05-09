@@ -6,7 +6,7 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 Capybara.default_driver = :webkit
 
 Capybara.javascript_driver = :webkit
-if ENV['DRIVER'] == 'selenium'
+if ENV['DRIVER'] == 'selenium' || ENV['SEL']
   puts "Enabling selenium driver..."
   Capybara.javascript_driver = :selenium
 end

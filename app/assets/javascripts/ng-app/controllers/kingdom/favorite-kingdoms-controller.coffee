@@ -2,6 +2,6 @@ angular.module('KingsCourt')
 .controller 'FavoriteKingdomsCtrl', ($controller, $scope, $routeParams) ->
   $controller 'KingdomCtrl', $scope: $scope
 
-  # TODO
-  $scope.username_faves = $routeParams.username
-  $scope.subtitle = "Browsing #{$scope.username_faves}'s favorite kingdoms"
+  favoriter = $routeParams.username
+  $scope.kingdomsUrl += "&favoriter=#{favoriter}"
+  $scope.subtitle = "Browsing #{favoriter}'s favorite kingdoms"

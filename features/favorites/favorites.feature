@@ -20,9 +20,16 @@ Feature: Favorites
     And I should not see "Batiatus's Kingdom" favorited
 
   Scenario: Browsing my favorites
-    Given PENDING
-    When I click on my username in the navbar
+    When I favorite "Joffre's Kingdom"
+    And I click on my username in the navbar
     And I follow "Favorites"
-    Then I should see "Browsing Joffre's favorite kingdoms"
+    Then I should see "Browsing my favorite kingdoms"
     And I should see "Joffre's Kingdom" favorited
-    And I should not see "Batiatus's Kingdom" favorited
+    And I should not see "Batiatus's Kingdom"
+
+  Scenario: Browsing another user's favorites
+    Given Batiatus has favorited his own kingdom
+    When I go to Batiatus' favorite kingdoms page
+    Then I should see "Browsing Batiatus's favorite kingdoms"
+    And I should see "Batiatus's Kingdom"
+    And I should not see "Joffre's Kingdom"

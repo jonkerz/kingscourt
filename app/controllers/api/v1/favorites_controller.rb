@@ -2,14 +2,7 @@
 
 module Api::V1
   class FavoritesController < ApiController
-    before_action :authenticate_user!, except: [:index]
-
-    def index # TODO
-      raise NotImplementedError
-      user = User.first
-      favorites = FavoriteKingdom.where(user: user).pluck :id
-      render json: favorites
-    end
+    before_action :authenticate_user!
 
     def create # TODO
       kingdom = Kingdom.find(params[:kingdom_id])

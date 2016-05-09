@@ -21,7 +21,6 @@ module Api::V1
     end
 
     def create
-      $stderr.puts "params: #{params.to_unsafe_h}"
       kingdom = Kingdom.new kingdom_params
       kingdom.user = current_user
       kingdom.card_ids = params[:card_ids]
@@ -42,6 +41,10 @@ module Api::V1
       def build_results
         if params[:my_kingdoms]
           Kingdom.where(user: current_user)
+        elsif params[:favoriter]
+          User.find_by(username: params[:favoriter]).favorites
+        elsif params[:my_favorites]
+          current_user.favorites
         elsif params[:username]
           user = User.find_by(username: params[:username])
           Kingdom.where(user: user)
@@ -51,11 +54,11 @@ module Api::V1
       end
 
       def filter_by_expansion
-        return unless params[:expansions]
+        return unless params[:expansions].present?
 
         expansions = params[:expansions].split(",")
-        @kingdoms = @kingdoms.uniq.joins(:cards)
-          .where(cards: { expansion_id: expansions })
+        @kingdoms = @kingdoms.joins(:cards)
+          .where(cards: { expansion_id: expansions }).distinct
       end
 
       def kingdom_params

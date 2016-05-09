@@ -1,3 +1,3 @@
 angular.module('KingsCourt')
-.controller 'AlertsCtrl', ($scope, AlertsService) ->
-  $scope.alertsService = AlertsService
+.controller 'AlertsCtrl', ($scope, Alerts) ->
+  $scope.alerts = Alerts

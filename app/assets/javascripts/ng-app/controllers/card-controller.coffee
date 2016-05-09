@@ -1,6 +1,6 @@
 angular.module('KingsCourt')
-.controller 'CardBroswerCtrl', ($scope, $http, ExpansionSelectorService, CardService, API_SERVER) ->
-  $scope.all_cards = CardService.cards
+.controller 'CardBroswerCtrl', ($scope, $http, ExpansionSelector, Card, API_SERVER) ->
+  $scope.all_cards = Card.cards
 
   $http.get(API_SERVER + 'get_non-randomizers/', { cache: true }).then (response) -> #TODO
     cards = response.data
@@ -17,7 +17,7 @@ angular.module('KingsCourt')
   $scope.orderByField = 'name'
   $scope.reverseSort = false
 
-  $scope.filterByExpansion = (card) -> ExpansionSelectorService.selectedExpansions.indexOf(card.expansion) isnt -1
+  $scope.filterByExpansion = (card) -> ExpansionSelector.selectedExpansions.indexOf(card.expansion) isnt -1
 
   $scope.cardDisplaySize = 110
   $scope.cardDisplaySizeSliderConfig =

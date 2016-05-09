@@ -1,13 +1,11 @@
 angular.module('KingsCourt')
-.controller 'KingdomDetailCtrl', ($rootScope, $scope, $location, $routeParams, AlertsService, AuthService, KingdomService, APIService) ->
+.controller 'KingdomDetailCtrl', ($rootScope, $scope, $location, $routeParams, Alerts, Kingdom, API) ->
   id = $routeParams.id
 
-  $scope.authService = AuthService
-
-  APIService.kingdoms.get id: id, (data) ->
+  API.kingdoms.get id: id, (data) ->
     $rootScope.title = $rootScope.title.replace '###', data.name
     kingdom = data
-    $scope.kingdom = KingdomService.getOrCreate 'detail'
+    $scope.kingdom = Kingdom.getOrCreate 'detail'
 
     $scope.kingdom.id = kingdom.id
     $scope.kingdom.name = kingdom.name
@@ -19,12 +17,12 @@ angular.module('KingsCourt')
     $scope.contentLoaded = true
 
   $scope.deleteKingdom = (id) ->
-    APIService.kingdoms.delete id: id, (data) ->
-      AlertsService.addAlert "Deleted \"#{$scope.kingdom.name}\".", 'danger'
+    API.kingdoms.delete id: id, (data) ->
+      Alerts.addAlert "Deleted \"#{$scope.kingdom.name}\".", 'danger'
       $location.path 'my_kingdoms'
 
   $scope.openInBuilder = ->
-    builderKingdom = KingdomService.getOrCreate 'builder'
+    builderKingdom = Kingdom.getOrCreate 'builder'
 
     builderKingdom.id = $scope.kingdom.id
     builderKingdom.name = $scope.kingdom.name

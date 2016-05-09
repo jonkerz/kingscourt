@@ -1,6 +1,6 @@
 angular.module('KingsCourt')
-.factory 'ExpansionSelectorService', ->
-  new class ExpansionSelectorService
+.factory 'ExpansionSelector', ->
+  new class ExpansionSelector
     constructor: ->
       @selectedExpansions = [0..9]
       @allExpansions = [0..9]

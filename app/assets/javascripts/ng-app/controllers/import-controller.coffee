@@ -1,6 +1,6 @@
 angular.module('KingsCourt')
-.controller 'ImportCtrl', ($http, $scope, $location, DeckService, AlertsService, KingdomService, CardService, APIService, AuthService) ->
-  $scope.kingdom = KingdomService.getOrCreate 'generator'
+.controller 'ImportCtrl', ($http, $scope, $location, Deck, Kingdom, Card, API) ->
+  $scope.kingdom = Kingdom.getOrCreate 'generator'
 
   #$scope.importTextarea = 'Big Money: Adventurer, Bureaucrat, Chancellor, Chapel, Feast, Laboratory, Market, Mine, Moneylender, Throne Room'
 
@@ -25,7 +25,7 @@ Chemistry Lesson: Alchemist, Golem, Philosopher's Stone, University, Bureaucrat,
       description: $scope.kingdom.description
     #console.log "in save, data:", data
 
-    APIService.kingdoms.save data, (data) -> console.log "saved"
+    API.kingdoms.save data, (data) -> console.log "saved"
 
   $scope.import = ->
     findKingdomName = (kingdomString) -> kingdomString.match(/(.*?):/)[1]
@@ -53,12 +53,12 @@ Chemistry Lesson: Alchemist, Golem, Philosopher's Stone, University, Bureaucrat,
       $scope.kingdom.name = findKingdomName kingdomString
       #console.log replaceStuff kingdom
 
-      kingdomString = replaceStuff kingdomString 
+      kingdomString = replaceStuff kingdomString
       kingdom = kingdomString.split(',')
       #console.log kingdom
 
       for card in kingdom
-        for cardServiceCard in CardService.cards
+        for cardServiceCard in Card.cards
           #cardo_namo = cardo.name.replace(' ', '')
           #cardo_namo = cardo_namo.replace("'", '')
           #cardo_namo = cardo_namo.toLowerCase()
@@ -94,9 +94,9 @@ Chemistry Lesson: Alchemist, Golem, Philosopher's Stone, University, Bureaucrat,
 
     #importList = importList.split(',')
     #console.log importList
-    #console.log CardService.cards, "<---"
+    #console.log Card.cards, "<---"
     #for i in importList
-    #    for cardo in CardService.cards
+    #    for cardo in Card.cards
     #        cardo_namo = cardo.name.replace(' ', '')
     #        cardo_namo = cardo_namo.replace("'", '')
     #        cardo_namo = cardo_namo.toLowerCase()
@@ -106,8 +106,8 @@ Chemistry Lesson: Alchemist, Golem, Philosopher's Stone, University, Bureaucrat,
     return
 
   $scope.openInBuilder = ->
-    generatorKingdom = KingdomService.getOrCreate 'generator'
-    builderKingdom = KingdomService.getOrCreate 'builder'
+    generatorKingdom = Kingdom.getOrCreate 'generator'
+    builderKingdom = Kingdom.getOrCreate 'builder'
     builderKingdom.cards = generatorKingdom.cards
     builderKingdom.name = generatorKingdom.name
     builderKingdom.description = generatorKingdom.description

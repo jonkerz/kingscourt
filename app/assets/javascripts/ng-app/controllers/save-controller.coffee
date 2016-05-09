@@ -1,5 +1,5 @@
 angular.module('KingsCourt')
-.controller 'SaveCtrl', ($scope, AlertsService, APIService) ->
+.controller 'SaveCtrl', ($scope, Alerts, API) ->
   $scope.editingKingdom = !!$scope.kingdom.id? if $scope.kingdom
 
   $scope.save = ->
@@ -9,8 +9,8 @@ angular.module('KingsCourt')
       card_ids: [1,2,3]
       description: $scope.kingdom.description
 
-    APIService.kingdoms.save data, (data) ->
-      AlertsService.addAlert "Saved <a href=\"#!/kingdoms/#{data.id}/#{data.slug}/\">#{data.name}</a>.", 'success'
+    API.kingdoms.save data, (data) ->
+      Alerts.addAlert "Saved <a href=\"#!/kingdoms/#{data.id}/#{data.slug}/\">#{data.name}</a>.", 'success'
 
   $scope.update = ->
     kingdom = $scope.kingdom
@@ -21,5 +21,5 @@ angular.module('KingsCourt')
       card_ids: [1,2,3]
       description: kingdom.description
 
-    APIService.kingdoms.update { id: kingdom.id }, data, (data) ->
+    API.kingdoms.update { id: kingdom.id }, data, (data) ->
       console.log 'patched', data

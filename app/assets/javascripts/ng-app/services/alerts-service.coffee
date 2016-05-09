@@ -1,6 +1,6 @@
 angular.module('KingsCourt')
-.factory 'AlertsService', (growl) ->
-  new class AlertsService
+.factory 'Alerts', (growl) ->
+  new class Alerts
     constructor: -> @alerts = []
 
     addAlert: (message, type) ->

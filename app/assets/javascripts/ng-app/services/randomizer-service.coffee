@@ -1,6 +1,6 @@
 angular.module("KingsCourt")
-.factory "RandomizerService", (APP_CONFIG) ->
-  new class RandomizerService
+.factory "Randomizer", (APP_CONFIG) ->
+  new class Randomizer
     constructor: ->
       @min_cost = APP_CONFIG.CARD_MIN_COST
       @max_cost = APP_CONFIG.CARD_MAX_COST

@@ -1,7 +1,7 @@
 # TODO
 angular.module('KingsCourt')
-.factory 'AuthService', ($rootScope, $http, $q, AlertsService, $localStorage) ->
-  new class AuthService
+.factory 'Auth', ($rootScope, $http, $q, Alerts, $localStorage) ->
+  new class Auth
     constructor: ->
       @favoriteKingdoms = []
 
@@ -31,5 +31,5 @@ angular.module('KingsCourt')
     logout: ->
       # ...
         $localStorage.$reset()
-        AlertsService.clearAlerts()
+        Alerts.clearAlerts()
 ###

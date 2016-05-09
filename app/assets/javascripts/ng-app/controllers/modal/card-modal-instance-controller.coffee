@@ -1,6 +1,6 @@
 angular.module('KingsCourt')
-.controller 'CardModalInstanceCtrl', ($scope, $modalInstance, KingdomService) ->
+.controller 'CardModalInstanceCtrl', ($scope, $modalInstance, Kingdom) ->
   $scope.card = $scope.params.card
-  $scope.kingdom = KingdomService.getOrCreate 'builder'
+  $scope.kingdom = Kingdom.getOrCreate 'builder'
 
   $scope.ok = -> $modalInstance.close()

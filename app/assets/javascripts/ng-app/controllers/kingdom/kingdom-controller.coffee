@@ -1,6 +1,6 @@
 angular.module('KingsCourt')
-.controller 'KingdomCtrl', ($scope, $location, $timeout, AuthService, AlertsService, APIService, ExpansionSelectorService, CardService) ->
-  $scope.authService = AuthService
+.controller 'KingdomCtrl', ($scope, $location, $timeout, Auth, Alerts, API, ExpansionSelector, Card) ->
+  $scope.auth = Auth
   $scope.username = null
   $scope.username_faves = null
   $scope.kingdoms = []
@@ -15,12 +15,12 @@ angular.module('KingsCourt')
     data
 
   deserializeCards = (cards) ->
-    _.map cards, (card_id) -> CardService.getCardById parseInt card_id, 10
+    _.map cards, (card_id) -> Card.getCardById parseInt card_id, 10
 
   $scope.kingdomsUrl = '/api/v1/kingdoms?format=json'
 
   $scope.kingdom_params =
-    expansions: ExpansionSelectorService.selectedExpansions.join(",")
+    expansions: ExpansionSelector.selectedExpansions.join(",")
 
   $scope.reloadPage = ->
     returnTo = $location.path()
@@ -33,11 +33,11 @@ angular.module('KingsCourt')
       page: pageNumber
       username: $scope.username
       username_faves: $scope.username_faves
-      expansions: ExpansionSelectorService.unselectedExpansions().join '_'
+      expansions: ExpansionSelector.unselectedExpansions().join '_'
 
-    APIService.kingdoms.query params, (data) ->
+    API.kingdoms.query params, (data) ->
       kingdoms = data.results
-      favoriteKingdoms = AuthService.favoriteKingdoms
+      favoriteKingdoms = Auth.favoriteKingdoms
 
       for kingdom in kingdoms
         kingdom.favorite = _.contains favoriteKingdoms, kingdom.id
@@ -56,14 +56,14 @@ angular.module('KingsCourt')
     $scope.savingKingdomId = kingdom.id
 
     if kingdom.favorite
-      APIService.favorites.delete { id: kingdom.id }, (data) ->
-        AuthService.removeFromFavoriteKingdomsList kingdom.id
+      API.favorites.delete { id: kingdom.id }, (data) ->
+        Auth.removeFromFavoriteKingdomsList kingdom.id
         kingdom.favorites_count--
         kingdom.favorite = not kingdom.favorite
         $scope.isSaving = false
     else
-      APIService.favorites.save { id: kingdom.id }, (data) ->
-        AuthService.addToFavoriteKingdomsList kingdom.id
+      API.favorites.save { id: kingdom.id }, (data) ->
+        Auth.addToFavoriteKingdomsList kingdom.id
         kingdom.favorites_count++
         kingdom.favorite = not kingdom.favorite
         $scope.isSaving = false

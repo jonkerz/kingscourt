@@ -1,6 +1,6 @@
 angular.module('KingsCourt')
-.factory 'CardService', ($http, Cards) ->
-  new class CardService
+.factory 'Card', ($http, Cards) ->
+  new class Card
     constructor: -> @cards = Cards
 
     getCardByName: (name) -> _.find @cards, name: name

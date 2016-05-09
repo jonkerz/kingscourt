@@ -1,5 +1,5 @@
 angular.module("KingsCourt")
-.directive "costSlider", (RandomizerService, APP_CONFIG) ->
+.directive "costSlider", (Randomizer, APP_CONFIG) ->
   restrict: "A"
   link: (scope, element, attrs) ->
     element.slider
@@ -7,10 +7,10 @@ angular.module("KingsCourt")
       min: APP_CONFIG.CARD_MIN_COST
       max: APP_CONFIG.CARD_MAX_COST
       values: [
-        RandomizerService.min_cost
-        RandomizerService.max_cost
+        Randomizer.min_cost
+        Randomizer.max_cost
       ]
       slide: (event, ui) ->
         scope.$apply ->
-          RandomizerService.min_cost = ui.values[0]
-          RandomizerService.max_cost = ui.values[1]
+          Randomizer.min_cost = ui.values[0]
+          Randomizer.max_cost = ui.values[1]

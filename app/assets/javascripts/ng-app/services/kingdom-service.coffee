@@ -1,8 +1,8 @@
-class Kingdom
-  AlertsService = APP_CONFIG = null
+class KingdomHack
+  Alerts = APP_CONFIG = null
 
   constructor: ($injector) ->
-    AlertsService = $injector.get 'AlertsService'
+    Alerts = $injector.get 'Alerts'
     APP_CONFIG = $injector.get 'APP_CONFIG'
 
     @cards = []
@@ -20,13 +20,13 @@ class Kingdom
 
   addCard: (card) ->
     if @cards.length >= APP_CONFIG.KINGDOM_SIZE
-      AlertsService.addAlert 'Kingdom full. Card not added.', 'danger'
+      Alerts.addAlert 'Kingdom full. Card not added.', 'danger'
       return false
     else if _(@bannedCards).find { name: card.name }
-      AlertsService.addAlert 'Card banned. Card not added.', 'danger'
+      Alerts.addAlert 'Card banned. Card not added.', 'danger'
       return false
     else if _(@cards).find { name: card.name }
-      AlertsService.addAlert 'Duplicate. Card not added.', 'danger'
+      Alerts.addAlert 'Duplicate. Card not added.', 'danger'
       return false
     else
       @cards.push card
@@ -43,9 +43,8 @@ class Kingdom
   idIsBanned: (id) -> !!_(@bannedCards).find id: id
 
 angular.module('KingsCourt')
-
-.factory 'KingdomService', ($injector) ->
-  new class KingdomService
+.factory 'Kingdom', ($injector) ->
+  new class Kingdom
     constructor: ->
       @instances = []
 
@@ -54,7 +53,7 @@ angular.module('KingsCourt')
       if instance
         return instance.kingdom
       else
-        kingdom = new Kingdom $injector
+        kingdom = new KingdomHack $injector
         @instances.push
           id: id
           kingdom: kingdom

@@ -1,12 +1,12 @@
 angular.module('KingsCourt')
-.controller 'GeneratorCtrl', ($http, $scope, $location, ExpansionSelectorService, DeckService, AlertsService, KingdomService) ->
-  $scope.kingdom = KingdomService.getOrCreate 'generator'
+.controller 'GeneratorCtrl', ($http, $scope, $location, ExpansionSelector, Deck, Kingdom) ->
+  $scope.kingdom = Kingdom.getOrCreate 'generator'
 
   $scope.range = (n) -> new Array n
 
   $scope.openInBuilder = ->
-    generatorKingdom = KingdomService.getOrCreate 'generator'
-    builderKingdom = KingdomService.getOrCreate 'builder'
+    generatorKingdom = Kingdom.getOrCreate 'generator'
+    builderKingdom = Kingdom.getOrCreate 'builder'
 
     builderKingdom.id = null
     builderKingdom.cards = generatorKingdom.cards
@@ -19,13 +19,13 @@ angular.module('KingsCourt')
 
     $location.path 'builder'
 
-  deck = DeckService
+  deck = Deck
 
   $scope.generate = ->
     $scope.kingdom.removeAllCards()
     for [1..10]
       deck.resetDeck $scope.kingdom.cards, $scope.kingdom.bannedCards
-      deck.excludeByExpansion ExpansionSelectorService.unselectedExpansions()
+      deck.excludeByExpansion ExpansionSelector.unselectedExpansions()
       card = deck.getRandomCard()
       if card
         $scope.kingdom.addCard card

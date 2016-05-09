@@ -1,8 +1,8 @@
 angular.module("KingsCourt")
-.factory "DeckService", (AlertsService, CardService, growl) ->
-  new class DeckService
+.factory "Deck", (Alerts, Card, growl) ->
+  new class Deck
     constructor: ->
-      @cards = CardService.cards
+      @cards = Card.cards
       @deck = angular.copy @cards
 
     deckSize: -> @deck.length
@@ -17,7 +17,7 @@ angular.module("KingsCourt")
 
     getRandomCard: ->
       if @deckSize() is 0
-        AlertsService.addAlert "No card found.", "danger"
+        Alerts.addAlert "No card found.", "danger"
         #growl.info "No card found."
         return
       card = @deck[_.random 0, @deck.length - 1]

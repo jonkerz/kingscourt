@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'application#index'
 
   get 'api/get_cards', to: 'application#get_cards'
+  get 'api/get_non_randomizers', to: 'application#get_non_randomizers'
 
   namespace :api do
     namespace :v1 do

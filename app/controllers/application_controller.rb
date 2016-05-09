@@ -9,7 +9,14 @@ class ApplicationController < ActionController::Base
   end
 
   def get_cards # TODO
-    cards = ActiveModel::ArraySerializer.new(Card.all, each_serializer: CardSerializer)
+    randomizers = Card.where(randomizable: true)
+    cards = ActiveModel::ArraySerializer.new(randomizers, each_serializer: CardSerializer)
+    render json: cards
+  end
+
+  def get_non_randomizers # TODO
+    non_randomizers = Card.where(randomizable: false)
+    cards = ActiveModel::ArraySerializer.new(non_randomizers, each_serializer: CardSerializer)
     render json: cards
   end
 

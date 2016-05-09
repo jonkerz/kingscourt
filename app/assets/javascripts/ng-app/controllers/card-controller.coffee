@@ -2,7 +2,7 @@ angular.module('KingsCourt')
 .controller 'CardBroswerCtrl', ($scope, $http, ExpansionSelector, Card, API_SERVER) ->
   $scope.all_cards = Card.cards
 
-  $http.get(API_SERVER + 'get_non-randomizers/', { cache: true }).then (response) -> #TODO
+  $http.get('/api/get_non_randomizers', { cache: true }).then (response) -> #TODO
     cards = response.data
     for card in cards
       card.image = (card.name).replace(RegExp(' ', 'g'), '_').replace(/'/g, '') + '.jpg'

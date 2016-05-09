@@ -20,6 +20,6 @@ class CardSerializer < ActiveModel::Serializer
   end
 
   def card_attributes
-    ["isAction", "givesActions"]
+    object.card_attributes.split(",")
   end
 end

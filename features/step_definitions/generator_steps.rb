@@ -9,9 +9,9 @@ Then /^I should see (\d+) face up cards$/ do |number|
 end
 
 Given /^there are some cards$/ do # TODO
-  Card.create! name: "Chapel", expansion: "0"
-  Card.create! name: "Milita", expansion: "0"
-  Card.create! name: "Masquerade", expansion: "1"
+  Card.create! name: "Chapel", expansion_id: 0
+  Card.create! name: "Militia", expansion_id: 0
+  Card.create! name: "Masquerade", expansion_id: 1
 end
 
 def facedown_cards

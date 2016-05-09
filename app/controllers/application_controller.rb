@@ -1,5 +1,3 @@
-require 'open-uri'
-
 class ApplicationController < ActionController::Base
   include DeviseTokenAuth::Concerns::SetUserByToken
 
@@ -9,10 +7,9 @@ class ApplicationController < ActionController::Base
   def index
   end
 
-  # Temporarily cheating...
   def get_cards # TODO
-    response = open('http://127.0.0.1:5000/api/get_cards/').read
-    render json: response
+    cards = ActiveModel::ArraySerializer.new(Card.all, each_serializer: CardSerializer)
+    render json: cards
   end
 
   private

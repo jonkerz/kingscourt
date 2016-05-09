@@ -21,6 +21,7 @@ module Api::V1
     end
 
     def create
+      $stderr.puts "params: #{params.to_unsafe_h}"
       kingdom = Kingdom.new kingdom_params
       kingdom.user = current_user
       kingdom.card_ids = params[:card_ids]
@@ -54,7 +55,7 @@ module Api::V1
 
         expansions = params[:expansions].split(",")
         @kingdoms = @kingdoms.uniq.joins(:cards)
-          .where(cards: { expansion: expansions })
+          .where(cards: { expansion_id: expansions })
       end
 
       def kingdom_params

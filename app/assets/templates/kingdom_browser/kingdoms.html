@@ -14,10 +14,10 @@
       <div>
         <ul class="list-group kingdom-list">
           <li class="list-group-item" dir-paginate="kingdom in kingdoms | itemsPerPage: 5" total-items="totalKingdoms">
-            <!-- TODO_favorites <span class="badge">{{ kingdom.favorites_count }}</span>
+            <span class="badge">{{ kingdom.favorite_count }}</span>
             <button ng-show="user.signedIn" class="pull-right btn-lnk" href="" ng-class="{'favorite-spinning': isSaving && savingKingdomId == kingdom.id, 'favorite': !isSaving}" ng-disabled="isSaving" ng-click="toggleFavorite(kingdom)">
               <span tooltip="{{kingdom.favorite ? 'Remove from favorites' : 'Add to favorites'}}" tooltip-trigger tooltip-placement="top" popover-append-to-body="true" class="fa pull-right" ng-class="{false: 'fa-star-o', true: 'fa-star'}[kingdom.favorite]"></span>
-            </button>-->
+            </button>
 
             <a href="#!/kingdoms/{{ kingdom.id }}/{{ kingdom.slug }}">{{ kingdom.name }}</a>
             <span class="description">

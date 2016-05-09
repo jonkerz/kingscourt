@@ -27,7 +27,7 @@ module Api::V1
       kingdom.card_ids = params[:card_ids]
       kingdom.save!
       render json: :ok
-     end
+    end
 
     def update
       @kingdom.update! kingdom_params

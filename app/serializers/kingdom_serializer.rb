@@ -2,7 +2,7 @@
 class KingdomSerializer < ActiveModel::Serializer
   attributes :id, :name, :created_at, :cards,
     :kingdom_description, :slug, :username, :description,
-    :expansions, :favorites_count
+    :expansions, :favorite_count, :favorite
 
   private
     def cards
@@ -25,7 +25,8 @@ class KingdomSerializer < ActiveModel::Serializer
       [2, 4, 1, 5]
     end
 
-    def favorites_count
-      5
+    def favorite
+      return unless scope.current_user
+      object.favorited_by? scope.current_user
     end
 end

@@ -18,9 +18,6 @@ angular.module('KingsCourt')
 .config (paginationTemplateProvider) ->
   paginationTemplateProvider.setPath 'directives/dir-pagination.tpl.html'
 
-.config ($resourceProvider) ->
-  $resourceProvider.defaults.stripTrailingSlashes = false
-
 .config ($httpProvider) ->
   $httpProvider.interceptors.push 'AuthInterceptor', 'LoadingInterceptor'
 

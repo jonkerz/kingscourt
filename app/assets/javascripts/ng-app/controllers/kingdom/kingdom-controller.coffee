@@ -1,6 +1,5 @@
 angular.module('KingsCourt')
-.controller 'KingdomCtrl', ($scope, $location, $timeout, Auth, Alerts, API, ExpansionSelector, Card) ->
-  $scope.auth = Auth
+.controller 'KingdomCtrl', ($scope, $location, $timeout, Alerts, API, ExpansionSelector, Card) ->
   $scope.username = null
   $scope.username_faves = null
   $scope.kingdoms = []
@@ -27,28 +26,6 @@ angular.module('KingsCourt')
     $timeout (-> $location.path returnTo), 0
     $location.path "/kings_court" # "loading..."
 
-  ### TODO
-  getResultsPage = (pageNumber) ->
-    params =
-      page: pageNumber
-      username: $scope.username
-      username_faves: $scope.username_faves
-      expansions: ExpansionSelector.unselected().join '_'
-
-    API.kingdoms.query params, (data) ->
-      kingdoms = data.results
-      favoriteKingdoms = Auth.favoriteKingdoms
-
-      for kingdom in kingdoms
-        kingdom.favorite = _.contains favoriteKingdoms, kingdom.id
-
-      $scope.kingdoms = kingdoms
-      $scope.totalKingdoms = data.count
-      $scope.totalKingdomsAll = data.count_all
-  ###
-
-  # TODO
-  ###
   $scope.toggleFavorite = (kingdom) ->
     return if $scope.isSaving
 
@@ -57,14 +34,11 @@ angular.module('KingsCourt')
 
     if kingdom.favorite
       API.favorites.delete { id: kingdom.id }, (data) ->
-        Auth.removeFromFavoriteKingdomsList kingdom.id
-        kingdom.favorites_count--
+        kingdom.favorite_count--
         kingdom.favorite = not kingdom.favorite
         $scope.isSaving = false
     else
-      API.favorites.save { id: kingdom.id }, (data) ->
-        Auth.addToFavoriteKingdomsList kingdom.id
-        kingdom.favorites_count++
+      API.favorites.save { kingdom_id: kingdom.id }, (data) ->
+        kingdom.favorite_count++
         kingdom.favorite = not kingdom.favorite
         $scope.isSaving = false
-  ###

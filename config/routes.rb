@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :kingdoms
+      scope :u do
+        scope ":username" do
+          resources :favorites, only: [:create, :destroy]
+        end
+      end
     end
   end
 end

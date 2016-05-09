@@ -1,8 +1,9 @@
 class ApplicationController < ActionController::Base
   include DeviseTokenAuth::Concerns::SetUserByToken
-
   protect_from_forgery with: :exception, if: Proc.new { |c| c.request.format != 'application/json' }
   protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
+
+  serialization_scope :view_context
 
   def index
   end

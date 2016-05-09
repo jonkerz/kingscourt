@@ -27,7 +27,7 @@
         <li  ng-show="user.signedIn" ng-class="{ active: isActive('/my_kingdoms')}"><a href="#!/my_kingdoms">My Kingdoms</a>
         </li>
         <li class="dropdown" ng-show="user.signedIn">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-user"></span> {{user.email}} <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-user"></span> {{user.username}} <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#!/my_favorites">Favorites</a></li>
             <li><a ng-click="signOut()">Logout</a></li>

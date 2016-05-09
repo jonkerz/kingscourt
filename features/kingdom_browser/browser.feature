@@ -1,18 +1,33 @@
 @javascript
 Feature: Kingdom browser
   Background:
-    Given there is a kingdom by "Joffre"
+    Given there is a kingdom by Joffre
     And I am on the home page
     And I follow "Browse Kingdoms"
 
   Scenario: Listing all kingdoms
-    Given there is a kingdom by "Batiatus"
+    Given there is a kingdom by Batiatus
     And I am on the home page
     And I follow "Browse Kingdoms"
 
     Then I should see "Browsing kingdoms"
     And I should see 2 kingdoms
     And I should see "Joffre's Kingdom"
+    And I should see "Batiatus's Kingdom"
+
+  Scenario: Show base game kingdoms only
+    Given there is a kingdom by Batiatus
+    And I am on the home page
+    And I follow "Browse Kingdoms"
+
+    Then I should see "Browsing kingdoms"
+    And I should see 2 kingdoms
+    When I toggle the expansions "Intrigue" and reload
+    And I wait
+    And I should see 1 kingdom
+    And I should see "Joffre's Kingdom"
+    When I toggle the expansions "Dominion, Intrigue" and reload
+    And I should see 1 kingdom
     And I should see "Batiatus's Kingdom"
 
   Scenario: Browsing a single

@@ -1,6 +1,5 @@
 angular.module('KingsCourt')
-.controller 'PublicKingdomsCtrl', ($scope, $controller, CardService) ->
-  $controller 'KingdomCtrl',
-    $scope: $scope
+.controller 'PublicKingdomsCtrl', ($scope, $controller) ->
+  $controller 'KingdomCtrl', $scope: $scope
 
   $scope.subtitle = 'Browsing kingdoms'

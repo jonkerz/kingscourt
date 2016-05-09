@@ -7,11 +7,12 @@ module Api::V1
     include CleanPagination
 
     def index
-      kingdoms = build_results
+      @kingdoms = build_results
+      filter_by_expansion
 
       max_per_page = 100
-      paginate kingdoms.count, max_per_page do |limit, offset|
-        render json: kingdoms.limit(limit).offset(offset)
+      paginate @kingdoms.count, max_per_page do |limit, offset|
+        render json: @kingdoms.limit(limit).offset(offset)
       end
     end
 
@@ -46,6 +47,14 @@ module Api::V1
         else
           Kingdom.all
         end
+      end
+
+      def filter_by_expansion
+        return unless params[:expansions]
+
+        expansions = params[:expansions].split(",")
+        @kingdoms = @kingdoms.uniq.joins(:cards)
+          .where(cards: { expansion: expansions })
       end
 
       def kingdom_params

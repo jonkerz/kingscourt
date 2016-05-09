@@ -3,7 +3,7 @@ angular.module('KingsCourt')
 .factory 'ExpansionSelectorService', ->
   new class ExpansionSelectorService
     constructor: ->
-      @selectedExpansions = [0, 1, 3, 4]
+      @selectedExpansions = [0..9]
       @allExpansions = [0..9]
       @expansionNames = [
         { id: 0, text: 'Dominion' }

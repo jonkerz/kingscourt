@@ -5,18 +5,18 @@ angular.module('KingsCourt')
   $scope.authService = AuthService
 
   APIService.kingdoms.get id: id, (data) ->
-      $rootScope.title = $rootScope.title.replace '###', data.name
-      kingdom = data
-      $scope.kingdom = KingdomService.getOrCreate 'detail'
+    $rootScope.title = $rootScope.title.replace '###', data.name
+    kingdom = data
+    $scope.kingdom = KingdomService.getOrCreate 'detail'
 
-      $scope.kingdom.id = kingdom.id
-      $scope.kingdom.name = kingdom.name
-      $scope.kingdom.cards = kingdom.cards
-      $scope.kingdom.description = kingdom.description
-      $scope.kingdom.username = kingdom.username
-      $scope.kingdom.created_at = kingdom.created_at
+    $scope.kingdom.id = kingdom.id
+    $scope.kingdom.name = kingdom.name
+    $scope.kingdom.cards = kingdom.cards
+    $scope.kingdom.description = kingdom.description
+    $scope.kingdom.username = kingdom.username
+    $scope.kingdom.created_at = kingdom.created_at
 
-      $scope.contentLoaded = true
+    $scope.contentLoaded = true
 
   $scope.deleteKingdom = (id) ->
     APIService.kingdoms.delete id: id, (data) ->

@@ -1,5 +1,5 @@
 angular.module('KingsCourt')
-.controller 'KingdomCtrl', ($scope, AuthService, AlertsService, APIService, ExpansionSelectorService, CardService) ->
+.controller 'KingdomCtrl', ($scope, $location, $timeout, AuthService, AlertsService, APIService, ExpansionSelectorService, CardService) ->
   $scope.authService = AuthService
   $scope.expansionSelectorService = ExpansionSelectorService
   $scope.username = null
@@ -18,7 +18,15 @@ angular.module('KingsCourt')
   deserializeCards = (cards) ->
     _.map cards, (card_id) -> CardService.getCardById parseInt card_id, 10
 
-  $scope.kingdoms_url = '/api/v1/kingdoms?format=json'
+  $scope.kingdomsUrl = '/api/v1/kingdoms?format=json'
+
+  $scope.kingdom_params =
+    expansions: ExpansionSelectorService.selectedExpansions.join(",")
+
+  $scope.reloadPage = ->
+    returnTo = $location.path()
+    $timeout (-> $location.path returnTo), 0
+    $location.path "/kings_court" # "loading..."
 
   ### TODO
   getResultsPage = (pageNumber) ->

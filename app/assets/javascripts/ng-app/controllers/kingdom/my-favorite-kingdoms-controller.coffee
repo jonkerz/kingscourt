@@ -1,9 +1,6 @@
 angular.module('KingsCourt')
-.controller 'MyFavoriteKingdomsCtrl', ($controller, $scope, AuthService, $routeParams, ExpansionSelectorService) ->
-  $scope.expansionSelectorService = ExpansionSelectorService
-
-  $controller 'KingdomCtrl',
-    $scope: $scope
+.controller 'MyFavoriteKingdomsCtrl', ($controller, $scope, $routeParams) ->
+  $controller 'KingdomCtrl', $scope: $scope
 
   # TODO
   $scope.kingdom_params = username: 'ehehhehehe'

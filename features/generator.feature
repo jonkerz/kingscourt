@@ -14,7 +14,7 @@ Feature: Kingdom generator
 
   Scenario: Saving a generated kingdom
     Given I am logged in
-    And the are some cards [TODO]
+    And there are some cards
     When I press "Generate!"
     And I open the "Save Kingdom" panel
     And I wait

@@ -1,5 +1,5 @@
 angular.module('KingsCourt')
-.controller 'ImportCtrl', ($http, $scope, $location, Deck, Kingdom, Card, API) ->
+.controller 'ImportCtrl', ($http, $scope, $location, Kingdom, Card, API) ->
   $scope.kingdom = Kingdom.getOrCreate 'generator'
 
   #$scope.importTextarea = 'Big Money: Adventurer, Bureaucrat, Chancellor, Chapel, Feast, Laboratory, Market, Mine, Moneylender, Throne Room'

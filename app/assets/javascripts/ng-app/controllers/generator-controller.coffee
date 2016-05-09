@@ -19,13 +19,11 @@ angular.module('KingsCourt')
 
     $location.path 'builder'
 
-  deck = Deck
-
   $scope.generate = ->
     $scope.kingdom.removeAllCards()
     for [1..10]
-      deck.resetDeck $scope.kingdom.cards, $scope.kingdom.bannedCards
-      deck.excludeByExpansion ExpansionSelector.unselected()
-      card = deck.getRandomCard()
+      Deck.reset $scope.kingdom.cards, $scope.kingdom.bannedCards
+      Deck.excludeByExpansion ExpansionSelector.unselected()
+      card = Deck.getRandomCard()
       if card
         $scope.kingdom.addCard card

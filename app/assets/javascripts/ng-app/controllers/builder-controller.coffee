@@ -23,13 +23,12 @@ angular.module('KingsCourt')
       'btn-success'
 
   $scope.randomCard = ->
-    deck = Deck
     collectAttributes()
-    deck.resetDeck $scope.kingdom.cards, $scope.kingdom.bannedCards
-    deck.excludeByExpansion ExpansionSelector.unselected()
-    deck.excludeByCost Randomizer.costsNot()
-    deck.excludeByAttributes Randomizer.cardAttributesYes, Randomizer.cardAttributesNo
-    card = deck.getRandomCard()
+    Deck.reset $scope.kingdom.cards, $scope.kingdom.bannedCards
+    Deck.excludeByExpansion ExpansionSelector.unselected()
+    Deck.excludeByCost Randomizer.costsNot()
+    Deck.excludeByAttributes Randomizer.cardAttributesYes, Randomizer.cardAttributesNo
+    card = Deck.getRandomCard()
     if card
       $scope.kingdom.addCard card
 

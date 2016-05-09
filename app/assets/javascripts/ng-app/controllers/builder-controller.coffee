@@ -1,9 +1,9 @@
 angular.module('KingsCourt')
 .controller 'BuilderCtrl', ($scope, API, Deck, ExpansionSelector, Randomizer, Kingdom) ->
-  $scope.randomizer = Randomizer # min_cost & max_cost
+  $scope.randomizer = Randomizer # minCost & maxCost
   $scope.expansionSelector = ExpansionSelector
   $scope.kingdom = Kingdom.getOrCreate 'builder'
-  $scope.all_cards = Deck.cards
+  $scope.allCards = Deck.cards
 
   $scope.currentPage = 1
   $scope.pageSize = 25
@@ -27,8 +27,8 @@ angular.module('KingsCourt')
     collectAttributes()
     deck.resetDeck $scope.kingdom.cards, $scope.kingdom.bannedCards
     deck.excludeByExpansion ExpansionSelector.unselected()
-    deck.excludeByCost Randomizer.costs_not()
-    deck.excludeByAttributes Randomizer.card_attributes_yes, Randomizer.card_attributes_no
+    deck.excludeByCost Randomizer.costsNot()
+    deck.excludeByAttributes Randomizer.cardAttributesYes, Randomizer.cardAttributesNo
     card = deck.getRandomCard()
     if card
       $scope.kingdom.addCard card
@@ -48,8 +48,8 @@ angular.module('KingsCourt')
 
   updateAttributesToDisplay = ->
     active = expansionAttributes.shared
-    for expansion_id in ExpansionSelector.selected
-      active = _.union active, expansionAttributes[expansion_id]
+    for expansionId in ExpansionSelector.selected
+      active = _.union active, expansionAttributes[expansionId]
 
     activeExpansionAttributes = {}
     activeExpansionAttributes[key] = true for key in active
@@ -62,5 +62,5 @@ angular.module('KingsCourt')
       yes_.push key if $scope.cardAttributes[key] is 'yes'
       no_.push key  if $scope.cardAttributes[key] is 'no'
 
-    Randomizer.card_attributes_yes = yes_
-    Randomizer.card_attributes_no = no_
+    Randomizer.cardAttributesYes = yes_
+    Randomizer.cardAttributesNo = no_

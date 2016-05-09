@@ -1,12 +1,12 @@
 angular.module('KingsCourt')
 .controller 'CardBroswerCtrl', ($scope, $http, ExpansionSelector, Card, API_SERVER) ->
-  $scope.all_cards = Card.cards
+  $scope.allCards = Card.cards
 
   $http.get('/api/get_non_randomizers', { cache: true }).then (response) -> #TODO
     cards = response.data
     for card in cards
       card.image = (card.name).replace(RegExp(' ', 'g'), '_').replace(/'/g, '') + '.jpg'
-    $scope.all_cards = $scope.all_cards.concat cards
+    $scope.allCards = $scope.allCards.concat cards
 
   $scope.currentPage = 1
   $scope.displayMode = 'images'

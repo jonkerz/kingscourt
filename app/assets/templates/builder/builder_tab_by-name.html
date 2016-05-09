@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-lg-8">
-    <dir-pagination-controls boundary-links="true" pagination-id="all_cards" on-page-change="pageChangeHandler(newPageNumber)"></dir-pagination-controls>
+    <dir-pagination-controls boundary-links="true" pagination-id="allCards" on-page-change="pageChangeHandler(newPageNumber)"></dir-pagination-controls>
   </div>
   <div class="col-lg-4">
     <input ng-model="q" ng-init="q=''" id="search" class="form-control" placeholder="Search">
@@ -11,7 +11,7 @@
   <div class="col-xs-12">
     <p ng-show="!expansionSelector.selected.length">Please select at least one expansion.</p>
 
-    <span class="animate col-xs-12 col-sm-6 col-md-4" dir-paginate="card in all_cards | orderBy:'name' | filter:{ name: q }  | filter:filterByExpansion| itemsPerPage: pageSize" current-page="currentPage" pagination-id="all_cards" ng-click="kingdom.addCard(card)">
+    <span class="animate col-xs-12 col-sm-6 col-md-4" dir-paginate="card in allCards | orderBy:'name' | filter:{ name: q }  | filter:filterByExpansion| itemsPerPage: pageSize" current-page="currentPage" pagination-id="allCards" ng-click="kingdom.addCard(card)">
       <div class="btn btn-block btn-md card-box" ng-class="cardStatus(card)">
         <img class="card-label-cost-image" ng-src="icons/16px-Coin{{::card.cost}}.png" />
         <span class="card-label"> {{::card.name}}</span>

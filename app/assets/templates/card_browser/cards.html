@@ -5,7 +5,7 @@
     <div class="well">
       <div class="row">
         <div class="col-md-8">
-          <dir-pagination-controls boundary-links="true" pagination-id="all_cards" on-page-change="pageChangeHandler(newPageNumber)"></dir-pagination-controls>
+          <dir-pagination-controls boundary-links="true" pagination-id="allCards" on-page-change="pageChangeHandler(newPageNumber)"></dir-pagination-controls>
         </div>
         <div class="col-md-4">
           <input ng-model="q" id="search" class="form-control" placeholder="Search">
@@ -15,19 +15,19 @@
       <div class="row ">
         <div class="col-md-12">
           <div id="triple" ng-if="displayMode=='labels'">
-            <div class="col-xs-12 col-sm-6 col-md-4" dir-paginate="card in all_cards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage: 'all_cards'" current-page="currentPage" pagination-id="all_cards" ng-click="setSelectedCard(card)">
+            <div class="col-xs-12 col-sm-6 col-md-4" dir-paginate="card in allCards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage: 'allCards'" current-page="currentPage" pagination-id="allCards" ng-click="setSelectedCard(card)">
               <div ng-include src="'card-label.tpl.html'"></div>
             </div>
           </div>
 
           <div ng-if="displayMode=='images'">
-              <div dir-paginate="card in all_cards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage" current-page="currentPage" pagination-id="all_cards" ng-click="setSelectedCard(card)">
+              <div dir-paginate="card in allCards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage" current-page="currentPage" pagination-id="allCards" ng-click="setSelectedCard(card)">
                   <div ng-include src="'card-image.tpl.html'"></div>
               </div>
           </div>
 
           <div ng-if="displayMode=='ascii'">
-              <div dir-paginate="card in all_cards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage: 'all_cards'" current-page="currentPage" pagination-id="all_cards" ng-click="setSelectedCard(card)">
+              <div dir-paginate="card in allCards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage: 'allCards'" current-page="currentPage" pagination-id="allCards" ng-click="setSelectedCard(card)">
                   <div ng-include src="'card-text.tpl.html'"></div>
               </div>
           </div>

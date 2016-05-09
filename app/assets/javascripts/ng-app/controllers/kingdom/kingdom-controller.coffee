@@ -1,7 +1,5 @@
 angular.module('KingsCourt')
 .controller 'KingdomCtrl', ($scope, $location, $timeout, Alerts, API, ExpansionSelector, Card) ->
-  $scope.username = null
-  $scope.username_faves = null
   $scope.kingdoms = []
   $scope.totalKingdoms = 'not set'
   $scope.totalKingdomsAll = 0
@@ -14,7 +12,7 @@ angular.module('KingsCourt')
     data
 
   deserializeCards = (cards) ->
-    _.map cards, (card_id) -> Card.getCardById parseInt card_id, 10
+    _.map cards, (cardId) -> Card.getCardById parseInt cardId, 10
 
   $scope.kingdomsUrl = '/api/v1/kingdoms?format=json'
 

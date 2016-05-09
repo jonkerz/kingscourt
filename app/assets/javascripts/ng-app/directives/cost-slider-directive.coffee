@@ -7,10 +7,10 @@ angular.module("KingsCourt")
       min: APP_CONFIG.CARD_MIN_COST
       max: APP_CONFIG.CARD_MAX_COST
       values: [
-        Randomizer.min_cost
-        Randomizer.max_cost
+        Randomizer.minCost
+        Randomizer.maxCost
       ]
       slide: (event, ui) ->
         scope.$apply ->
-          Randomizer.min_cost = ui.values[0]
-          Randomizer.max_cost = ui.values[1]
+          Randomizer.minCost = ui.values[0]
+          Randomizer.maxCost = ui.values[1]

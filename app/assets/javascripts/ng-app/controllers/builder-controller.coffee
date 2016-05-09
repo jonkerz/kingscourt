@@ -12,7 +12,7 @@ angular.module('KingsCourt')
 
   $scope.setTab = (tab) -> $scope.tab = tab
 
-  $scope.filterByExpansion = (card) -> _.contains ExpansionSelector.selectedExpansions, card.expansion
+  $scope.filterByExpansion = (card) -> _.contains ExpansionSelector.selected, card.expansion
 
   $scope.cardStatus = (card) ->
     if $scope.kingdom.idIsAdded card.id
@@ -26,7 +26,7 @@ angular.module('KingsCourt')
     deck = Deck
     collectAttributes()
     deck.resetDeck $scope.kingdom.cards, $scope.kingdom.bannedCards
-    deck.excludeByExpansion ExpansionSelector.unselectedExpansions()
+    deck.excludeByExpansion ExpansionSelector.unselected()
     deck.excludeByCost Randomizer.costs_not()
     deck.excludeByAttributes Randomizer.card_attributes_yes, Randomizer.card_attributes_no
     card = deck.getRandomCard()
@@ -44,11 +44,11 @@ angular.module('KingsCourt')
 
   setupAttributes()
 
-  $scope.$watchCollection 'expansionSelector.selectedExpansions', -> updateAttributesToDisplay()
+  $scope.$watchCollection 'expansionSelector.selected', -> updateAttributesToDisplay()
 
   updateAttributesToDisplay = ->
     active = expansionAttributes.shared
-    for expansion_id in ExpansionSelector.selectedExpansions
+    for expansion_id in ExpansionSelector.selected
       active = _.union active, expansionAttributes[expansion_id]
 
     activeExpansionAttributes = {}

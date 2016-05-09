@@ -20,7 +20,7 @@ angular.module('KingsCourt')
   $scope.kingdomsUrl = '/api/v1/kingdoms?format=json'
 
   $scope.kingdom_params =
-    expansions: ExpansionSelector.selectedExpansions.join(",")
+    expansions: ExpansionSelector.selected.join(",")
 
   $scope.reloadPage = ->
     returnTo = $location.path()
@@ -33,7 +33,7 @@ angular.module('KingsCourt')
       page: pageNumber
       username: $scope.username
       username_faves: $scope.username_faves
-      expansions: ExpansionSelector.unselectedExpansions().join '_'
+      expansions: ExpansionSelector.unselected().join '_'
 
     API.kingdoms.query params, (data) ->
       kingdoms = data.results

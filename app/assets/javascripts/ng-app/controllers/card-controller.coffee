@@ -17,7 +17,7 @@ angular.module('KingsCourt')
   $scope.orderByField = 'name'
   $scope.reverseSort = false
 
-  $scope.filterByExpansion = (card) -> ExpansionSelector.selectedExpansions.indexOf(card.expansion) isnt -1
+  $scope.filterByExpansion = (card) -> ExpansionSelector.selected.indexOf(card.expansion) isnt -1
 
   $scope.cardDisplaySize = 110
   $scope.cardDisplaySizeSliderConfig =

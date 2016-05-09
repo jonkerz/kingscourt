@@ -1,24 +1,24 @@
 <div class="row">
   <div class="col-md-12 well-t expansions hidden-xs">
     <div class="btn-group nocheck">
-      <label ng-repeat="expansion in expansionSelector.expansionNames" class="btn btn-primary btn-sm " ng-class='{"active": expansionSelector.isExpansionActive(expansion.id)}'>
-        <input type="checkbox" checklist-model="expansionSelector.selectedExpansions" checklist-value="expansion.id"> {{expansion.text}}
+      <label ng-repeat="expansion in expansionSelector.names" class="btn btn-primary btn-sm " ng-class='{"active": expansionSelector.isActive(expansion.id)}'>
+        <input type="checkbox" checklist-model="expansionSelector.selected" checklist-value="expansion.id"> {{expansion.text}}
       </label>
     </div>
 
     <div class="btn-group">
-      <button class="btn btn-default btn-sm" ng-click="expansionSelector.checkAllExpansions()">All</button>
-      <button class="btn btn-default btn-sm" ng-click="expansionSelector.uncheckAllExpansions()">None</button>
+      <button class="btn btn-default btn-sm" ng-click="expansionSelector.checkAll()">All</button>
+      <button class="btn btn-default btn-sm" ng-click="expansionSelector.uncheckAll()">None</button>
     </div>
   </div>
 
   <div class="col-md-12 well-t expansions visible-xs">
     <div class="btn-group nocheck" style="margin-bottom:15px">
-      <label ng-repeat="expansion in expansionSelector.expansionNames" class="col-xs-4 btn btn-primary btn-sm " ng-class='{"active": expansionSelector.isExpansionActive(expansion.id)}'>
-      <input type="checkbox" checklist-model="expansionSelector.selectedExpansions" checklist-value="expansion.id"> {{expansion.text}}
+      <label ng-repeat="expansion in expansionSelector.names" class="col-xs-4 btn btn-primary btn-sm " ng-class='{"active": expansionSelector.isActive(expansion.id)}'>
+      <input type="checkbox" checklist-model="expansionSelector.selected" checklist-value="expansion.id"> {{expansion.text}}
       </label>
-      <button class="visible-xs col-xs-4 btn btn-default btn-sm" ng-click="expansionSelector.checkAllExpansions()">All</button>
-      <button class="visible-xs col-xs-4 btn btn-default btn-sm" ng-click="expansionSelector.uncheckAllExpansions()">None</button>
+      <button class="visible-xs col-xs-4 btn btn-default btn-sm" ng-click="expansionSelector.checkAll()">All</button>
+      <button class="visible-xs col-xs-4 btn btn-default btn-sm" ng-click="expansionSelector.uncheckAll()">None</button>
     </div>
   </div>
 </div>

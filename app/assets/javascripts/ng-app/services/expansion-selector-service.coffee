@@ -2,9 +2,9 @@ angular.module('KingsCourt')
 .factory 'ExpansionSelector', ->
   new class ExpansionSelector
     constructor: ->
-      @selectedExpansions = [0..9]
-      @allExpansions = [0..9]
-      @expansionNames = [
+      @selected = [0..9]
+      @all = [0..9]
+      @names = [
         { id: 0, text: 'Dominion' }
         { id: 1, text: 'Intrigue' }
         { id: 2, text: 'Seaside' }
@@ -17,12 +17,10 @@ angular.module('KingsCourt')
         { id: 9, text: 'Promo' }
       ]
 
-    unselectedExpansions: -> _.difference @allExpansions, @selectedExpansions
+    unselected: -> _.difference @all, @selected
 
-    isExpansionActive: (id) -> _.contains @selectedExpansions, id
+    isActive: (id) -> _.contains @selecteds, id
 
-    checkAllExpansions: -> @selectedExpansions = @allExpansions.slice 0
+    checkAll: -> @selected = @all.slice 0
 
-    uncheckAllExpansions: ->  @selectedExpansions = []
-
-    noExpansionsSelected: -> @selectedExpansions.length == 0 #TODO: remove?
+    uncheckAll: ->  @selected = []

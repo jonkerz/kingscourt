@@ -1,5 +1,4 @@
 angular.module("KingsCourt")
-
 .factory "RandomizerService", (APP_CONFIG) ->
   new class RandomizerService
     constructor: ->

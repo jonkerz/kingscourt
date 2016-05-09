@@ -25,7 +25,8 @@ KingsCourt = angular.module 'KingsCourt', [
   'ui.bootstrap'
 ]
 
-KingsCourt.run ($location, $rootScope, $auth) ->
+KingsCourt.run ($location, $rootScope, $auth, ExpansionSelectorService) ->
+  $rootScope.expansionSelectorService = ExpansionSelectorService
   $rootScope.getHeaders = -> $auth.retrieveData('auth_headers')
 
   $rootScope.$on '$routeChangeSuccess', (event, currentRoute, previousRoute) ->

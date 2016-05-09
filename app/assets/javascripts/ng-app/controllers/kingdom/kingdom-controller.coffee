@@ -1,7 +1,6 @@
 angular.module('KingsCourt')
 .controller 'KingdomCtrl', ($scope, $location, $timeout, AuthService, AlertsService, APIService, ExpansionSelectorService, CardService) ->
   $scope.authService = AuthService
-  $scope.expansionSelectorService = ExpansionSelectorService
   $scope.username = null
   $scope.username_faves = null
   $scope.kingdoms = []

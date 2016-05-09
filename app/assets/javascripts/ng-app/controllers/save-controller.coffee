@@ -1,6 +1,5 @@
 angular.module('KingsCourt')
-.controller 'SaveCtrl', ($scope, AlertsService, APIService, AuthService) ->
-  #$scope.authService = AuthService
+.controller 'SaveCtrl', ($scope, AlertsService, APIService) ->
   $scope.editingKingdom = !!$scope.kingdom.id? if $scope.kingdom
 
   $scope.save = ->

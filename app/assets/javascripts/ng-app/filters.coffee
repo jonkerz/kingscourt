@@ -1,5 +1,4 @@
 angular.module('KingsCourt')
-
 .filter 'expansionToString', ->
   ExpansionEnum =
     0: 'Dominion'

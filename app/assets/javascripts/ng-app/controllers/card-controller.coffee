@@ -1,8 +1,5 @@
 angular.module('KingsCourt')
 .controller 'CardBroswerCtrl', ($scope, $http, ExpansionSelectorService, CardService, API_SERVER) ->
-
-  $scope.expansionSelectorService = ExpansionSelectorService
-
   $scope.all_cards = CardService.cards
 
   $http.get(API_SERVER + 'get_non-randomizers/', { cache: true }).then (response) -> #TODO

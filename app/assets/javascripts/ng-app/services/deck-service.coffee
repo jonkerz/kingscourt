@@ -1,5 +1,4 @@
 angular.module("KingsCourt")
-
 .factory "DeckService", (AlertsService, CardService, growl) ->
   new class DeckService
     constructor: ->

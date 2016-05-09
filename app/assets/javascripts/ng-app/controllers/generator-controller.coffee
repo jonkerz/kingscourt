@@ -1,7 +1,5 @@
 angular.module('KingsCourt')
-
 .controller 'GeneratorCtrl', ($http, $scope, $location, ExpansionSelectorService, DeckService, AlertsService, KingdomService) ->
-  $scope.expansionSelectorService = ExpansionSelectorService
   $scope.kingdom = KingdomService.getOrCreate 'generator'
 
   $scope.range = (n) -> new Array n

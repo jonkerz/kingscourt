@@ -1,5 +1,4 @@
 angular.module("KingsCourt")
-
 .directive "costSlider", (RandomizerService, APP_CONFIG) ->
   restrict: "A"
   link: (scope, element, attrs) ->

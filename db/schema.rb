@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160508142140) do
+ActiveRecord::Schema.define(version: 20160509070008) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 20160508142140) do
     t.string   "name"
     t.boolean  "randomizable"
     t.text     "text"
-    t.string   "expansion"
-    t.string   "card_type"
+    t.integer  "expansion_id"
+    t.integer  "card_type_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

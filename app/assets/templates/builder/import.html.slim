@@ -3,7 +3,6 @@
     .col-md-9
       .well.clearfix
         textarea ng-model="importTextarea" rows="4" cols="50"
-
         #Kingdom[droppable ng-cloak]
           .animate.black_card.shadow ng-repeat="card in kingdom.cards" ng-dblclick="kingdom.removeCard(card)"
             img.card_image width="110" ng-src="cards/{{card.image}}"

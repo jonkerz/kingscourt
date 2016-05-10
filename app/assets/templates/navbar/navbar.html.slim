@@ -29,9 +29,7 @@
             span.fa.fa-user  {{user.username}}
             span.caret
           ul.dropdown-menu role="menu"
-            li
-              a href="#!/my_favorites" Favorites
-            li
-              a ng-click="signOut()" Logout
+            li: a href="#!/my_favorites" Favorites
+            li: a ng-click="signOut()" Logout
         li ng-hide="user.signedIn" ng-controller="ModalCtrl"
           a href="" ng-click="openLogin()" Login/Register

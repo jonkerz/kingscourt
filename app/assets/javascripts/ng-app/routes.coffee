@@ -2,7 +2,7 @@ angular.module('KingsCourt')
 .config ($routeProvider) ->
   $routeProvider.when '/',
     title: 'Generator'
-    templateUrl: 'builder/generator.html'
+    templateUrl: 'generator/generator.html'
 
   .when '/builder',
     title: 'Builder'
@@ -56,6 +56,6 @@ angular.module('KingsCourt')
 
   .when '/import',
     title: 'Import'
-    templateUrl: 'builder/import.html'
+    templateUrl: 'importer/import.html'
 
   .otherwise templateUrl: '404.html'

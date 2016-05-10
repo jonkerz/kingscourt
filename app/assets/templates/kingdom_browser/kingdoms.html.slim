@@ -1,0 +1,38 @@
+ng-include src="'expansion_selector/expansions.tpl.html'"
+.row
+  .col-md-3.hidden-md.hidden-lg
+    ng-include src="'alerts/_alert-box.html'"
+    .well.clearfix
+      ng-include src="'kingdom_browser/kingdoms_kingdoms-panel.html'"
+  .col-md-9
+    .well
+      h3 ng-if="subtitle" {{subtitle}}
+      div
+        ul.list-group.kingdom-list
+          li.list-group-item dir-paginate="kingdom in kingdoms | itemsPerPage: 5" total-items="totalKingdoms"
+            span.badge {{kingdom.favorite_count}}
+            button.pull-right.btn-lnk ng-show="user.signedIn" href="" ng-class="{'favorite-spinning': isSaving && savingKingdomId == kingdom.id, 'favorite': !isSaving}" ng-disabled="isSaving" ng-click="toggleFavorite(kingdom)"
+              span.fa.pull-right[tooltip="{{kingdom.favorite ? 'Remove from favorites' : 'Add to favorites'}}" tooltip-trigger tooltip-placement="top" popover-append-to-body="true" ng-class="{false: 'fa-star-o', true: 'fa-star'}[kingdom.favorite]"]
+            a> href="#!/kingdoms/{{kingdom.id}}/{{kingdom.slug}}" {{kingdom.name}}
+            span.description>
+              i {{kingdom.description}}
+            span
+              | by
+              a< ng-href="#!/{{kingdom.username}}/kingdoms" {{kingdom.username}}
+            .clearfix ng-if="displayMode=='images'"
+              span.col-xs-20p.col-sm-10p.col-md-10p.padding-0 ng-repeat="card in kingdom.cards"
+                hover-card-image card-name="{{::card.name}}" card-image="{{::card.image}}"
+            div ng-if="displayMode=='text'"
+              span ng-repeat="card in kingdom.cards"
+                hover-card card-name="{{card.name}}"
+                | {{$last ? '' : ', '}}
+        bgf-pagination url="kingdomsUrl" url-params="kingdom_params" collection="kingdoms" per-page="10" transform-response="deserializeKingdoms"
+  .col-md-3
+    .well-t.clearfix.hidden-xs.hidden-sm
+      ng-include src="'alerts/_alert-box.html'"
+    .well.clearfix.hidden-xs.hidden-xs
+      ng-include src="'kingdom_browser/kingdoms_kingdoms-panel.html'"
+    .well
+      h4 Display
+      button.btn.btn-success.btn-sm ng-click="displayMode='images'" Images
+      button.btn.btn-success.btn-sm ng-click="displayMode='text'" Text

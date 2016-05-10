@@ -1,9 +1,0 @@
-<div class="modal-body clearfix" ng-click="ok()">
-  <img class="col-xs-12 card-border-radius" ng-src="cards_large/{{::card.image}}" style="margin-bottom:10px">
-
-  <button ng-show="isAdded" class='btn btn-danger col-xs-12' ng-click="kingdom.removeCard(card)">Remove Card</button>
-  <button ng-show="isAdded" class='btn btn-danger col-xs-12' ng-click="kingdom.banCard(card)">Ban Card</button>
-
-  <button ng-show="isBanned" class='btn btn-success col-xs-12' ng-click="kingdom.unbanCard(card); kingdom.addCard(card)">Add to Kingdom</button>
-  <button ng-show="isBanned" class='btn btn-danger col-xs-12' ng-click="kingdom.unbanCard(card)">Return to Deck</button>
-</div>

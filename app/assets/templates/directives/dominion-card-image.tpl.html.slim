@@ -1,0 +1,4 @@
+.angular-hovercard.max-sizes
+  img.thumbnail.animate.card-border-radius.angular-hovercard.max-sizes ng-src="cards/{{::cardImage}}" ng-mouseenter="showCard = true" ng-mouseleave="showCard = false"
+  .angular-hovercard-detail style="border:2px #f00 solid;" ng-class="{'angular-hovercard-active': showCard}"
+    img width="160" ng-src="cards/{{::cardImage}}"

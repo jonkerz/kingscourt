@@ -1,3 +1,6 @@
-<p>Current filter matched {{totalKingdoms}} out of {{totalKingdomsAll}} kingdoms.</p>
-<span ng-show="!expansionSelector.selected.length">Please select at least one expansion.</span>
-<button ng-click="reloadPage()" class='btn btn-primary col-xs-12'>Filter</button>
+p
+  | Current filter matched {{totalKingdoms}} out of {{totalKingdomsAll}} kingdoms.
+span[ng-show="!expansionSelector.selected.length"]
+  | Please select at least one expansion.
+button.btn.btn-primary.col-xs-12[ng-click="reloadPage()"]
+  | Filter

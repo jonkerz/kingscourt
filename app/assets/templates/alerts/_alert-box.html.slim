@@ -1,13 +1,9 @@
-<span ng-controller="AlertsCtrl">
-  <ul ng-show="alerts.alerts.length" class="nav nav-pills nav-stacked">
-    <li class="active">
-      <a href>
-        <span class="badge pull-right">{{alerts.alerts.length}}</span> Messages
-      </a>
-    </li>
-  </ul>
-
-  <alert ng-repeat="alert in alerts.alerts" type="info" ng-if="$index == alerts.alerts.length-1" close="alerts.closeAlert(alerts.alerts.length-1)">
-    <span ng-bind-html="alert.message"></span>
-  </alert>
-</span>
+span[ng-controller="AlertsCtrl"]
+  ul.nav.nav-pills.nav-stacked[ng-show="alerts.alerts.length"]
+    li.active
+      a[href]
+        span.badge.pull-right
+          | {{alerts.alerts.length}}
+        |  Messages 
+  alert[ng-repeat="alert in alerts.alerts" type="info" ng-if="$index == alerts.alerts.length-1" close="alerts.closeAlert(alerts.alerts.length-1)"]
+    span[ng-bind-html="alert.message"]

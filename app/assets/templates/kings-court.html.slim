@@ -1,30 +1,33 @@
-<div class="row">
-  <div class="col-md-9">
-    <div class="well clearfix">
-      <p>Welcome to the King's Court! Here you will find all the good stuff.
-
-      <h4>Stuff</h4>
-      <a href="#!/import">Import/Export Kingdoms</a>
-
-      <h4>Other generators</h4>
-      <ul>
-        <li><a href="http://www.poeppelkiste.de/suche/dominion/generator1.php">Dominion: Set-Generator</a></li>
-        <li><a href="http://www.hiwiller.com/dominion/">Dominion Card Randomizer!</a></li>
-        <li><a href="http://dominionsetgenerator.com/">Dominion Set Generator (Beta)</a></li>
-        <li><a href="http://www.dominiondeck.com/">Dominion Deck Builder</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="col-md-3">
-    <div class="well clearfix">
-      <div id="content">
-        <h4>The King</h4>
-        <div class="animate black_card shadow animate">
-          <img class="card_image" width="180" ng-src="cards/Kings_Court.jpg"/>
-        </div>
-        <i>Come at the king, you best not miss.</i>
-      </div>
-    </div>
-  </div>
-</div>
+.row
+  .col-md-9
+    .well.clearfix
+      p
+        | Welcome to the King's Court! Here you will find all the good stuff. 
+      h4
+        | Stuff
+      a[href="#!/import"]
+        | Import/Export Kingdoms
+      h4
+        | Other generators
+      ul
+        li
+          a[href="http://www.poeppelkiste.de/suche/dominion/generator1.php"]
+            | Dominion: Set-Generator
+        li
+          a[href="http://www.hiwiller.com/dominion/"]
+            | Dominion Card Randomizer!
+        li
+          a[href="http://dominionsetgenerator.com/"]
+            | Dominion Set Generator (Beta)
+        li
+          a[href="http://www.dominiondeck.com/"]
+            | Dominion Deck Builder
+  .col-md-3
+    .well.clearfix
+      #content
+        h4
+          | The King
+        .animate.black_card.shadow.animate
+          img.card_image[width="180" ng-src="cards/Kings_Court.jpg"]
+        i
+          | Come at the king, you best not miss.

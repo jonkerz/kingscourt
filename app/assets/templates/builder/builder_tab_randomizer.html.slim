@@ -1,50 +1,41 @@
-<div class="row">
-  <div class="col-lg-6">
-    <panel-collapse title="Card Type">
-      <attribute-radio display-name="Action" attribute-name="isAction"></attribute-radio>
-      <attribute-radio display-name="Victory" attribute-name="isVictory"></attribute-radio>
-      <attribute-radio display-name="Treasure" attribute-name="isTreasure"></attribute-radio>
-      <attribute-radio display-name="Attack" attribute-name="isAttack"></attribute-radio>
-      <attribute-radio display-name="Action-Attack" attribute-name="isActionAttack"></attribute-radio>
-      <attribute-radio display-name="Reaction" attribute-name="isReaction"></attribute-radio>
-      <attribute-radio display-name="Action-Reaction" attribute-name="isActionReaction"></attribute-radio>
-      <attribute-radio display-name="Action-Victory" attribute-name="isActionVictory"></attribute-radio>
-      <attribute-radio display-name="Treasure-Victory" attribute-name="isTreasureVictory"></attribute-radio>
-    </panel-collapse>
-    <panel-collapse title="Card Category">
-      <attribute-radio display-name="Trasher" attribute-name="isTrasher"></attribute-radio>
-      <attribute-radio display-name="Gainer" attribute-name="isGainer"></attribute-radio>
-      <attribute-radio display-name="Curser" attribute-name="isCurser"></attribute-radio>
-      <attribute-radio display-name="Remodeler" attribute-name="isRemodeler"></attribute-radio>
-      <attribute-radio display-name="Terminal Action" attribute-name="isTerminal"></attribute-radio>
-      <attribute-radio display-name="Interactive" attribute-name="isInteractive"></attribute-radio>
-      <attribute-radio display-name="Deck Inspector" attribute-name="isDeckInspector"></attribute-radio>
-      <attribute-radio display-name="Non-Attack Interactive" attribute-name="isNonAttackInteractive"></attribute-radio>
-      <attribute-radio display-name="Multiple Choice" attribute-name="isMultipleChoice"></attribute-radio>
-      <attribute-radio display-name="Event on Trash" attribute-name="eventOnTrash"></attribute-radio>
-      <attribute-radio display-name="Very Annoying" attribute-name="isVeryAnnoying"></attribute-radio>
-    </panel-collapse>
-  </div>
-
-  <div class="col-lg-6">
-    <panel-collapse title="Cost: ${{randomizer.minCost}} - {{randomizer.maxCost}}">
-      <div class="slider" cost-slider></div>
-      <attribute-radio display-name="Costs Potion" attribute-name="costsPotion"></attribute-radio>
-    </panel-collapse>
-
-    <panel-collapse title="Attributes">
-      <attribute-radio display-name="+Cards" attribute-name="givesCards"></attribute-radio>
-      <attribute-radio display-name="+1 Card" attribute-name="givesOneCard"></attribute-radio>
-      <attribute-radio display-name="+2 Cards" attribute-name="givesTwoCards"></attribute-radio>
-      <attribute-radio display-name="+3 (or more) Cards" attribute-name="givesThreeOrMoreCards"></attribute-radio>
-      <attribute-radio display-name="+Actions" attribute-name="givesActions"></attribute-radio>
-      <attribute-radio display-name="+1 Action" attribute-name="givesOneAction"></attribute-radio>
-      <attribute-radio display-name="+2 Actions" attribute-name="givesTwoActions"></attribute-radio>
-      <attribute-radio display-name="+Coins" attribute-name="givesCoins"></attribute-radio>
-      <attribute-radio display-name="+1 Coin" attribute-name="givesOneCoin"></attribute-radio>
-      <attribute-radio display-name="+2 Coins" attribute-name="givesTwoCoins"></attribute-radio>
-      <attribute-radio display-name="+3 (or more) coins" attribute-name="givesThreeOrMoreCoins"></attribute-radio>
-      <attribute-radio display-name="+Buys" attribute-name="givesBuys"></attribute-radio>
-    </panel-collapse>
-  </div>
-</div>
+.row
+  .col-lg-6
+    panel-collapse[title="Card Type"]
+      attribute-radio[display-name="Action" attribute-name="isAction"]
+      attribute-radio[display-name="Victory" attribute-name="isVictory"]
+      attribute-radio[display-name="Treasure" attribute-name="isTreasure"]
+      attribute-radio[display-name="Attack" attribute-name="isAttack"]
+      attribute-radio[display-name="Action-Attack" attribute-name="isActionAttack"]
+      attribute-radio[display-name="Reaction" attribute-name="isReaction"]
+      attribute-radio[display-name="Action-Reaction" attribute-name="isActionReaction"]
+      attribute-radio[display-name="Action-Victory" attribute-name="isActionVictory"]
+      attribute-radio[display-name="Treasure-Victory" attribute-name="isTreasureVictory"]
+    panel-collapse[title="Card Category"]
+      attribute-radio[display-name="Trasher" attribute-name="isTrasher"]
+      attribute-radio[display-name="Gainer" attribute-name="isGainer"]
+      attribute-radio[display-name="Curser" attribute-name="isCurser"]
+      attribute-radio[display-name="Remodeler" attribute-name="isRemodeler"]
+      attribute-radio[display-name="Terminal Action" attribute-name="isTerminal"]
+      attribute-radio[display-name="Interactive" attribute-name="isInteractive"]
+      attribute-radio[display-name="Deck Inspector" attribute-name="isDeckInspector"]
+      attribute-radio[display-name="Non-Attack Interactive" attribute-name="isNonAttackInteractive"]
+      attribute-radio[display-name="Multiple Choice" attribute-name="isMultipleChoice"]
+      attribute-radio[display-name="Event on Trash" attribute-name="eventOnTrash"]
+      attribute-radio[display-name="Very Annoying" attribute-name="isVeryAnnoying"]
+  .col-lg-6
+    panel-collapse[title="Cost: ${{randomizer.minCost}} - {{randomizer.maxCost}}"]
+      .slider[cost-slider]
+      attribute-radio[display-name="Costs Potion" attribute-name="costsPotion"]
+    panel-collapse[title="Attributes"]
+      attribute-radio[display-name="+Cards" attribute-name="givesCards"]
+      attribute-radio[display-name="+1 Card" attribute-name="givesOneCard"]
+      attribute-radio[display-name="+2 Cards" attribute-name="givesTwoCards"]
+      attribute-radio[display-name="+3 (or more) Cards" attribute-name="givesThreeOrMoreCards"]
+      attribute-radio[display-name="+Actions" attribute-name="givesActions"]
+      attribute-radio[display-name="+1 Action" attribute-name="givesOneAction"]
+      attribute-radio[display-name="+2 Actions" attribute-name="givesTwoActions"]
+      attribute-radio[display-name="+Coins" attribute-name="givesCoins"]
+      attribute-radio[display-name="+1 Coin" attribute-name="givesOneCoin"]
+      attribute-radio[display-name="+2 Coins" attribute-name="givesTwoCoins"]
+      attribute-radio[display-name="+3 (or more) coins" attribute-name="givesThreeOrMoreCoins"]
+      attribute-radio[display-name="+Buys" attribute-name="givesBuys"]

@@ -1,62 +1,41 @@
-<!doctype html>
-<html>
-<head>
-  <title ng-bind="title">King's Court - Dominion Kingdom Generator</title>
-  <meta charset="utf-8" />
-  <meta name="description" content="Kingdom Generator" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="logo_kings_court.png" >
-  <%= javascript_include_tag "application" %>
-  <%= stylesheet_link_tag 'application' %>
-
-  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-
-  <script>
-    // browser-update.org
-    var $buoop = { c:2 };
-    function $buo_f(){
-      var e = document.createElement("script");
-      e.src = "//browser-update.org/update.js";
-      document.body.appendChild(e);
-    };
-    try {
-      document.addEventListener("DOMContentLoaded", $buo_f,false);
-    } catch(e) {
-      window.attachEvent("onload", $buo_f);
-    }
-  </script>
-</head>
-
-<body>
-  <div class="container" ng-if="!loadingIsComplete">
-    <div class="spinner spinner-large">
-      <i class="fa fa-refresh fa-spin loading-icon"></i>
-    </div>
-  </div>
-
-  <ng-include src="'navbar/navbar.html'"></ng-include>
-
-  <div growl limit-messages="5"></div>
-
-  <div class="container container-background" ng-cloak>
-    <div ng-view></div>
-  </div>
-
-  <footer ng-cloak>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <ul class="list-unstyled">
-            <li><a href="#!/kings_court"><i class="fa fa-rocket fa-lg"></i> King's Court</a>
-            </li>
-            <li><a href=""><i class="fa fa-github fa-lg"></i> GitHub</a>
-            </li>
-          </ul>
-          <p>Heey <a href="#" rel="nofollow">this link</a>. and thisadasd
-        </div>
-      </div>
-    </div>
-  </footer>
-</body>
-</html>
+| <!doctype html> 
+html
+  head
+    title[ng-bind="title"]
+      | King's Court - Dominion Kingdom Generator
+    meta[charset="utf-8"]
+    meta[name="description" content="Kingdom Generator"]
+    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+    link[rel="icon" type="image/png" href="logo_kings_court.png"]
+    = javascript_include_tag "application"
+    = stylesheet_link_tag 'application'
+    link[href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"]
+    link[href="http://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css"]
+    script
+      |  // browser-update.org var $buoop = { c:2 }; function $buo_f(){ var e = document.createElement("script"); e.src = "//browser-update.org/update.js"; document.body.appendChild(e); }; try { document.addEventListener("DOMContentLoaded", $buo_f,false); } catch(e) { window.attachEvent("onload", $buo_f); } 
+  body
+    .container[ng-if="!loadingIsComplete"]
+      .spinner.spinner-large
+        i.fa.fa-refresh.fa-spin.loading-icon
+    ng-include[src="'navbar/navbar.html'"]
+    div[growl limit-messages="5"]
+    .container.container-background[ng-cloak]
+      div[ng-view]
+    footer[ng-cloak]
+      .container
+        .row
+          .col-lg-12
+            ul.list-unstyled
+              li
+                a[href="#!/kings_court"]
+                  i.fa.fa-rocket.fa-lg
+                  |  King's Court
+              li
+                a[href=""]
+                  i.fa.fa-github.fa-lg
+                  |  GitHub
+            p
+              | Heey 
+              a[href="#" rel="nofollow"]
+                | this link
+              | . and thisadasd 

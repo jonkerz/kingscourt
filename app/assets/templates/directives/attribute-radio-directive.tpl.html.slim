@@ -1,19 +1,15 @@
-<div ng-if="activeExpansionAttributes[attributeName]" class="attribute-radios">
-  <span  class="attribute-display-name">
-    {{::displayName}}
-  </span>
+.attribute-radios[ng-if="activeExpansionAttributes[attributeName]"]
+  span.attribute-display-name
+    |  {{::displayName}} 
+  span.pull-right.attribute-radio
 
-  <span class="pull-right attribute-radio">
-    <div class="btn-group" data-toggle="buttons">
-      <label class="btn btn-primary btn-md" ng-class='{"btn-success": isActive("yes")}' ng-click='activate("yes", $event)'>
-        <input name="{{::displayName}}" type="radio" ng-click="cardAttributes[attributeName] = 'yes'" value="yes"> Yes
-      </label>
-      <label class="btn btn-primary btn-md" ng-class='{"btn-danger": isActive("no")}' ng-click='activate("no", $event)'>
-        <input name="{{::displayName}}" type="radio" ng-click="cardAttributes[attributeName] = 'no'" value="no"> No
-      </label>
-      <label class="btn btn-primary btn-md" ng-class='{"active": isActive("whatever")}' ng-click='activate("whatever", $event)'>
-        <input ng-checked="true" name="{{::displayName}}" type="radio" ng-click="cardAttributes[attributeName] = 'whatever'" value="whatever"> Whatever
-      </label>
-    </div>
-  </span>
-</div>
+  .btn-group[data-toggle="buttons"]
+    label.btn.btn-primary.btn-md[ng-class="{\"btn-success\": isActive(\"yes\")}" ng-click="activate(\"yes\", $event)"]
+      input[name="{{::displayName}}" type="radio" ng-click="cardAttributes[attributeName] = 'yes'" value="yes"]
+      |  Yes 
+    label.btn.btn-primary.btn-md[ng-class="{\"btn-danger\": isActive(\"no\")}" ng-click="activate(\"no\", $event)"]
+      input[name="{{::displayName}}" type="radio" ng-click="cardAttributes[attributeName] = 'no'" value="no"]
+      |  No 
+    label.btn.btn-primary.btn-md[ng-class="{\"active\": isActive(\"whatever\")}" ng-click="activate(\"whatever\", $event)"]
+      input[ng-checked="true" name="{{::displayName}}" type="radio" ng-click="cardAttributes[attributeName] = 'whatever'" value="whatever"]
+      |  Whatever 

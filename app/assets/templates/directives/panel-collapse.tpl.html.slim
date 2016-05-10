@@ -1,12 +1,9 @@
-<div class="panel-group" id="{{panelId}}">
-  <div class="panel panel-default">
-    <div class="panel-heading {{collapsed ? 'collapsed' : ''}}" data-toggle="collapse" data-parent="#{{panelId}}" href="#{{panelId}}-1">
-      <h4 class="panel-title">
-        <a>{{title}}</a>
-      </h4>
-    </div>
-    <div id="{{panelId}}-1" class="panel-collapse collapse {{collapsed ? '' : 'in'}}">
-      <div class="panel-body"><div ng-transclude></div></div>
-    </div>
-  </div>
-</div>
+#{{panelId}}.panel-group
+  .panel.panel-default
+    .panel-heading.{{collapsed.?.'collapsed'.:.''}}[data-toggle="collapse" data-parent="#{{panelId}}" href="#{{panelId}}-1"]
+      h4.panel-title
+        a
+          | {{title}}
+    #{{panelId}}-1.panel-collapse.collapse.{{collapsed.?.''.:.'in'}}
+      .panel-body
+        div[ng-transclude]

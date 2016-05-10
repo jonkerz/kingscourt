@@ -26,6 +26,8 @@ gem 'clean_pagination'
 gem 'mysql2'
 gem 'ngannotate-rails'
 gem 'dotenv-rails'
+gem 'execjs'
+gem 'therubyracer'
 
 group :development do
   gem 'web-console'
@@ -33,6 +35,11 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'quiet_assets'
+  gem 'capistrano', require: false
+  gem 'capistrano-rvm', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma', require: false
 end
 
 group :test do

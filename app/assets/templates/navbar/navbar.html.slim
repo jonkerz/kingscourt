@@ -3,46 +3,35 @@
     .navbar-header
       button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target=".navbar-collapse"
         .three-bars
-          span.sr-only
-            | Toggle navigation
+          span.sr-only Toggle navigation
           span.icon-bar
           span.icon-bar
           span.icon-bar
         span.loading-spinner.fa.fa-refresh.fa-spin
-      a#logo.navbar-brand.visible-xs.hidden-sm.visible-md.visible-lg
-        | King's Court
+      a#logo.navbar-brand.visible-xs.hidden-sm.visible-md.visible-lg King's Court
     .navbar-collapse.collapse
       ul.nav.navbar-nav
         li ng-class="{ active: isActive('/')}"
-          a href="/#!/"
-            | Generator
+          a href="/#!/" Generator
         li ng-class="{ active: isActive('/builder')}"
-          a href="/#!/builder"
-            | Builder
+          a href="/#!/builder" Builder
         li ng-class="{ active: isActive('/kingdoms')}"
-          a href="/#!/kingdoms"
-            | Browse Kingdoms
+          a href="/#!/kingdoms" Browse Kingdoms
         li ng-class="{ active: isActive('/cards')}"
-          a href="/#!/cards"
-            | Cards
+          a href="/#!/cards" Cards
       ul.nav.navbar-nav.navbar-right
         li.loading-spinner
           a.fa.fa-refresh.fa-spin
         li ng-show="user.signedIn" ng-class="{ active: isActive('/my_kingdoms')}"
-          a href="#!/my_kingdoms"
-            | My Kingdoms
+          a href="#!/my_kingdoms" My Kingdoms
         li.dropdown ng-show="user.signedIn"
           a.dropdown-toggle href="#" data-toggle="dropdown"
-            span.fa.fa-user
-            |  {{user.username}} 
+            span.fa.fa-user  {{user.username}}
             span.caret
           ul.dropdown-menu role="menu"
             li
-              a href="#!/my_favorites"
-                | Favorites
+              a href="#!/my_favorites" Favorites
             li
-              a ng-click="signOut()"
-                | Logout
+              a ng-click="signOut()" Logout
         li ng-hide="user.signedIn" ng-controller="ModalCtrl"
-          a href="" ng-click="openLogin()"
-            | Login/Register
+          a href="" ng-click="openLogin()" Login/Register

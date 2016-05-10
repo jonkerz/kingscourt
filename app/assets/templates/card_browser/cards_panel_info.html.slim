@@ -12,13 +12,13 @@ div ng-if="selectedCard"
   br
   br
   br
-  |  {{selectedCard.name}}
+  {{selectedCard.name}}
   br
-  |  Expansion: 
+  Expansion:
   img ng-src="icons/{{selectedCard.expansion}}.png" width="16" height="16"
   br
   br
-  |  "{{selectedCard.text}}" 
+  "{{selectedCard.text}}"
   img ng-src="icons/16px-Coin{{selectedCard.cost}}.png"
 div ng-if="!selectedCard"
   .animate.black_card.shadow.animate

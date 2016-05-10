@@ -1,5 +1,5 @@
-.btn.btn-block.btn-primary.btn-md.card-box[ng-class="cardStatus(card)"]
-  img[ng-src="icons/16px-Coin{{::card.cost}}.png" alt="(C)" style="float: left; margin-left: 3px"]
+.btn.btn-block.btn-primary.btn-md.card-box ng-class="cardStatus(card)"
+  img ng-src="icons/16px-Coin{{::card.cost}}.png" alt="(C)" style="float: left; margin-left: 3px"
   span
-    img[ng-src="icons/{{::card.expansion}}.png" alt="(E)" style="float: right; margin-right: 3px; amargin-top:-16px"]
+    img ng-src="icons/{{::card.expansion}}.png" alt="(E)" style="float: right; margin-right: 3px; amargin-top:-16px"
   | {{::card.name}} 

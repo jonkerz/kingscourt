@@ -1,10 +1,10 @@
-.modal-body.clearfix[ng-click="ok()"]
-  img.col-xs-12.card-border-radius[ng-src="cards_large/{{::card.image}}" style="margin-bottom:10px"]
-  button.btn.btn-danger.col-xs-12[ng-show="isAdded" ng-click="kingdom.removeCard(card)"]
+.modal-body.clearfix ng-click="ok()"
+  img.col-xs-12.card-border-radius ng-src="cards_large/{{::card.image}}" style="margin-bottom:10px"
+  button.btn.btn-danger.col-xs-12 ng-show="isAdded" ng-click="kingdom.removeCard(card)"
     | Remove Card
-  button.btn.btn-danger.col-xs-12[ng-show="isAdded" ng-click="kingdom.banCard(card)"]
+  button.btn.btn-danger.col-xs-12 ng-show="isAdded" ng-click="kingdom.banCard(card)"
     | Ban Card
-  button.btn.btn-success.col-xs-12[ng-show="isBanned" ng-click="kingdom.unbanCard(card); kingdom.addCard(card)"]
+  button.btn.btn-success.col-xs-12 ng-show="isBanned" ng-click="kingdom.unbanCard(card); kingdom.addCard(card)"
     | Add to Kingdom
-  button.btn.btn-danger.col-xs-12[ng-show="isBanned" ng-click="kingdom.unbanCard(card)"]
+  button.btn.btn-danger.col-xs-12 ng-show="isBanned" ng-click="kingdom.unbanCard(card)"
     | Return to Deck

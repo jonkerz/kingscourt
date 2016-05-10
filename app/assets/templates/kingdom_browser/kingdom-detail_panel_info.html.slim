@@ -1,9 +1,9 @@
 .well.clearfix
-  div[ng-controller="KingdomDetailCtrl"]
-    span[ng-if="authService.username == kingdom.username"]
-      input.form-control.input-small[type="text" placeholder="Kingdom Name" ng-model="kingdom.name"]
-      textarea.form-control.input-small[rows="2" placeholder="Description" ng-model="kingdom.description"]
-    span[ng-if="authService.username != kingdom.username"]
+  div ng-controller="KingdomDetailCtrl"
+    span ng-if="authService.username == kingdom.username"
+      input.form-control.input-small type="text" placeholder="Kingdom Name" ng-model="kingdom.name"
+      textarea.form-control.input-small rows="2" placeholder="Description" ng-model="kingdom.description"
+    span ng-if="authService.username != kingdom.username"
 
     h4
       | {{kingdom.name}}
@@ -11,13 +11,13 @@
       | Description: {{kingdom.description || 'None'}}
     p
       | Creator: 
-      a[ng-href="#!/{{kingdom.username}}/kingdoms"]
+      a ng-href="#!/{{kingdom.username}}/kingdoms"
         | {{kingdom.username}}
     p
       | Created: {{kingdom.created_at | date:'dd MMMM yyyy' }}
-    button.btn.btn-success.btn-md.col-xs-12[ng-click="openInBuilder()"]
+    button.btn.btn-success.btn-md.col-xs-12 ng-click="openInBuilder()"
       | Open in Builder
-    button.btn.btn-success.btn-md.col-xs-12[ng-controller="SaveCtrl" ng-if="authService.username == kingdom.username" ng-click="update()" type="button"]
+    button.btn.btn-success.btn-md.col-xs-12 ng-controller="SaveCtrl" ng-if="authService.username == kingdom.username" ng-click="update()" type="button"
       | Update
-    button.btn.btn-danger.btn-md.col-xs-12[ng-if="authService.username == kingdom.username" ng-click="deleteKingdom(kingdom.id)" type="button"]
+    button.btn.btn-danger.btn-md.col-xs-12 ng-if="authService.username == kingdom.username" ng-click="deleteKingdom(kingdom.id)" type="button"
       | Delete

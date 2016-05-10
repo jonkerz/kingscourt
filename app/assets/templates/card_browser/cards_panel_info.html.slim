@@ -1,6 +1,6 @@
-div[ng-if="selectedCard"]
+div ng-if="selectedCard"
   .animate.black_card.shadow.animate
-    img.card_image[width="180" ng-src="cards/{{selectedCard.image}}"]
+    img.card_image width="180" ng-src="cards/{{selectedCard.image}}"
   br
   br
   br
@@ -15,11 +15,11 @@ div[ng-if="selectedCard"]
   |  {{selectedCard.name}}
   br
   |  Expansion: 
-  img[ng-src="icons/{{selectedCard.expansion}}.png" width="16" height="16"]
+  img ng-src="icons/{{selectedCard.expansion}}.png" width="16" height="16"
   br
   br
   |  "{{selectedCard.text}}" 
-  img[ng-src="icons/16px-Coin{{selectedCard.cost}}.png"]
-div[ng-if="!selectedCard"]
+  img ng-src="icons/16px-Coin{{selectedCard.cost}}.png"
+div ng-if="!selectedCard"
   .animate.black_card.shadow.animate
-    img.card_image[width="180" ng-src="cards/Randomizer.jpg"]
+    img.card_image width="180" ng-src="cards/Randomizer.jpg"

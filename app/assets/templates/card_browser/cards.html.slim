@@ -1,39 +1,39 @@
-ng-include[src="'expansion_selector/expansions.tpl.html'"]
+ng-include src="'expansion_selector/expansions.tpl.html'"
 .row[ng-controller="CardBroswerCtrl" ng-cloak]
   .col-md-9
     .well
       .row
         .col-md-8
-          dir-pagination-controls[boundary-links="true" pagination-id="allCards" on-page-change="pageChangeHandler(newPageNumber)"]
+          dir-pagination-controls boundary-links="true" pagination-id="allCards" on-page-change="pageChangeHandler(newPageNumber)"
         .col-md-4
-          input#search.form-control[ng-model="q" placeholder="Search"]
+          input#search.form-control ng-model="q" placeholder="Search"
       .row
         .col-md-12
-          #triple[ng-if="displayMode=='labels'"]
-            .col-xs-12.col-sm-6.col-md-4[dir-paginate="card in allCards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage: 'allCards'" current-page="currentPage" pagination-id="allCards" ng-click="setSelectedCard(card)"]
+          #triple ng-if="displayMode=='labels'"
+            .col-xs-12.col-sm-6.col-md-4 dir-paginate="card in allCards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage: 'allCards'" current-page="currentPage" pagination-id="allCards" ng-click="setSelectedCard(card)"
               div[ng-include src="'card-label.tpl.html'"]
-          div[ng-if="displayMode=='images'"]
-            div[dir-paginate="card in allCards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage" current-page="currentPage" pagination-id="allCards" ng-click="setSelectedCard(card)"]
+          div ng-if="displayMode=='images'"
+            div dir-paginate="card in allCards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage" current-page="currentPage" pagination-id="allCards" ng-click="setSelectedCard(card)"
               div[ng-include src="'card-image.tpl.html'"]
-          div[ng-if="displayMode=='ascii'"]
-            div[dir-paginate="card in allCards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage: 'allCards'" current-page="currentPage" pagination-id="allCards" ng-click="setSelectedCard(card)"]
+          div ng-if="displayMode=='ascii'"
+            div dir-paginate="card in allCards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage: 'allCards'" current-page="currentPage" pagination-id="allCards" ng-click="setSelectedCard(card)"
               div[ng-include src="'card-text.tpl.html'"]
-          p[ng-show="!expansionSelector.selected.length"]
+          p ng-show="!expansionSelector.selected.length"
             | Please select at least one expansion.
   .col-md-3
     .well.clearfix
-      ng-include[src="'card_browser/cards_panel_info.html'"]
+      ng-include src="'card_browser/cards_panel_info.html'"
     .well
       h4
         | Display
       div
-        button.btn.btn-success.btn-sm[ng-click="displayMode='images'"]
+        button.btn.btn-success.btn-sm ng-click="displayMode='images'"
           | Images
-        button.btn.btn-success.btn-sm[ng-click="displayMode='labels'"]
+        button.btn.btn-success.btn-sm ng-click="displayMode='labels'"
           | Labels
-        button.btn.btn-success.btn-sm[ng-click="displayMode='ascii'"]
+        button.btn.btn-success.btn-sm ng-click="displayMode='ascii'"
           | Text
-      span[ng-show="displayMode=='images'"]
+      span ng-show="displayMode=='images'"
         |  Display size: {{cardDisplaySize}} 
       .slider[slider config="cardDisplaySizeSliderConfig" model="cardDisplaySize"]
       |  Cards per page: {{cardsPerPage}} 
@@ -42,12 +42,12 @@ ng-include[src="'expansion_selector/expansions.tpl.html'"]
         | Sort 
         small
           | ({{orderByField}}
-          span[ng-show="reverseSort"]
+          span ng-show="reverseSort"
             |  reversed
           | )
-      button.btn.btn-success.btn-sm[href="" ng-click="orderByField='expansion'; reverseSort = !reverseSort"]
+      button.btn.btn-success.btn-sm href="" ng-click="orderByField='expansion'; reverseSort = !reverseSort"
         |  Expansion 
-      button.btn.btn-success.btn-sm[href="" ng-click="orderByField='name'; reverseSort = !reverseSort"]
+      button.btn.btn-success.btn-sm href="" ng-click="orderByField='name'; reverseSort = !reverseSort"
         |  Name 
-      button.btn.btn-success.btn-sm[href="" ng-click="orderByField='cost_in_coins'; reverseSort = !reverseSort"]
+      button.btn.btn-success.btn-sm href="" ng-click="orderByField='cost_in_coins'; reverseSort = !reverseSort"
         |  Cost 

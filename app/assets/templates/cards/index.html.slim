@@ -25,11 +25,13 @@ ng-include src="'shared/expansion_selector.html'"
     .well
       h4 Display
       div
-        button.btn.btn-success.btn-sm ng-click="displayMode='images'" Images
-        button.btn.btn-success.btn-sm ng-click="displayMode='labels'" Labels
-        button.btn.btn-success.btn-sm ng-click="displayMode='ascii'" Text
-      span ng-show="displayMode=='images'" Display size: {{cardDisplaySize}}
-      .slider[slider config="cardDisplaySizeSliderConfig" model="cardDisplaySize"] Cards per page: {{cardsPerPage}}
+        button.btn.btn-success.btn-sm> ng-click="displayMode='images'" Images
+        button.btn.btn-success.btn-sm> ng-click="displayMode='labels'" Labels
+        button.btn.btn-success.btn-sm> ng-click="displayMode='ascii'" Text
+      span ng-show="displayMode=='images'"
+      Display size: {{cardDisplaySize}}
+      .slider[slider config="cardDisplaySizeSliderConfig" model="cardDisplaySize"]
+      Cards per page: {{cardsPerPage}}
       .slider[slider config="cardsPerPageSliderConfig" model="cardsPerPage"]
       h4
         Sort
@@ -37,6 +39,6 @@ ng-include src="'shared/expansion_selector.html'"
           ({{orderByField}}
           span ng-show="reverseSort" reversed
           )
-      button.btn.btn-success.btn-sm href="" ng-click="orderByField='expansion'; reverseSort = !reverseSort" Expansion
-      button.btn.btn-success.btn-sm href="" ng-click="orderByField='name'; reverseSort = !reverseSort" Name
-      button.btn.btn-success.btn-sm href="" ng-click="orderByField='cost_in_coins'; reverseSort = !reverseSort" Cost
+      button.btn.btn-success.btn-sm> href="" ng-click="orderByField='expansion'; reverseSort = !reverseSort" Expansion
+      button.btn.btn-success.btn-sm> href="" ng-click="orderByField='name'; reverseSort = !reverseSort" Name
+      button.btn.btn-success.btn-sm> href="" ng-click="orderByField='cost_in_coins'; reverseSort = !reverseSort" Cost

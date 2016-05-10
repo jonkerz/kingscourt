@@ -1,25 +1,13 @@
+h4 {{selectedCard.name || "Select a card"}}
+div ng-if="!selectedCard"
+  .black_card.shadow
+    img.card_image width="180" ng-src="cards/Randomizer.jpg"
+
 div ng-if="selectedCard"
-  .animate.black_card.shadow.animate
+  .black_card.shadow
     img.card_image width="180" ng-src="cards/{{selectedCard.image}}"
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  {{selectedCard.name}}
-  br
   Expansion:
   img ng-src="icons/{{selectedCard.expansion}}.png" width="16" height="16"
-  br
-  br
-  "{{selectedCard.text}}"
-  img ng-src="icons/16px-Coin{{selectedCard.cost}}.png"
-div ng-if="!selectedCard"
-  .animate.black_card.shadow.animate
-    img.card_image width="180" ng-src="cards/Randomizer.jpg"
+  {{selectedCard.text}}
+  Cost:
+    img ng-src="icons/16px-Coin{{selectedCard.cost}}.png"

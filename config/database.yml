@@ -1,0 +1,24 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  pool: 5
+
+development: &development
+  <<: *default
+  database: <%= ENV['DEV_DB_NAME'] %>
+  username: <%= ENV['DEV_DB_USER'] %>
+  password: <%= ENV['DEV_DB_PASSWORD'] %>
+
+test: &test
+  <<: *development
+  database: <%= ENV['DEV_DB_NAME'] %>_test
+
+production:
+  <<: *default
+  database: <%= ENV['PROD_DB_NAME'] %>
+  username: <%= ENV['PROD_DB_USER'] %>
+  password: <%= ENV['PROD_DB_PASSWORD'] %>
+
+cucumber:
+  <<: *test

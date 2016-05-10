@@ -25,6 +25,7 @@ gem 'colorize'
 gem 'clean_pagination'
 gem 'mysql2'
 gem 'ngannotate-rails'
+gem 'dotenv-rails'
 
 group :development do
   gem 'web-console'

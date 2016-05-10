@@ -1,11 +1,7 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
-
-# Ignore all logfiles and tempfiles.
+# log/tmp
 /log/*
 /tmp/*
 !/log/.keep
@@ -22,5 +18,5 @@ public/assets/**
 /public/cards
 /public/cards_large
 
-# Stuff
-/config/database.yml
+# Ignore application configuration
+.env

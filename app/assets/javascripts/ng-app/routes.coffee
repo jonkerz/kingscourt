@@ -6,7 +6,7 @@ angular.module('KingsCourt')
 
   .when '/builder',
     title: 'Builder'
-    templateUrl: 'builder/builder.html'
+    templateUrl: 'builder/index.html'
 
   .when '/kingdoms/:id',
     title: 'Kingdoms'
@@ -18,7 +18,7 @@ angular.module('KingsCourt')
 
   .when '/cards',
     title: 'Browse Cards'
-    templateUrl: 'card_browser/cards.html'
+    templateUrl: 'cards/index.html'
 
   .when '/kingdoms',
     title: 'Browse Kingdoms'

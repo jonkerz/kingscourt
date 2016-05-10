@@ -4,7 +4,6 @@
 //= require angular-route
 //= require angular-rails-templates
 
-//= require angular-animate/angular-animate
 //= require angular-ui-bootstrap-bower/ui-bootstrap-tpls
 //= require angular-resource/angular-resource
 //= require bootstrap/dist/js/bootstrap

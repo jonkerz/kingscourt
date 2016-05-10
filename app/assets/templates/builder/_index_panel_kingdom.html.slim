@@ -1,12 +1,12 @@
 .ui-widget-header.cards-droppable[droppable ng-controller="ModalCtrl"]
   h5: i.fi-check Kingdom Cards ({{kingdom.cards.length}})
-  .animate.btn.btn-primary.btn-block[ng-repeat="card in kingdom.cards" data-index="{{$index}}" data-card="{{::card}}" draggable]
+  .btn.btn-primary.btn-block[ng-repeat="card in kingdom.cards" data-index="{{$index}}" data-card="{{::card}}" draggable]
     img.card-label-cost-image ng-src="icons/16px-Coin{{::card.cost}}.png" {{::card.name}}
     img.card-label-expansion-image ng-src="icons/{{::card.expansion}}.png"
   div ng-show="!kingdom.cards.length" Empty
 /.ui-widget-header.banned-cards-droppable[droppable ng-controller="ModalCtrl"]
   h5: i.fi-lock Banned Cards ({{kingdom.bannedCards.length}})
-  .animate.btn.btn-danger.btn-block[ng-repeat="card in kingdom.bannedCards" data-index="{{$index}}" data-card="{{::card}}" draggable]
+  .btn.btn-danger.btn-block[ng-repeat="card in kingdom.bannedCards" data-index="{{$index}}" data-card="{{::card}}" draggable]
     img.card-label-cost-image ng-src="icons/16px-Coin{{::card.cost}}.png" {{card.name}}
     img.card-label-expansion-image ng-src="icons/{{::card.expansion}}.png"
   div ng-show="!kingdom.bannedCards.length" Empty

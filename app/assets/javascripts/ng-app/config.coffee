@@ -10,11 +10,6 @@ angular.module('KingsCourt')
   growlProvider.globalDisableCountDown true
   growlProvider.globalDisableIcons true
 
-# ui-bootstrap tooltip animation is broken using angular 1.3
-# https://github.com/angular-ui/bootstrap/issues/2828#issuecomment-60379389
-.config ($tooltipProvider) ->
-  $tooltipProvider.options animation: false
-
 .config (paginationTemplateProvider) ->
   paginationTemplateProvider.setPath 'directives/dir-pagination.tpl.html'
 

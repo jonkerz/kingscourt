@@ -1,6 +1,5 @@
 asset "angular", "~1.4.0"
 asset "angular-route", "~1.4.0"
-asset "angular-animate", "~1.4.0"
 asset "angular-ui-bootstrap-bower", "~0.13.0"
 asset "angular-resource", "~1.4.0"
 asset "bootstrap", "~3.3.4"

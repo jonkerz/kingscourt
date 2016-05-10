@@ -1,8 +1,8 @@
-ng-include src="'expansion_selector/expansions.tpl.html'"
+ng-include src="'shared/expansion_selector.html'"
 .row[ng-controller="GeneratorCtrl" ng-cloak]
   .col-md-3.hidden-md.hidden-lg
     .well-t.clearfix
-      ng-include src="'alerts/_alert-box.html'"
+      ng-include src="'shared/_alert-box.html'"
     .well.clearfix
       ng-include src="'builder/generator_panel_controls.html'"
   .col-md-9
@@ -15,7 +15,7 @@ ng-include src="'expansion_selector/expansions.tpl.html'"
             img.col-xs-12.animate.card-border-radius.shadow ng-src="cards/Randomizer.jpg"
   .col-md-3
     .well-t.clearfix.hidden-xs.hidden-sm
-      ng-include src="'alerts/_alert-box.html'"
+      ng-include src="'shared/_alert-box.html'"
     .well.clearfix.hidden-xs.hidden-sm
       ng-include src="'builder/generator_panel_controls.html'"
     ng-include src="'builder/_panel_save.html'"

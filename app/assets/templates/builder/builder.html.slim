@@ -1,8 +1,8 @@
-ng-include src="'expansion_selector/expansions.tpl.html'"
+ng-include src="'shared/expansion_selector.html'"
 .row[ng-controller="BuilderCtrl" ng-cloak]
   .col-md-3.hidden-md.hidden-lg
     .well-t.clearfix
-      ng-include src="'alerts/_alert-box.html'"
+      ng-include src="'shared/_alert-box.html'"
     .well.clearfix ng-show="tab=='randomizer-tab'"
       ng-include src="'builder/builder_panel_controls.html'"
     .well.clearfix
@@ -21,7 +21,7 @@ ng-include src="'expansion_selector/expansions.tpl.html'"
           ng-include src="'builder/builder_tab_by-name.html'"
   .col-md-3
     .well-t.clearfix.hidden-xs.hidden-sm
-      ng-include src="'alerts/_alert-box.html'"
+      ng-include src="'shared/_alert-box.html'"
     .well.clearfix.hidden-xs.hidden-sm ng-show="tab=='randomizer-tab'"
       ng-include src="'builder/builder_panel_controls.html'"
     .well.clearfix.hidden-xs.hidden-sm

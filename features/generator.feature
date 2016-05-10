@@ -16,8 +16,6 @@ Feature: Kingdom generator
   Scenario: Saving a generated kingdom
     Given I am logged in
     When I press "Generate!"
-    And I open the "Save Kingdom" panel
-    And I wait
     When I press "Save Kingdom"
     Then I should see "Messages"
     Then I should see "Saved"

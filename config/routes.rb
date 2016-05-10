@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get 'api/get_cards', to: 'application#get_cards'
   get 'api/get_non_randomizers', to: 'application#get_non_randomizers'
+  get 'api/get_all_expansion_attributes', to: 'application#get_all_expansion_attributes'
 
   namespace :api do
     namespace :v1 do

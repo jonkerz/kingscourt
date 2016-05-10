@@ -2,7 +2,7 @@ angular.module('KingsCourt')
 .config ($routeProvider) ->
   $routeProvider.when '/',
     title: 'Generator'
-    templateUrl: 'generator/generator.html'
+    templateUrl: 'generator/index.html'
 
   .when '/builder',
     title: 'Builder'
@@ -10,11 +10,11 @@ angular.module('KingsCourt')
 
   .when '/kingdoms/:id',
     title: 'Kingdoms'
-    templateUrl: 'kingdom_browser/kingdom-detail.html'
+    templateUrl: 'kingdoms/show.html'
 
   .when '/kingdoms/:id/:string',
     title: '###'
-    templateUrl: 'kingdom_browser/kingdom-detail.html'
+    templateUrl: 'kingdoms/show.html'
 
   .when '/cards',
     title: 'Browse Cards'
@@ -22,31 +22,31 @@ angular.module('KingsCourt')
 
   .when '/kingdoms',
     title: 'Browse Kingdoms'
-    templateUrl: 'kingdom_browser/kingdoms.html'
+    templateUrl: 'kingdoms/index.html'
     reloadOnSearch: false
     controller: 'PublicKingdomsCtrl'
 
   .when '/my_kingdoms',
     title: 'My Kingdoms'
-    templateUrl: 'kingdom_browser/kingdoms.html'
+    templateUrl: 'kingdoms/index.html'
     reloadOnSearch: false
     controller: 'MyKingdomsCtrl'
 
   .when '/:username/kingdoms',
     title: 'User Kingdoms'
-    templateUrl: 'kingdom_browser/kingdoms.html'
+    templateUrl: 'kingdoms/index.html'
     reloadOnSearch: false
     controller: 'UserKingdomsCtrl'
 
   .when '/my_favorites',
     title: 'My Favorites'
-    templateUrl: 'kingdom_browser/kingdoms.html'
+    templateUrl: 'kingdoms/index.html'
     reloadOnSearch: false
     controller: 'MyFavoriteKingdomsCtrl'
 
   .when '/:username/favorites',
     title: 'User Favorites'
-    templateUrl: 'kingdom_browser/kingdoms.html'
+    templateUrl: 'kingdoms/index.html'
     reloadOnSearch: false
     controller: 'FavoriteKingdomsCtrl'
 
@@ -56,6 +56,6 @@ angular.module('KingsCourt')
 
   .when '/import',
     title: 'Import'
-    templateUrl: 'importer/import.html'
+    templateUrl: 'importer/index.html'
 
   .otherwise templateUrl: '404.html'

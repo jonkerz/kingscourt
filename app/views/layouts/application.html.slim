@@ -12,14 +12,18 @@ html
     link href="http://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css"
     script
       |  // browser-update.org var $buoop = { c:2 }; function $buo_f(){ var e = document.createElement("script"); e.src = "//browser-update.org/update.js"; document.body.appendChild(e); }; try { document.addEventListener("DOMContentLoaded", $buo_f,false); } catch(e) { window.attachEvent("onload", $buo_f); }
+
   body
     .container ng-if="!loadingIsComplete"
       .spinner.spinner-large
         i.fa.fa-refresh.fa-spin.loading-icon
+
     ng-include src="'shared/navbar.html'"
     div[growl limit-messages="5"]
+
     .container.container-background[ng-cloak]
       div[ng-view]
+
     footer[ng-cloak]
       .container
         .row

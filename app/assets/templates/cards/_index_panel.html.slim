@@ -7,7 +7,9 @@ div ng-if="selectedCard"
   .black_card.shadow
     img.card_image width="180" ng-src="cards/{{selectedCard.image}}"
   Expansion:
+  br
   img ng-src="icons/{{selectedCard.expansion}}.png" width="16" height="16"
   {{selectedCard.text}}
+  br
   Cost:
-    img ng-src="icons/16px-Coin{{selectedCard.cost}}.png"
+  img ng-src="icons/16px-Coin{{selectedCard.cost}}.png"

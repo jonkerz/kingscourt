@@ -26,7 +26,7 @@ end
 
 When /^I toggle the expansions "([^"]*)"( and reload)?$/ do |expansions, reload|
   expansions.split(", ").each do |expansion|
-    find(".expansions label", text: expansion).click
+    find(".expansion-selector label", text: expansion).click
   end
   find("button", text: "Filter").click if reload
 end

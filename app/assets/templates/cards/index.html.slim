@@ -1,4 +1,3 @@
-ng-include src="'shared/expansion_selector.html'"
 .row[ng-controller="CardBroswerCtrl" ng-cloak]
   .col-md-9
     .well
@@ -20,6 +19,8 @@ ng-include src="'shared/expansion_selector.html'"
               div[ng-include src="'card-text.tpl.html'"]
           p ng-show="!expansionSelector.selected.length" Please select at least one expansion.
   .col-md-3
+    .well
+      ng-include src="'shared/expansion_selector.html'"
     .well.clearfix
       ng-include src="'cards/_index_panel.html'"
     .well

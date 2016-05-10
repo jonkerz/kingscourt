@@ -4,9 +4,9 @@ ng-include src="'shared/expansion_selector.html'"
     .well-t.clearfix
       ng-include src="'shared/_alert-box.html'"
     .well.clearfix ng-show="tab=='randomizer-tab'"
-      ng-include src="'builder/builder_panel_controls.html'"
+      ng-include src="'builder/_index_panel_controls.html'"
     .well.clearfix
-      ng-include src="'builder/builder_panel_kingdom-list.html'"
+      ng-include src="'builder/_index_panel_kingdom.html'"
   .col-md-9
     .well.clearfix
       ul#tabs.nav.nav-tabs data-tabs="tabs"
@@ -16,14 +16,14 @@ ng-include src="'shared/expansion_selector.html'"
           a data-target="#by-name-tab" data-toggle="tab" ng-click="setTab('by-name-tab')" Add Card by Name
       #my-tab-content.tab-content.white-bg
         #randomizer-tab.tab-pane.fade.in.active.clearfix ng-if="tab=='randomizer-tab'"
-          ng-include src="'builder/builder_tab_randomizer.html'"
+          ng-include src="'builder/tabs/randomizer.html'"
         #by-name-tab.tab-pane.fade ng-if="tab=='by-name-tab'"
-          ng-include src="'builder/builder_tab_by-name.html'"
+          ng-include src="'builder/tabs/by_name.html'"
   .col-md-3
     .well-t.clearfix.hidden-xs.hidden-sm
       ng-include src="'shared/_alert-box.html'"
     .well.clearfix.hidden-xs.hidden-sm ng-show="tab=='randomizer-tab'"
-      ng-include src="'builder/builder_panel_controls.html'"
+      ng-include src="'builder/_panel_controls.html'"
     .well.clearfix.hidden-xs.hidden-sm
-      ng-include src="'builder/builder_panel_kingdom-list.html'"
-    ng-include src="'shared/_panel_save.html'"
+      ng-include src="'builder/_index_panel_kingdom.html'"
+    ng-include src="'shared/_index_panel_save.html'"

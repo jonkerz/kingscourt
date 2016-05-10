@@ -1,9 +1,0 @@
-#{{panelId}}.panel-group
-  .panel.panel-default
-    .panel-heading.{{collapsed.?.'collapsed'.:.''}}[data-toggle="collapse" data-parent="#{{panelId}}" href="#{{panelId}}-1"]
-      h4.panel-title
-        a
-          | {{title}}
-    #{{panelId}}-1.panel-collapse.collapse.{{collapsed.?.''.:.'in'}}
-      .panel-body
-        div[ng-transclude]

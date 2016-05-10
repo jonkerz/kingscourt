@@ -21,7 +21,7 @@
         <li ng-class="{ active: isActive('/cards')}"><a href="/#!/cards">Cards</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="loading-spinner"> <!-- .navbar-text, .navbar-btn / etc. to vertically align -->
+        <li class="loading-spinner">
             <a class="fa fa-refresh fa-spin"></a>
         </li>
         <li  ng-show="user.signedIn" ng-class="{ active: isActive('/my_kingdoms')}"><a href="#!/my_kingdoms">My Kingdoms</a>
@@ -34,7 +34,7 @@
           </ul>
         </li>
         <li ng-hide="user.signedIn" ng-controller="ModalCtrl">
-          <a adata-toggle="collapse" adata-target=".navbar-collapse" href="" ng-click="openLogin()">Login/Register</a>
+          <a href="" ng-click="openLogin()">Login/Register</a>
         </li>
       </ul>
     </div>

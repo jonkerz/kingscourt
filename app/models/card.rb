@@ -1,5 +1,7 @@
 class Card < ApplicationRecord
   belongs_to :expansion
+  belongs_to :card_type
+
   has_many :kingdom_cards
   has_many :kingdoms, through: :kingdom_cards
   has_many :card_attribute_links

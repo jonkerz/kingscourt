@@ -1,0 +1,2 @@
+class CardType < ApplicationRecord
+end

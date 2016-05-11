@@ -26,6 +26,7 @@ class CreateExpansions < ActiveRecord::Migration[5.0]
   end
 end
 
+# From dominiondb/dominion/card_choices.py, but starting from 1.
 def expansions
   [
     ['Dominion', 1],

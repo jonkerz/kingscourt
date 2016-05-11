@@ -28,6 +28,10 @@ gem 'ngannotate-rails'
 gem 'dotenv-rails'
 gem 'execjs'
 gem 'therubyracer'
+gem 'kaminari',
+  github: "amatsuda/kaminari",
+  branch: '0-17-stable'
+  # https://github.com/sferik/rails_admin/issues/2628
 
 group :development do
   gem 'web-console'

@@ -18,6 +18,15 @@ GIT
       sprockets (< 4)
 
 GIT
+  remote: git://github.com/amatsuda/kaminari.git
+  revision: ac3ff9594a378b6d811e726f952603d800925289
+  branch: 0-17-stable
+  specs:
+    kaminari (0.17.0.alpha)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+
+GIT
   remote: git://github.com/lynndylanhurley/devise_token_auth.git
   revision: 10863b31270b31cec72a07e1a195aa21686ede2b
   branch: master
@@ -194,9 +203,6 @@ GEM
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
     json (1.8.3)
-    kaminari (0.16.3)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
     libv8 (3.16.14.15)
@@ -381,6 +387,7 @@ DEPENDENCIES
   execjs
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari!
   listen (~> 3.0.5)
   mysql2
   ngannotate-rails

@@ -2,19 +2,19 @@ angular.module('KingsCourt')
 .factory 'ExpansionSelector', ->
   new class ExpansionSelector
     constructor: ->
-      @selected = [0..9]
-      @all = [0..9]
+      @selected = [1..10]
+      @all = [1..10]
       @names = [
-        { id: 0, text: 'Dominion' }
-        { id: 1, text: 'Intrigue' }
-        { id: 2, text: 'Seaside' }
-        { id: 3, text: 'Alchemy' }
-        { id: 4, text: 'Prosperity' }
-        { id: 5, text: 'Cornucopia' }
-        { id: 6, text: 'Hinterlands' }
-        { id: 7, text: 'Dark Ages' }
-        { id: 8, text: 'Guilds' }
-        { id: 9, text: 'Promo' }
+        { id: 1, text: 'Dominion' }
+        { id: 2, text: 'Intrigue' }
+        { id: 3, text: 'Seaside' }
+        { id: 4, text: 'Alchemy' }
+        { id: 5, text: 'Prosperity' }
+        { id: 6, text: 'Cornucopia' }
+        { id: 7, text: 'Hinterlands' }
+        { id: 8, text: 'Dark Ages' }
+        { id: 9, text: 'Guilds' }
+        { id: 10, text: 'Promo' }
       ]
 
     unselected: -> _.difference @all, @selected

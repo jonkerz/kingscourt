@@ -32,6 +32,7 @@ gem 'kaminari',
   github: "amatsuda/kaminari",
   branch: '0-17-stable'
   # https://github.com/sferik/rails_admin/issues/2628
+gem 'less-rails' # For Bootstrap
 
 group :development do
   gem 'web-console'

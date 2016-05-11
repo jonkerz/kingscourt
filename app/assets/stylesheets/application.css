@@ -1,6 +1,9 @@
 /*
- *= require_tree ./copied_vendor_css
  *= require_tree ./copied
+ *= require jquery-ui/themes/base/core
+ *= require jquery-ui/themes/base/draggable
+ *= require jquery-ui/themes/base/slider
+ *= require jquery-ui/themes/base/theme
  *= require_tree ./directives
  *= require_self
  */

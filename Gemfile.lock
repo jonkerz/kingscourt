@@ -178,6 +178,11 @@ GEM
       railties (>= 4.0, < 5.1)
     erubis (2.7.0)
     execjs (2.6.0)
+    factory_girl (4.7.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.7.0)
+      factory_girl (~> 4.7.0)
+      railties (>= 3.0.0)
     ffi (1.9.10)
     formtastic (3.1.4)
       actionpack (>= 3.2.13)
@@ -393,6 +398,7 @@ DEPENDENCIES
   devise_token_auth!
   dotenv-rails
   execjs
+  factory_girl_rails
   jbuilder (~> 2.0)
   jquery-rails
   kaminari!

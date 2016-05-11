@@ -54,6 +54,7 @@ group :test do
   gem 'capybara-webkit'
   gem 'capybara-screenshot'
   gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
 end
 
 group :development, :test do

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160509141458) do
+ActiveRecord::Schema.define(version: 20160511125050) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "namespace"
@@ -27,15 +27,29 @@ ActiveRecord::Schema.define(version: 20160509141458) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
   end
 
+  create_table "card_attribute_links", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "card_id"
+    t.integer  "card_attribute_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["card_attribute_id"], name: "index_card_attribute_links_on_card_attribute_id", using: :btree
+    t.index ["card_id"], name: "index_card_attribute_links_on_card_id", using: :btree
+  end
+
+  create_table "card_attributes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.boolean  "randomizable"
-    t.text     "text",            limit: 65535
+    t.text     "text",         limit: 65535
     t.integer  "expansion_id"
     t.integer  "card_type_id"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-    t.string   "card_attributes"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "favorite_kingdoms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -90,4 +104,6 @@ ActiveRecord::Schema.define(version: 20160509141458) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
   end
 
+  add_foreign_key "card_attribute_links", "card_attributes"
+  add_foreign_key "card_attribute_links", "cards"
 end

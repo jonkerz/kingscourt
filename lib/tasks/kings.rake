@@ -18,21 +18,40 @@ namespace :kings do
     end
   end
 
-  # Should be denormalized, but lets's start like this.
-  desc 'Import "extra_field" exported from Django/Postgres'
-  task import_extra_field: :environment do
+  desc 'Import card attributes'
+  task import_card_attributes: :environment do
+    unique_card_attributes = Set.new
+
     cvs_from_django.each do |row|
       card = row.to_hash
-
       ids = card["extra_field"].split(",") # "24,214"
-      as_string = ids.map do |id|
+      names = ids.map do |id|
         EXTRA_FIELD[id.to_i]
-      end.join(",")
-
-      Card.find(card["id"])
-        .update_attributes card_attributes: as_string
-      puts "Added this ids --> #{as_string}"
+      end
+      unique_card_attributes.merge names
     end
+
+    unique_card_attributes.each do |attribute|
+      CardAttribute.create! name: attribute
+    end
+  end
+
+  desc 'Import card attribute links'
+  task import_card_attribute_links: :environment do
+    cvs_from_django.each do |row|
+      card = row.to_hash
+      ids = card["extra_field"].split(",") # "24,214"
+      names = ids.map do |id|
+        EXTRA_FIELD[id.to_i]
+      end
+
+      db_card = Card.find(card["id"])
+      names.each do |name|
+        attribute = CardAttribute.find_by(name: name)
+        db_card.card_attributes << attribute
+      end
+    end
+
   end
 
   private

@@ -1,0 +1,2 @@
+class CardAttribute < ApplicationRecord
+end

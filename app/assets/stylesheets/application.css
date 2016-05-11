@@ -7,6 +7,6 @@
  *= require jquery-ui/themes/base/slider
  *= require jquery-ui/themes/base/theme
  *
- *= require_tree ./copied
+ *= require_tree ./site
  *= require_tree ./directives
  */

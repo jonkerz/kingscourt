@@ -17,7 +17,6 @@ KingsCourt = angular.module 'KingsCourt', [
   'ngRoute'
   'ngSanitize'
   'ngStorage'
-  'angular-growl'
   'angularUtils.directives.dirPagination'
   'checklist-model'
   'ng-token-auth'

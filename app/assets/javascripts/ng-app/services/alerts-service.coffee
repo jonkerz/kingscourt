@@ -1,6 +1,6 @@
 angular.module 'KingsCourt'
 
-.factory 'Alerts', (growl) ->
+.factory 'Alerts', ->
   new class Alerts
     constructor: -> @alerts = []
 
@@ -8,10 +8,6 @@ angular.module 'KingsCourt'
       @alerts.push
         message: message
         type: type ? 'info'
-      type = 'info'
-      #growl.info "No card found!."
-      growl[type] message
-      console.log message, type
 
     clearAlerts: -> @alerts.splice 0, @alerts.length
 

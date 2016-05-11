@@ -11,7 +11,6 @@
 //= require autofill-event/src/autofill-event
 //= require checklist-model/checklist-model
 //= require lodash/lodash
-//= require angular-growl-v2/build/angular-growl
 //= require angular-sanitize/angular-sanitize
 //= require ngstorage/ngStorage
 

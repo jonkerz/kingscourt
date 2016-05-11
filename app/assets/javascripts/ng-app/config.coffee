@@ -6,11 +6,6 @@ angular.module 'KingsCourt'
   'CARD_MAX_COST': 8
   'KINGDOM_SIZE': 10
 
-.config (growlProvider) ->
-  growlProvider.globalTimeToLive 2000
-  growlProvider.globalDisableCountDown true
-  growlProvider.globalDisableIcons true
-
 .config (paginationTemplateProvider) ->
   paginationTemplateProvider.setPath 'directives/dir-pagination.tpl.html'
 

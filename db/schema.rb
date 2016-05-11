@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160511125050) do
+ActiveRecord::Schema.define(version: 20160511143252) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "namespace"
@@ -45,11 +45,13 @@ ActiveRecord::Schema.define(version: 20160511125050) do
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.boolean  "randomizable"
-    t.text     "text",         limit: 65535
+    t.text     "text",          limit: 65535
     t.integer  "expansion_id"
     t.integer  "card_type_id"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "cost_in_coins"
+    t.string   "cost"
   end
 
   create_table "favorite_kingdoms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

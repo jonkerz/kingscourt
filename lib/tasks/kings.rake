@@ -51,7 +51,15 @@ namespace :kings do
         db_card.card_attributes << attribute
       end
     end
+  end
 
+  desc 'Import cost/cost in coins'
+  task import_costs: :environment do
+    cvs_from_django.each do |row|
+      card = row.to_hash
+      Card.find(card["id"]).update_attributes cost: card["cost_txt"],
+        cost_in_coins: card["cost_in_coins"].to_i
+    end
   end
 
   private

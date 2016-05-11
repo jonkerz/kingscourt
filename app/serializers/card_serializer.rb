@@ -11,14 +11,6 @@ class CardSerializer < ActiveModel::Serializer
     object.expansion_id
   end
 
-  def cost
-    "2"
-  end
-
-  def cost_in_coins
-    2
-  end
-
   def card_attributes
     object.card_attributes.pluck :name
   end

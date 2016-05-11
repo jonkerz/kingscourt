@@ -1,4 +1,5 @@
-angular.module('KingsCourt')
+angular.module 'KingsCourt'
+
 .config ($routeProvider) ->
   $routeProvider.when '/',
     title: 'Generator'

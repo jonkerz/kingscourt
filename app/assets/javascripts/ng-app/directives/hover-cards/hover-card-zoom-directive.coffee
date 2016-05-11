@@ -1,4 +1,5 @@
-angular.module('KingsCourt')
+angular.module 'KingsCourt'
+
 .directive 'hoverCardZoom', ->
   restrict: 'E'
   templateUrl: 'directives/dominion-card-zoom.tpl.html'

@@ -1,4 +1,5 @@
-angular.module('KingsCourt')
+angular.module 'KingsCourt'
+
 .controller 'MyKingdomsCtrl', ($scope, $controller) ->
   $controller 'KingdomCtrl', $scope: $scope
 

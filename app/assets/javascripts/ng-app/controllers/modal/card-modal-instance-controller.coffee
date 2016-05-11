@@ -1,4 +1,5 @@
-angular.module('KingsCourt')
+angular.module 'KingsCourt'
+
 .controller 'CardModalInstanceCtrl', ($scope, $modalInstance, Kingdom) ->
   $scope.card = $scope.params.card
   $scope.kingdom = Kingdom.getOrCreate 'builder'

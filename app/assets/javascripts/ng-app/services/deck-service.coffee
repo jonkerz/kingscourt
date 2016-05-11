@@ -1,4 +1,5 @@
-angular.module("KingsCourt")
+angular.module "KingsCourt"
+
 .factory "Deck", (Alerts, Card, growl) ->
   new class Deck
     constructor: ->

@@ -1,4 +1,5 @@
-angular.module('KingsCourt')
+angular.module 'KingsCourt'
+
 .controller 'SaveCtrl', ($scope, Alerts, API) ->
   $scope.editingKingdom = !!$scope.kingdom.id? if $scope.kingdom
 

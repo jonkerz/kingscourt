@@ -1,4 +1,5 @@
-angular.module('KingsCourt')
+angular.module 'KingsCourt'
+
 .factory 'ExpansionSelector', ->
   new class ExpansionSelector
     constructor: ->

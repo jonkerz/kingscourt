@@ -1,4 +1,5 @@
-angular.module('KingsCourt')
+angular.module 'KingsCourt'
+
 .factory 'Alerts', (growl) ->
   new class Alerts
     constructor: -> @alerts = []

@@ -42,7 +42,8 @@ class KingdomHack
 
   idIsBanned: (id) -> !!_(@bannedCards).find id: id
 
-angular.module('KingsCourt')
+angular.module 'KingsCourt'
+
 .factory 'Kingdom', ($injector) ->
   new class Kingdom
     constructor: ->

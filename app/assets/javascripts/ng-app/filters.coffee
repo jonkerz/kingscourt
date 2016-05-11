@@ -1,4 +1,5 @@
-angular.module('KingsCourt')
+angular.module 'KingsCourt'
+
 .filter 'expansionToString', ->
   ExpansionEnum =
     0: 'Dominion'
@@ -12,11 +13,10 @@ angular.module('KingsCourt')
     8: 'Guilds'
     9: 'Promo'
 
-  (exp) ->
-    ExpansionEnum[exp]
+  (exp) -> ExpansionEnum[exp]
 
 .filter 'replaceSpaces', ->
   (str) ->
-    return str    if str is undefined
+    return str if str is undefined
     str = str.replace(/'/g, '')
     str.replace RegExp(' ', 'g'), '_'

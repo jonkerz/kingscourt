@@ -1,4 +1,5 @@
-angular.module('KingsCourt')
+angular.module 'KingsCourt'
+
 .controller 'ImportCtrl', ($http, $scope, $location, Kingdom, Card, API) ->
   $scope.kingdom = Kingdom.getOrCreate 'generator'
 

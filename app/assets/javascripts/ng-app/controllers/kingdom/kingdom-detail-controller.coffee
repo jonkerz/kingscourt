@@ -1,4 +1,5 @@
-angular.module('KingsCourt')
+angular.module 'KingsCourt'
+
 .controller 'KingdomDetailCtrl', ($rootScope, $scope, $location, $routeParams, Alerts, Kingdom, API) ->
   id = $routeParams.id
 

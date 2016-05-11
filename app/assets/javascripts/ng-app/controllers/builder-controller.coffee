@@ -1,4 +1,5 @@
-angular.module('KingsCourt')
+angular.module 'KingsCourt'
+
 .controller 'BuilderCtrl', ($scope, API, Deck, ExpansionSelector, Randomizer, Kingdom) ->
   $scope.randomizer = Randomizer # minCost & maxCost
   $scope.expansionSelector = ExpansionSelector

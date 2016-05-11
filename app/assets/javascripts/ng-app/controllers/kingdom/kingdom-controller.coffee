@@ -1,4 +1,5 @@
-angular.module('KingsCourt')
+angular.module 'KingsCourt'
+
 .controller 'KingdomCtrl', ($scope, $location, $timeout, Alerts, API, ExpansionSelector, Card) ->
   $scope.kingdoms = []
   $scope.totalKingdoms = 'not set'

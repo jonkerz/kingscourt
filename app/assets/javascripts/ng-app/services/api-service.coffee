@@ -1,4 +1,5 @@
-angular.module('KingsCourt')
+angular.module 'KingsCourt'
+
 .factory 'API', ($resource, $http, $q, API_SERVER, Card) ->
   new class API
     deserializeCards = (cards) ->

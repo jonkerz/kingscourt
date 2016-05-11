@@ -1,4 +1,5 @@
-angular.module("KingsCourt")
+angular.module "KingsCourt"
+
 .directive "trash", ($compile) ->
   restrict: "A"
   link: (scope, element, attrs) ->

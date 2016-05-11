@@ -1,4 +1,5 @@
-angular.module('KingsCourt')
+angular.module 'KingsCourt'
+
 .controller 'GeneratorCtrl', ($http, $scope, $location, ExpansionSelector, Deck, Kingdom) ->
   $scope.kingdom = Kingdom.getOrCreate 'generator'
 

@@ -1,4 +1,5 @@
-angular.module('KingsCourt')
+angular.module 'KingsCourt'
+
 .controller 'ModalInstanceCtrl', ($scope, $modalInstance) ->
   $scope.$on 'auth:login-success', (event, mass) -> $modalInstance.close()
 

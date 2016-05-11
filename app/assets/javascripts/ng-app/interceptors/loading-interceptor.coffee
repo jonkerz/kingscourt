@@ -1,4 +1,5 @@
-angular.module('KingsCourt')
+angular.module 'KingsCourt'
+
 .factory 'LoadingInterceptor', ($q, $timeout) ->
   request: (config) ->
     angular.element('.loading-spinner').show()

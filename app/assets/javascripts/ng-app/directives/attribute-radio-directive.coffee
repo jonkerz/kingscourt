@@ -1,4 +1,5 @@
-angular.module("KingsCourt")
+angular.module "KingsCourt"
+
 .directive "attributeRadio", ->
   restrict: "E"
   replace: true

@@ -1,4 +1,5 @@
-angular.module("KingsCourt")
+angular.module "KingsCourt"
+
 .directive "costSlider", (Randomizer, APP_CONFIG) ->
   restrict: "A"
   link: (scope, element, attrs) ->

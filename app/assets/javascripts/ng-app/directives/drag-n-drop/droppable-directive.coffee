@@ -1,4 +1,5 @@
-angular.module("KingsCourt")
+angular.module "KingsCourt"
+
 .directive "droppable", ($compile) ->
   restrict: "A"
   link: (scope, element, attrs) ->

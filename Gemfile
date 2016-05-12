@@ -11,7 +11,6 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'bower-rails', '~> 0.10.0'
 gem 'slim-rails'
-gem 'slim', require: 'slim/smart'
 gem 'angular-rails-templates'
 gem 'activeadmin', github: 'activeadmin'
 gem 'active_model_serializers',

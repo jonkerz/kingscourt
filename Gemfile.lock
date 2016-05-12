@@ -421,7 +421,6 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   selenium-webdriver
   shoulda-matchers
-  slim
   slim-rails
   slugify
   spring

@@ -19,3 +19,5 @@ Capybara::Webkit.configure do |config|
   config.block_unknown_urls
   config.allow_url "192.168.1.74" # old API server (Django)
 end
+
+World FactoryGirl::Syntax::Methods

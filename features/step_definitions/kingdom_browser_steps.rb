@@ -1,22 +1,16 @@
-# TODO add factories
 # Base game
 Given /^there is a kingdom by Joffre$/ do
-  name = "Joffre"
-  step %Q[there is a user named "#{name}"]
   step 'there are some cards'
-  user = User.find_by(username: name)
-  kingdom = Kingdom.create! name: "#{name}'s Kingdom", user: user
-  kingdom.cards << Card.first << Card.second
+  create :kingdom, name: "Joffre's Kingdom",
+    cards: [Card.first, Card.second]
 end
 
 # Intrigue
 Given /^there is a kingdom by Batiatus$/ do
-  name = "Batiatus"
-  step %Q[there is a user named "#{name}"]
   step 'there are some cards'
-  user = User.find_by(username: name)
-  kingdom = Kingdom.create! name: "#{name}'s Kingdom", user: user
-  kingdom.cards << Card.last
+  name = "Batiatus"
+  create :kingdom, name: "#{name}'s Kingdom",
+    user: create(:user, username: name), cards: [Card.last]
 end
 
 Then /^I should see (\d+) kingdoms?$/ do |number|

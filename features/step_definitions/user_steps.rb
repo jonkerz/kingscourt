@@ -6,14 +6,16 @@ Then /^I should see the login modal$/ do
   expect(page).to have_css(".modal-content")
 end
 
-Given /^there is a user(?: named "([^"]+)")?$/ do |name|
-  name ||= "Joffre"
-  User.create email: "#{name.downcase}@example.com",
-    password: "secret123", username: name
+Given /^there is a user(?: named "([^"]+)")?$/ do |username|
+  if username
+    create :user, username: username
+  else
+    create :user
+  end
 end
 
 Given /^I am logged in$/ do # TODO
-  step 'there is a user'
+  create :user
   step 'I am on the home page'
   step 'I login in via the web interface'
 end

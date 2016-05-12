@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe User do
   describe "validations" do
-    subject { build_user }
+    subject { create :user }
 
     it { should validate_presence_of(:email) }
 
@@ -15,10 +15,4 @@ describe User do
     it { should_not allow_value('^username').for(:username) }
     it { should_not allow_value('usernäme').for(:username) }
   end
-end
-
-def build_user
-  User.new email: "king@example.com",
-    password: "secret123",
-    username: "Joffre"
 end

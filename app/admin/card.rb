@@ -20,7 +20,7 @@ ActiveAdmin.register Card do
     column :card_type_id
     column "Image" do |card|
       span do
-        image_tag card.image, width: 100
+        image_tag "/cards/#{card.image}", width: 100
       end
     end
     column 'Attributes' do |card|
@@ -30,7 +30,7 @@ ActiveAdmin.register Card do
   end
 
   index as: :grid, columns: 5 do |card|
-    link_to image_tag(card.image), admin_card_path(card)
+    link_to image_tag("/cards/#{card.image}"), admin_card_path(card)
   end
 
   show do
@@ -67,7 +67,7 @@ ActiveAdmin.register Card do
 
   sidebar :image, only: [:show, :edit] do
     @card = Card.find(params[:id])
-    image_tag @card.image, width: 200
+    image_tag "/cards/#{@card.image}", width: 200
   end
 
   controller do

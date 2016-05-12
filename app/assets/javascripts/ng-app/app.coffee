@@ -4,11 +4,7 @@ angular.element(document).ready ->
   $http = initInjector.get '$http'
 
   $http.get("/api/get_cards/").then (response) ->
-    cards = response.data
-    for card in cards
-      card.image = (card.name).replace(RegExp(' ', 'g'), '_').replace(/'/g, '') + '.jpg'
-
-    KingsCourt.constant 'Cards', cards
+    KingsCourt.constant 'Cards', response.data
     angular.bootstrap document, ['KingsCourt']
 
 KingsCourt = angular.module 'KingsCourt', [

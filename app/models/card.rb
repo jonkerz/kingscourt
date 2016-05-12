@@ -12,6 +12,6 @@ class Card < ApplicationRecord
 
   def image
     base_filename = self.name.gsub(" ", "_").gsub("'", "")
-    "/cards/#{base_filename}.jpg"
+    "#{base_filename}.jpg"
   end
 end

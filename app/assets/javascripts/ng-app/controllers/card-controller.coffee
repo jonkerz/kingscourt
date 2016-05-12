@@ -4,10 +4,7 @@ angular.module 'KingsCourt'
   $scope.allCards = Card.cards
 
   $http.get('/api/get_non_randomizers', { cache: true }).then (response) -> #TODO
-    cards = response.data
-    for card in cards
-      card.image = (card.name).replace(RegExp(' ', 'g'), '_').replace(/'/g, '') + '.jpg'
-    $scope.allCards = $scope.allCards.concat cards
+    $scope.allCards = $scope.allCards.concat response.data
 
   $scope.currentPage = 1
   $scope.displayMode = 'images'

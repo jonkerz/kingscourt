@@ -9,4 +9,9 @@ class Card < ApplicationRecord
 
   validates :name, presence: true
   validates :expansion_id, presence: true
+
+  def image
+    base_filename = self.name.gsub(" ", "_").gsub("'", "")
+    "/cards/#{base_filename}.jpg"
+  end
 end

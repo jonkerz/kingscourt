@@ -9,7 +9,7 @@ FactoryGirl.define do
     expansion_id 1
     expansion
 
-    after(:create) do |card, evaluator|
+    after :create do |card, evaluator|
       if evaluator.card_attributes.present?
         evaluator.card_attributes.each do |card_attribute|
           card.card_attributes << card_attribute
@@ -34,7 +34,7 @@ FactoryGirl.define do
     end
     name "Ancient Kingdom"
     user
-    after(:create) do |kingdom, evaluator|
+    after :create do |kingdom, evaluator|
       if evaluator.cards.present?
         evaluator.cards.each do |card|
           kingdom.cards << card

@@ -1,7 +1,8 @@
 @javascript
 Feature: Favorites
   Background:
-    Given I am logged in
+    Given there are some cards
+    And I am logged in
     And there is a kingdom by Joffre
     And there is a kingdom by Batiatus
     And I am on the home page

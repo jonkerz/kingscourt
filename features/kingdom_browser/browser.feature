@@ -1,7 +1,8 @@
 @javascript
 Feature: Kingdom browser
   Background:
-    Given there is a kingdom by Batiatus
+    Given there are some cards
+    And there is a kingdom by Batiatus
     And I am on the home page
     And I follow "Browse Kingdoms"
 

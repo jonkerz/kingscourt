@@ -11,7 +11,10 @@ angular.module 'KingsCourt'
       description: kingdom.description
 
     API.kingdoms.save data, (data) ->
-      Alerts.addAlert "Saved <a href=\"#!/kingdoms/#{data.id}/#{data.slug}/\">#{data.name}</a>.", 'success'
+      kingdom = data.kingdom
+      url = "#!/kingdoms/#{kingdom.id}/#{kingdom.slug}"
+      Alerts.addAlert """Successfully saved \
+        <a href="#{url}">#{kingdom.name}</a>."""
 
   $scope.update = ->
     kingdom = $scope.kingdom

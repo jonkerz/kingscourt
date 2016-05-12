@@ -14,4 +14,8 @@ class Kingdom < ApplicationRecord
   def favorited_by? user
     !!FavoriteKingdom.find_by(kingdom: self, user: user)
   end
+
+  def slug
+    self.name.slugify
+  end
 end

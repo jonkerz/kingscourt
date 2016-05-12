@@ -7,10 +7,6 @@ class KingdomSerializer < ActiveModel::Serializer
     object.cards.pluck :id
   end
 
-  def slug
-    "fake-slug"
-  end
-
   def username
     object.user.username
   end

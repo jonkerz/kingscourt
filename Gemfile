@@ -34,6 +34,7 @@ gem 'kaminari',
   # https://github.com/sferik/rails_admin/issues/2628
 gem 'less-rails' # For Bootstrap
 gem 'paper_trail'
+gem 'slugify'
 
 group :development do
   gem 'web-console'

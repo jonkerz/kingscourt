@@ -33,6 +33,7 @@ gem 'kaminari',
   branch: '0-17-stable'
   # https://github.com/sferik/rails_admin/issues/2628
 gem 'less-rails' # For Bootstrap
+gem 'paper_trail'
 
 group :development do
   gem 'web-console'

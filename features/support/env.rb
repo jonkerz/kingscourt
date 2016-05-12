@@ -1,4 +1,5 @@
 require 'cucumber/rails'
+require 'paper_trail/frameworks/cucumber'
 
 ActionController::Base.allow_rescue = false
 DatabaseCleaner.strategy = :transaction

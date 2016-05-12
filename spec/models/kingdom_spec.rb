@@ -15,4 +15,10 @@ describe Kingdom do
       end
     end
   end
+
+  describe "versioning" do
+    with_versioning do
+      it { is_expected.to be_versioned }
+    end
+  end
 end

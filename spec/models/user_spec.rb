@@ -15,4 +15,10 @@ describe User do
     it { should_not allow_value('^username').for(:username) }
     it { should_not allow_value('usernäme').for(:username) }
   end
+
+  describe "versioning" do
+    with_versioning do
+      it { is_expected.to be_versioned }
+    end
+  end
 end

@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_paper_trail
+
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
   include DeviseTokenAuth::Concerns::User

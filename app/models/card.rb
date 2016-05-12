@@ -6,4 +6,7 @@ class Card < ApplicationRecord
   has_many :kingdoms, through: :kingdom_cards
   has_many :card_attribute_links
   has_many :card_attributes, through: :card_attribute_links
+
+  validates :name, presence: true
+  validates :expansion_id, presence: true
 end

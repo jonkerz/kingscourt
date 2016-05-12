@@ -11,7 +11,7 @@ class Kingdom < ApplicationRecord
     FavoriteKingdom.where(kingdom: self).count
   end
 
-  def favorited_by? user # TODO
+  def favorited_by? user
     !!FavoriteKingdom.find_by(kingdom: self, user: user)
   end
 end

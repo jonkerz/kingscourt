@@ -1,5 +1,3 @@
-# TODO
-
 module Api::V1
   class KingdomsController < ApiController
     before_action :set_kingdom, only: [:show, :update]

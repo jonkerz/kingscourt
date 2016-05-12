@@ -14,7 +14,7 @@ Given /^there is a user(?: named "([^"]+)")?$/ do |username|
   end
 end
 
-Given /^I am logged in$/ do # TODO
+Given /^I am logged in$/ do
   create :user
   step 'I am on the home page'
   step 'I login in via the web interface'

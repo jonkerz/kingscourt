@@ -9,8 +9,8 @@ Then /^I should see (\d+) face up cards$/ do |number|
 end
 
 Given /^there are some cards$/ do
-  create :card, name: "Chapel"
-  create :card, name: "Militia"
+  create :card, name: "Chapel", expansion_id: 1
+  create :card, name: "Militia", expansion_id: 1
   create :card, name: "Masquerade", expansion_id: 2
 end
 

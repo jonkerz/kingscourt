@@ -1,7 +1,4 @@
 ActiveAdmin.register Card do
-  permit_params :name, :randomizable, :text,
-    :expansion_id, :card_type_id
-
   filter :card_attributes, as: :check_boxes
   preserve_default_filters!
 
@@ -38,8 +35,21 @@ ActiveAdmin.register Card do
 
   form do |f|
     f.inputs "Attributes" do
+      f.input :name
+      f.input :randomizable
+      f.input :cost
+      f.input :cost_in_coins
+      f.input :text
+      f.input :expansion
+      f.input :card_type
       f.input :card_attributes, as: :check_boxes
     end
     f.actions
+  end
+
+  controller do
+    def permitted_params
+      params.permit!
+    end
   end
 end

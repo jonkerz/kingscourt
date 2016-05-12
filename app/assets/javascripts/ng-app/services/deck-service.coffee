@@ -36,9 +36,11 @@ angular.module "KingsCourt"
         @deck.splice i, 1 if removeCard
       "coffee"
 
-    excludeByExpansion: (expansion) -> @_excludeByX "expansion", expansion
+    excludeByExpansion: (expansions) ->
+      @_excludeByX "expansion_id", expansions
 
-    excludeByCost: (cost) -> @_excludeByX "cost_in_coins", cost
+    excludeByCost: (cost) ->
+      @_excludeByX "cost_in_coins", cost
 
     _excludeByX: (param, values) ->
       return if values.length is 0

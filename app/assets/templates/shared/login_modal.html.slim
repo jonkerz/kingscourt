@@ -1,27 +1,33 @@
-.modal-body
-  div
-    h4 Login
-    p.text-danger ng-show="loginError" {{loginError}}
-    form ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}" ng-if="!user.signedIn"
+#login-modal.modal-body
+  button type="button" class="close" ng-click="cancel()" aria-label="Close"
+    span aria-hidden="true" &times;
+
+  p.text-danger {{authErrors}}
+
+  #login
+    form role="form" ng-init="loginForm = {}" ng-if="!user.signedIn"
       .form-group
-        label for="login-email" Email address
-        input#login-email.form-control type="email" ng-model="loginForm.email" placeholder="Email"
+        label for="login-email" Email
+        input#login-email.form-control type="email" ng-model="loginForm.email" required="required"
       .form-group
         label for="login-password" Password
-        input#login-password.form-control type="password" ng-model="loginForm.password" placeholder="Password"
-      button.btn.btn-primary.btn-sm type="submit" Login
-      button.btn.btn-warning.btn-sm ng-click="cancel()" Cancel
-    h4 Register
-    p.text-danger ng-show="registerError" {{registerError}}
-    form ng-submit="submitRegistration(registrationForm)" role="form" ng-init="registrationForm = {}"
+        input#login-password.form-control type="password" ng-model="loginForm.password" required="required"
+      button.btn.btn-primary.btn-sm> type="submit" ng-click="login(loginForm)" Login
+      button.btn.btn-warning.btn-sm ng-click="toggleLoginRegistration()" Registration
+
+  #register
+    form role="form" ng-init="registrationForm = {}"
       .form-group
-        label email
-        input.form-control type="email" name="email" ng-model="registrationForm.email" required="required"
+        label Username
+        input#register-username.form-control name="username" ng-model="registrationForm.username" required="required"
       .form-group
-        label password
-        input.form-control type="password" name="password" ng-model="registrationForm.password" required="required"
+        label Email
+        input#register-email.form-control type="email" name="email" ng-model="registrationForm.email" required="required"
       .form-group
-        label password confirmation
-        input.form-control type="password" name="password_confirmation" ng-model="registrationForm.password_confirmation" required="required"
-      button.btn.btn-primary.btn-sm type="submit" Register
-      button.btn.btn-warning.btn-sm ng-click="cancel()" Cancel
+        label Password
+        input#register-password.form-control type="password" name="password" ng-model="registrationForm.password" required="required"
+      .form-group
+        label Password confirmation
+        input#register-password-confirmation.form-control type="password" name="password_confirmation" ng-model="registrationForm.password_confirmation" required="required"
+      button.btn.btn-primary.btn-sm> type="submit" ng-click="register(registrationForm)" Register
+      button.btn.btn-warning.btn-sm ng-click="toggleLoginRegistration()" Back to login

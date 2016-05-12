@@ -20,9 +20,15 @@ AfterStep '@single_step' do
   single_step
 end
 
-if ENV['SINGLE_STEP'] || ENV['SS']
+# "Single Step Selenium"
+# "Single Step Pry"
+if ENV['SS'] || ENV['SSS'] || ENV['SSP']
   AfterStep do
-    single_step
+    if ENV['SSP']
+      binding.pry
+    else
+      single_step
+    end
   end
 end
 

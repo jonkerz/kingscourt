@@ -50,6 +50,7 @@ FactoryGirl.define do
     username "Joffre"
     email { "#{username.downcase}@example.com" }
     password "secret123"
+    password_confirmation "secret123"
   end
 
   factory :favorite_kingdom do

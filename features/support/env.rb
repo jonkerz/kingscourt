@@ -7,7 +7,9 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 Capybara.default_driver = :webkit
 
 Capybara.javascript_driver = :webkit
-if ENV['DRIVER'] == 'selenium' || ENV['SEL']
+if ENV['DRIVER'] == 'selenium' || ENV['SEL'] || ENV['SSS'] || ENV['SSP']
+  # "Single Step Selenium"
+  # "Single Step Pry"
   puts "Enabling selenium driver..."
   Capybara.javascript_driver = :selenium
 end
@@ -18,7 +20,6 @@ Capybara::Screenshot.webkit_options = { width: 1024, height: 768 }
 
 Capybara::Webkit.configure do |config|
   config.block_unknown_urls
-  config.allow_url "192.168.1.74" # old API server (Django)
 end
 
 World FactoryGirl::Syntax::Methods

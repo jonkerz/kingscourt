@@ -33,3 +33,17 @@ Feature: User
 
     When I reload the page
     Then I should still be logged in
+
+  Scenario: Register
+    When I follow "Login/Register"
+    And I click on the registration link
+    And I fill in "register-email" with "new@example.com"
+    And I fill in "register-username" with "Joffre"
+    And I fill in "register-password" with "secret123"
+    And I fill in "register-password-confirmation" with "secret123"
+    And I press "Register"
+    Then I should see "Username has already been taken"
+
+    When I fill in "register-username" with "Archibald"
+    And I press "Register"
+    Then I should be logged in

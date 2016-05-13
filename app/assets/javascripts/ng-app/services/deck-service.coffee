@@ -8,9 +8,9 @@ angular.module "KingsCourt"
 
     deckSize: -> @deck.length
 
-    reset: (cardsInKingdom, bannedCards) ->
+    reset: (cardsInKingdom) ->
       @deck = @cards.slice()
-      @removeCardById card.id for card in cardsInKingdom.concat bannedCards
+      @removeCardById card.id for card in cardsInKingdom
 
     removeCardById: (id) -> @deck.splice _(@deck).findIndex(id: id), 1
 

@@ -22,7 +22,7 @@ angular.module 'KingsCourt'
     scope.params = card: card
 
     modalInstance = $modal.open
-      templateUrl: 'card-modal.html'
+      templateUrl: 'shared/_card_modal.html'
       controller: 'BuilderCardModalInstanceCtrl'
       size: 'sm'
       scope: scope

@@ -5,7 +5,6 @@ angular.module 'KingsCourt'
   $scope.kingdom = Kingdom.getOrCreate 'builder'
 
   cardId = $scope.card.id
-  $scope.isBanned = $scope.kingdom.idIsBanned cardId
   $scope.isAdded = $scope.kingdom.idIsAdded cardId
 
   $scope.ok = -> $modalInstance.close()

@@ -19,14 +19,12 @@ angular.module 'KingsCourt'
   $scope.cardStatus = (card) ->
     if $scope.kingdom.idIsAdded card.id
       'btn-primary'
-    else if $scope.kingdom.idIsBanned card.id
-      'btn-danger'
     else
       'btn-success'
 
   $scope.randomCard = ->
     collectAttributes()
-    Deck.reset $scope.kingdom.cards, $scope.kingdom.bannedCards
+    Deck.reset $scope.kingdom.cards
     Deck.excludeByExpansion ExpansionSelector.unselected()
     Deck.excludeByCost Randomizer.costsNot()
     Deck.excludeByAttributes Randomizer.cardAttributesYes, Randomizer.cardAttributesNo

@@ -12,7 +12,4 @@ angular.module "KingsCourt"
         if scope.kingdom.idIsAdded card.id
           scope.kingdom.removeCard card
 
-        else if scope.kingdom.idIsBanned card.id
-          scope.kingdom.unbanCard card
-
         scope.$apply()

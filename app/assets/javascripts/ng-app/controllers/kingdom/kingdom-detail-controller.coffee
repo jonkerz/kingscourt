@@ -19,7 +19,7 @@ angular.module 'KingsCourt'
 
   $scope.deleteKingdom = (id) ->
     API.kingdoms.delete id: id, (data) ->
-      Alerts.addAlert "Deleted \"#{$scope.kingdom.name}\".", 'danger'
+      Alerts.addAlert """Deleted "#{$scope.kingdom.name}"."""
       $location.path 'my_kingdoms'
 
   $scope.openInBuilder = ->
@@ -29,6 +29,5 @@ angular.module 'KingsCourt'
     builderKingdom.name = $scope.kingdom.name
     builderKingdom.cards = $scope.kingdom.cards
     builderKingdom.description = $scope.kingdom.description
-    builderKingdom.public = $scope.kingdom.public
 
     $location.path 'builder'

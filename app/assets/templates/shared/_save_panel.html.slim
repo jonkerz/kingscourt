@@ -7,7 +7,10 @@ panel-collapse title="Save Kingdom"
       a> href="" ng-click="openLogin()" register
       | an account.
   div ng-show="user.signedIn" ng-controller="SaveCtrl"
-    input#kingdom-name.form-control.input-small type="text" placeholder="Kingdom name" ng-model="kingdom.name"
+    input#kingdom-name.form-control.input-small ng-hide="kingdom.id" type="text" placeholder="Kingdom name" ng-model="kingdom.name"
+    p ng-show="kingdom.id" {{kingdom.name}}
+
     textarea#kingdom-description.form-control.input-small rows="2" placeholder="Optional description" ng-model="kingdom.description"
-    button.btn.btn-success.btn-md ng-click="save()" Save Kingdom
+
+    button.btn.btn-success.btn-md ng-hide="kingdom.id" ng-click="save()" Save Kingdom
     button.btn.btn-success.btn-md ng-show="editingKingdom" ng-click="update()" Update Kingdom

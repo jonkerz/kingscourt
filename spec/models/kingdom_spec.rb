@@ -23,6 +23,20 @@ describe Kingdom do
     end
   end
 
+  describe "#can_be_edited_by?" do
+    let!(:creator) { create :user, username: "Creator" }
+    let!(:kingdom) { build :kingdom, user: creator }
+
+    it "allows creators to edit their own kingdoms" do
+      expect(kingdom.can_be_edited_by? creator).to be true
+    end
+
+    it "show not be possible to edit other users' kingdoms" do
+      another_user = create :user, username: "OtherUser"
+      expect(kingdom.can_be_edited_by? another_user).to be false
+    end
+  end
+
   describe "#slug" do
     it "slugifies" do
       [ ["Hállå", "halla"],

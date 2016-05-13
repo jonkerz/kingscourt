@@ -16,6 +16,7 @@ end
 Given /^there is a kingdom by Joffre$/ do
   build(:kingdom,
     name: "Joffre's Kingdom",
+    description: "Very dangerous kingdom.",
     cards: Card.where(expansion_id: 1).take(10)
   ).save!
 end

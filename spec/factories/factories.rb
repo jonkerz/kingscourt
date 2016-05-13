@@ -10,6 +10,8 @@ FactoryGirl.define do
     randomizable true
     expansion_id 1
     expansion
+    cost "2"
+    cost_in_coins 2
 
     after :create do |card, evaluator|
       if evaluator.card_attributes.present?

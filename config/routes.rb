@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :kingdoms, only: [:index, :show, :create, :update]
+      resources :kingdoms, only: [:index, :show, :create, :update, :destroy]
       resources :cards, only: [:index]
       resources :expansions, only: [:index]
       scope :u do

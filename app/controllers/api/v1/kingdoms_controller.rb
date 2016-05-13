@@ -1,8 +1,9 @@
 module Api::V1
   class KingdomsController < ApiController
-    before_action :set_kingdom, only: [:show, :update]
-    before_action :authenticate_user!, except: [:index, :show]
     include CleanPagination
+    before_action :set_kingdom, only: [:show, :update, :destroy]
+    before_action :check_can_be_edited_by, only: [:update, :destroy]
+    before_action :authenticate_user!, except: [:index, :show]
 
     def index
       @kingdoms = build_results
@@ -32,13 +33,34 @@ module Api::V1
     end
 
     def update
-      @kingdom.update! kingdom_params
-      render json: :ok
+      @kingdom.card_ids = params[:card_ids]
+      if @kingdom.update kingdom_params
+        render json: @kingdom
+      else
+        json = { errors: @kingdom.errors.full_messages.join(", ")}
+        render json: json, status: :unprocessable_entity
+      end
+    end
+
+    def destroy
+      if @kingdom.destroy
+        render json: {}, status: :ok
+      else
+        json = { errors: @kingdom.errors.full_messages.join(", ")}
+        render json: json, status: :unprocessable_entity
+      end
     end
 
     private
       def set_kingdom
         @kingdom = Kingdom.find params[:id]
+      end
+
+      def check_can_be_edited_by
+        unless @kingdom.can_be_edited_by? current_user
+          render json: {}, status: :unauthorized
+          return
+        end
       end
 
       def build_results

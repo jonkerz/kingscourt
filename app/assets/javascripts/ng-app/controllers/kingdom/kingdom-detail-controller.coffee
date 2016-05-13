@@ -19,7 +19,7 @@ angular.module 'KingsCourt'
 
   $scope.deleteKingdom = (id) ->
     API.kingdoms.delete id: id, (data) ->
-      Alerts.add """Deleted "#{$scope.kingdom.name}"."""
+      Alerts.add "Successfully deleted #{$scope.kingdom.name}."
       $location.path 'my_kingdoms'
 
   $scope.openInBuilder = ->

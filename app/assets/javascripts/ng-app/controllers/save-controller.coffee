@@ -27,5 +27,12 @@ angular.module 'KingsCourt'
       card_ids: kingdom.getAllCardIds()
       description: kingdom.description
 
-    API.kingdoms.update { id: kingdom.id }, data, (data) ->
-      console.log 'patched', data
+    onSuccess = (response, _header) ->
+      kingdom = response.kingdom
+      url = "#!/kingdoms/#{kingdom.id}/#{kingdom.slug}"
+      Alerts.add """Successfully updated \
+        <a href="#{url}">#{kingdom.name}</a>."""
+
+    onError = (response) -> Alerts.add response.data.errors
+
+    API.kingdoms.update { id: kingdom.id }, data, onSuccess, onError

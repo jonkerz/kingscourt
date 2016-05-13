@@ -20,6 +20,10 @@ class Kingdom < ApplicationRecord
     self.name.slugify
   end
 
+  def can_be_edited_by? user
+    self.user == user
+  end
+
   private
     def validate_cards
       unless cards.size == 10

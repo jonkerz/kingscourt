@@ -1,9 +1,9 @@
 .row[ng-controller="GeneratorCtrl" ng-cloak]
   .col-md-3.hidden-md.hidden-lg
     .well-t.clearfix
-      ng-include src="'shared/alerts.html'"
+      ng-include src="'shared/_alerts.html'"
     .well.clearfix
-      ng-include src="'generator/_index_panel.html'"
+      ng-include src="'generator/_generate_panel.html'"
   .col-md-9
     .well.clearfix[ng-cloak]
       .row.kingdom
@@ -14,7 +14,7 @@
             img.col-xs-12.card-border-radius.shadow ng-src="cards/Randomizer.jpg"
   .col-md-3
     .well-t.clearfix.hidden-xs.hidden-sm
-      ng-include src="'shared/alerts.html'"
+      ng-include src="'shared/_alerts.html'"
     .well.clearfix.hidden-xs.hidden-sm
-      ng-include src="'generator/_index_panel.html'"
-    ng-include src="'shared/panel_save.html'"
+      ng-include src="'generator/_generate_panel.html'"
+    ng-include src="'shared/_save_panel.html'"

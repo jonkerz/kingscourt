@@ -3,7 +3,7 @@ angular.module 'KingsCourt'
 .controller 'ModalCtrl', ($rootScope, $scope, $modal, $log) ->
   $scope.openLogin = ->
     modalInstance = $modal.open
-      templateUrl: 'shared/login_modal.html'
+      templateUrl: 'shared/_login_modal.html'
       controller: 'ModalInstanceCtrl'
       size: 'sm'
 
@@ -12,7 +12,7 @@ angular.module 'KingsCourt'
     scope.params = card: card
 
     modalInstance = $modal.open
-      templateUrl: 'card-modal.html'
+      templateUrl: 'shared/_card_modal.html'
       controller: 'CardModalInstanceCtrl'
       size: 'sm'
       scope: scope

@@ -30,14 +30,13 @@ Feature: Kingdom browser
     When I toggle the expansions "Dominion, Intrigue" and reload
     And I should see 1 kingdom
     And I should see "Batiatus's Kingdom"
-    #And PRY
 
   Scenario: Browsing a single
     Then I should see "Browsing kingdoms"
     And I should see "Batiatus's Kingdom"
     And I should see "by Batiatus"
     When I follow "Batiatus's Kingdom"
-    Then I should see 1 face up cards
+    Then I should see 10 face up cards
     And I should see "Description:"
 
   Scenario: Browsing a user's kingdoms

@@ -36,7 +36,7 @@ FactoryGirl.define do
     end
     name "Ancient Kingdom"
     user
-    after :create do |kingdom, evaluator|
+    after :build do |kingdom, evaluator|
       if evaluator.cards.present?
         evaluator.cards.each do |card|
           kingdom.cards << card

@@ -6,6 +6,7 @@ class Kingdom < ApplicationRecord
 
   validates :user, presence: true
   validates :name, presence: true
+  validate :validate_cards
 
   def favorite_count
     FavoriteKingdom.where(kingdom: self).count
@@ -18,4 +19,17 @@ class Kingdom < ApplicationRecord
   def slug
     self.name.slugify
   end
+
+  private
+    def validate_cards
+      unless cards.size == 10
+        errors.add :cards, "must contain 10 cards"
+      end
+      unless cards.all?(&:randomizable?)
+        errors.add :cards, <<-MSG.squish
+          can only contain randomizable cards (remove
+          #{cards.non_randomizers.pluck(:name).to_sentence})
+        MSG
+      end
+    end
 end

@@ -4,14 +4,21 @@ describe Kingdom do
   describe "validations" do
     it { should validate_presence_of(:name) }
 
-    describe "disallow card duplicates" do
-      let(:card) { create :card }
-      let(:kingdom) { create :kingdom }
+    describe "cards" do
+      it "should not allow duplicates" do
+        kingdom = build :kingdom
+        8.times { kingdom.cards << create(:card) }
 
-      it "should not be allowed" do
-        kingdom.cards << card
-        expect { kingdom.cards << card }
-          .to raise_error ActiveRecord::RecordNotUnique
+        card = create :card
+        kingdom.cards << card << card
+
+        expect { kingdom.save }.to raise_error ActiveRecord::RecordNotUnique
+      end
+
+      it "must be 10 cards" do
+        kingdom = Kingdom.new
+        kingdom.save
+        expect(kingdom.errors[:cards]).to eq ["must contain 10 cards"]
       end
     end
   end
@@ -23,7 +30,7 @@ describe Kingdom do
         ["p@rty_kingdom", "prty-kingdom"],
         ["12345", "12345"]
       ].each do |no_slug, slugified|
-        kingdom = create :kingdom, name: no_slug
+        kingdom = build :kingdom, name: no_slug
         expect(kingdom.slug).to eq slugified
       end
     end

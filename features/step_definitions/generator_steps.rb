@@ -9,9 +9,17 @@ Then /^I should see (\d+) face up cards$/ do |number|
 end
 
 Given /^there are some cards$/ do
-  create :card, name: "Chapel", expansion_id: 1
-  create :card, name: "Militia", expansion_id: 1
-  create :card, name: "Masquerade", expansion_id: 2
+  %w(Cellar Chapel Moat Chancellor Village
+    Woodcutter Workshop Bureaucrat Feast Gardens
+  ).each do |name|
+    create :card, name: name, expansion_id: 1
+  end
+
+  %w(Courtyard Pawn Secret\ Chamber Great\ Hall Masquerade
+    Shanty\ Town Steward Swindler Wishing\ Well Baron
+  ).each do |name|
+    create :card, name: name, expansion_id: 2
+  end
 end
 
 def facedown_cards

@@ -1,14 +1,18 @@
 # Base game
 Given /^there is a kingdom by Joffre$/ do
-  create :kingdom, name: "Joffre's Kingdom",
-    cards: [Card.first, Card.second]
+  build(:kingdom,
+    name: "Joffre's Kingdom",
+    cards: Card.where(expansion_id: 1).take(10)
+  ).save!
 end
 
 # Intrigue
 Given /^there is a kingdom by Batiatus$/ do
-  name = "Batiatus"
-  create :kingdom, name: "#{name}'s Kingdom",
-    user: create(:user, username: name), cards: [Card.last]
+  build(:kingdom,
+    name: "Batiatus's Kingdom",
+    cards: Card.where(expansion_id: 2).take(10),
+    user: create(:user, username: "Batiatus")
+  ).save!
 end
 
 Then /^I should see (\d+) kingdoms?$/ do |number|

@@ -20,14 +20,11 @@ class KingdomHack
 
   addCard: (card) ->
     if @cards.length >= APP_CONFIG.KINGDOM_SIZE
-      Alerts.addAlert 'Kingdom full. Card not added.', 'danger'
-      return false
+      return Alerts.add 'Kingdom full. Card not added.'
     else if _(@bannedCards).find { name: card.name }
-      Alerts.addAlert 'Card banned. Card not added.', 'danger'
-      return false
+      return Alerts.add 'Card banned. Card not added.'
     else if _(@cards).find { name: card.name }
-      Alerts.addAlert 'Duplicate. Card not added.', 'danger'
-      return false
+      return Alerts.add 'Duplicate. Card not added.'
     else
       @cards.push card
 

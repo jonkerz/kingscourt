@@ -13,11 +13,10 @@ angular.module 'KingsCourt'
     onSuccess = (response, _header) ->
       kingdom = response.kingdom
       url = "#!/kingdoms/#{kingdom.id}/#{kingdom.slug}"
-      Alerts.addAlert """Successfully saved \
+      Alerts.add """Successfully saved \
         <a href="#{url}">#{kingdom.name}</a>."""
 
-    onError = (response) ->
-      Alerts.addAlert response.data.errors
+    onError = (response) -> Alerts.add response.data.errors
 
     API.kingdoms.save data, onSuccess, onError
 

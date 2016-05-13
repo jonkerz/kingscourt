@@ -3,12 +3,16 @@
     ng-include src="'shared/alerts.html'"
     .well.clearfix
       ng-include src="'kingdoms/_index_panel.html'"
+      button.btn.btn-success.btn-sm> ng-click="displayMode='images'" Images
+      button.btn.btn-success.btn-sm ng-click="displayMode='text'" Text
+
   .col-md-9
-    .well
+    .well.clearfix
       h3 ng-if="subtitle" {{subtitle}}
       div
+        h4 ng-if="kingdoms.length == 0" No kingdoms :(
         ul.list-group.kingdom-list
-          li.list-group-item dir-paginate="kingdom in kingdoms | itemsPerPage: 5" total-items="totalKingdoms"
+          li.list-group-item ng-repeat="kingdom in kingdoms"
             span.badge {{kingdom.favorite_count}}
             button.pull-right.btn-lnk ng-show="user.signedIn" href="" ng-class="{'favorite-spinning': isSaving && savingKingdomId == kingdom.id, 'favorite': !isSaving}" ng-disabled="isSaving" ng-click="toggleFavorite(kingdom)"
               span.fa.pull-right[tooltip="{{kingdom.favorite ? 'Remove from favorites' : 'Add to favorites'}}" tooltip-trigger tooltip-placement="top" popover-append-to-body="true" ng-class="{false: 'fa-star-o', true: 'fa-star'}[kingdom.favorite]"]
@@ -25,13 +29,15 @@
               span ng-repeat="card in kingdom.cards"
                 hover-card card-name="{{card.name}}"
                 | {{$last ? '' : ', '}}
+
+        .pull-right ng-hide="kingdoms.length == 0"
+          button.btn.btn-success.btn-sm> ng-click="displayMode='images'" ng-hide="displayMode=='images'" Show Images
+          button.btn.btn-success.btn-sm ng-click="displayMode='text'"  ng-hide="displayMode=='text'" Show Card Names
+
         bgf-pagination url="kingdomsUrl" url-params="kingdom_params" collection="kingdoms" per-page="10" transform-response="deserializeKingdoms"
+
   .col-md-3
     .well-t.clearfix.hidden-xs.hidden-sm
       ng-include src="'shared/alerts.html'"
     .well.clearfix.hidden-xs.hidden-xs
       ng-include src="'kingdoms/_index_panel.html'"
-    .well
-      h4 Display
-      button.btn.btn-success.btn-sm ng-click="displayMode='images'" Images
-      button.btn.btn-success.btn-sm ng-click="displayMode='text'" Text

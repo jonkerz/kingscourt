@@ -6,7 +6,7 @@ class KingdomHack
     APP_CONFIG = $injector.get 'APP_CONFIG'
 
     @cards = []
-    @name = 'Kingdom  ' + Math.random().toString(36).replace(/[^a-z]+/g, '').substr 0, 5
+    @name = ''
     @description = ''
     @bannedCards = []
 

@@ -13,7 +13,8 @@ angular.module 'KingsCourt'
 
   $scope.setTab = (tab) -> $scope.tab = tab
 
-  $scope.filterByExpansion = (card) -> _.contains ExpansionSelector.selected, card.expansion_id
+  $scope.filterByExpansion = (card) ->
+    _.contains ExpansionSelector.selected, card.expansion_id
 
   $scope.cardStatus = (card) ->
     if $scope.kingdom.idIsAdded card.id
@@ -44,7 +45,8 @@ angular.module 'KingsCourt'
 
   setupAttributes()
 
-  $scope.$watchCollection 'expansionSelector.selected', -> updateAttributesToDisplay()
+  $scope.$watchCollection 'expansionSelector.selected',
+    -> updateAttributesToDisplay()
 
   updateAttributesToDisplay = ->
     active = expansionAttributes.shared

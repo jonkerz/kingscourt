@@ -22,8 +22,13 @@ module Api::V1
       kingdom = Kingdom.new kingdom_params
       kingdom.user = current_user
       kingdom.card_ids = params[:card_ids]
-      kingdom.save!
-      render json: kingdom
+
+      if kingdom.save
+        render json: kingdom
+      else
+        json = { errors: kingdom.errors.full_messages.join(", ")}
+        render json: json, status: :unprocessable_entity
+      end
     end
 
     def update

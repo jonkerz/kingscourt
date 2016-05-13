@@ -9,5 +9,5 @@ angular.module 'KingsCourt'
   responseError: (response) ->
     if response.status is 404
       console.log 'AuthInterceptor: cannot connect...'
-    #Alerts.addAlert "responseError " + response.status + ": " + response.statusText, "danger"
+    Alerts.addAlert "responseError " + response.status + ": " + response.statusText
     return $q.reject response

@@ -23,7 +23,7 @@ angular.module 'KingsCourt'
   $scope.reloadPage = ->
     returnTo = $location.path()
     $timeout (-> $location.path returnTo), 0
-    $location.path "/kings_court" # "loading..."
+    $location.path "/loading"
 
   $scope.toggleFavorite = (kingdom) ->
     return if $scope.isSaving

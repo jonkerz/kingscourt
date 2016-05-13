@@ -8,22 +8,27 @@ angular.module 'KingsCourt'
   $scope.cancel = -> $modalInstance.dismiss 'cancel'
 
   $scope.login = (form) ->
-    $auth.submitLogin(form).then((resp) ->
-      # OK
-    ).catch (resp) ->
-      $scope.authErrors = "#{resp.reason}: #{resp.errors.join(", ")}"
+    onError = (response) ->
+      $scope.authErrors =
+        "#{response.reason}: #{response.errors.join(", ")}"
+
+    $auth.submitLogin(form).then().catch onError
 
   $scope.register = (form) ->
-    $auth.submitRegistration(form).then((resp) ->
+    onSuccess = (response) ->
       $auth.submitLogin
         email: form.email,
         password: form.password
-    ).catch (resp) ->
-      errors = resp.data.errors
+
+    onError = (response) ->
+      errors = response.data.errors
       $scope.authErrors = if errors.full_messages?
         errors.full_messages.join(", ")
       else
         errors.join(", ")
+
+    $auth.submitRegistration(form).then(onSuccess).catch onError
+
 
   $scope.toggleLoginRegistration = ->
     $('#login-modal #login, #login-modal #register').toggle()

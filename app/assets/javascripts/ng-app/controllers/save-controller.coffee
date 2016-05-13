@@ -10,11 +10,16 @@ angular.module 'KingsCourt'
       card_ids: kingdom.getAllCardIds()
       description: kingdom.description
 
-    API.kingdoms.save data, (data) ->
-      kingdom = data.kingdom
+    onSuccess = (response, _header) ->
+      kingdom = response.kingdom
       url = "#!/kingdoms/#{kingdom.id}/#{kingdom.slug}"
       Alerts.addAlert """Successfully saved \
         <a href="#{url}">#{kingdom.name}</a>."""
+
+    onError = (response) ->
+      Alerts.addAlert response.data.errors
+
+    API.kingdoms.save data, onSuccess, onError
 
   $scope.update = ->
     kingdom = $scope.kingdom

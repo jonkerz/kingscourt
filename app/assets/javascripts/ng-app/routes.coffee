@@ -59,4 +59,8 @@ angular.module 'KingsCourt'
     title: 'Import'
     templateUrl: 'importer/index.html'
 
+  .when '/loading',
+    title: 'Loading...'
+    templateUrl: 'loading.html'
+
   .otherwise templateUrl: '404.html'

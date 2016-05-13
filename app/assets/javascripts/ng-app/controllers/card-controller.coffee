@@ -3,7 +3,7 @@ angular.module 'KingsCourt'
 .controller 'CardBroswerCtrl', ($scope, $http, ExpansionSelector, Card, API_SERVER) ->
   $scope.allCards = Card.cards
 
-  $http.get('/api/get_non_randomizers', { cache: true }).then (response) -> #TODO
+  $http.get('/api/v1/cards?non_randomizers_only=true', { cache: true }).then (response) -> #TODO
     $scope.allCards = $scope.allCards.concat response.data
 
   $scope.currentPage = 1

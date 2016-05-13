@@ -20,7 +20,7 @@ angular.module 'KingsCourt'
 
     getCardAttributes: ->
       deferred = $q.defer()
-      url =  "api/get_all_expansion_attributes/"
+      url =  "api/v1/expansions?card_attributes=true"
       $http.get(url, { cache: true }).success (response) ->
         deferred.resolve response
 

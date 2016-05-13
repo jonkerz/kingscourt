@@ -10,6 +10,9 @@ class Card < ApplicationRecord
   validates :name, presence: true
   validates :expansion_id, presence: true
 
+  scope :randomizers, -> { where(randomizable: true) }
+  scope :non_randomizers, -> { where(randomizable: false) }
+
   def image
     base_filename = self.name.gsub(" ", "_").gsub("'", "")
     "#{base_filename}.jpg"

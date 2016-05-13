@@ -4,7 +4,9 @@ FactoryGirl.define do
       card_attributes nil
     end
     initialize_with { Card.find_or_create_by name: name }
-    name "Chapel"
+    sequence :name do |n|
+      "Chapel #{n}"
+    end
     randomizable true
     expansion_id 1
     expansion

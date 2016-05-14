@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title ng-bind="title" King's Court - Dominion Kingdom Generator
+    meta charset="utf-8"
+    meta name="description" content="Kingdom Generator"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    link rel="icon" type="image/png" href="logo_kings_court.png"
+    =stylesheet_link_tag 'application'
+    =javascript_include_tag 'jquery'
+    =javascript_include_tag 'jquery_ujs'
+    link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"
+    link href="http://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css"
+
+  body
+    .navbar.navbar-default.navbar-static-top role="navigation"
+      .container
+        .navbar-header
+          a#logo.navbar-brand href="/" King's Court
+        ul.nav.navbar-nav.navbar-right
+          li: a href="/" Back to the site
+          li=link_to "Admin", dashboard_path
+          -if current_user
+            li=link_to "Logout #{current_user.email}", destroy_user_session_path, method: :delete
+          -else
+            li class="active"=link_to "Login", new_user_session_path
+
+    div style="max-width: 400px; margin: 0 auto"
+      -flash.each do |type, message|
+        .alert.alert-danger.alert-block
+          =message
+      ==yield

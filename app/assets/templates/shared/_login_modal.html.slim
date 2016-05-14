@@ -1,7 +1,8 @@
 #login-modal.modal-body
   button type="button" class="close" ng-click="cancel()" aria-label="Close": span aria-hidden="true" &times;
 
-  p.text-danger {{authErrors}}
+  p.text-danger {{errors}}
+  p {{notice}}
 
   #login
     form role="form" ng-init="loginForm = {}" ng-if="!user.signedIn"
@@ -11,8 +12,9 @@
       .form-group
         label for="login-password" Password
         input#login-password.form-control type="password" ng-model="loginForm.password" required="required"
-      button.btn.btn-primary.btn-sm> type="submit" ng-click="login(loginForm)" Login
-      button.btn.btn-warning.btn-sm ng-click="toggleLoginRegistration()" Registration
+      button.btn.btn-primary.btn-sm> type="submit" ng-click="submitLogin(loginForm)" Login
+      a> href="" ng-click="showPanel('register')" Registration
+      a ng-click="showPanel('forgot_password')" Forgot password?
 
   #register
     form role="form" ng-init="registrationForm = {}"
@@ -28,5 +30,13 @@
       .form-group
         label Password confirmation
         input#register-password-confirmation.form-control type="password" name="password_confirmation" ng-model="registrationForm.password_confirmation" required="required"
-      button.btn.btn-primary.btn-sm> type="submit" ng-click="register(registrationForm)" Register
-      button.btn.btn-warning.btn-sm ng-click="toggleLoginRegistration()" Back to login
+      button.btn.btn-primary.btn-sm> type="submit" ng-click="submitRegistration(registrationForm)" Register
+      a ng-click="showPanel('login')" Back to login
+
+  #forgot_password
+    form ng-init="passwordResetForm = {}" role="form"
+      .form-group
+        label Email
+        input.form-control name="email" ng-model="passwordResetForm.email" required="required" type="email" /
+      button.btn.btn-primary.btn-sm> type="submit" ng-click="requestPasswordReset(passwordResetForm)" Request password reset
+      a ng-click="showPanel('login')" Back to login

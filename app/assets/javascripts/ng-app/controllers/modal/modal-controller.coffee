@@ -1,9 +1,15 @@
 angular.module 'KingsCourt'
 
-.controller 'ModalCtrl', ($rootScope, $scope, $modal, $log) ->
+.controller 'ModalCtrl', ($rootScope, $scope, $modal) ->
   $scope.openLogin = ->
     modalInstance = $modal.open
       templateUrl: 'shared/_login_modal.html'
+      controller: 'ModalInstanceCtrl'
+      size: 'sm'
+
+  $scope.openUpdatePassword = ->
+    modalInstance = $modal.open
+      templateUrl: 'shared/_change_password_modal.html'
       controller: 'ModalInstanceCtrl'
       size: 'sm'
 

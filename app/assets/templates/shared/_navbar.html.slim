@@ -8,7 +8,7 @@
           span.icon-bar
           span.icon-bar
         span.loading-spinner.fa.fa-refresh.fa-spin
-      a#logo.navbar-brand.visible-xs.hidden-sm.visible-md.visible-lg King's Court
+      a#logo.navbar-brand href="/#!/" King's Court
     .navbar-collapse.collapse
       ul.nav.navbar-nav
         li ng-class="{ active: isActive('/')}"
@@ -30,6 +30,7 @@
             span.caret
           ul.dropdown-menu role="menu"
             li: a href="#!/my_favorites" Favorites
-            li: a ng-click="signOut()" Logout
+            li: a href="" ng-controller="ModalCtrl" ng-click="openUpdatePassword()" Change password
+            li: a href="" ng-click="signOut()" Logout
         li ng-hide="user.signedIn" ng-controller="ModalCtrl"
           a href="" ng-click="openLogin()" Login/Register

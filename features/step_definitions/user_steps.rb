@@ -42,11 +42,3 @@ end
 When /^I click on my username in the navbar$/ do
   find(".dropdown").click
 end
-
-When /^I click on the logout link$/ do
-  find("a", text: "Logout").click
-end
-
-When /^I click on the registration link$/ do
-  find("button", text: "Registration").click
-end

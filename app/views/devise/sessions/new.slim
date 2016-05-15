@@ -1,0 +1,23 @@
+-unless resource.errors.empty?
+  .alert.alert-danger.alert-block
+    ul
+      -resource.errors.full_messages.each do |message|
+        li=message
+
+.panel.panel-default
+  .panel-heading
+    h4 Login
+  .panel-body
+    =form_for(resource, as: resource_name, url: user_session_path, html: { role: "form" }) do |f|
+      .form-group
+        =f.label :email
+        =f.email_field :email, autofocus: true, class: "form-control"
+      .form-group
+        =f.label :password
+        =f.password_field :password, autocomplete: "off", class: "form-control"
+      -if devise_mapping.rememberable?
+        .checkbox
+          =f.label :remember_me do
+            =f.check_box :remember_me
+            >remember me
+      =f.submit "Login", class: "btn btn-primary btn-sm"

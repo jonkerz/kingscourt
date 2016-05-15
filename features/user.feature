@@ -36,7 +36,6 @@ Feature: User
 
   Scenario: Register
     When I follow "Login/Register"
-    #And I click on the registration link
     And I follow "Registration"
     And I fill in "register-email" with "new@example.com"
     And I fill in "register-username" with "Joffre"

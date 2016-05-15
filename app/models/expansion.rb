@@ -1,6 +1,7 @@
 class Expansion < ApplicationRecord
-  validates :name, presence: true
   has_many :cards
+
+  validates :name, presence: true, uniqueness: true
 
   def self.all_card_attributes
     Expansion.all.each.collect do |expansion|

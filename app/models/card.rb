@@ -1,4 +1,6 @@
 class Card < ApplicationRecord
+  include ByNameOrId
+
   belongs_to :expansion
   belongs_to :card_type
 

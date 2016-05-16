@@ -3,8 +3,8 @@ angular.module 'KingsCourt'
 .factory 'ExpansionSelector', ->
   new class ExpansionSelector
     constructor: ->
-      @selected = [1..10]
-      @all = [1..10]
+      @selected = [1..11]
+      @all = [1..11]
       @names = [
         { id: 1, text: 'Dominion' }
         { id: 2, text: 'Intrigue' }
@@ -15,6 +15,7 @@ angular.module 'KingsCourt'
         { id: 7, text: 'Hinterlands' }
         { id: 8, text: 'Dark Ages' }
         { id: 9, text: 'Guilds' }
+        { id: 11, text: 'Adventures' }
         { id: 10, text: 'Promo' }
       ]
 

@@ -18,7 +18,8 @@ angular.module "KingsCourt"
 
     getRandomCard: ->
       if @deckSize() is 0
-        return Alerts.add "No card found."
+        Alerts.add "No card found."
+        return false
       card = @deck[_.random 0, @deck.length - 1]
       @removeCard card
       card

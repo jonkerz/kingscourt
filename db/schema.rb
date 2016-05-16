@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516160436) do
+ActiveRecord::Schema.define(version: 20160516173507) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "namespace"
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 20160516160436) do
     t.datetime "updated_at",                  null: false
     t.integer  "cost_in_coins"
     t.string   "cost"
+    t.index ["card_type_id"], name: "cards_card_type_id_fk", using: :btree
+    t.index ["expansion_id"], name: "cards_expansion_id_fk", using: :btree
   end
 
   create_table "expansions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -92,6 +94,7 @@ ActiveRecord::Schema.define(version: 20160516160436) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.integer  "user_id"
+    t.index ["user_id"], name: "kingdoms_user_id_fk", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -133,4 +136,11 @@ ActiveRecord::Schema.define(version: 20160516160436) do
 
   add_foreign_key "card_attribute_links", "card_attributes"
   add_foreign_key "card_attribute_links", "cards"
+  add_foreign_key "cards", "card_types", name: "cards_card_type_id_fk"
+  add_foreign_key "cards", "expansions", name: "cards_expansion_id_fk"
+  add_foreign_key "favorite_kingdoms", "kingdoms", name: "favorite_kingdoms_kingdom_id_fk"
+  add_foreign_key "favorite_kingdoms", "users", name: "favorite_kingdoms_user_id_fk"
+  add_foreign_key "kingdom_cards", "cards", name: "kingdom_cards_card_id_fk"
+  add_foreign_key "kingdom_cards", "kingdoms", name: "kingdom_cards_kingdom_id_fk"
+  add_foreign_key "kingdoms", "users", name: "kingdoms_user_id_fk"
 end

@@ -8,7 +8,6 @@ FactoryGirl.define do
       "Chapel #{n}"
     end
     randomizable true
-    expansion_id 1
     expansion
     cost "2"
     cost_in_coins 2
@@ -26,10 +25,12 @@ FactoryGirl.define do
     name "isAction"
   end
 
+  factory :card_type
+
   factory :expansion do
-    sequence :name do |n|
-      "Expansion #{n}"
-    end
+    initialize_with { Expansion.find_or_create_by name: name }
+    name "Dominion"
+    id 1
   end
 
   factory :kingdom do

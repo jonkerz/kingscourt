@@ -37,6 +37,20 @@ describe Kingdom do
     end
   end
 
+  describe "database cleanups" do
+    describe "deleting a kingdom" do
+      let!(:kingdom) { create_kindom_with_cards }
+
+      it "deletes all kingdom cards (join table)" do
+        expect { kingdom.destroy }.to change{KingdomCard.count}.from(10).to(0)
+      end
+
+      it "doesn't delete the cards" do
+        expect { kingdom.destroy }.not_to change{Card.count}
+      end
+    end
+  end
+
   describe "#slug" do
     it "slugifies" do
       [ ["Hállå", "halla"],
@@ -55,4 +69,11 @@ describe Kingdom do
       it { is_expected.to be_versioned }
     end
   end
+end
+
+def create_kindom_with_cards
+  kingdom = build :kingdom
+  10.times { kingdom.cards << create(:card) }
+  kingdom.save
+  kingdom
 end

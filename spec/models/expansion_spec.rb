@@ -30,7 +30,7 @@ describe Expansion do
     end
 
     describe ".all_card_attributes" do
-      let!(:dark_ages) { create :expansion, name: "Dark Ages" }
+      let!(:dark_ages) { create :expansion, name: "Dark Ages", id: 8 }
       before do
         create :card,
           name: "Urchin",
@@ -45,6 +45,22 @@ describe Expansion do
         }
         expect(Expansion.all_card_attributes)
           .to eq expected
+      end
+    end
+  end
+
+  describe "database cleanups" do
+    describe "deleting an expansion" do
+      let!(:expansion) { create :expansion }
+      let!(:card) { create :card, expansion: expansion }
+
+      it "errors out" do
+        expect { expansion.destroy }
+          .to raise_error ActiveRecord::StatementInvalid
+      end
+
+      it "doesn't delete the expansion" do
+        expect { expansion.destroy rescue nil }.not_to change{Expansion.count}
       end
     end
   end

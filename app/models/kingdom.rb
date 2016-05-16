@@ -1,6 +1,6 @@
 class Kingdom < ApplicationRecord
   has_many :kingdom_cards
-  has_many :cards, through: :kingdom_cards
+  has_many :cards, through: :kingdom_cards, dependent: :destroy
 
   belongs_to :user
 

@@ -25,10 +25,9 @@ class Kingdom < ApplicationRecord
   end
 
   private
+
     def validate_cards
-      unless cards.size == 10
-        errors.add :cards, "must contain 10 cards"
-      end
+      errors.add :cards, "must contain 10 cards" unless cards.size == 10
       unless cards.all?(&:randomizable?)
         errors.add :cards, <<-MSG.squish
           can only contain randomizable cards (remove

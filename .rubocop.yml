@@ -91,3 +91,7 @@ Rails/Output:
 Style/CommentIndentation:
   Exclude:
     - 'Gemfile'
+
+Style/SymbolProc:
+  Exclude:
+    - 'features/step_definitions/shared_then_steps.rb'

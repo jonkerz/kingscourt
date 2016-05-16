@@ -27,7 +27,7 @@ module Api::V1
       if kingdom.save
         render json: kingdom
       else
-        json = { errors: kingdom.errors.full_messages.join(", ")}
+        json = { errors: kingdom.errors.full_messages.join(", ") }
         render json: json, status: :unprocessable_entity
       end
     end
@@ -37,7 +37,7 @@ module Api::V1
       if @kingdom.update kingdom_params
         render json: @kingdom
       else
-        json = { errors: @kingdom.errors.full_messages.join(", ")}
+        json = { errors: @kingdom.errors.full_messages.join(", ") }
         render json: json, status: :unprocessable_entity
       end
     end
@@ -46,12 +46,13 @@ module Api::V1
       if @kingdom.destroy
         render json: {}, status: :ok
       else
-        json = { errors: @kingdom.errors.full_messages.join(", ")}
+        json = { errors: @kingdom.errors.full_messages.join(", ") }
         render json: json, status: :unprocessable_entity
       end
     end
 
     private
+
       def set_kingdom
         @kingdom = Kingdom.find params[:id]
       end

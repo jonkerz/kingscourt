@@ -10,9 +10,7 @@ After "@slow_motion" do
 end
 
 Transform /.*/ do |match|
-  if @slow_motion
-    sleep 1.5
-  end
+  sleep 1.5 if @slow_motion
   match
 end
 

@@ -22,6 +22,16 @@ describe Card do
     it { should validate_presence_of(:name) }
     it { should validate_uniqueness_of(:name) }
     it { should validate_presence_of(:expansion_id) }
+
+    describe "card_attributes" do
+      let(:card) { create :card }
+      let(:is_duplicate) { create :card_attribute, name: "isDuplicate" }
+
+      it "should not allow duplicates" do
+        expect { card.card_attributes << is_duplicate << is_duplicate }
+          .to raise_error ActiveRecord::RecordNotUnique
+      end
+    end
   end
 
   describe "versioning" do

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160514235429) do
+ActiveRecord::Schema.define(version: 20160516160436) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "namespace"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20160514235429) do
     t.integer  "card_attribute_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.index ["card_attribute_id", "card_id"], name: "index_card_attribute_links_on_card_attribute_id_and_card_id", unique: true, using: :btree
     t.index ["card_attribute_id"], name: "index_card_attribute_links_on_card_attribute_id", using: :btree
     t.index ["card_id"], name: "index_card_attribute_links_on_card_id", using: :btree
   end

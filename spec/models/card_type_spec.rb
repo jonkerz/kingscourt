@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe CardType do
   describe "validations" do
@@ -16,7 +16,7 @@ describe CardType do
       end
 
       it "doesn't delete the card type" do
-        expect { action.destroy rescue nil }.not_to change{CardType.count}
+        expect { action.destroy rescue nil }.not_to change { CardType.count }
       end
     end
   end

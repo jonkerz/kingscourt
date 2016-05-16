@@ -25,7 +25,7 @@ ActiveAdmin.register Card do
         image_tag "/cards/#{card.image}", width: 100
       end
     end
-    column 'Attributes' do |card|
+    column "Attributes" do |card|
       card.card_attributes.map(&:name).join(", ").html_safe
     end
     actions
@@ -47,7 +47,7 @@ ActiveAdmin.register Card do
       row :card_type_id
       row :updated_at
       row :created_at
-      row 'Attributes' do |card|
+      row "Attributes" do |card|
         card.card_attributes.map(&:name).join(", ").html_safe
       end
     end

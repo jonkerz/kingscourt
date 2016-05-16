@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe CardAttribute do
   describe "validations" do
@@ -18,7 +18,7 @@ describe CardAttribute do
 
       it "removed itself from cards" do
         expect { is_action.destroy }
-          .to change{card.card_attributes.count}.from(2).to(1)
+          .to change { card.card_attributes.count }.from(2).to(1)
       end
     end
   end

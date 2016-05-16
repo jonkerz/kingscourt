@@ -16,8 +16,8 @@ end
 
 Given /^I am logged in$/ do
   create :user
-  step 'I am on the home page'
-  step 'I login in via the web interface'
+  step "I am on the home page"
+  step "I login in via the web interface"
 end
 
 When /^I login in via the web interface$/ do

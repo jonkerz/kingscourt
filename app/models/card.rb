@@ -16,7 +16,7 @@ class Card < ApplicationRecord
   scope :non_randomizers, -> { where(randomizable: false) }
 
   def image
-    base_filename = self.name.gsub(" ", "_").gsub("'", "")
+    base_filename = self.name.tr(" ", "_").delete("'")
     "#{base_filename}.jpg"
   end
 end

@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Kingdom do
   describe "validations" do
@@ -42,22 +42,22 @@ describe Kingdom do
       let!(:kingdom) { create_kindom_with_cards }
 
       it "deletes all kingdom cards (join table)" do
-        expect { kingdom.destroy }.to change{KingdomCard.count}.from(10).to(0)
+        expect { kingdom.destroy }
+          .to change { KingdomCard.count }.from(10).to(0)
       end
 
       it "doesn't delete the cards" do
-        expect { kingdom.destroy }.not_to change{Card.count}
+        expect { kingdom.destroy }.not_to change { Card.count }
       end
     end
   end
 
   describe "#slug" do
     it "slugifies" do
-      [ ["Hállå", "halla"],
+      [["Hállå", "halla"],
         ["With spaces, haha!!", "with-spaces--haha"],
         ["p@rty_kingdom", "prty-kingdom"],
-        ["12345", "12345"]
-      ].each do |no_slug, slugified|
+        ["12345", "12345"]].each do |no_slug, slugified|
         kingdom = build :kingdom, name: no_slug
         expect(kingdom.slug).to eq slugified
       end

@@ -60,7 +60,8 @@ describe Expansion do
       end
 
       it "doesn't delete the expansion" do
-        expect { expansion.destroy rescue nil }.not_to change { Expansion.count }
+        expect { expansion.destroy rescue nil }
+          .not_to change { Expansion.count }
       end
     end
   end

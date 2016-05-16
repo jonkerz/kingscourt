@@ -1,6 +1,3 @@
-# From http://makandracards.com/makandra/1709-single-step-and-
-# slow-motion-for-cucumber-scenarios-using-javascript-selenium
-# Use with `@javascript` and `DRIVER=selenium --format pretty` for the full experience.
 Before "@slow_motion" do
   @slow_motion = true
 end

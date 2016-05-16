@@ -1,5 +1,3 @@
-inherit_from: .rubocop_todo.yml
-
 AllCops:
   TargetRubyVersion: 2.2
 
@@ -71,14 +69,24 @@ Style/DoubleNegation:
 Style/AlignHash:
   Enabled: false
 
+Metrics/AbcSize:
+  Enabled: false
+
 Style/ClosingParenthesisIndentation:
   Enabled: false
+
+Metrics/MethodLength:
+  Max: 15
 
 AllCops:
   Exclude:
     - 'db/**/*'
     - 'bin/**/*'
     - 'script/**/*'
+    - 'config/environments/**/*'
+    - 'lib/tasks/cucumber.rake'
+    - 'config/deploy.rb'
+
 Style/RescueModifier:
   Exclude:
     - 'spec/**/*'

@@ -6,23 +6,6 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: AlignWith, SupportedStyles, AutoCorrect.
-# SupportedStyles: keyword, variable, start_of_line
-Lint/EndAlignment:
-  Enabled: false
-
-# Offense count: 1
-Lint/ShadowingOuterLocalVariable:
-  Exclude:
-    - 'spec/support/shoulda_matchers.rb'
-
-# Offense count: 1
-Lint/UselessAssignment:
-  Exclude:
-    - 'features/step_definitions/shared_then_steps.rb'
-
 # Offense count: 2
 Metrics/AbcSize:
   Max: 22
@@ -46,46 +29,6 @@ Performance/StringReplacement:
 
 # Offense count: 1
 # Cop supports --auto-correct.
-# Configuration parameters: Include.
-# Include: app/models/**/*.rb
-Rails/FindEach:
-  Exclude:
-    - 'app/models/expansion.rb'
-
-# Offense count: 3
-# Configuration parameters: Include.
-# Include: app/**/*.rb, config/**/*.rb, db/**/*.rb, lib/**/*.rb
-Rails/Output:
-  Exclude:
-    - 'app/models/concerns/by_name_or_id.rb'
-    - 'config/deploy.rb'
-
-# Offense count: 2
-# Configuration parameters: Include.
-# Include: app/models/**/*.rb
-Rails/Validation:
-  Exclude:
-    - 'app/models/user.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-Style/AlignArray:
-  Exclude:
-    - 'features/step_definitions/shared_given_steps.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles, ProceduralMethods, FunctionalMethods, IgnoredMethods.
-# SupportedStyles: line_count_based, semantic, braces_for_chaining
-# ProceduralMethods: benchmark, bm, bmbm, create, each_with_object, measure, new, realtime, tap, with_object
-# FunctionalMethods: let, let!, subject, watch
-# IgnoredMethods: lambda, proc, it
-Style/BlockDelimiters:
-  Exclude:
-    - 'spec/models/user_spec.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
 Style/BlockEndNewline:
   Exclude:
     - 'spec/models/user_spec.rb'
@@ -97,35 +40,6 @@ Style/BlockEndNewline:
 Style/BracesAroundHashParameters:
   Exclude:
     - 'config/deploy.rb'
-
-# Offense count: 5
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: nested, compact
-Style/ClassAndModuleChildren:
-  Exclude:
-    - 'app/controllers/api/v1/api_controller.rb'
-    - 'app/controllers/api/v1/cards_controller.rb'
-    - 'app/controllers/api/v1/expansions_controller.rb'
-    - 'app/controllers/api/v1/favorites_controller.rb'
-    - 'app/controllers/api/v1/kingdoms_controller.rb'
-
-# Offense count: 3
-# Cop supports --auto-correct.
-Style/CommentIndentation:
-  Exclude:
-    - 'Gemfile'
-
-# Offense count: 6
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: leading, trailing
-Style/DotPosition:
-  Enabled: false
-
-# Offense count: 1
-Style/DoubleNegation:
-  Exclude:
-    - 'app/models/kingdom.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -149,12 +63,6 @@ Style/EmptyLinesAroundBlockBody:
   Exclude:
     - 'app/admin/dashboard.rb'
     - 'app/admin/kingdom.rb'
-
-# Offense count: 1
-# Configuration parameters: MinBodyLength.
-Style/GuardClause:
-  Exclude:
-    - 'app/models/kingdom.rb'
 
 # Offense count: 9
 # Cop supports --auto-correct.
@@ -203,29 +111,12 @@ Style/MultilineMethodCallBraceLayout:
   Exclude:
     - 'features/step_definitions/shared_given_steps.rb'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles, IndentationWidth.
-# SupportedStyles: aligned, indented
-Style/MultilineMethodCallIndentation:
-  Enabled: false
-
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: PreferredDelimiters.
 Style/PercentLiteralDelimiters:
   Exclude:
     - 'config/deploy.rb'
-
-# Offense count: 1
-# Configuration parameters: NamePrefix, NamePrefixBlacklist, NameWhitelist.
-# NamePrefix: is_, has_, have_
-# NamePrefixBlacklist: is_, has_, have_
-# NameWhitelist: is_a?
-Style/PredicateName:
-  Exclude:
-    - 'spec/**/*'
-    - 'features/step_definitions/favorite_steps.rb'
 
 # Offense count: 2
 # Cop supports --auto-correct.

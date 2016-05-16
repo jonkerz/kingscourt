@@ -4,7 +4,6 @@ end
 
 Then /^I should see (\d+) face up cards$/ do |number|
   cards = all ".card-border-radius"
-  facedown = facedown_cards
   expect(cards.size - facedown_cards.size).to eq number
 end
 

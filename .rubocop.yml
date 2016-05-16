@@ -24,12 +24,24 @@ Lint/AmbiguousOperator:
 Lint/AmbiguousRegexpLiteral:
   Enabled: false
 
+Style/AlignArray:
+  Enabled: false
+
+Style/MultilineMethodCallIndentation:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Rails/Validation:
+  Enabled: false
+
 Lint/Debugger:
   Exclude:
     - features/**/*
 
 Style/DotPosition:
-  EnforcedStyle: trailing
+  EnforcedStyle: leading
 
 # Disable, known to break things
 Style/RedundantSelf:
@@ -50,6 +62,12 @@ Lint/UnusedBlockArgument:
 Style/Documentation:
   Enabled: false
 
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/DoubleNegation:
+  Enabled: false
+
 Style/AlignHash:
   Enabled: false
 
@@ -64,3 +82,12 @@ AllCops:
 Style/RescueModifier:
   Exclude:
     - 'spec/**/*'
+
+Rails/Output:
+  Exclude:
+    - 'app/models/concerns/by_name_or_id.rb'
+    - 'config/deploy.rb'
+
+Style/CommentIndentation:
+  Exclude:
+    - 'Gemfile'

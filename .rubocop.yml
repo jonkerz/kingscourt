@@ -1,0 +1,66 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  TargetRubyVersion: 2.2
+
+Rails:
+  Enabled: true
+
+Style/IndentationConsistency:
+  EnforcedStyle: rails
+
+Style/MethodDefParentheses:
+  EnforcedStyle: require_no_parentheses
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Lint/AmbiguousOperator:
+  Enabled: false
+
+Lint/AmbiguousRegexpLiteral:
+  Enabled: false
+
+Lint/Debugger:
+  Exclude:
+    - features/**/*
+
+Style/DotPosition:
+  EnforcedStyle: trailing
+
+# Disable, known to break things
+Style/RedundantSelf:
+  Enabled: false
+
+Style/OptionHash:
+  Enabled: true
+
+Style/WordArray:
+  Enabled: false
+
+Style/NestedParenthesizedCalls:
+  Enabled: false
+
+Lint/UnusedBlockArgument:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/AlignHash:
+  Enabled: false
+
+Style/ClosingParenthesisIndentation:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'bin/**/*'
+    - 'script/**/*'
+Style/RescueModifier:
+  Exclude:
+    - 'spec/**/*'

@@ -1,11 +1,11 @@
 angular.module 'KingsCourt'
 
-.controller 'ModalInstanceCtrl', ($scope, $modalInstance, $auth) ->
-  $scope.$on 'auth:login-success', (event, mass) -> $modalInstance.close()
+.controller 'ModalInstanceCtrl', ($scope, $uibModalInstance, $auth) ->
+  $scope.$on 'auth:login-success', (event, mass) -> $uibModalInstance.close()
 
-  $scope.ok = -> $modalInstance.close()
+  $scope.ok = -> $uibModalInstance.close()
 
-  $scope.cancel = -> $modalInstance.dismiss 'cancel'
+  $scope.cancel = -> $uibModalInstance.dismiss 'cancel'
 
   $scope.submitLogin = (form) ->
     onError = (response) ->

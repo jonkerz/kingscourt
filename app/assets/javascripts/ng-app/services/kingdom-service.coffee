@@ -15,7 +15,7 @@ class KingdomHack
 
   removeAllCards: -> @cards = []
 
-  getAllCardIds: -> _.pluck @cards, 'id'
+  getAllCardIds: -> _.map @cards, 'id'
 
   addCard: (card) ->
     if @cards.length >= APP_CONFIG.KINGDOM_SIZE

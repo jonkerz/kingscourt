@@ -14,7 +14,7 @@ angular.module 'KingsCourt'
   $scope.setTab = (tab) -> $scope.tab = tab
 
   $scope.filterByExpansion = (card) ->
-    _.contains ExpansionSelector.selected, card.expansion_id
+    _.includes ExpansionSelector.selected, card.expansion_id
 
   $scope.cardStatus = (card) ->
     if $scope.kingdom.idIsAdded card.id

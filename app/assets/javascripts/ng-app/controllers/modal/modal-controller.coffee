@@ -1,14 +1,14 @@
 angular.module 'KingsCourt'
 
-.controller 'ModalCtrl', ($rootScope, $scope, $modal) ->
+.controller 'ModalCtrl', ($rootScope, $scope, $uibModal) ->
   $scope.openLogin = ->
-    modalInstance = $modal.open
+    modalInstance = $uibModal.open
       templateUrl: 'shared/_login_modal.html'
       controller: 'ModalInstanceCtrl'
       size: 'sm'
 
   $scope.openUpdatePassword = ->
-    modalInstance = $modal.open
+    modalInstance = $uibModal.open
       templateUrl: 'shared/_change_password_modal.html'
       controller: 'ModalInstanceCtrl'
       size: 'sm'
@@ -17,7 +17,7 @@ angular.module 'KingsCourt'
     scope = $rootScope.$new()
     scope.params = card: card
 
-    modalInstance = $modal.open
+    modalInstance = $uibModal.open
       templateUrl: 'shared/_card_modal.html'
       controller: 'CardModalInstanceCtrl'
       size: 'sm'
@@ -27,7 +27,7 @@ angular.module 'KingsCourt'
     scope = $rootScope.$new()
     scope.params = card: card
 
-    modalInstance = $modal.open
+    modalInstance = $uibModal.open
       templateUrl: 'shared/_card_modal.html'
       controller: 'BuilderCardModalInstanceCtrl'
       size: 'sm'

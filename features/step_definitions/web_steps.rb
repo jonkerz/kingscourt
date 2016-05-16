@@ -1,5 +1,5 @@
 Given /^I (?:am on|go to) the home page$/ do
-  visit '/'
+  visit "/"
 end
 
 Then /^I should see "([^"]*)"$/ do |text|

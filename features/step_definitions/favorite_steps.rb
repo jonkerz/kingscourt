@@ -20,7 +20,7 @@ end
 
 def star_next_to kingdom_name
   element = find ".list-group-item a", text: kingdom_name
-  element.find(:xpath, '..').find(:button)
+  element.find(:xpath, "..").find(:button)
 end
 
 def favorited? star

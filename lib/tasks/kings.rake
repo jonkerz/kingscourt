@@ -1,4 +1,4 @@
-require 'csv'
+require "csv"
 
 namespace :kings do
   task remove_orphaned_kingdom_cards: :environment do

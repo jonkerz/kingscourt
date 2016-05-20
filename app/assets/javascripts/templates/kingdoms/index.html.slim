@@ -22,10 +22,10 @@
               a< ng-href="#!/{{kingdom.username}}/kingdoms" {{kingdom.username}}
             .clearfix ng-if="displayMode=='images'"
               span.col-xs-20p.col-sm-10p.col-md-10p.padding-0 ng-repeat="card in kingdom.cards"
-                hover-card-image card="{{card}}"
+                hovercard-image card="{{card}}"
             div ng-if="displayMode=='text'"
               span ng-repeat="card in kingdom.cards"
-                hover-card card="{{card}}"
+                hovercard-text card="{{card}}"
                 | {{$last ? '' : ', '}}
 
         .pull-right ng-hide="kingdoms.length == 0"

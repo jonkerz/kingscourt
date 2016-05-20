@@ -1,5 +1,5 @@
 .btn.btn-block.btn-primary.btn-md.card-box ng-class="cardStatus(card)"
-  img ng-src="icons/16px-Coin{{::card.cost}}.png" style="float: left; margin-left: 3px"
+  img.cost-icon ng-src="icons/16px-Coin{{::card.cost}}.png"
   span
-    img ng-src="icons/{{::card.expansion_id}}.png" style="float: right; margin-right: 3px;"
+    img.expansion-icon ng-src="icons/{{::card.expansion_id}}.png"
     {{::card.name}}

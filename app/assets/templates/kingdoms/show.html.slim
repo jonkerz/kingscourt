@@ -1,7 +1,6 @@
-.row ng-controller="KingdomDetailCtrl"
+.row
   .col-md-9
     .well.clearfix[ng-cloak]
-      h3 {{kingdom.name}}
       .row.kingdom
         .col-xs-6.col-sm-4.col-md-3.col-lg-20p.thumbnail.transparent-bg ng-repeat="card in kingdom.cards" ng-controller="ModalCtrl"
           img.col-xs-12.card-border-radius ng-click="openCard(card)" ng-src="cards/{{::card.image}}"
@@ -10,5 +9,6 @@
             img.col-xs-12.card-border-radius ng-src="cards/Randomizer.jpg"
     panel-collapse title="Comments"
       dir-disqus disqus-shortname="kingscourt" disqus-identifier="kingdoms/{{kingdom.id}}" disqus-url="http://kingscourt.io/#!/kingdoms/{{kingdom.id}}" ready-to-bind="{{contentLoaded}}"
+
   .col-md-3
     ng-include src="'kingdoms/_kingdom_details_panel.html'"

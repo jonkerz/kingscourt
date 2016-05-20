@@ -36,6 +36,7 @@ Feature: Kingdom browser
     And I should see "Batiatus's Kingdom"
     And I should see "by Batiatus"
     When I follow "Batiatus's Kingdom"
+    And I wait
     Then I should see 10 face up cards
     And I should see "Description:"
 

@@ -1,6 +1,6 @@
 angular.module 'KingsCourt'
 
-.controller 'MyFavoriteKingdomsCtrl', ($controller, $scope, $routeParams) ->
+.controller 'MyFavoriteKingdomsCtrl', ($controller, $scope) ->
   $controller 'KingdomCtrl', $scope: $scope
 
   $scope.kingdomsUrl += '&my_favorites=true'

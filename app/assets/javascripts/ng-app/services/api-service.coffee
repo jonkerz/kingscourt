@@ -24,4 +24,4 @@ angular.module 'KingsCourt'
       $http.get(url, { cache: true }).success (response) ->
         deferred.resolve response
 
-      return deferred.promise
+      deferred.promise

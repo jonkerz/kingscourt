@@ -4,22 +4,27 @@ angular.module 'KingsCourt'
   $routeProvider.when '/',
     title: 'Generator'
     templateUrl: 'generator/index.html'
+    controller: 'GeneratorCtrl'
 
   .when '/builder',
     title: 'Builder'
     templateUrl: 'builder/index.html'
+    controller: 'BuilderCtrl'
 
   .when '/kingdoms/:id',
     title: 'Kingdoms'
     templateUrl: 'kingdoms/show.html'
+    controller: 'KingdomDetailCtrl'
 
   .when '/kingdoms/:id/:string',
     title: '###'
     templateUrl: 'kingdoms/show.html'
+    controller: 'KingdomDetailCtrl'
 
   .when '/cards',
     title: 'Browse Cards'
     templateUrl: 'cards/index.html'
+    controller: 'CardCtrl'
 
   .when '/kingdoms',
     title: 'Browse Kingdoms'
@@ -58,6 +63,7 @@ angular.module 'KingsCourt'
   .when '/import',
     title: 'Import'
     templateUrl: 'importer/index.html'
+    controller: 'ImportCtrl'
 
   .when '/loading',
     title: 'Loading...'

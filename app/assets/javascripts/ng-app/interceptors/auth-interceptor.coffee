@@ -4,10 +4,10 @@ angular.module 'KingsCourt'
   request: (config) ->
     config.headers = config.headers or {}
     _.assign config.headers, $rootScope.getHeaders()
-    return config
+    config
 
   responseError: (response) ->
     if response.status is 404
       console.log 'AuthInterceptor: cannot connect...'
     Alerts.add "responseError #{response.status}: #{response.statusText}"
-    return $q.reject response
+    $q.reject response

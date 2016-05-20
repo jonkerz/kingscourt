@@ -2,7 +2,7 @@ ActiveAdmin.register Card do
   filter :card_attributes, as: :check_boxes
   preserve_default_filters!
 
-  config.per_page = 60
+  config.per_page = 500
 
   Expansion.all.each do |expansion|
     scope expansion.name do |scope|

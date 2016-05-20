@@ -1,6 +1,6 @@
 angular.module "KingsCourt"
 
-.directive "trash", ($compile) ->
+.directive "trash", ->
   restrict: "A"
   link: (scope, element, attrs) ->
     element.droppable

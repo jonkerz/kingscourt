@@ -13,11 +13,6 @@ namespace :kings do
   end
 
   desc "rake -T"
-  task unique_general_card_types: :environment do
-    puts unique_general_card_types
-  end
-
-  desc "rake -T"
   task add_general_card_types_to_cards: :environment do
     Card.find_each do |card|
       types_from_attribute = card.card_type.name.split("-").map { |type| "is#{type}"}
@@ -33,12 +28,41 @@ namespace :kings do
   end
 
   desc "rake -T"
+  task check: :environment do
+    Rake::Task["kings:check_card_types"].invoke
+    Rake::Task["kings:check_terminal"].invoke
+  end
+
+  desc "rake -T"
   task check_card_types: :environment do
+    puts "Checking card types".blue
+
     check_card_types "givesOneAction", "givesActions"
     check_card_types "givesTwoActions", "givesActions"
 
     check_card_types "givesOneCard", "givesCards"
     check_card_types "givesTwoCards", "givesCards"
+
+    check_card_types "givesOneCoin", "givesCoins"
+    check_card_types "givesTwoCoins", "givesCoins"
+  end
+
+  desc "rake -T"
+  task check_terminal: :environment do
+    puts "Checking terminal/givesActions".blue
+
+    CardAttribute["isAction"].cards.each do |card|
+      givesActions = !!card.card_attributes.include?(CardAttribute["givesActions"])
+      terminal = !!card.card_attributes.include?(CardAttribute["terminal"])
+
+      if givesActions && terminal
+        puts "#{card.name} gives actions and is terminal...".red
+      end
+
+      unless givesActions || terminal
+        puts "#{card.name} gives no actions and is not terminal...".red
+      end
+    end
   end
 end
 

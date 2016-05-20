@@ -1,11 +1,12 @@
-.row[ng-controller="BuilderCtrl" ng-cloak]
+.row[ng-cloak]
   .col-md-3.hidden-md.hidden-lg
-    .well-t.clearfix
+    .transparent-well.clearfix
       ng-include src="'shared/_alerts.html'"
     .well.clearfix ng-show="tab=='randomizer-tab'"
       ng-include src="'builder/_randomize_panel.html'"
     .well.clearfix
       ng-include src="'builder/_kingdom_panel.html'"
+
   .col-md-9
     .well.clearfix
       ul#tabs.nav.nav-tabs data-tabs="tabs"
@@ -18,8 +19,9 @@
           ng-include src="'builder/tabs/_randomizer.html'"
         #by-name-tab.tab-pane.fade ng-if="tab=='by-name-tab'"
           ng-include src="'builder/tabs/_by_name.html'"
+
   .col-md-3
-    .well-t.clearfix.hidden-xs.hidden-sm
+    .transparent-well.clearfix.hidden-xs.hidden-sm
       ng-include src="'shared/_alerts.html'"
     .well.clearfix.hidden-xs.hidden-sm ng-show="tab=='randomizer-tab'"
       ng-include src="'builder/_randomize_panel.html'"

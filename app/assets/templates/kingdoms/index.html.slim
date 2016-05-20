@@ -25,7 +25,7 @@
                 hover-card-image card-name="{{::card.name}}" card-image="{{::card.image}}"
             div ng-if="displayMode=='text'"
               span ng-repeat="card in kingdom.cards"
-                hover-card card-name="{{card.name}}"
+                hover-card card="{{card}}"
                 | {{$last ? '' : ', '}}
 
         .pull-right ng-hide="kingdoms.length == 0"

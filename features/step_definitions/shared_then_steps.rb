@@ -8,7 +8,7 @@ Then /^I should see (\d+) face up cards$/ do |number|
 end
 
 def facedown_cards
-  all :xpath, "//img[contains(@src, 'Randomizer.jpg')]"
+  all :xpath, "//img[contains(@src, 'randomizer.jpg')]"
 end
 
 Transform /(^-?\d+$)/ do |str|

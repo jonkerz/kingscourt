@@ -17,6 +17,6 @@ class Card < ApplicationRecord
 
   def image
     base_filename = self.name.tr(" ", "_").delete("'")
-    "#{base_filename}.jpg"
+    "#{base_filename.downcase}.jpg"
   end
 end

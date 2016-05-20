@@ -17,8 +17,6 @@ public/assets/**
 # Card assets
 /public/cards/*
 !/public/cards/.keep
-/public/cards_large/*
-!/public/cards_large/.keep
 
 # Ignore application configuration
 .env

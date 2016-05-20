@@ -1,6 +1,6 @@
 angular.module 'KingsCourt'
 
-.controller 'CardBroswerCtrl', ($scope, $http, ExpansionSelector, Card, API_SERVER) ->
+.controller 'CardCtrl', ($scope, $http, ExpansionSelector, Card, API_SERVER) ->
   $scope.allCards = Card.cards
 
   $http.get('/api/v1/cards?non_randomizers_only=true', { cache: true }).then (response) -> #TODO

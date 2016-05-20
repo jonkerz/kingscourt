@@ -39,7 +39,7 @@ set :puma_init_active_record, true
 set :linked_dirs, %w(
   bin log tmp/pids tmp/cache
   tmp/sockets vendor/bundle public/system
-  public/cards public/cards_large
+  public/cards
 )
 
 namespace :puma do

@@ -6,7 +6,6 @@
   border: 0
   outline: none
   border: 0px
-  -webkit-box-sizing: none
   box-sizing: none
   background-color: transparent
   &:active, &:focus
@@ -15,7 +14,6 @@
     border: 0
     outline: none
     border: 0px
-    -webkit-box-sizing: none
     box-sizing: none
     background-color: transparent
 
@@ -24,21 +22,13 @@
   @extend ._button-as-link
 
 .favorite-not-spinning
-  -webkit-transition-duration: 0.8s
-  -moz-transition-duration: 0.8s
-  -o-transition-duration: 0.8s
   transition-duration: 0.8s
-  -webkit-transition-property: -webkit-transform
-  -moz-transition-property: -moz-transform
-  -o-transition-property: -o-transform
   transition-property: transform
 
 .favorite-spinning
   -webkit-transform: rotate(-72deg)
   -moz-transform: rotate(-72deg)
   -o-transform: rotate(-72deg)
+
   tranform: rotate(-72deg)
-  -webkit-transform-origin: 50% 50%
-  -moz-transform-origin: 50% 50%
-  -o-transform-origin: 50% 50%
   transform-origin: 50% 50%

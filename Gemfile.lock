@@ -95,6 +95,8 @@ GEM
       activesupport (>= 3.0.0)
     arel (7.0.0)
     ast (2.2.0)
+    autoprefixer-rails (6.3.6.1)
+      execjs
     bcrypt (3.1.11)
     bourbon (4.2.7)
       sass (~> 3.4)
@@ -397,6 +399,7 @@ DEPENDENCIES
   active_model_serializers!
   activeadmin!
   angular-rails-templates
+  autoprefixer-rails
   bower-rails (~> 0.10.0)
   capistrano
   capistrano-bundler

@@ -34,6 +34,7 @@ gem "kaminari",
 gem "less-rails" # For Bootstrap
 gem "paper_trail"
 gem "slugify"
+gem "autoprefixer-rails"
 
 group :development do
   gem "web-console"

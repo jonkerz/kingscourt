@@ -14,7 +14,7 @@
           a data-target="#randomizer-tab" data-toggle="tab" ng-click="setTab('randomizer-tab')" Add Random
         li
           a data-target="#by-name-tab" data-toggle="tab" ng-click="setTab('by-name-tab')" Add Card by Name
-      #my-tab-content.tab-content.white-bg
+      .tab-content
         #randomizer-tab.tab-pane.fade.in.active.clearfix ng-if="tab=='randomizer-tab'"
           ng-include src="'builder/tabs/_randomizer.html'"
         #by-name-tab.tab-pane.fade ng-if="tab=='by-name-tab'"

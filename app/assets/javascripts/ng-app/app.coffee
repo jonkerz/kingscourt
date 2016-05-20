@@ -1,4 +1,4 @@
-# Bootstrap thing...
+# Bootstraping the app like this because all screens depend on the JSON cards.
 angular.element(document).ready ->
   initInjector = angular.injector ['ng']
   $http = initInjector.get '$http'
@@ -22,7 +22,7 @@ KingsCourt = angular.module 'KingsCourt', [
 
 KingsCourt.run ($location, $rootScope, $auth, ExpansionSelector) ->
   $rootScope.expansionSelector = ExpansionSelector
-  $rootScope.getHeaders = -> $auth.retrieveData('auth_headers')
+  $rootScope.getAuthHeaders = -> $auth.retrieveData('auth_headers')
 
   $rootScope.$on '$routeChangeSuccess', (event, currentRoute, previousRoute) ->
     baseTitle = "King's Court - Dominion Kingdom Generator"

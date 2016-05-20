@@ -12,7 +12,7 @@
         ul.list-group.kingdom-list
           li.list-group-item ng-repeat="kingdom in kingdoms"
             span.badge {{kingdom.favorite_count}}
-            button.pull-right.btn-lnk ng-show="user.signedIn" href="" ng-class="{'favorite-spinning': isSaving && savingKingdomId == kingdom.id, 'favorite': !isSaving}" ng-disabled="isSaving" ng-click="toggleFavorite(kingdom)"
+            button.favorite.pull-right ng-show="user.signedIn" href="" ng-class="{'favorite-spinning': isSaving && savingKingdomId == kingdom.id, 'favorite-not-spinning': !isSaving}" ng-disabled="isSaving" ng-click="toggleFavorite(kingdom)"
               span.fa.pull-right[tooltip="{{kingdom.favorite ? 'Remove from favorites' : 'Add to favorites'}}" tooltip-trigger tooltip-placement="top" popover-append-to-body="true" ng-class="{false: 'fa-star-o', true: 'fa-star'}[kingdom.favorite]"]
             a> href="#!/kingdoms/{{kingdom.id}}/{{kingdom.slug}}" {{kingdom.name}}
             span.description>
@@ -21,7 +21,7 @@
               | by
               a< ng-href="#!/{{kingdom.username}}/kingdoms" {{kingdom.username}}
             .clearfix ng-if="displayMode=='images'"
-              span.col-xs-20p.col-sm-10p.col-md-10p.padding-0 ng-repeat="card in kingdom.cards"
+              span.col-xs-20p.col-sm-10p.col-md-10p.small-padding ng-repeat="card in kingdom.cards"
                 hovercard-image card="{{card}}"
             div ng-if="displayMode=='text'"
               span ng-repeat="card in kingdom.cards"

@@ -1,11 +1,8 @@
 h4 {{selectedCard.name || "Select a card"}}
-div ng-if="!selectedCard"
-  .black_card.shadow
-    img.card_image width="180" ng-src="randomizer.jpg"
+.black_card.shadow
+  img.card_image width="180" ng-src="{{selectedCard ? ('cards/' + selectedCard.image) : 'randomizer.jpg'}}"
 
 div ng-if="selectedCard"
-  .black_card.shadow
-    img.card_image width="180" ng-src="cards/{{selectedCard.image}}"
   Expansion:
   br
   img ng-src="icons/{{selectedCard.expansion_id}}.png" width="16" height="16"

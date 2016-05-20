@@ -1,0 +1,2 @@
+button.favorite.pull-right ng-show="user.signedIn" href="" ng-class="{'favorite-spinning': isSaving && savingKingdomId == kingdom.id, 'favorite-not-spinning': !isSaving}" ng-disabled="isSaving" ng-click="toggleFavorite(kingdom)"
+  span.fa.pull-right[tooltip="{{kingdom.favorite ? 'Remove from favorites' : 'Add to favorites'}}" tooltip-trigger tooltip-placement="top" popover-append-to-body="true" ng-class="{false: 'fa-star-o', true: 'fa-star'}[kingdom.favorite]"]

@@ -9,15 +9,8 @@
 
       .row
         .col-md-12
-          div dir-paginate="card in allCards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage" current-page="currentPage" pagination-id="allCards" ng-class="{'col-xs-12 col-sm-6 col-md-4': displayMode=='labels'}"
-            div ng-if="displayMode=='images'"
-              div[ng-include src="'cards/card-image.tpl.html'"]
-
-            div ng-if="displayMode=='labels'"
-              div[ng-include src="'cards/card-label.tpl.html'"]
-
-            div ng-if="displayMode=='text'"
-              div[ng-include src="'cards/card-text.tpl.html'"]
+          div dir-paginate="card in allCards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage" current-page="currentPage" pagination-id="allCards" ng-class="{'col-xs-12 col-sm-6 col-md-4': displayMode=='label'}"
+            ng-include src="'cards/card-' + displayMode + '.tpl.html'"
 
           p ng-show="!expansionSelector.selected.length" Please select at least one expansion.
 
@@ -27,10 +20,10 @@
     .well
       h4 Display
       div
-        button.btn.btn-success.btn-sm> ng-click="displayMode='images'" Images
-        button.btn.btn-success.btn-sm> ng-click="displayMode='labels'" Labels
+        button.btn.btn-success.btn-sm> ng-click="displayMode='image'" Images
+        button.btn.btn-success.btn-sm> ng-click="displayMode='label'" Labels
         button.btn.btn-success.btn-sm> ng-click="displayMode='text'" Text
-      div ng-show="displayMode=='images'"
+      div ng-show="displayMode=='image'"
         Display size: {{cardDisplaySize}}
         .slider[slider config="cardDisplaySizeSliderConfig" model="cardDisplaySize"]
       Cards per page: {{cardsPerPage}}

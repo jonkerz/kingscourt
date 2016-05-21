@@ -4,7 +4,7 @@ angular.module 'KingsCourt'
   $scope.randomizer = Randomizer # minCost & maxCost
   $scope.expansionSelector = ExpansionSelector
   $scope.kingdom = Kingdom.getOrCreate 'builder'
-  $scope.allCards = Deck.cards
+  $scope.allRandomizers = Deck.cards
 
   $scope.currentPage = 1
   $scope.pageSize = 25

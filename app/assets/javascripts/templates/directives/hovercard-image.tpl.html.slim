@@ -1,4 +1,4 @@
-.hovercard.fix-stacking-hack
+.hovercard.fix-stacking-hack[card-modal data-card="{{card}}"]
   img.thumbnail.card-border-radius.hovercard.fix-stacking-hack ng-src="cards/small/{{::card.image}}" ng-mouseenter="showCard = true" ng-mouseleave="showCard = false"
   .hovercard-detail ng-class="{'hovercard-visible': showCard}"
     img ng-src="cards/{{::card.image}}"

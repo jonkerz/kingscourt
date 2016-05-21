@@ -7,7 +7,7 @@
         .col-md-4
           input#search.form-control ng-model="q" placeholder="Search"
       .row
-        .col-md-12 ng-controller="ModalCtrl"
+        .col-md-12
           #triple ng-if="displayMode=='labels'"
             .col-xs-12.col-sm-6.col-md-4 dir-paginate="card in allCards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage: 'allCards'" current-page="currentPage" pagination-id="allCards"
               div[ng-include src="'cards/card-label.tpl.html'"]

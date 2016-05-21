@@ -1,11 +1,11 @@
 panel-collapse title="Save Kingdom"
   p ng-hide="user.signedIn" ng-controller="SaveCtrl"
-    span ng-controller="ModalCtrl"
-      You must be logged in to save kingdoms, please
-      a href="" ng-click="openLogin()" login
-      , or
-      a> href="" ng-click="openLogin()" register
-      | an account.
+    You must be logged in to save kingdoms, please
+    a href="" ng-click="openLogin()" login
+    , or
+    a> href="" ng-click="openLogin()" register
+    | an account.
+
   div ng-show="user.signedIn" ng-controller="SaveCtrl"
     input#kingdom-name.form-control.input-small ng-hide="kingdom.id" type="text" placeholder="Kingdom name" ng-model="kingdom.name"
     p ng-show="kingdom.id" {{kingdom.name}}

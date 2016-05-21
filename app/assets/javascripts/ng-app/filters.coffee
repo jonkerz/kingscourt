@@ -2,16 +2,17 @@ angular.module 'KingsCourt'
 
 .filter 'expansionToString', ->
   ExpansionEnum =
-    0: 'Dominion'
-    1: 'Intrigue'
-    2: 'Seaside'
-    3: 'Alchemy'
-    4: 'Prosperity'
-    5: 'Cornucopia'
-    6: 'Hinterlands'
-    7: 'Dark Ages'
-    8: 'Guilds'
-    9: 'Promo'
+    1:  'Dominion'
+    2:  'Intrigue'
+    3:  'Seaside'
+    4:  'Alchemy'
+    5:  'Prosperity'
+    6:  'Cornucopia'
+    7:  'Hinterlands'
+    8:  'Dark Ages'
+    9:  'Guilds'
+    10: 'Promo'
+    11: 'Adventures'
 
   (exp) -> ExpansionEnum[exp]
 

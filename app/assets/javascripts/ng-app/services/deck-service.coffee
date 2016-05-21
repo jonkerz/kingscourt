@@ -39,8 +39,8 @@ angular.module "KingsCourt"
     excludeByExpansion: (expansions) ->
       @_excludeByX "expansion_id", expansions
 
-    excludeByCost: (cost) ->
-      @_excludeByX "cost_in_coins", cost
+    excludeByCost: (costInCoins) ->
+      @_excludeByX "cost_in_coins", costInCoins
 
     _excludeByX: (param, values) ->
       return if values.length is 0

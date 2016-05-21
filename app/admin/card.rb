@@ -15,7 +15,7 @@ ActiveAdmin.register Card do
     id_column
     column :name
     column :randomizable
-    column :cost
+    column :cost_in_text
     column :cost_in_coins
     column :text
     column :expansion_id
@@ -40,7 +40,7 @@ ActiveAdmin.register Card do
       row :id
       row :name
       row :randomizable
-      row :cost
+      row :cost_in_text
       row :cost_in_coins
       row :text
       row :expansion_id
@@ -57,7 +57,7 @@ ActiveAdmin.register Card do
     f.inputs "Attributes" do
       f.input :name
       f.input :randomizable
-      f.input :cost
+      f.input :cost_in_text
       f.input :cost_in_coins
       f.input :text
       f.input :expansion

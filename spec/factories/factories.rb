@@ -9,7 +9,7 @@ FactoryGirl.define do
     end
     randomizable true
     expansion
-    cost "2"
+    cost_in_text "2"
     cost_in_coins 2
 
     after :create do |card, evaluator|

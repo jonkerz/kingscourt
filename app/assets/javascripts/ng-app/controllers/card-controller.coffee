@@ -9,9 +9,6 @@ angular.module 'KingsCourt'
   $scope.currentPage = 1
   $scope.displayMode = 'images'
 
-  $scope.selectedCard = null
-  $scope.setSelectedCard = (card) -> $scope.selectedCard = card
-
   $scope.orderByField = 'name'
   $scope.reverseSort = false
 

@@ -6,18 +6,21 @@
           dir-pagination-controls boundary-links="true" pagination-id="allCards" on-page-change="pageChangeHandler(newPageNumber)"
         .col-md-4
           input#search.form-control ng-model="q" placeholder="Search"
+
       .row
         .col-md-12
-          #triple ng-if="displayMode=='labels'"
-            .col-xs-12.col-sm-6.col-md-4 dir-paginate="card in allCards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage: 'allCards'" current-page="currentPage" pagination-id="allCards"
-              div[ng-include src="'cards/card-label.tpl.html'"]
-          div ng-if="displayMode=='images'"
-            div dir-paginate="card in allCards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage" current-page="currentPage" pagination-id="allCards" ng-click="setSelectedCard(card)"
+          div dir-paginate="card in allCards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage" current-page="currentPage" pagination-id="allCards" ng-class="{'col-xs-12 col-sm-6 col-md-4': displayMode=='labels'}"
+            div ng-if="displayMode=='images'"
               div[ng-include src="'cards/card-image.tpl.html'"]
-          div ng-if="displayMode=='ascii'"
-            div dir-paginate="card in allCards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage: 'allCards'" current-page="currentPage" pagination-id="allCards"
+
+            div ng-if="displayMode=='labels'"
+              div[ng-include src="'cards/card-label.tpl.html'"]
+
+            div ng-if="displayMode=='text'"
               div[ng-include src="'cards/card-text.tpl.html'"]
+
           p ng-show="!expansionSelector.selected.length" Please select at least one expansion.
+
   .col-md-3
     .well
       ng-include src="'shared/_expansion_selector.html'"
@@ -26,7 +29,7 @@
       div
         button.btn.btn-success.btn-sm> ng-click="displayMode='images'" Images
         button.btn.btn-success.btn-sm> ng-click="displayMode='labels'" Labels
-        button.btn.btn-success.btn-sm> ng-click="displayMode='ascii'" Text
+        button.btn.btn-success.btn-sm> ng-click="displayMode='text'" Text
       div ng-show="displayMode=='images'"
         Display size: {{cardDisplaySize}}
         .slider[slider config="cardDisplaySizeSliderConfig" model="cardDisplaySize"]

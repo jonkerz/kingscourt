@@ -7,31 +7,29 @@
         .col-md-4
           input#search.form-control ng-model="q" placeholder="Search"
       .row
-        .col-md-12
+        .col-md-12 ng-controller="ModalCtrl"
           #triple ng-if="displayMode=='labels'"
-            .col-xs-12.col-sm-6.col-md-4 dir-paginate="card in allCards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage: 'allCards'" current-page="currentPage" pagination-id="allCards" ng-click="setSelectedCard(card)"
+            .col-xs-12.col-sm-6.col-md-4 dir-paginate="card in allCards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage: 'allCards'" current-page="currentPage" pagination-id="allCards"
               div[ng-include src="'cards/card-label.tpl.html'"]
           div ng-if="displayMode=='images'"
             div dir-paginate="card in allCards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage" current-page="currentPage" pagination-id="allCards" ng-click="setSelectedCard(card)"
               div[ng-include src="'cards/card-image.tpl.html'"]
           div ng-if="displayMode=='ascii'"
-            div dir-paginate="card in allCards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage: 'allCards'" current-page="currentPage" pagination-id="allCards" ng-click="setSelectedCard(card)"
+            div dir-paginate="card in allCards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage: 'allCards'" current-page="currentPage" pagination-id="allCards"
               div[ng-include src="'cards/card-text.tpl.html'"]
           p ng-show="!expansionSelector.selected.length" Please select at least one expansion.
   .col-md-3
     .well
       ng-include src="'shared/_expansion_selector.html'"
-    .well.clearfix
-      ng-include src="'cards/_selected_card_panel.html'"
     .well
       h4 Display
       div
         button.btn.btn-success.btn-sm> ng-click="displayMode='images'" Images
         button.btn.btn-success.btn-sm> ng-click="displayMode='labels'" Labels
         button.btn.btn-success.btn-sm> ng-click="displayMode='ascii'" Text
-      span ng-show="displayMode=='images'"
-      Display size: {{cardDisplaySize}}
-      .slider[slider config="cardDisplaySizeSliderConfig" model="cardDisplaySize"]
+      div ng-show="displayMode=='images'"
+        Display size: {{cardDisplaySize}}
+        .slider[slider config="cardDisplaySizeSliderConfig" model="cardDisplaySize"]
       Cards per page: {{cardsPerPage}}
       .slider[slider config="cardsPerPageSliderConfig" model="cardsPerPage"]
       h4

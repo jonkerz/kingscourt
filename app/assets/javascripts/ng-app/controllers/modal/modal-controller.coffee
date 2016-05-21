@@ -22,14 +22,4 @@ angular.module 'KingsCourt'
       controller: 'CardModalInstanceCtrl'
       size: 'sm'
       scope: scope
-
-  $scope.openBuilderCard = (card) ->
-    scope = $rootScope.$new()
-    scope.params = card: card
-
-    modalInstance = $uibModal.open
-      templateUrl: 'shared/_card_modal.html'
-      controller: 'BuilderCardModalInstanceCtrl'
-      size: 'sm'
-      scope: scope
       animation: false

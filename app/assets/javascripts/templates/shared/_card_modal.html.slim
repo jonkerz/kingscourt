@@ -1,3 +1,11 @@
 .modal-body.clearfix ng-click="ok()"
   img.col-xs-12.card-border-radius ng-src="cards/{{::card.image}}" style="margin-bottom:10px"
   button.btn.btn-danger.col-xs-12 ng-show="isAdded" ng-click="kingdom.removeCard(card)" Remove Card
+
+  Expansion:
+  br
+  img ng-src="icons/{{card.expansion_id}}.png" width="16" height="16"
+  {{card.text}}
+  br
+  Cost:
+  img ng-src="icons/16px-Coin{{card.cost}}.png"

@@ -1,4 +1,4 @@
-.btn.btn-block.btn-primary.btn-md.card-box ng-class="cardStatus(card)"
+.btn.btn-block.btn-primary.btn-md.card-title[card-modal data-card="{{card}}" ng-class="cardStatus(card)"]
   img.cost-icon ng-src="icons/16px-Coin{{::card.cost}}.png"
   span
     img.expansion-icon ng-src="icons/{{::card.expansion_id}}.png"

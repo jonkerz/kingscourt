@@ -9,7 +9,7 @@
     .well.clearfix[ng-cloak]
       .row.kingdom
         .col-xs-6.col-sm-4.col-md-3.col-lg-20p.thumbnail.transparent-bg ng-repeat="card in kingdom.cards" ng-controller="ModalCtrl"
-          img.col-xs-12.card-border-radius.shadow ng-click="openCard(card)" ng-src="cards/{{::card.image}}"
+          img.col-xs-12.card-border-radius.shadow[ng-src="cards/{{::card.image}}" card-modal data-card="{{card}}"]
         div ng-show="kingdom.cards.length < 10"
           .col-xs-6.col-sm-4.col-md-3.col-lg-20p.thumbnail.transparent-bg ng-repeat="a in range(10 - kingdom.cards.length) track by $index"
             img.col-xs-12.card-border-radius.shadow ng-src="randomizer.jpg"

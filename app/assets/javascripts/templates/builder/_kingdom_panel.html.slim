@@ -1,6 +1,6 @@
 .ui-widget-header ng-controller="ModalCtrl"
   h5: i.fi-check Kingdom Cards ({{kingdom.cards.length}})
-  .btn.btn-primary.btn-block[ng-repeat="card in kingdom.cards" data-index="{{$index}}" data-card="{{::card}}" draggable]
+  .btn.btn-primary.btn-block.card-title[ng-repeat="card in kingdom.cards" data-index="{{$index}}" data-card="{{::card}}" card-modal draggable]
     img.cost-icon ng-src="icons/16px-Coin{{::card.cost}}.png"
     {{::card.name}}
     img.expansion-icon ng-src="icons/{{::card.expansion_id}}.png"

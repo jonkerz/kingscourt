@@ -7,7 +7,7 @@
   .col-xs-12
     p ng-show="!expansionSelector.selected.length" Please select at least one expansion.
     span.col-xs-12.col-sm-6.col-md-4 dir-paginate="card in allCards | orderBy:'name' | filter:{ name: q }  | filter:filterByExpansion | itemsPerPage: pageSize" current-page="currentPage" pagination-id="allCards" ng-click="kingdom.addCard(card)"
-      .btn.btn-block.btn-md.card-box ng-class="cardStatus(card)"
+      .btn.btn-block.btn-md.card-title ng-class="cardStatus(card)"
         img.cost-icon ng-src="icons/16px-Coin{{::card.cost}}.png"
-        span.card-label {{::card.name}}
+        {{::card.name}}
         img.expansion-icon ng-src="icons/{{::card.expansion_id}}.png"

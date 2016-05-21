@@ -1,3 +1,7 @@
+// Weird filename "kings_angular" and not the usual "application"
+// to make it clear that this is used only by the Angular app,
+// and "angular.js" would be a very bad name.
+
 //= require jquery
 //= require jquery_ujs
 //= require angular
@@ -23,6 +27,7 @@
 
 //= require angular-paginate-anything/dist/paginate-anything
 //= require angular-paginate-anything/dist/paginate-anything-tpls
+//= require angular-lazy-img/release/angular-lazy-img
 
 //= require_tree ./ng-app
 

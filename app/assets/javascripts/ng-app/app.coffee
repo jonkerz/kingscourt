@@ -18,6 +18,7 @@ KingsCourt = angular.module 'KingsCourt', [
   'ng-token-auth'
   'bgf.paginateAnything'
   'ui.bootstrap'
+  'angularLazyImg'
 ]
 
 KingsCourt.run ($location, $rootScope, $auth, ExpansionSelector) ->

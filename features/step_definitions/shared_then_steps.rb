@@ -3,7 +3,7 @@ Then /^I should see (\d+) face down cards$/ do |number|
 end
 
 Then /^I should see (\d+) face up cards$/ do |number|
-  cards = all ".card-border-radius"
+  cards = all ".rounded-card"
   expect(cards.size - facedown_cards.size).to eq number
 end
 

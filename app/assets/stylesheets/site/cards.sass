@@ -1,16 +1,23 @@
-.black_card
-  float: left
-  background-color: #000
-  margin: 5px
-  position: relative
-  border: 0.3em solid black
-  border-radius: 5%
-
 .shadow
   box-shadow: 2px 2px 3px #000
 
-.card-border-radius
+.rounded-card
   background-color: #000
   border: 0.3em solid black
   border-radius: 5%
   padding: 0.1em
+
+.card-browser-card
+  float: left
+  margin: 5px
+
+.responsive-card
+  float: left
+  padding: 2px
+  width: 50%
+
+  @media (min-width: 768px)
+    width: 33%
+
+  @media (min-width: 1200px)
+    width: 20%

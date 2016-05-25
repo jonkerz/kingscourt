@@ -1,4 +1,4 @@
 .hovercard[card-modal data-card="{{card}}"]
   span ng-mouseenter="showCard = true" ng-mouseleave="showCard = false" {{::card.name}}
   .hovercard-popup ng-class="{'hovercard-visible': showCard}"
-    img src="cards/small/{{::card.image}}" lazy-img="cards/{{::card.image}}" ng-if="showCard" width="290" height="464"
+    img ng-src="cards/small/{{::card.image}}" lazy-img="cards/{{::card.image}}" ng-if="showCard" width="290" height="464"

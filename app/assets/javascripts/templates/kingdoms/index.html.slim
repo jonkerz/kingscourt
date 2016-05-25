@@ -14,13 +14,11 @@
             span.badge {{kingdom.favorite_count}}
             kingdom-favoriter
             a> href="#!/kingdoms/{{kingdom.id}}/{{kingdom.slug}}" {{kingdom.name}}
-            span.description>
-              i {{kingdom.description}}
             span
               | by
               a< ng-href="#!/{{kingdom.username}}/kingdoms" {{kingdom.username}}
             .clearfix ng-if="displayMode=='images'"
-              span.col-xs-20p.col-sm-10p.col-md-10p.small-padding ng-repeat="card in kingdom.cards"
+              span.responsive-card ng-repeat="card in kingdom.cards"
                 hovercard-image card="{{card}}"
             div ng-if="displayMode=='text'"
               span ng-repeat="card in kingdom.cards"

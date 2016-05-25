@@ -18,7 +18,7 @@
               | by
               a< ng-href="#!/{{kingdom.username}}/kingdoms" {{kingdom.username}}
             .clearfix ng-if="displayMode=='images'"
-              span.responsive-card ng-repeat="card in kingdom.cards"
+              span ng-repeat="card in kingdom.cards"
                 hovercard-image card="{{card}}"
             div ng-if="displayMode=='text'"
               span ng-repeat="card in kingdom.cards"

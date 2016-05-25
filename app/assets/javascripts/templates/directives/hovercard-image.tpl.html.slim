@@ -1,4 +1,4 @@
-.hovercard[card-modal data-card="{{card}}"]
+.hovercard.responsive-card[card-modal data-card="{{card}}"]
   img.rounded-card.hovercard.fix-stacking-hack ng-src="cards/small/{{::card.image}}" ng-mouseenter="showCard = true" ng-mouseleave="showCard = false"
   .hovercard-popup ng-class="{'hovercard-visible': showCard}"
     img ng-src="cards/small/{{::card.image}}" lazy-img="cards/{{::card.image}}" ng-if="showCard" width="290" height="464"

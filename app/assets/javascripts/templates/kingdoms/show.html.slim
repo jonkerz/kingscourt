@@ -1,8 +1,8 @@
 .row
   .col-md-9
     .well.clearfix[ng-cloak]
-      .responsive-card.thumbnail ng-repeat="card in kingdom.cards"
-        img.card-border-radius[ng-src="cards/{{::card.image}}" card-modal data-card="{{card}}"]
+      .responsive-card ng-repeat="card in kingdom.cards"
+        img.card-border-radius.fix-stacking-hack[ng-src="cards/{{::card.image}}" card-modal data-card="{{card}}"]
 
     panel-collapse title="Comments"
       dir-disqus disqus-shortname="kingscourt" disqus-identifier="kingdoms/{{kingdom.id}}" disqus-url="http://kingscourt.io/#!/kingdoms/{{kingdom.id}}" ready-to-bind="{{contentLoaded}}"

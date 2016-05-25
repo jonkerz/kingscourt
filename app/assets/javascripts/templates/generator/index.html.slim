@@ -7,11 +7,11 @@
 
   .col-md-9
     .well.clearfix[ng-cloak]
-      .responsive-card.thumbnail ng-repeat="card in kingdom.cards"
-        img.card-border-radius.shadow[ng-src="cards/{{::card.image}}" card-modal data-card="{{card}}"]
+      .responsive-card ng-repeat="card in kingdom.cards"
+        img.card-border-radius.shadow.fix-stacking-hack[ng-src="cards/{{::card.image}}" card-modal data-card="{{card}}"]
       div ng-show="kingdom.cards.length < 10"
-        .responsive-card.thumbnail ng-repeat="a in range(10 - kingdom.cards.length) track by $index"
-          img.card-border-radius.shadow ng-src="randomizer.jpg"
+        .responsive-card ng-repeat="a in range(10 - kingdom.cards.length) track by $index"
+          img.fix-stacking-hack.card-border-radius.shadow ng-src="randomizer.jpg"
 
   .col-md-3
     .transparent-well.clearfix.hidden-xs.hidden-sm

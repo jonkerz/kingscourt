@@ -24,7 +24,20 @@ Feature: Editing
 
     When I follow "Joffre's Kingdom"
     And I press "Delete"
+    And I press "Confirm"
     Then I should see "Successfully deleted Joffre's Kingdom"
 
     When I follow "Browse Kingdoms"
     Then I should see 0 kingdoms
+
+  Scenario: Not deleting unless confirmed
+    And I wait
+    Then I should see 1 kingdom
+
+    When I follow "Joffre's Kingdom"
+    And I press "Delete"
+    And I press "Cancel"
+    Then I should not see "Successfully deleted Joffre's Kingdom"
+
+    When I follow "Browse Kingdoms"
+    Then I should see 1 kingdom

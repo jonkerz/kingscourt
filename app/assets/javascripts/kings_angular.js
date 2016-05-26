@@ -28,6 +28,7 @@
 //= require angular-paginate-anything/dist/paginate-anything
 //= require angular-paginate-anything/dist/paginate-anything-tpls
 //= require angular-lazy-img/release/angular-lazy-img
+//= require angular-bootstrap-confirm/dist/angular-bootstrap-confirm
 
 //= require_tree ./ng-app
 

@@ -2,6 +2,10 @@ class Kingdom < ApplicationRecord
   has_many :kingdom_cards
   has_many :cards, through: :kingdom_cards, dependent: :destroy
 
+  has_many :favorite_kingdoms
+  has_many :favorites, through: :favorite_kingdoms,
+    source: :kingdom, dependent: :destroy
+
   belongs_to :user
 
   validates :user, presence: true

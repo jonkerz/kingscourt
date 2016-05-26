@@ -19,6 +19,7 @@ KingsCourt = angular.module 'KingsCourt', [
   'bgf.paginateAnything'
   'ui.bootstrap'
   'angularLazyImg'
+  'mwl.confirm'
 ]
 
 KingsCourt.run ($location, $rootScope, $auth, ExpansionSelector) ->

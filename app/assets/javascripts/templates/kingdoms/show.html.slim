@@ -1,7 +1,7 @@
 .row
   .col-md-9
     .well.clearfix[ng-cloak]
-      .responsive-card ng-repeat="card in kingdom.cards"
+      .responsive-card ng-repeat="card in kingdom.cards track by $index"
         img.rounded-card.fix-stacking-hack[ng-src="cards/{{::card.image}}" card-modal data-card="{{card}}"]
 
     panel-collapse title="Comments"

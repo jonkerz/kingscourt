@@ -3,7 +3,6 @@
  *= require bootstrap/overrides_and_custom
  *
  *= require jquery-ui/themes/base/core
- *= require jquery-ui/themes/base/draggable
  *= require jquery-ui/themes/base/slider
  *= require jquery-ui/themes/base/theme
  *

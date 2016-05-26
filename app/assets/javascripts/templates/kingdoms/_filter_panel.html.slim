@@ -1,6 +1,8 @@
+.text-center style="margin-bottom: 1rem"
+  button.btn.btn-primary ng-click="reloadPage()" Filter
+
 ng-include src="'shared/_expansion_selector.html'"
 
 span ng-show="!expansionSelector.selected.length" Please select at least one expansion.
 
 p Current filter matched {{totalKingdoms}} out of {{totalKingdomsAll}} kingdoms.
-button.btn.btn-primary ng-click="reloadPage()" Filter

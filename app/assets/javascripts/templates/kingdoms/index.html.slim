@@ -10,24 +10,16 @@
       div
         h4 ng-if="kingdoms.length == 0" No kingdoms :(
         ul.list-group.kingdom-list
-          li.list-group-item ng-repeat="kingdom in kingdoms"
+          li.list-group-item.clearfix ng-repeat="kingdom in kingdoms"
             span.badge {{kingdom.favorite_count}}
             kingdom-favoriter
             a> href="#!/kingdoms/{{kingdom.id}}/{{kingdom.slug}}" {{kingdom.name}}
             span
               | by
               a< ng-href="#!/{{kingdom.username}}/kingdoms" {{kingdom.username}}
-            .clearfix ng-if="displayMode=='images'"
-              span ng-repeat="card in kingdom.cards"
-                hovercard-image card="{{card}}"
-            div ng-if="displayMode=='text'"
-              span ng-repeat="card in kingdom.cards"
-                hovercard-text card="{{card}}"
-                | {{$last ? '' : ', '}}
-
-        .pull-right ng-hide="kingdoms.length == 0"
-          button.btn.btn-success.btn-sm> ng-click="displayMode='images'" ng-hide="displayMode=='images'" Show Images
-          button.btn.btn-success.btn-sm ng-click="displayMode='text'"  ng-hide="displayMode=='text'" Show Card Names
+            .clearfix
+            .responsive-card ng-repeat="card in kingdom.cards  track by $index"
+              hovercard
 
         bgf-pagination url="kingdomsUrl" url-params="kingdom_params" collection="kingdoms" per-page="10" transform-response="deserializeKingdoms"
 
@@ -36,3 +28,5 @@
       ng-include src="'shared/_alerts.html'"
     .well.clearfix
       ng-include src="'kingdoms/_filter_panel.html'"
+      button.btn.btn-success.btn-sm> ng-click="displayMode='image'" ng-hide="displayMode=='image'" Show Images
+      button.btn.btn-success.btn-sm ng-click="displayMode='text'"  ng-hide="displayMode=='text'" Show Text Only

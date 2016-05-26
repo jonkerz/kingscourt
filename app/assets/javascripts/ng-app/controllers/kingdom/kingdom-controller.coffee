@@ -4,7 +4,7 @@ angular.module 'KingsCourt'
   $scope.kingdoms = []
   $scope.totalKingdoms = 'not set'
   $scope.totalKingdomsAll = 0
-  $scope.displayMode = 'images'
+  $scope.displayMode = 'image'
 
   # TODO DRY
   $scope.deserializeKingdoms = (data) ->

@@ -1,0 +1,9 @@
+.hovercard[card-modal data-card="{{card}}"]
+  img.rounded-card.hovercard.fix-stacking-hack ng-show="displayMode == 'image'" ng-src="cards/small/{{::card.image || 'randomizer.jpg'}}" ng-mouseenter="showCard = true" ng-mouseleave="showCard = false"
+
+  span ng-show="displayMode == 'text'" ng-mouseenter="showCard = true" ng-mouseleave="showCard = false"
+    span ng-hide="card" ???
+    span ng-show="card" ({{::card.cost_in_text}}) {{::card.name}}
+
+  .hovercard-popup ng-class="{'hovercard-visible': card && showCard}"
+    img ng-src="cards/small/{{::card.image}}" lazy-img="cards/{{::card.image}}" ng-if="showCard" width="290" height="464"

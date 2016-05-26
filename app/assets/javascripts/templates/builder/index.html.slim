@@ -4,10 +4,15 @@
       ng-include src="'shared/_alerts.html'"
     .well.clearfix ng-show="tab=='randomizer-tab'"
       ng-include src="'builder/_randomize_panel.html'"
-    .well.clearfix
-      ng-include src="'builder/_kingdom_panel.html'"
 
-  .col-md-9
+  .col-md-9.sm-12
+    .well.clearfix
+      .responsive-card ng-class="{'tiny' : displayMode == 'image'}" ng-repeat="card in kingdom.cards"
+        hovercard
+      span ng-show="kingdom.cards.length < 10"
+        .responsive-card ng-class="{'tiny' : displayMode == 'image'}" ng-repeat="card in range(10 - kingdom.cards.length) track by $index"
+          hovercard
+
     .well.clearfix
       ul#tabs.nav.nav-tabs data-tabs="tabs"
         li.active
@@ -23,8 +28,10 @@
   .col-md-3
     .transparent-well.clearfix.hidden-xs.hidden-sm
       ng-include src="'shared/_alerts.html'"
-    .well.clearfix.hidden-xs.hidden-sm ng-show="tab=='randomizer-tab'"
-      ng-include src="'builder/_randomize_panel.html'"
+
     .well.clearfix.hidden-xs.hidden-sm
-      ng-include src="'builder/_kingdom_panel.html'"
+      ng-include src="'builder/_randomize_panel.html'"
+      button.btn.btn-success.btn-sm> ng-click="displayMode='image'" ng-hide="displayMode=='image'" Show Images
+      button.btn.btn-success.btn-sm ng-click="displayMode='text'"  ng-hide="displayMode=='text'" Show Text Only
+
     ng-include src="'shared/_save_panel.html'"

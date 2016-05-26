@@ -56,6 +56,7 @@ group :test do
   gem "capybara-screenshot"
   gem "shoulda-matchers"
   gem "factory_girl_rails"
+  gem "headless"
 end
 
 group :development, :test do

@@ -1,6 +1,17 @@
 require "cucumber/rails"
 require "paper_trail/frameworks/cucumber"
 
+if ENV["HEADLESS"]
+  require "headless"
+
+  headless = Headless.new
+  headless.start
+
+  at_exit do
+    headless.destroy
+  end
+end
+
 ActionController::Base.allow_rescue = false
 DatabaseCleaner.strategy = :transaction
 Cucumber::Rails::Database.javascript_strategy = :truncation

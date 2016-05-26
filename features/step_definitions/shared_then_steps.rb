@@ -1,14 +1,9 @@
 Then /^I should see (\d+) face down cards$/ do |number|
-  expect(facedown_cards.size).to eq number
+  expect(page).to have_css('img[src="randomizer.jpg"]', count: number)
 end
 
 Then /^I should see (\d+) face up cards$/ do |number|
-  cards = all ".rounded-card"
-  expect(cards.size - facedown_cards.size).to eq number
-end
-
-def facedown_cards
-  all :xpath, "//img[contains(@src, 'randomizer.jpg')]"
+  expect(page).to have_css('img[src="randomizer.jpg"]', count: 10 - number)
 end
 
 Transform /(^-?\d+$)/ do |str|

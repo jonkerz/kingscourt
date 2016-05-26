@@ -24,7 +24,6 @@ Feature: Kingdom browser
     Then I should see "Browsing kingdoms"
     And I should see 2 kingdoms
     When I toggle the expansions "Intrigue" and reload
-    And I wait
     And I should see 1 kingdom
     And I should see "Joffre's Kingdom"
     When I toggle the expansions "Dominion, Intrigue" and reload
@@ -36,7 +35,6 @@ Feature: Kingdom browser
     And I should see "Batiatus's Kingdom"
     And I should see "by Batiatus"
     When I follow "Batiatus's Kingdom"
-    And I wait
     Then I should see 10 face up cards
     And I should see "Description:"
 

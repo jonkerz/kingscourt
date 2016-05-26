@@ -19,7 +19,6 @@ Feature: Editing
     Then I should see "Description: not very dangerous.."
 
   Scenario: Deleting a kingdom
-    And I wait
     Then I should see 1 kingdom
 
     When I follow "Joffre's Kingdom"
@@ -31,7 +30,6 @@ Feature: Editing
     Then I should see 0 kingdoms
 
   Scenario: Not deleting unless confirmed
-    And I wait
     Then I should see 1 kingdom
 
     When I follow "Joffre's Kingdom"

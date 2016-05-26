@@ -28,7 +28,7 @@ When /^I login in via the web interface$/ do
 end
 
 When /^I click outside of the modal$/ do
-  first(".modal").click
+  find(".modal").click
 end
 
 Then /^I should (?:|still )be logged in$/ do

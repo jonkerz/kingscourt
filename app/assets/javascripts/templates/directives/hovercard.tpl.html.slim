@@ -5,5 +5,5 @@
     span ng-hide="card" ???
     span ng-show="card" ({{::card.cost_in_text}}) {{::card.name}}
 
-  .hovercard-popup ng-class="{'hovercard-visible': card && showCard}"
+  .hovercard-popup ng-if="card" ng-class="{'hovercard-visible': card && showCard}"
     img ng-src="cards/small/{{::card.image}}" lazy-img="cards/{{::card.image}}" ng-if="showCard" width="290" height="464"

@@ -439,7 +439,6 @@ DEPENDENCIES
   slim-rails
   slugify
   therubyracer
-  tzinfo-data
   uglifier (>= 1.3.0)
   web-console
 

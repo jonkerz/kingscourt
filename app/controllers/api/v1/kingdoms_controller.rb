@@ -1,18 +1,16 @@
 module Api::V1
   class KingdomsController < ApiController
-    include CleanPagination
     before_action :set_kingdom, only: [:show, :update, :destroy]
     before_action :check_can_be_edited_by, only: [:update, :destroy]
     before_action :authenticate_user!, except: [:index, :show]
 
     def index
-      @kingdoms = build_results
-      filter_by_expansion
+      kingdoms = filter_kingdoms
 
-      max_per_page = 100
-      paginate @kingdoms.count, max_per_page do |limit, offset|
-        render json: @kingdoms.limit(limit).offset(offset)
-      end
+      render json: kingdoms.results,
+        meta: {
+          count: kingdoms.total
+        }
     end
 
     def show
@@ -64,27 +62,31 @@ module Api::V1
         end
       end
 
-      def build_results
-        if params[:my_kingdoms]
-          Kingdom.where(user: current_user)
-        elsif params[:favoriter]
-          User.find_by(username: params[:favoriter]).favorites
-        elsif params[:my_favorites]
-          current_user.favorites
-        elsif params[:username]
-          user = User.find_by(username: params[:username])
-          Kingdom.where(user: user)
-        else
-          Kingdom.all
+      def filter_kingdoms
+        Sunspot.search(Kingdom) do
+          # Filter by kingdom creator, favorites
+          if params[:my_kingdoms]
+            with :user_id, current_user.id
+          elsif params[:username]
+            user = User.find_by(username: params[:username])
+            with :user_id, user.id
+          elsif params[:favoriter]
+            user = User.find_by(username: params[:favoriter])
+            with :favorited_by_user_ids, user.id
+          elsif params[:my_favorites]
+            with :favorited_by_user_ids, current_user.id
+          end
+
+          # Filter by expansions
+          if params[:expansions].present?
+            expansions = params[:expansions].split(",").map(&:to_i)
+            without_expansion = (Set.new(1..11) ^ expansions).to_a
+            without :expansion_ids, without_expansion
+          end
+
+          # Paginate
+          paginate page: (params[:page] || 1), per_page: 2
         end
-      end
-
-      def filter_by_expansion
-        return unless params[:expansions].present?
-
-        expansions = params[:expansions].split(",")
-        @kingdoms = @kingdoms.joins(:cards)
-          .where(cards: { expansion_id: expansions }).distinct
       end
 
       def kingdom_params

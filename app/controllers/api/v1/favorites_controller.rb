@@ -4,14 +4,13 @@ module Api::V1
 
     def create
       kingdom = Kingdom.find(params[:kingdom_id])
-      FavoriteKingdom.create! user: current_user,
-        kingdom: kingdom
+      kingdom.favoriters << current_user
       render json: :ok
     end
 
     def destroy
-      id = params[:id]
-      FavoriteKingdom.find_by(kingdom_id: id, user: current_user).destroy
+      kingdom = Kingdom.find(params[:id])
+      kingdom.favoriters.delete current_user
       render json: :ok
     end
   end

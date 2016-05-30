@@ -1,6 +1,6 @@
 angular.module 'KingsCourt'
 
-.controller 'KingdomDetailCtrl', ($rootScope, $scope, $location, $routeParams, Alerts, Kingdom, API) ->
+.controller 'KingdomCtrl', ($rootScope, $scope, $location, $routeParams, Alerts, Kingdom, API) ->
   id = $routeParams.id
 
   API.kingdoms.get id: id, (data) ->

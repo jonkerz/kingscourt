@@ -1,72 +1,75 @@
 angular.module 'KingsCourt'
 
 .config ($routeProvider) ->
-  $routeProvider.when '/',
-    title: 'Generator'
-    templateUrl: 'generator/index.html'
-    controller: 'GeneratorCtrl'
+  $routeProvider
+    .when '/',
+      title: 'Generator'
+      templateUrl: 'generator/index.html'
+      controller: 'GeneratorCtrl'
 
-  .when '/builder',
-    title: 'Builder'
-    templateUrl: 'builder/index.html'
-    controller: 'BuilderCtrl'
+    .when '/builder',
+      title: 'Builder'
+      templateUrl: 'builder/index.html'
+      controller: 'BuilderCtrl'
 
-  .when '/kingdoms/:id',
-    title: 'Kingdoms'
-    templateUrl: 'kingdoms/show.html'
-    controller: 'KingdomDetailCtrl'
+    # "kingdoms#show"
+    .when '/kingdoms/:id',
+      title: 'Kingdoms'
+      templateUrl: 'kingdoms/show.html'
+      controller: 'KingdomCtrl'
+    .when '/kingdoms/:id/:string',
+      title: '###'
+      templateUrl: 'kingdoms/show.html'
+      controller: 'KingdomCtrl'
 
-  .when '/kingdoms/:id/:string',
-    title: '###'
-    templateUrl: 'kingdoms/show.html'
-    controller: 'KingdomDetailCtrl'
+    .when '/cards',
+      title: 'Browse Cards'
+      templateUrl: 'cards/index.html'
+      controller: 'CardCtrl'
 
-  .when '/cards',
-    title: 'Browse Cards'
-    templateUrl: 'cards/index.html'
-    controller: 'CardCtrl'
+    # "kingdoms#index"
+    .when '/kingdoms',
+      title: 'Browse Kingdoms'
+      params: view: "all_kingdoms"
+      controller: 'KingdomsCtrl'
+      templateUrl: 'kingdoms/index.html'
+      reloadOnSearch: false
+    .when '/my_kingdoms',
+      title: 'My Kingdoms'
+      params: view: "my_kingdoms"
+      controller: 'KingdomsCtrl'
+      templateUrl: 'kingdoms/index.html'
+      reloadOnSearch: false
+    .when '/:username/kingdoms',
+      title: 'User Kingdoms'
+      params: view: "user_kingdoms"
+      controller: 'KingdomsCtrl'
+      templateUrl: 'kingdoms/index.html'
+      reloadOnSearch: false
+    .when '/my_favorites',
+      title: 'My Favorites'
+      params: view: "my_favorites"
+      controller: 'KingdomsCtrl'
+      templateUrl: 'kingdoms/index.html'
+      reloadOnSearch: false
+    .when '/:username/favorites',
+      title: 'User Favorites'
+      params: view: "user_favorites"
+      controller: 'KingdomsCtrl'
+      templateUrl: 'kingdoms/index.html'
+      reloadOnSearch: false
 
-  .when '/kingdoms',
-    title: 'Browse Kingdoms'
-    templateUrl: 'kingdoms/index.html'
-    reloadOnSearch: false
-    controller: 'PublicKingdomsCtrl'
+    .when '/kings_court',
+      title: "King's Court"
+      templateUrl: 'kings-court.html'
 
-  .when '/my_kingdoms',
-    title: 'My Kingdoms'
-    templateUrl: 'kingdoms/index.html'
-    reloadOnSearch: false
-    controller: 'MyKingdomsCtrl'
+    .when '/import',
+      title: 'Import'
+      templateUrl: 'importer/index.html'
+      controller: 'ImportCtrl'
 
-  .when '/:username/kingdoms',
-    title: 'User Kingdoms'
-    templateUrl: 'kingdoms/index.html'
-    reloadOnSearch: false
-    controller: 'UserKingdomsCtrl'
+    .when '/loading',
+      title: 'Loading...'
+      templateUrl: 'loading.html'
 
-  .when '/my_favorites',
-    title: 'My Favorites'
-    templateUrl: 'kingdoms/index.html'
-    reloadOnSearch: false
-    controller: 'MyFavoriteKingdomsCtrl'
-
-  .when '/:username/favorites',
-    title: 'User Favorites'
-    templateUrl: 'kingdoms/index.html'
-    reloadOnSearch: false
-    controller: 'FavoriteKingdomsCtrl'
-
-  .when '/kings_court',
-    title: "King's Court"
-    templateUrl: 'kings-court.html'
-
-  .when '/import',
-    title: 'Import'
-    templateUrl: 'importer/index.html'
-    controller: 'ImportCtrl'
-
-  .when '/loading',
-    title: 'Loading...'
-    templateUrl: 'loading.html'
-
-  .otherwise templateUrl: '404.html'
+    .otherwise templateUrl: '404.html'

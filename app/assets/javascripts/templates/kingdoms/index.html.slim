@@ -6,11 +6,11 @@
 
   .col-md-9
     .well.clearfix
-      h3 ng-if="subtitle" {{subtitle}}
+      h3 {{subtitle}} {{totalKingdoms}}
       div
-        h4 ng-if="kingdoms.length == 0" No kingdoms :(
+        h4 ng-if="totalKingdoms == 0" No kingdoms :(
         ul.list-group.kingdom-list
-          li.list-group-item.clearfix ng-repeat="kingdom in kingdoms"
+          li.list-group-item.clearfix ang-repeat="kingdom in kingdoms" dir-paginate="kingdom in kingdoms | itemsPerPage: 2" total-items="totalKingdoms" current-page="pagination.current"
             span.badge {{kingdom.favorite_count}}
             kingdom-favoriter
             a> href="#!/kingdoms/{{kingdom.id}}/{{kingdom.slug}}" {{kingdom.name}}
@@ -18,10 +18,10 @@
               | by
               a< ng-href="#!/{{kingdom.username}}/kingdoms" {{kingdom.username}}
             .clearfix
-            .responsive-card ng-repeat="card in kingdom.cards  track by $index"
+            .responsive-card ng-repeat="card in kingdom.cards track by $index"
               hovercard
 
-        bgf-pagination url="kingdomsUrl" url-params="kingdom_params" collection="kingdoms" per-page="10" transform-response="deserializeKingdoms"
+        dir-pagination-controls on-page-change="pageChanged(newPageNumber)"
 
   .col-md-3.hidden-xs.hidden-sm
     .transparent-well.clearfix

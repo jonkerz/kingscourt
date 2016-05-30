@@ -3,6 +3,7 @@ require "spec_helper"
 require File.expand_path("../../config/environment", __FILE__)
 require "rspec/rails"
 require "paper_trail/frameworks/rspec"
+require "sunspot_test/rspec"
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 

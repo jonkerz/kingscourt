@@ -1,16 +1,29 @@
 class Kingdom < ApplicationRecord
+  belongs_to :user
+
   has_many :kingdom_cards
   has_many :cards, through: :kingdom_cards, dependent: :destroy
 
   has_many :favorite_kingdoms
-  has_many :favorites, through: :favorite_kingdoms,
-    source: :kingdom, dependent: :destroy
-
-  belongs_to :user
+  has_many :favoriters, through: :favorite_kingdoms,
+    source: :user, dependent: :destroy
 
   validates :user, presence: true
   validates :name, presence: true
   validate :validate_cards
+
+  searchable do
+    integer :expansion_ids, multiple: true do expansions end
+    string :expansion_ids_string do expansions.to_s end
+    integer :user_id
+    integer :favorited_by_user_ids, multiple: true do
+      favoriters.map(&:id)
+    end
+  end
+
+  def expansions
+    cards.map(&:expansion_id).uniq.sort
+  end
 
   def favorite_count
     FavoriteKingdom.where(kingdom: self).count

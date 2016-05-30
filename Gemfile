@@ -30,13 +30,12 @@ gem "ngannotate-rails"
 gem "active_model_serializers",
   github: "rails-api/active_model_serializers"
   # http://stackoverflow.com/questions/34507596/undefined-method-config-for-activemodelserializer
-gem "clean_pagination"
 gem "devise_token_auth",
   github: "lynndylanhurley/devise_token_auth",
   branch: "master"
   # https://github.com/lynndylanhurley/devise_token_auth/issues/500
 gem "slugify"
-gem "sunspot_rails"
+gem "sunspot_rails", "2.2.0"
 
 # Admin backend
 gem "activeadmin", github: "activeadmin"
@@ -54,7 +53,7 @@ group :development do
   gem "listen", "~> 3.0.5"
   gem "quiet_assets"
   gem "rubocop", "~> 0.40.0", require: false
-  gem "sunspot_solr"
+  gem "sunspot_solr", "2.2.0"
   gem "web-console"
 end
 
@@ -67,6 +66,7 @@ group :test do
   gem "headless"
   gem "selenium-webdriver"
   gem "shoulda-matchers"
+  gem "sunspot_test"
 end
 
 group :development, :test do

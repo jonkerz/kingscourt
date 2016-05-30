@@ -1,5 +1,6 @@
 require "cucumber/rails"
 require "paper_trail/frameworks/cucumber"
+require "sunspot_test/cucumber"
 
 if ENV["HEADLESS"]
   require "headless"

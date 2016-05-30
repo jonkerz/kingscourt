@@ -1,6 +1,6 @@
 angular.module 'KingsCourt'
 
-.factory 'ExpansionSelector', ->
+.factory 'ExpansionSelector', ($location) ->
   new class ExpansionSelector
     constructor: ->
       @selected = [1..11]

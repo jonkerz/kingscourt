@@ -8,6 +8,7 @@ Feature: Favorites
     And I am on the home page
     And I follow "Browse Kingdoms"
 
+  @search
   Scenario: Favoriting from the browser
     Then I should not see "Joffre's Kingdom" favorited
     And I should not see "Batiatus's Kingdom" favorited
@@ -20,6 +21,7 @@ Feature: Favorites
     Then I should see "Joffre's Kingdom" favorited
     And I should not see "Batiatus's Kingdom" favorited
 
+  @search
   Scenario: Browsing my favorites
     When I favorite "Joffre's Kingdom"
     And I click on my username in the navbar
@@ -28,6 +30,7 @@ Feature: Favorites
     And I should see "Joffre's Kingdom" favorited
     And I should not see "Batiatus's Kingdom"
 
+  @search
   Scenario: Browsing another user's favorites
     Given Batiatus has favorited his own kingdom
     When I go to Batiatus' favorite kingdoms page

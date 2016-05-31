@@ -1,6 +1,6 @@
-angular.module 'KingsCourt'
+angular.module "KingsCourt"
 
-.factory 'Alerts', ->
+.factory "Alerts", ->
   new class Alerts
     constructor: -> @alerts = []
 

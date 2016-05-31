@@ -1,13 +1,13 @@
-angular.module 'KingsCourt'
+angular.module "KingsCourt"
 
-.controller 'GeneratorCtrl', ($scope, $location, ExpansionSelector, Deck, Kingdom) ->
-  $scope.kingdom = Kingdom.getOrCreate 'generator'
+.controller "GeneratorCtrl", ($scope, $location, ExpansionSelector, Deck, Kingdom) ->
+  $scope.kingdom = Kingdom.getOrCreate "generator"
 
   $scope.range = (n) -> new Array n
 
   $scope.openInBuilder = ->
-    generatorKingdom = Kingdom.getOrCreate 'generator'
-    builderKingdom = Kingdom.getOrCreate 'builder'
+    generatorKingdom = Kingdom.getOrCreate "generator"
+    builderKingdom = Kingdom.getOrCreate "builder"
 
     builderKingdom.id = null
     builderKingdom.cards = generatorKingdom.cards
@@ -15,10 +15,10 @@ angular.module 'KingsCourt'
     builderKingdom.description = generatorKingdom.description
 
     generatorKingdom.cards = []
-    generatorKingdom.name = ''
-    generatorKingdom.description = ''
+    generatorKingdom.name = ""
+    generatorKingdom.description = ""
 
-    $location.path 'builder'
+    $location.path "builder"
 
   $scope.generate = ->
     $scope.kingdom.removeAllCards()

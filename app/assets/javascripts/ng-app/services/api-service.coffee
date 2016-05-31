@@ -1,6 +1,6 @@
-angular.module 'KingsCourt'
+angular.module "KingsCourt"
 
-.factory 'API', ($resource, $http, $q, API_SERVER, Card) ->
+.factory "API", ($resource, $http, $q, API_SERVER, Card) ->
   new class API
     deserializeCards = (cards) ->
       _.map cards, (cardId) -> Card.getCardById parseInt(cardId, 10)
@@ -19,15 +19,15 @@ angular.module 'KingsCourt'
         kingdom.cards = deserializeCards kingdom.cards
       transformedData
 
-    kingdoms: $resource "api/v1/kingdoms/:id/", { id: '@id' },
+    kingdoms: $resource "api/v1/kingdoms/:id/", { id: "@id" },
       query:
         transformResponse: deserializeKingdoms
       get:
         transformResponse: deserializeKingdom
       update:
-        method: 'PUT'
+        method: "PUT"
 
-    favorites: $resource "api/v1/u/my/favorites/:id", { id: '@id' }
+    favorites: $resource "api/v1/u/my/favorites/:id", { id: "@id" }
 
     getCardAttributes: ->
       deferred = $q.defer()

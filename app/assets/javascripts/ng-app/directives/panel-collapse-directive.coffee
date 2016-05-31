@@ -1,11 +1,11 @@
-angular.module 'KingsCourt'
+angular.module "KingsCourt"
 
-.directive 'panelCollapse', ->
-  restrict: 'E'
+.directive "panelCollapse", ->
+  restrict: "E"
   scope:
-    title: '@'
-    collapsed: '@'
+    title: "@"
+    collapsed: "@"
   transclude: true
-  templateUrl: 'directives/panel-collapse.tpl.html'
+  templateUrl: "directives/panel-collapse.tpl.html"
   link: (scope, element, attrs) ->
-    scope.panelId = _.uniqueId 'panel'
+    scope.panelId = _.uniqueId "panel"

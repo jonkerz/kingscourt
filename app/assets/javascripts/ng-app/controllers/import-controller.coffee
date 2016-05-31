@@ -1,7 +1,7 @@
-angular.module 'KingsCourt'
+angular.module "KingsCourt"
 
-.controller 'ImportCtrl', ($scope, $location, Kingdom, Card, API) ->
-  $scope.kingdom = Kingdom.getOrCreate 'generator'
+.controller "ImportCtrl", ($scope, $location, Kingdom, Card, API) ->
+  $scope.kingdom = Kingdom.getOrCreate "generator"
 
   $scope.importTextarea = """
 Big Money: Adventurer, Bureaucrat, Chancellor, Chapel, Feast, Laboratory, Market, Mine, Moneylender, Throne Room
@@ -29,17 +29,17 @@ Chemistry Lesson: Alchemist, Golem, Philosopher's Stone, University, Bureaucrat,
     findKingdomName = (kingdomString) -> kingdomString.match(/(.*?):/)[1]
 
     replaceStuff = (string) ->
-      string = string.replace(/(.*?):/, '')
-      string = string.replace(/^ /g, '')
-      string = string.replace(/, /g, ',')
-      string = string.replace(RegExp(' ,', 'g'), ',')
+      string = string.replace(/(.*?):/, "")
+      string = string.replace(/^ /g, "")
+      string = string.replace(/, /g, ",")
+      string = string.replace(RegExp(" ,", "g"), ",")
 
       string = string.toLowerCase() #n
-      string = string.replace(/ /g, '')
-      string = string.replace(/'/g, '')
+      string = string.replace(/ /g, "")
+      string = string.replace(/'/g, "")
       string
 
-    importTextarea = '' + $scope.importTextarea
+    importTextarea = "" + $scope.importTextarea
 
     importTextarea = importTextarea.replace(/\n\n\n/g, '\n\n')
     importTextarea = importTextarea.replace(/\n\n/g, '\n')
@@ -51,7 +51,7 @@ Chemistry Lesson: Alchemist, Golem, Philosopher's Stone, University, Bureaucrat,
       $scope.kingdom.name = findKingdomName kingdomString
 
       kingdomString = replaceStuff kingdomString
-      kingdom = kingdomString.split(',')
+      kingdom = kingdomString.split(",")
 
       for card in kingdom
         for cardServiceCard in Card.cards
@@ -67,12 +67,12 @@ Chemistry Lesson: Alchemist, Golem, Philosopher's Stone, University, Bureaucrat,
       save()
 
   $scope.openInBuilder = ->
-    generatorKingdom = Kingdom.getOrCreate 'generator'
-    builderKingdom = Kingdom.getOrCreate 'builder'
+    generatorKingdom = Kingdom.getOrCreate "generator"
+    builderKingdom = Kingdom.getOrCreate "builder"
     builderKingdom.cards = generatorKingdom.cards
     builderKingdom.name = generatorKingdom.name
     builderKingdom.description = generatorKingdom.description
     generatorKingdom.cards = []
-    generatorKingdom.name = ''
-    generatorKingdom.description = ''
-    $location.path 'builder'
+    generatorKingdom.name = ""
+    generatorKingdom.description = ""
+    $location.path "builder"

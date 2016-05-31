@@ -1,16 +1,16 @@
-angular.module 'KingsCourt'
+angular.module "KingsCourt"
 
-.controller 'CardCtrl', ($scope, $http, ExpansionSelector, Card, API_SERVER) ->
+.controller "CardCtrl", ($scope, $http, ExpansionSelector, Card, API_SERVER) ->
   $scope.allCards = Card.cards
 
   # TODO Caching breaks dir-paginate
-  $http.get('/api/v1/cards?non_randomizers_only=true').then (response) ->
+  $http.get("/api/v1/cards?non_randomizers_only=true").then (response) ->
     $scope.allCards = $scope.allCards.concat response.data
 
   $scope.currentPage = 1
-  $scope.displayMode = 'image'
+  $scope.displayMode = "image"
 
-  $scope.orderByField = 'name'
+  $scope.orderByField = "name"
   $scope.reverseSort = false
 
   $scope.filterByExpansion = (card) ->

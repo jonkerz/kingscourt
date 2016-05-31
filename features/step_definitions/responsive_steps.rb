@@ -19,7 +19,7 @@ def resize_window_to_device device
          when :large       then [1200, 768]
          end
 
-  # HACK to get the correct size. Perhaps capybara-webkit
+  # HACK: to get the correct size. Perhaps capybara-webkit
   # includes scrollbars etc in the width?
   if Capybara.current_driver == :webkit
     return resize_window size.first + 100, size.second

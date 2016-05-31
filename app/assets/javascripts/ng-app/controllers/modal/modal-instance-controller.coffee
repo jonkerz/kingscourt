@@ -1,11 +1,11 @@
-angular.module 'KingsCourt'
+angular.module "KingsCourt"
 
-.controller 'ModalInstanceCtrl', ($scope, $uibModalInstance, $auth) ->
-  $scope.$on 'auth:login-success', (event, mass) -> $uibModalInstance.close()
+.controller "ModalInstanceCtrl", ($scope, $uibModalInstance, $auth) ->
+  $scope.$on "auth:login-success", (event, mass) -> $uibModalInstance.close()
 
   $scope.ok = -> $uibModalInstance.close()
 
-  $scope.cancel = -> $uibModalInstance.dismiss 'cancel'
+  $scope.cancel = -> $uibModalInstance.dismiss "cancel"
 
   $scope.submitLogin = (form) ->
     onError = (response) ->
@@ -33,7 +33,7 @@ angular.module 'KingsCourt'
     onSuccess = (response) -> $scope.notice = response.data.message
 
     onError = (response) ->
-      $scope.errors = "#{response.errors.join(", ")}"
+      $scope.errors = response.errors.join(", ")
 
     $auth.requestPasswordReset(form).then(onSuccess).catch onError
 
@@ -50,6 +50,6 @@ angular.module 'KingsCourt'
     $auth.updatePassword(form).then(onSuccess).catch onError
 
   $scope.showPanel = (panel) ->
-    $('#login-modal #login, #login-modal #register, #login-modal #forgot_password').hide()
+    $("#login-modal #login, #login-modal #register, #login-modal #forgot_password").hide()
     $("#login-modal ##{panel}").show()
     return "coffee"

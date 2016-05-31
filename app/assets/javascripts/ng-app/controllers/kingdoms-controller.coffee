@@ -1,9 +1,9 @@
-angular.module 'KingsCourt'
+angular.module "KingsCourt"
 
-.controller 'KingdomsCtrl', ($route, $routeParams, $scope, $location, API, ExpansionSelector, Card) ->
+.controller "KingdomsCtrl", ($route, $routeParams, $scope, $location, API, ExpansionSelector, Card) ->
   $scope.kingdoms = []
-  $scope.totalKingdoms = 'loading...'
-  $scope.displayMode = 'image'
+  $scope.totalKingdoms = "loading..."
+  $scope.displayMode = "image"
 
   ExpansionSelector.setFromParams()
 
@@ -22,7 +22,7 @@ angular.module 'KingsCourt'
   getResultsPage = (pageNumber) ->
     params =
       page: pageNumber
-      expansions: ExpansionSelector.selected.join ','
+      expansions: ExpansionSelector.selected.join ","
       match_all_expansions: ExpansionSelector.matchAllExpansions
 
     _.merge params, $scope.extraParams
@@ -34,15 +34,15 @@ angular.module 'KingsCourt'
 
   setPageParams = (newPage) ->
     if newPage is 1
-      $location.search 'page', null
+      $location.search "page", null
     else
-      $location.search 'page', parseInt(newPage, 10)
+      $location.search "page", parseInt(newPage, 10)
 
   setMatchAllExpansionsParam = ->
     if ExpansionSelector.matchAllExpansions
-      $location.search 'match_all_expansions', "true"
+      $location.search "match_all_expansions", "true"
     else
-      $location.search 'match_all_expansions', null
+      $location.search "match_all_expansions", null
 
   $scope.pageChanged = (newPage) ->
     # TODO refactor
@@ -72,7 +72,7 @@ angular.module 'KingsCourt'
   # "Child controllers"
   switch $route.current.$$route.params.view
     when "all_kingdoms"
-      $scope.subtitle = 'Browsing kingdoms'
+      $scope.subtitle = "Browsing kingdoms"
 
     when "my_kingdoms"
       $scope.subtitle = "Browsing my kingdoms"

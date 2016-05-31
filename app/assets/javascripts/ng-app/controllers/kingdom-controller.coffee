@@ -1,12 +1,12 @@
-angular.module 'KingsCourt'
+angular.module "KingsCourt"
 
-.controller 'KingdomCtrl', ($rootScope, $scope, $location, $routeParams, Alerts, Kingdom, API) ->
+.controller "KingdomCtrl", ($rootScope, $scope, $location, $routeParams, Alerts, Kingdom, API) ->
   id = $routeParams.id
 
   API.kingdoms.get id: id, (data) ->
-    $rootScope.title = $rootScope.title.replace '###', data.name
+    $rootScope.title = $rootScope.title.replace "###", data.name
     kingdom = data
-    $scope.kingdom = Kingdom.getOrCreate 'detail'
+    $scope.kingdom = Kingdom.getOrCreate "detail"
 
     $scope.kingdom.id = kingdom.id
     $scope.kingdom.name = kingdom.name
@@ -20,14 +20,14 @@ angular.module 'KingsCourt'
   $scope.deleteKingdom = (id) ->
     API.kingdoms.delete id: id, (data) ->
       Alerts.add "Successfully deleted #{$scope.kingdom.name}."
-      $location.path 'my_kingdoms'
+      $location.path "my_kingdoms"
 
   $scope.openInBuilder = ->
-    builderKingdom = Kingdom.getOrCreate 'builder'
+    builderKingdom = Kingdom.getOrCreate "builder"
 
     builderKingdom.id = $scope.kingdom.id
     builderKingdom.name = $scope.kingdom.name
     builderKingdom.cards = $scope.kingdom.cards
     builderKingdom.description = $scope.kingdom.description
 
-    $location.path 'builder'
+    $location.path "builder"

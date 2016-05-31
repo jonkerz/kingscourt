@@ -1,10 +1,10 @@
-angular.module 'KingsCourt'
+angular.module "KingsCourt"
 
-.directive 'slider', ->
-  restrict: 'A'
+.directive "slider", ->
+  restrict: "A"
   scope:
-    config: '=config'
-    price: '=model'
+    config: "=config"
+    price: "=model"
   link: (scope, element, attrs) ->
     setModel = (value) -> scope.model = value
 

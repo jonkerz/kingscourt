@@ -1,13 +1,29 @@
-When /^I resize the browser window to (mobile|tablet|desktop)$/ do |device|
+When /^I resize the browser window to (extra_small|small|medium|large)$/ do |device|
   resize_window_to_device device
 end
 
+Then /^I should see the menu hamburger$/ do
+  expect(page).to have_css(".navbar-toggle")
+end
+
+Then /^I should not see the menu hamburger$/ do
+  expect(page).to have_no_css(".navbar-toggle")
+end
+
+# Widths from Bootstrap.
 def resize_window_to_device device
   size = case device.to_sym
-         when :mobile then  [640, 480]
-         when :tablet then  [960, 640]
-         when :desktop then [1024, 768]
+         when :extra_small then [480, 480]
+         when :small       then [768, 640]
+         when :medium      then [992, 768]
+         when :large       then [1200, 768]
          end
+
+  # HACK to get the correct size. Perhaps capybara-webkit
+  # includes scrollbars etc in the width?
+  if Capybara.current_driver == :webkit
+    return resize_window size.first + 100, size.second
+  end
   resize_window *size
 end
 

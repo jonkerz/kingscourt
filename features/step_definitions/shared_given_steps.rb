@@ -20,7 +20,7 @@ Given /^there is a kingdom by Joffre$/ do
   build(:kingdom,
     name: "Joffre's Kingdom",
     description: "Very dangerous kingdom.",
-    cards: Card.where(expansion: standard).take(10)).save!
+    cards: standard.cards.take(10)).save!
 end
 
 # Intrigue
@@ -29,6 +29,32 @@ Given /^there is a kingdom by Batiatus$/ do
 
   build(:kingdom,
     name: "Batiatus's Kingdom",
-    cards: Card.where(expansion: intrigue).take(10),
+    cards: intrigue.cards.take(10),
     user: create(:user, username: "Batiatus")).save!
+end
+
+# Mixed base game and Intrigue
+Given /^there is a kingdom by mixed kingdom$/ do
+  standard = Expansion.find_by!(name: "Dominion")
+  intrigue = Expansion.find_by!(name: "Intrigue")
+
+  cards = standard.cards.take(5) + intrigue.cards.take(5)
+
+  build(:kingdom,
+    name: "Mixed Dominion and Intrigue Kingdom",
+    cards: cards,
+    user: create(:user, username: "Batiatus")).save!
+end
+
+Given /^there are (\d+) kingdoms?$/ do |number|
+  standard = Expansion.find_by!(name: "Dominion")
+  cards = standard.cards.take(10)
+
+  number.times do |n|
+    build(:kingdom, name: "Kingdom #{n}", cards: cards).save!
+  end
+end
+
+Transform /(^-?\d+$)/ do |str|
+  str.to_i
 end

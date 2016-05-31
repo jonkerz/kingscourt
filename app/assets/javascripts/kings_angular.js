@@ -22,11 +22,8 @@
 //= require ng-token-auth/dist/ng-token-auth
 
 //= require angular-ui-bootstrap-bower/ui-bootstrap-tpls.js
-//= require angular-sanitize/angular-sanitize
 //= require angular-utils-pagination/dirPagination
 
-//= require angular-paginate-anything/dist/paginate-anything
-//= require angular-paginate-anything/dist/paginate-anything-tpls
 //= require angular-lazy-img/release/angular-lazy-img
 //= require angular-bootstrap-confirm/dist/angular-bootstrap-confirm
 

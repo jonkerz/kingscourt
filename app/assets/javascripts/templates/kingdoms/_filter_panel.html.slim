@@ -1,7 +1,11 @@
 .text-center style="margin-bottom: 1rem"
-  button.btn.btn-primary ng-click="reloadPage()" Filter
+  button.btn.btn-primary ng-click="pageChanged(1)" Filter
 
 ng-include src="'shared/_expansion_selector.html'"
+
+label
+  Match all expansions?
+  input type="checkbox" ng-model="expansionSelector.matchAllExpansions"
 
 span ng-show="!expansionSelector.selected.length" Please select at least one expansion.
 

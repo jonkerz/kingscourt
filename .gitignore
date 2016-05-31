@@ -10,9 +10,17 @@
 
 # Generated
 public/assets/**
+
 ## Bower
 /vendor/assets/bower_components
 /vendor/assets/bower.json
+
+##Solr
+solr/data
+solr/test
+solr/development
+solr/default/data
+solr/pids
 
 # Card assets
 /public/cards/*

@@ -6,6 +6,7 @@ Feature: Editing
     And I am logged in
     And I follow "Browse Kingdoms"
 
+  @search
   Scenario: Updating a kingdom
     When I follow "Joffre's Kingdom"
     Then I should see "Description: Very dangerous kingdom."
@@ -18,6 +19,7 @@ Feature: Editing
     When I follow "Joffre's Kingdom"
     Then I should see "Description: not very dangerous.."
 
+  @search
   Scenario: Deleting a kingdom
     Then I should see 1 kingdom
 
@@ -29,6 +31,7 @@ Feature: Editing
     When I follow "Browse Kingdoms"
     Then I should see 0 kingdoms
 
+  @search
   Scenario: Not deleting unless confirmed
     Then I should see 1 kingdom
 

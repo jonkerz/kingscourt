@@ -12,6 +12,7 @@ Feature: Kingdom generator
     Then I should see 10 face up cards
     And I should see 0 face down cards
 
+  @search
   Scenario: Saving a generated kingdom
     Given I am logged in
     When I press "Generate!"

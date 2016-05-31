@@ -3,14 +3,25 @@ angular.module 'KingsCourt'
 .factory 'API', ($resource, $http, $q, API_SERVER, Card) ->
   new class API
     deserializeCards = (cards) ->
-      _.map cards, (cardId) -> Card.getCardById parseInt cardId, 10
+      _.map cards, (cardId) -> Card.getCardById parseInt(cardId, 10)
 
     deserializeKingdom = (data, _header) ->
       transformedData = angular.fromJson(data)["kingdom"]
       transformedData.cards = deserializeCards transformedData.cards
       transformedData
 
-    kingdoms: $resource "api/v1/kingdoms/:id", { id: '@id' },
+    deserializeKingdoms = (data, _header) ->
+      transformedData = angular.fromJson(data)
+      kingdoms = transformedData["kingdoms"]
+      return transformedData unless kingdoms
+
+      for kingdom in kingdoms
+        kingdom.cards = deserializeCards kingdom.cards
+      transformedData
+
+    kingdoms: $resource "api/v1/kingdoms/:id/", { id: '@id' },
+      query:
+        transformResponse: deserializeKingdoms
       get:
         transformResponse: deserializeKingdom
       update:
@@ -20,8 +31,9 @@ angular.module 'KingsCourt'
 
     getCardAttributes: ->
       deferred = $q.defer()
+
       url =  "api/v1/expansions?card_attributes=true"
-      $http.get(url, { cache: true }).success (response) ->
+      $http.get(url, cache: true).success (response) ->
         deferred.resolve response
 
       deferred.promise

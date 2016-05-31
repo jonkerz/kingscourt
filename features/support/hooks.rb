@@ -1,3 +1,14 @@
+# Some drivers (eg selenium) remembers the window
+# size between tests, so always restore.
+Before "@responsive" do
+  resize_window_to_device :large
+end
+
+# Debug hooks.
+After "@responsive" do
+  resize_window_to_device :large
+end
+
 Before "@slow_motion" do
   @slow_motion = true
 end

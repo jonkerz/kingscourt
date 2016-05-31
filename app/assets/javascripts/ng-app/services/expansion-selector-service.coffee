@@ -1,6 +1,6 @@
 angular.module 'KingsCourt'
 
-.factory 'ExpansionSelector', ->
+.factory 'ExpansionSelector', ($location) ->
   new class ExpansionSelector
     constructor: ->
       @selected = [1..11]
@@ -23,6 +23,18 @@ angular.module 'KingsCourt'
 
     isActive: (id) -> _.includes @selected, id
 
+    allChecked:  -> _.isEqual @selected, @all
+
     checkAll: -> @selected = @all.slice 0
 
     uncheckAll: ->  @selected = []
+
+    setParams: ->
+      expansions = if @allChecked() then null else @selected.join(',')
+      $location.search 'expansions', expansions
+
+    setFromParams: ->
+      if $location.search().expansions?
+        expansions = $location.search().expansions.split(",")
+        expansions = _.map expansions, (expansion) -> parseInt(expansion, 10)
+        @selected = expansions

@@ -9,6 +9,7 @@
           span.icon-bar
         span.loading-spinner.fa.fa-refresh.fa-spin
       a#logo.navbar-brand href="/#!/" King's Court
+
     .navbar-collapse.collapse
       ul.nav.navbar-nav
         li ng-class="{ active: isActive('/')}"
@@ -22,13 +23,14 @@
       ul.nav.navbar-nav.navbar-right
         li.loading-spinner
           a.fa.fa-refresh.fa-spin
-        li ng-show="user.signedIn" ng-class="{ active: isActive('/my_kingdoms')}"
+        li.hidden-sm ng-show="user.signedIn" ng-class="{ active: isActive('/my_kingdoms')}"
           a href="#!/my_kingdoms" My Kingdoms
         li.dropdown ng-show="user.signedIn"
           a.dropdown-toggle href="#" data-toggle="dropdown"
             {{user.username}}
             span.caret
           ul.dropdown-menu role="menu"
+            li.visible-sm: a href="#!/my_kingdoms" ng-show="user.signedIn" My Kingdoms
             li: a href="#!/my_favorites" Favorites
             li: a href="" ng-click="openUpdatePassword()" Change password
             li: a href="" ng-click="signOut()" Logout

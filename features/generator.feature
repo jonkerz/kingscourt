@@ -1,7 +1,7 @@
 @javascript
 Feature: Kingdom generator
   Background:
-    Given there are some cards
+    Given there are some Dominion cards
     And I am on the home page
 
   Scenario: Generating a kingdom

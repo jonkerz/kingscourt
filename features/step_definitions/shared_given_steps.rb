@@ -1,11 +1,14 @@
-Given /^there are some cards$/ do
+Given /^there are some Dominion cards$/ do
   standard = create :expansion, name: "Dominion", id: 1
-  intrigue = create :expansion, name: "Intrigue", id: 2
 
   %w(Cellar Chapel Moat Chancellor Village
     Woodcutter Workshop Bureaucrat Feast Gardens).each do |name|
     create :card, name: name, expansion: standard
   end
+end
+
+Given /^there are some Intrigue cards$/ do
+  intrigue = create :expansion, name: "Intrigue", id: 2
 
   %w(Courtyard Pawn Secret\ Chamber Great\ Hall Masquerade
     Shanty\ Town Steward Swindler Wishing\ Well Baron).each do |name|
@@ -13,28 +16,25 @@ Given /^there are some cards$/ do
   end
 end
 
-# Base game
-Given /^there is a kingdom by Joffre$/ do
+Given /^there is a Dominion kingdom(?: by Joffre)$/ do
   standard = Expansion.find_by!(name: "Dominion")
 
   build(:kingdom,
-    name: "Joffre's Kingdom",
+    name: "Joffre's Dominion Kingdom",
     description: "Very dangerous kingdom.",
     cards: standard.cards.take(10)).save!
 end
 
-# Intrigue
-Given /^there is a kingdom by Batiatus$/ do
+Given /^there is an Intrigue kingdom(?: by Batiatus)?$/ do
   intrigue = Expansion.find_by!(name: "Intrigue")
 
   build(:kingdom,
-    name: "Batiatus's Kingdom",
+    name: "Batiatus's Intrigue Kingdom",
     cards: intrigue.cards.take(10),
     user: create(:user, username: "Batiatus")).save!
 end
 
-# Mixed base game and Intrigue
-Given /^there is a kingdom by mixed kingdom$/ do
+Given /^there is a mixed Dominion\/Intrigue kingdom$/ do
   standard = Expansion.find_by!(name: "Dominion")
   intrigue = Expansion.find_by!(name: "Intrigue")
 
@@ -53,8 +53,4 @@ Given /^there are (\d+) kingdoms?$/ do |number|
   number.times do |n|
     build(:kingdom, name: "Kingdom #{n}", cards: cards).save!
   end
-end
-
-Transform /(^-?\d+$)/ do |str|
-  str.to_i
 end

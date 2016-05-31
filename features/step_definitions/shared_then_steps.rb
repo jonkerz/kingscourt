@@ -5,7 +5,3 @@ end
 Then /^I should see (\d+) face up cards$/ do |number|
   expect(page).to have_css('img[src="randomizer.jpg"]', count: 10 - number)
 end
-
-Transform /(^-?\d+$)/ do |str|
-  str.to_i
-end

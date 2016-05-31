@@ -1,39 +1,40 @@
 @javascript
 Feature: Favorites
   Background:
-    Given there are some cards
+    Given there are some Dominion cards
+    Given there are some Intrigue cards
     And I am logged in
-    And there is a kingdom by Joffre
-    And there is a kingdom by Batiatus
+    And there is a Dominion kingdom by Joffre
+    And there is an Intrigue kingdom by Batiatus
     And I am on the home page
     And I follow "Browse Kingdoms"
 
   @search
   Scenario: Favoriting from the browser
-    Then I should not see "Joffre's Kingdom" favorited
-    And I should not see "Batiatus's Kingdom" favorited
+    Then I should not see "Joffre's Dominion Kingdom" favorited
+    And I should not see "Batiatus's Intrigue Kingdom" favorited
 
-    When I favorite "Joffre's Kingdom"
-    Then I should see "Joffre's Kingdom" favorited
+    When I favorite "Joffre's Dominion Kingdom"
+    Then I should see "Joffre's Dominion Kingdom" favorited
 
     When I reload the page
     And I follow "Browse Kingdoms"
-    Then I should see "Joffre's Kingdom" favorited
-    And I should not see "Batiatus's Kingdom" favorited
+    Then I should see "Joffre's Dominion Kingdom" favorited
+    And I should not see "Batiatus's Intrigue Kingdom" favorited
 
   @search
   Scenario: Browsing my favorites
-    When I favorite "Joffre's Kingdom"
+    When I favorite "Joffre's Dominion Kingdom"
     And I click on my username in the navbar
     And I follow "Favorites"
     Then I should see "Browsing my favorite kingdoms"
-    And I should see "Joffre's Kingdom" favorited
-    And I should not see "Batiatus's Kingdom"
+    And I should see "Joffre's Dominion Kingdom" favorited
+    And I should not see "Batiatus's Intrigue Kingdom"
 
   @search
   Scenario: Browsing another user's favorites
     Given Batiatus has favorited his own kingdom
     When I go to Batiatus' favorite kingdoms page
     Then I should see "Browsing Batiatus's favorite kingdoms"
-    And I should see "Batiatus's Kingdom"
-    And I should not see "Joffre's Kingdom"
+    And I should see "Batiatus's Intrigue Kingdom"
+    And I should not see "Joffre's Dominion Kingdom"

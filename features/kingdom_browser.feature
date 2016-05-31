@@ -86,6 +86,18 @@ Feature: Kingdom browser
       And I should see "Mixed Dominion and Intrigue Kingdom"
 
   @search
+  Scenario: Filtering kingdoms (facets)
+    Given there is a kingdom by Joffre
+    And there is a kingdom by mixed kingdom
+    And I am on the home page
+
+    When I follow "Browse Kingdoms"
+    Then I should see "Browsing kingdoms (3)"
+      And I should see 3 kingdoms
+      And I should see "Dominion (2)"
+      And I should see "Intrigue (2)"
+
+  @search
   Scenario: Browsing a single kingdom
     Then I should see "Browsing kingdoms"
     And I should see "Batiatus's Kingdom"

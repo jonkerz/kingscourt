@@ -30,6 +30,7 @@ angular.module 'KingsCourt'
     API.kingdoms.query params, (data) ->
       $scope.kingdoms = data.kingdoms
       $scope.totalKingdoms = data.meta.count
+      $scope.expansionFacets = data.meta.expansion_facets
 
   setPageParams = (newPage) ->
     if newPage is 1

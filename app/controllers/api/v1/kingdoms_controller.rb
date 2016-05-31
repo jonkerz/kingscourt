@@ -7,9 +7,15 @@ module Api::V1
     def index
       kingdoms = filter_kingdoms
 
+      expansion_facets = {}
+      kingdoms.facet(:expansion_ids).rows.each do |row|
+        expansion_facets[row.value] = row.count
+      end
+
       render json: kingdoms.results,
         meta: {
-          count: kingdoms.total
+          count: kingdoms.total,
+          expansion_facets: expansion_facets
         }
     end
 
@@ -87,6 +93,10 @@ module Api::V1
               without :expansion_ids, without_expansion
             end
           end
+
+          # Facets
+          facet :expansion_ids
+          facet :expansion_ids_string
 
           # Paginate
           paginate page: (params[:page] || 1), per_page: 5

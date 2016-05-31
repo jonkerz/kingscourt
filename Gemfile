@@ -7,7 +7,6 @@ gem "coffee-rails", "~> 4.1.0"
 gem "execjs"
 gem "jbuilder", "~> 2.0"
 gem "jquery-rails"
-gem "less-rails" # For Bootstrap
 gem "mysql2"
 gem "puma", "~> 3.0"
 gem "sass-rails", "~> 5.0"

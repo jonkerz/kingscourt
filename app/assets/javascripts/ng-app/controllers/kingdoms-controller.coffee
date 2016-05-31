@@ -2,15 +2,28 @@ angular.module 'KingsCourt'
 
 .controller 'KingdomsCtrl', ($route, $routeParams, $scope, $location, API, ExpansionSelector, Card) ->
   $scope.kingdoms = []
-  $scope.totalKingdoms = 'not set'
+  $scope.totalKingdoms = 'loading...'
   $scope.displayMode = 'image'
 
-  $scope.pagination = current: 1
+  ExpansionSelector.setFromParams()
+
+  getPageParam = ->
+    page = $location.search().page
+    return 1 unless page
+    parseInt page, 10
+
+  getMatchAllExpansionsParam = ->
+    if $location.search().match_all_expansions?
+      ExpansionSelector.matchAllExpansions = true
+
+  $scope.pagination = current: getPageParam()
+  getMatchAllExpansionsParam()
 
   getResultsPage = (pageNumber) ->
     params =
       page: pageNumber
       expansions: ExpansionSelector.selected.join ','
+      match_all_expansions: ExpansionSelector.matchAllExpansions
 
     _.merge params, $scope.extraParams
 
@@ -18,7 +31,24 @@ angular.module 'KingsCourt'
       $scope.kingdoms = data.kingdoms
       $scope.totalKingdoms = data.meta.count
 
+  setPageParams = (newPage) ->
+    if newPage is 1
+      $location.search 'page', null
+    else
+      $location.search 'page', parseInt(newPage, 10)
+
+  setMatchAllExpansionsParam = ->
+    if ExpansionSelector.matchAllExpansions
+      $location.search 'match_all_expansions', "true"
+    else
+      $location.search 'match_all_expansions', null
+
   $scope.pageChanged = (newPage) ->
+    # TODO refactor
+    setPageParams newPage
+    ExpansionSelector.setParams()
+    setMatchAllExpansionsParam()
+
     getResultsPage newPage
 
   $scope.toggleFavorite = (kingdom) ->
@@ -62,4 +92,4 @@ angular.module 'KingsCourt'
       $scope.extraParams = favoriter: favoriter
 
   do triggerInitialPageLoad = ->
-    $scope.pageChanged 1
+    $scope.pageChanged $location.search().page || 1

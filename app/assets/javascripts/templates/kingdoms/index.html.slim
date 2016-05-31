@@ -6,11 +6,11 @@
 
   .col-md-9
     .well.clearfix
-      h3 {{subtitle}} {{totalKingdoms}}
+      h3 {{subtitle}} ({{totalKingdoms}})
       div
         h4 ng-if="totalKingdoms == 0" No kingdoms :(
         ul.list-group.kingdom-list
-          li.list-group-item.clearfix ang-repeat="kingdom in kingdoms" dir-paginate="kingdom in kingdoms | itemsPerPage: 2" total-items="totalKingdoms" current-page="pagination.current"
+          li.list-group-item.clearfix ang-repeat="kingdom in kingdoms" dir-paginate="kingdom in kingdoms | itemsPerPage: 5" total-items="totalKingdoms" current-page="pagination.current"
             span.badge {{kingdom.favorite_count}}
             kingdom-favoriter
             a> href="#!/kingdoms/{{kingdom.id}}/{{kingdom.slug}}" {{kingdom.name}}

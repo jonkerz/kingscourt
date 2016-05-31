@@ -80,12 +80,16 @@ module Api::V1
           # Filter by expansions
           if params[:expansions].present?
             expansions = params[:expansions].split(",").map(&:to_i)
-            without_expansion = (Set.new(1..11) ^ expansions).to_a
-            without :expansion_ids, without_expansion
+            if params[:match_all_expansions] == "true"
+              with :expansion_ids_string, expansions.sort.to_s
+            else
+              without_expansion = (Set.new(1..11) ^ expansions).to_a
+              without :expansion_ids, without_expansion
+            end
           end
 
           # Paginate
-          paginate page: (params[:page] || 1), per_page: 2
+          paginate page: (params[:page] || 1), per_page: 5
         end
       end
 

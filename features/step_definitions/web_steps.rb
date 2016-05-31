@@ -2,6 +2,10 @@ Given /^I (?:am on|go to) the home page$/ do
   visit "/"
 end
 
+Given /^I (?:am on|go to) "([^"]*)"$/ do |url|
+  visit url
+end
+
 Then /^I should see "([^"]*)"$/ do |text|
   expect(page).to have_content(text)
 end

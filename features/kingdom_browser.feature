@@ -3,16 +3,14 @@ Feature: Kingdom browser
   Background:
     Given there are some Dominion cards
     And there is a Dominion kingdom by Joffre
-    And I am on the home page
-    And I follow "Browse Kingdoms"
 
   @search
   Scenario: Browsing all kingdoms
     Given there are some Intrigue cards
     And there is an Intrigue kingdom by Batiatus
     And I am on the home page
-    And I follow "Browse Kingdoms"
 
+    When I follow "Browse Kingdoms"
     Then I should see "Browsing kingdoms"
     And I should see 2 kingdoms
     And I should see "Joffre's Dominion Kingdom"
@@ -22,8 +20,8 @@ Feature: Kingdom browser
   Scenario: Browsing all kingdoms (page 2 via GUI)
     Given there are 5 kingdoms
     And I am on the home page
-    And I follow "Browse Kingdoms"
 
+    When I follow "Browse Kingdoms"
     Then I should see "Browsing kingdoms (6)"
     And I should see 5 kingdoms
 
@@ -33,7 +31,7 @@ Feature: Kingdom browser
   @search
   Scenario: Browsing all kingdoms (page 2 via URL params)
     Given there are 5 kingdoms
-    And I follow "Cards"
+    And I am on the home page
 
     When I go to "/#!/kingdoms?page=2"
     Then I should see "Browsing kingdoms (6)"
@@ -104,6 +102,9 @@ Feature: Kingdom browser
 
   @search
   Scenario: Browsing a single kingdom
+    Given I am on the home page
+
+    When I follow "Browse Kingdoms"
     Then I should see "Browsing kingdoms"
     And I should see "Joffre's Dominion Kingdom"
     And I should see "by Joffre"
@@ -113,7 +114,10 @@ Feature: Kingdom browser
 
   @search
   Scenario: Browsing a user's kingdoms
-    When I follow "Joffre"
+    Given I am on the home page
+
+    When I follow "Browse Kingdoms"
+    And I follow "Joffre"
     Then I should see "Browsing Joffre's kingdoms"
     And I should see "Joffre's Dominion Kingdom"
     And I should see 1 kingdom

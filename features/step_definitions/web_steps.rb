@@ -1,3 +1,5 @@
+# General web steps.
+
 Given /^I (?:am on|go to) the home page$/ do
   visit "/"
 end

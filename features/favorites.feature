@@ -2,11 +2,10 @@
 Feature: Favorites
   Background:
     Given there are some Dominion cards
-    Given there are some Intrigue cards
-    And I am logged in
+    And there are some Intrigue cards
     And there is a Dominion kingdom by Joffre
     And there is an Intrigue kingdom by Batiatus
-    And I am on the home page
+    And I am logged in
     And I follow "Browse Kingdoms"
 
   @search
@@ -34,6 +33,7 @@ Feature: Favorites
   @search
   Scenario: Browsing another user's favorites
     Given Batiatus has favorited his own kingdom
+
     When I go to Batiatus' favorite kingdoms page
     Then I should see "Browsing Batiatus's favorite kingdoms"
     And I should see "Batiatus's Intrigue Kingdom"

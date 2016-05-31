@@ -1,12 +1,10 @@
-.text-center style="margin-bottom: 1rem"
+.center-button
   button.btn.btn-primary ng-click="pageChanged(1)" Filter
 
 ng-include src="'shared/_expansion_selector.html'"
 
-label
+label.btn.btn-default.btn-sm
+  input> type="checkbox" ng-model="expansionSelector.matchAllExpansions"
   Match all expansions?
-  input type="checkbox" ng-model="expansionSelector.matchAllExpansions"
 
 span ng-show="!expansionSelector.selected.length" Please select at least one expansion.
-
-p Current filter matched {{totalKingdoms}} out of {{totalKingdomsAll}} kingdoms.

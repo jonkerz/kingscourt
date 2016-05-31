@@ -7,6 +7,5 @@
  *= require jquery-ui/themes/base/theme
  *
  *= require_tree ./site
- *= require_tree ./ng-controllers
  *= require_tree ./directives
  */

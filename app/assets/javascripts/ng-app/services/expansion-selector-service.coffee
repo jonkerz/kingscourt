@@ -21,7 +21,7 @@ angular.module 'KingsCourt'
 
     unselected: -> _.difference @all, @selected
 
-    isActive: (id) -> _.includes @selected, id
+    isChecked: (id) -> _.includes @selected, id
 
     allChecked:  -> _.isEqual @selected, @all
 

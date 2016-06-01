@@ -29,7 +29,7 @@ module Api::V1
       kingdom.card_ids = params[:card_ids]
 
       if kingdom.save
-        render json: kingdom
+        render json: kingdom, status: :created
       else
         json = { errors: kingdom.errors.full_messages.join(", ") }
         render json: json, status: :unprocessable_entity
@@ -39,7 +39,7 @@ module Api::V1
     def update
       @kingdom.card_ids = params[:card_ids]
       if @kingdom.update kingdom_params
-        render json: @kingdom
+        render json: @kingdom, status: :ok
       else
         json = { errors: @kingdom.errors.full_messages.join(", ") }
         render json: json, status: :unprocessable_entity
@@ -48,7 +48,7 @@ module Api::V1
 
     def destroy
       if @kingdom.destroy
-        render json: {}, status: :ok
+        render json: :no_content
       else
         json = { errors: @kingdom.errors.full_messages.join(", ") }
         render json: json, status: :unprocessable_entity
@@ -63,7 +63,7 @@ module Api::V1
 
       def check_can_be_edited_by
         unless @kingdom.can_be_edited_by? current_user
-          render json: {}, status: :unauthorized
+          render json: :forbidden
           return
         end
       end

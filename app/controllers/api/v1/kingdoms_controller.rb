@@ -5,7 +5,7 @@ module Api::V1
     before_action :authenticate_user!, except: [:index, :show]
 
     def index
-      kingdoms = filter_kingdoms
+      kingdoms = filter_kingdoms params
 
       expansion_facets = {}
       kingdoms.facet(:expansion_ids).rows.each do |row|
@@ -68,7 +68,7 @@ module Api::V1
         end
       end
 
-      def filter_kingdoms
+      def filter_kingdoms params
         Sunspot.search(Kingdom) do
           # Filter by kingdom creator, favorites
           if params[:my_kingdoms]

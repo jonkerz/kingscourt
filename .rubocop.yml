@@ -31,6 +31,9 @@ Style/MultilineMethodCallIndentation:
 Style/GuardClause:
   Enabled: false
 
+Style/SpaceInsideBrackets:
+  Enabled: false
+
 Rails/Validation:
   Enabled: false
 

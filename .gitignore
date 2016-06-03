@@ -17,8 +17,8 @@ public/assets/**
 
 ##Solr
 solr/data
-solr/test
-solr/development
+solr/test/data
+solr/development/data
 solr/default/data
 solr/pids
 

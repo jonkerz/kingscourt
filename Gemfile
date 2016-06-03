@@ -35,6 +35,7 @@ gem "devise_token_auth",
   # https://github.com/lynndylanhurley/devise_token_auth/issues/500
 gem "slugify"
 gem "sunspot_rails", "2.2.0"
+gem "sunspot_solr", "2.2.0"
 
 # Admin backend
 gem "activeadmin", github: "activeadmin"
@@ -52,7 +53,6 @@ group :development do
   gem "listen", "~> 3.0.5"
   gem "quiet_assets"
   gem "rubocop", "~> 0.40.0", require: false
-  gem "sunspot_solr", "2.2.0"
   gem "web-console"
 end
 

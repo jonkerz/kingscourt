@@ -11,7 +11,6 @@ set :user,            ENV["CAPISTRANO_USER"]
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
-# Don't change these unless you know what you're doing
 set :pty,             true
 set :use_sudo,        false
 set :stage,           :production
@@ -27,15 +26,6 @@ set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true
 
-## Defaults:
-# set :scm,           :git
-# set :branch,        :master
-# set :format,        :pretty
-# set :log_level,     :debug
-# set :keep_releases, 5
-
-## Linked Files & Directories (Default None):
-# set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w(
   bin log tmp/pids tmp/cache
   tmp/sockets vendor/bundle public/system
@@ -43,7 +33,7 @@ set :linked_dirs, %w(
 )
 
 namespace :puma do
-  desc "Create Directories for Puma Pids and Socket"
+  desc "Create directories for Puma pids and socket"
   task :make_dirs do
     on roles(:app) do
       execute "mkdir #{shared_path}/tmp/sockets -p"
@@ -66,7 +56,7 @@ namespace :deploy do
     end
   end
 
-  desc "Initial Deploy"
+  desc "Initial deploy"
   task :initial do
     on roles(:app) do
       before "deploy:restart", "puma:start"
@@ -88,7 +78,7 @@ namespace :deploy do
 end
 
 namespace :bower do
-  desc "Install bower"
+  desc "Install Bower"
   task :install do
     on roles(:web) do
       within release_path do
@@ -100,7 +90,3 @@ namespace :bower do
   end
 end
 before "deploy:compile_assets", "bower:install"
-
-# ps aux | grep puma    # Get puma pid
-# kill -s SIGUSR2 pid   # Restart puma
-# kill -s SIGTERM pid   # Stop puma

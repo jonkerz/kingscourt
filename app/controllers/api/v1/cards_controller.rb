@@ -2,11 +2,11 @@ module Api::V1
   class CardsController < ApiController
     def index
       cards = if params[:randomizers_only]
-                Card.randomizers
+                Card.include_card_attributes.randomizers
               elsif params[:non_randomizers_only]
-                Card.non_randomizers
+                Card.include_card_attributes.non_randomizers
               else
-                Card.all
+                Card.include_card_attributes.all
               end
 
       cards_json = ActiveModel::Serializer::CollectionSerializer

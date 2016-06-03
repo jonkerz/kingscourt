@@ -6,7 +6,7 @@ class Expansion < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
   def self.all_card_attributes
-    Expansion.find_each.collect do |expansion|
+    Expansion.includes(cards: :card_attributes).find_each.collect do |expansion|
       [expansion.id, expansion.card_attributes]
     end.to_h
   end

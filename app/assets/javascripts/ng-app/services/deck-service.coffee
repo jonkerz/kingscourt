@@ -4,6 +4,8 @@ angular.module "KingsCourt"
   new class Deck
     constructor: ->
       @cards = Card.cards
+      for card in @cards
+        card.card_attributes = _.map card.card_attributes, "name"
       @deck = angular.copy @cards
 
     deckSize: -> @deck.length

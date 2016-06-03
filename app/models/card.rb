@@ -12,6 +12,7 @@ class Card < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :expansion_id, presence: true
 
+  scope :include_card_attributes, -> { includes(:card_attributes) }
   scope :randomizers, -> { where(randomizable: true) }
   scope :non_randomizers, -> { where(randomizable: false) }
 

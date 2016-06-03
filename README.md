@@ -1,24 +1,17 @@
-# README
+```
+ ____  __..__               /\        _________                           __   
+|    |/ _||__|  ____    ____)/ ______ \_   ___ \   ____   __ __ _______ _/  |_ 
+|      <  |  | /    \  / ___\ /  ___/ /    \  \/  /  _ \ |  |  \\_  __ \\   __\
+|    |  \ |  ||   |  \/ /_/  >\___ \  \     \____(  <_> )|  |  / |  | \/ |  |  
+|____|__ \|__||___|  /\___  //____  >  \______  / \____/ |____/  |__|    |__|  
+        \/         \//_____/      \/          \/                               
+```
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### King's Court
+Generate, build, and browse kingdoms of the card game [Dominion](https://en.wikipedia.org/wiki/Dominion_(card_game)). Live at [kingscourt.io](http://kingscourt.io/).
 
-Things you may want to cover:
+### Installation
+See [INSTALL.md](INSTALL.md).
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Contributing
+Contributions welcome!

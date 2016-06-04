@@ -4,13 +4,13 @@ angular.module "KingsCourt"
   $scope.openLogin = ->
     modalInstance = $uibModal.open
       templateUrl: "shared/_login_modal.html"
-      controller: "ModalInstanceCtrl"
+      controller: "UserModalInstanceCtrl"
       size: "sm"
 
   $scope.openUpdatePassword = ->
     modalInstance = $uibModal.open
       templateUrl: "shared/_change_password_modal.html"
-      controller: "ModalInstanceCtrl"
+      controller: "UserModalInstanceCtrl"
       size: "sm"
 
   $scope.openCard = (card) ->

@@ -1,6 +1,6 @@
 angular.module "KingsCourt"
 
-.controller "ModalInstanceCtrl", ($scope, $uibModalInstance, $auth) ->
+.controller "UserModalInstanceCtrl", ($scope, $uibModalInstance, $auth) ->
   $scope.$on "auth:login-success", (event, mass) -> $uibModalInstance.close()
 
   $scope.ok = -> $uibModalInstance.close()
@@ -48,8 +48,3 @@ angular.module "KingsCourt"
         errors.join(", ")
 
     $auth.updatePassword(form).then(onSuccess).catch onError
-
-  $scope.showPanel = (panel) ->
-    $("#login-modal #login, #login-modal #register, #login-modal #forgot_password").hide()
-    $("#login-modal ##{panel}").show()
-    return "coffee"

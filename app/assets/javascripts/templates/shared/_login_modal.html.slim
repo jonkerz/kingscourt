@@ -1,11 +1,11 @@
-#login-modal.modal-body
+#login-modal.modal-body ng-init="tab = 'login'"
   button type="button" class="close" ng-click="cancel()" aria-label="Close": span aria-hidden="true" &times;
 
   p.text-danger {{errors}}
   p {{notice}}
 
-  #login
-    form role="form" ng-init="loginForm = {}" ng-if="!user.signedIn"
+  div ng-show="tab == 'login'"
+    form role="form" ng-init="loginForm = {}"
       .form-group
         label for="login-email" Email
         input#login-email.form-control type="email" ng-model="loginForm.email" required="required"
@@ -13,10 +13,10 @@
         label for="login-password" Password
         input#login-password.form-control type="password" ng-model="loginForm.password" required="required"
       button.btn.btn-primary.btn-sm> type="submit" ng-click="submitLogin(loginForm)" Login
-      a> href="" ng-click="showPanel('register')" Registration
-      a ng-click="showPanel('forgot_password')" Forgot password?
+      a> href="" ng-click="tab = 'register'" Registration
+      a ng-click="tab = 'forgotPassword'" Forgot password?
 
-  #register
+  div ng-show="tab == 'register'"
     form role="form" ng-init="registrationForm = {}"
       .form-group
         label Username
@@ -31,12 +31,12 @@
         label Password confirmation
         input#register-password-confirmation.form-control type="password" name="password_confirmation" ng-model="registrationForm.password_confirmation" required="required"
       button.btn.btn-primary.btn-sm> type="submit" ng-click="submitRegistration(registrationForm)" Register
-      a ng-click="showPanel('login')" Back to login
+      a ng-click="tab = 'login'" Back to login
 
-  #forgot_password
+  div ng-show="tab == 'forgotPassword'"
     form ng-init="passwordResetForm = {}" role="form"
       .form-group
         label Email
         input.form-control name="email" ng-model="passwordResetForm.email" required="required" type="email" /
       button.btn.btn-primary.btn-sm> type="submit" ng-click="requestPasswordReset(passwordResetForm)" Request password reset
-      a ng-click="showPanel('login')" Back to login
+      a ng-click="tab = 'login'" Back to login

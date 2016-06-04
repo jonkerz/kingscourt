@@ -1,9 +1,9 @@
 angular.module "KingsCourt"
 
-.controller "CardCtrl", ($scope, $http, ExpansionSelector, Card, API_SERVER) ->
+.controller "CardCtrl", ($scope, $http, ExpansionSelector, Card) ->
   $scope.allCards = Card.cards
 
-  # TODO Caching breaks dir-paginate
+  # TODO: Caching breaks dir-paginate
   $http.get("/api/v1/cards?non_randomizers_only=true").then (response) ->
     $scope.allCards = $scope.allCards.concat response.data
 

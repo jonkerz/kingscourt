@@ -45,7 +45,7 @@ angular.module "KingsCourt"
       $location.search "match_all_expansions", null
 
   $scope.pageChanged = (newPage) ->
-    # TODO refactor
+    # TODO: refactor
     setPageParams newPage
     ExpansionSelector.setParams()
     setMatchAllExpansionsParam()

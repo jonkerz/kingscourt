@@ -11,10 +11,6 @@ angular.module "KingsCourt"
 
   $scope.displayMode = "image"
 
-  $scope.tab = "randomizer-tab"
-
-  $scope.setTab = (tab) -> $scope.tab = tab
-
   $scope.range = (n) -> new Array n
 
   $scope.filterByExpansion = (card) ->

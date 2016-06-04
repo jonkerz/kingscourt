@@ -14,11 +14,11 @@
           hovercard
 
     .well.clearfix
-      ul#tabs.nav.nav-tabs data-tabs="tabs"
+      ul#tabs.nav.nav-tabs data-tabs="tabs" ng-init="tab = 'randomizer-tab'"
         li.active
-          a data-target="#randomizer-tab" data-toggle="tab" ng-click="setTab('randomizer-tab')" Add Random
+          a data-target="#randomizer-tab" data-toggle="tab" ng-click="tab ='randomizer-tab'" Add Random
         li
-          a data-target="#by-name-tab" data-toggle="tab" ng-click="setTab('by-name-tab')" Add Card by Name
+          a data-target="#by-name-tab" data-toggle="tab" ng-click="tab ='by-name-tab'" Add Card by Name
       .tab-content
         #randomizer-tab.tab-pane.fade.in.active.clearfix ng-if="tab=='randomizer-tab'"
           ng-include src="'builder/tabs/_randomizer.html'"

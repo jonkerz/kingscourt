@@ -22,11 +22,6 @@ angular.module "KingsCourt"
       templateUrl: "kingdoms/show.html"
       controller: "KingdomCtrl"
 
-    .when "/cards",
-      title: "Browse Cards"
-      templateUrl: "cards/index.html"
-      controller: "CardCtrl"
-
     # "kingdoms#index"
     .when "/kingdoms",
       title: "Browse Kingdoms"
@@ -59,9 +54,11 @@ angular.module "KingsCourt"
       templateUrl: "kingdoms/index.html"
       reloadOnSearch: false
 
-    .when "/kings_court",
-      title: "King's Court"
-      templateUrl: "kings-court.html"
+
+    .when "/cards",
+      title: "Browse Cards"
+      templateUrl: "cards/index.html"
+      controller: "CardCtrl"
 
     .when "/import",
       title: "Import"

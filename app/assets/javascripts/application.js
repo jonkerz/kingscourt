@@ -16,6 +16,7 @@
 //= require ng-token-auth/dist/ng-token-auth
 //= require angular-lazy-img/release/angular-lazy-img
 //= require angular-bootstrap-confirm/dist/angular-bootstrap-confirm
+//= require angular-utils-disqus/dirDisqus
 
 //= require_tree ./ng-app
 

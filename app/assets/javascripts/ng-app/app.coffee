@@ -19,6 +19,7 @@ KingsCourt = angular.module "KingsCourt", [
   "ui.bootstrap"
   "angularLazyImg"
   "mwl.confirm"
+  "angularUtils.directives.dirDisqus"
 ]
 
 KingsCourt.run ($location, $rootScope, $auth, ExpansionSelector) ->

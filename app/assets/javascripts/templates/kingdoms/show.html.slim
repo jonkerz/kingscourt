@@ -4,8 +4,8 @@
       .responsive-card ng-repeat="card in kingdom.cards track by $index"
         img.rounded-card.fix-stacking-hack[ng-src="cards/{{::card.image}}" card-modal data-card="{{card}}"]
 
-    panel-collapse title="Comments"
-      dir-disqus disqus-shortname="kingscourt" disqus-identifier="kingdoms/{{kingdom.id}}" disqus-url="http://kingscourt.io/#!/kingdoms/{{kingdom.id}}" ready-to-bind="{{contentLoaded}}"
+    panel-collapse title="Comments" ng-if="disqusConfig"
+      dir-disqus config="disqusConfig"
 
   .col-md-3
     ng-include src="'kingdoms/_kingdom_details_panel.html'"

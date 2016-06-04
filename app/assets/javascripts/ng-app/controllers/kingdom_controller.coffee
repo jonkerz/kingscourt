@@ -15,7 +15,10 @@ angular.module "KingsCourt"
     $scope.kingdom.username = kingdom.username
     $scope.kingdom.created_at = kingdom.created_at
 
-    $scope.contentLoaded = true
+    $scope.disqusConfig =
+      disqus_shortname: "kingscourt"
+      disqus_identifier: "kingdoms/#{$scope.kingdom.id}"
+      disqus_url: "http://kingscourt.io/#!/kingdoms/#{$scope.kingdom.id}"
 
   $scope.deleteKingdom = (id) ->
     API.kingdoms.delete id: id, (data) ->

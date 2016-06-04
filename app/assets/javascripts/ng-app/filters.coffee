@@ -15,9 +15,3 @@ angular.module "KingsCourt"
     11: "Adventures"
 
   (exp) -> ExpansionEnum[exp]
-
-.filter "replaceSpaces", ->
-  (str) ->
-    return str if str is undefined
-    str = str.replace(/'/g, "")
-    str.replace RegExp(" ", "g"), "_"

@@ -1,43 +1,13 @@
 Teaspoon.configure do |config|
-  # Determines where the Teaspoon routes will be mounted. Changing this to "/jasmine" would allow you to browse to
-  # `http://localhost:3000/jasmine` to run your tests.
   config.mount_at = "/teaspoon"
-
-  # Specifies the root where Teaspoon will look for files. If you're testing an engine using a dummy application it can
-  # be useful to set this to your engines root (e.g. `Teaspoon::Engine.root`).
-  # Note: Defaults to `Rails.root` if nil.
   config.root = nil
-
-  # Paths that will be appended to the Rails assets paths
-  # Note: Relative to `config.root`.
   config.asset_paths = ["spec/javascripts", "spec/javascripts/stylesheets"]
 
-  # Fixtures are rendered through a controller, which allows using HAML, RABL/JBuilder, etc. Files in these paths will
-  # be rendered as fixtures.
   config.fixture_paths = ["spec/javascripts/fixtures"]
 
-  # SUITES
-  #
-  # You can modify the default suite configuration and create new suites here. Suites are isolated from one another.
-  #
-  # When defining a suite you can provide a name and a block. If the name is left blank, :default is assumed. You can
-  # omit various directives and the ones defined in the default suite will be used.
-  #
-  # To run a specific suite
-  # - in the browser: http://localhost/teaspoon/[suite_name]
-  # - with the rake task: rake teaspoon suite=[suite_name]
-  # - with the cli: teaspoon --suite=[suite_name]
   config.suite do |suite|
-    # Specify the framework you would like to use. This allows you to select versions, and will do some basic setup for
-    # you -- which you can override with the directives below. This should be specified first, as it can override other
-    # directives.
-    # Note: If no version is specified, the latest is assumed.
-    #
-    # Versions: 1.3.1, 2.0.3, 2.1.3, 2.2.0, 2.2.1, 2.3.4
     suite.use_framework :jasmine, "2.3.4"
 
-    # Specify a file matcher as a regular expression and all matching files will be loaded when the suite is run. These
-    # files need to be within an asset path. You can add asset paths using the `config.asset_paths`.
     suite.matcher = "{spec/javascripts,app/assets}/**/*_spec.{js,js.coffee,coffee}"
 
     # Load additional JS files, but requiring them in your spec helper is the preferred way to do this.
@@ -47,8 +17,6 @@ Teaspoon.configure do |config|
     # Note: Spec related CSS can and should be loaded using fixtures.
     #suite.stylesheets = ["teaspoon"]
 
-    # This suites spec helper, which can require additional support files. This file is loaded before any of your test
-    # files are loaded.
     suite.helper = "spec_helper"
 
     # Partial to be rendered in the head tag of the runner. You can use the provided ones or define your own by creating
@@ -69,7 +37,6 @@ Teaspoon.configure do |config|
     # Teaspoon expands all assets to provide more valuable stack traces that reference individual source files.
     #suite.expand_assets = true
 
-    # Non-.js file extensions Teaspoon should consider JavaScript files
     #suite.js_extensions = [/(\.js)?.coffee/, /(\.js)?.es6/, ".es6.js"]
   end
 
@@ -81,10 +48,6 @@ Teaspoon.configure do |config|
 
   # CONSOLE RUNNER SPECIFIC
   #
-  # These configuration directives are applicable only when running via the rake task or command line interface. These
-  # directives can be overridden using the command line interface arguments or with ENV variables when using the rake
-  # task.
-  #
   # Command Line Interface:
   # teaspoon --driver=phantomjs --server-port=31337 --fail-fast=true --format=junit --suite=my_suite /spec/file_spec.js
   #
@@ -94,22 +57,14 @@ Teaspoon.configure do |config|
   # Specify which headless driver to use. Supports PhantomJS, Selenium Webdriver and BrowserStack Webdriver.
   #
   # Available: :phantomjs, :selenium, :browserstack, :capybara_webkit
-  # PhantomJS: https://github.com/modeset/teaspoon/wiki/Using-PhantomJS
   # Selenium Webdriver: https://github.com/modeset/teaspoon/wiki/Using-Selenium-WebDriver
-  # BrowserStack Webdriver: https://github.com/modeset/teaspoon/wiki/Using-BrowserStack-WebDriver
   # Capybara Webkit: https://github.com/modeset/teaspoon/wiki/Using-Capybara-Webkit
-  #config.driver = :phantomjs
+  config.driver = :capybara_webkit
 
-  # Specify additional options for the driver.
-  #
-  # PhantomJS: https://github.com/modeset/teaspoon/wiki/Using-PhantomJS
   # Selenium Webdriver: https://github.com/modeset/teaspoon/wiki/Using-Selenium-WebDriver
-  # BrowserStack Webdriver: https://github.com/modeset/teaspoon/wiki/Using-BrowserStack-WebDriver
   # Capybara Webkit: https://github.com/modeset/teaspoon/wiki/Using-Capybara-Webkit
   #config.driver_options = nil
 
-  # Specify the timeout for the driver. Specs are expected to complete within this time frame or the run will be
-  # considered a failure. This is to avoid issues that can arise where tests stall.
   #config.driver_timeout = 180
 
   # Specify a server to use with Rack (e.g. thin, mongrel). If nil is provided Rack::Server is used.

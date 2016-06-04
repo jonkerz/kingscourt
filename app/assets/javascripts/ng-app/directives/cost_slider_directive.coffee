@@ -1,12 +1,12 @@
 angular.module "KingsCourt"
 
-.directive "costSlider", (Randomizer, APP_CONFIG) ->
+.directive "costSlider", (Randomizer) ->
   restrict: "A"
   link: (scope, element, attrs) ->
     element.slider
       range: true
-      min: APP_CONFIG.CARD_MIN_COST
-      max: APP_CONFIG.CARD_MAX_COST
+      min: Randomizer.GLOBAL_MIN_COST
+      max: Randomizer.GLOBAL_MAX_COST
       values: [
         Randomizer.minCost
         Randomizer.maxCost

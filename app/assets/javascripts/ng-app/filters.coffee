@@ -1,7 +1,7 @@
 angular.module "KingsCourt"
 
 .filter "expansionToString", ->
-  ExpansionEnum =
+  expansions =
     1:  "Dominion"
     2:  "Intrigue"
     3:  "Seaside"
@@ -14,4 +14,4 @@ angular.module "KingsCourt"
     10: "Promo"
     11: "Adventures"
 
-  (exp) -> ExpansionEnum[exp]
+  (exp) -> expansions[exp]

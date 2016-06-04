@@ -6,4 +6,4 @@ angular.module "KingsCourt"
 
     getCardByName: (name) -> _.find @cards, name: name
 
-    getCardById: (id) -> _.find @cards, id: id
+    getCardById: (id) -> _.find @cards, id: parseInt(id, 10)

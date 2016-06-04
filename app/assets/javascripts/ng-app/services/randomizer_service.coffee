@@ -1,10 +1,13 @@
 angular.module "KingsCourt"
 
-.factory "Randomizer", (APP_CONFIG) ->
+.factory "Randomizer", ->
   new class Randomizer
     constructor: ->
-      @minCost = APP_CONFIG.CARD_MIN_COST
-      @maxCost = APP_CONFIG.CARD_MAX_COST
+      @GLOBAL_MIN_COST = 0
+      @GLOBAL_MAX_COST = 8
+
+      @minCost = @GLOBAL_MIN_COST
+      @maxCost = @GLOBAL_MAX_COST
       @cardAttributesYes = []
       @cardAttributesNo = []
 
@@ -15,4 +18,5 @@ angular.module "KingsCourt"
         @minCost + "-" + @maxCost
 
     costsNot: ->
-      _.difference [APP_CONFIG.CARD_MIN_COST..APP_CONFIG.CARD_MAX_COST], [@minCost..@maxCost]
+      allCosts = [@GLOBAL_MIN_COST..@GLOBAL_MAX_COST]
+      _.difference allCosts, [@minCost..@maxCost]

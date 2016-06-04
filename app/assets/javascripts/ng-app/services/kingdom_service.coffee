@@ -1,24 +1,24 @@
 class KingdomHack
-  Alerts = APP_CONFIG = null
+  Alerts = null
+  KINGDOM_MAX_SIZE = 10
 
   constructor: ($injector) ->
     Alerts = $injector.get "Alerts"
-    APP_CONFIG = $injector.get "APP_CONFIG"
 
     @cards = []
     @name = ""
     @description = ""
 
-  removeCard: (card) -> @cards.splice _(@cards).findIndex(card), 1
+  removeCardById: (id) -> _.remove @cards, (card) -> card.id is id
 
-  removeCardById: (id) -> @cards = _.reject @cards, id: id
+  removeCard: (card) -> @removeCardById card.id
 
   removeAllCards: -> @cards = []
 
   getAllCardIds: -> _.map @cards, "id"
 
   addCard: (card) ->
-    if @cards.length >= APP_CONFIG.KINGDOM_SIZE
+    if @cards.length >= KINGDOM_MAX_SIZE
       return Alerts.add "Kingdom full. Card not added."
     else if _(@cards).find { name: card.name }
       return Alerts.add "Duplicate. Card not added."

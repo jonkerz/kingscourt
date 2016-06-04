@@ -14,15 +14,15 @@ angular.module "KingsCourt"
       @deck = @cards.slice()
       @removeCardById card.id for card in cardsInKingdom
 
-    removeCardById: (id) -> @deck.splice _(@deck).findIndex(id: id), 1
+    removeCardById: (id) -> _.remove @deck, (card) -> card.id is id
 
-    removeCard: (card) -> @deck.splice _(@deck).findIndex(card), 1
+    removeCard: (card) -> @removeCardById card.id
 
     getRandomCard: ->
       if @deckSize() is 0
         Alerts.add "No card found."
         return false
-      card = @deck[_.random 0, @deck.length - 1]
+      card = _.sample @deck
       @removeCard card
       card
 

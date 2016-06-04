@@ -1,5 +1,3 @@
-# From https://www.digitalocean.com/community/tutorials/deploying-a-rails-app-on-ubuntu-14-04-with-capistrano-nginx-and-puma
-
 server ENV["CAPISTRANO_SERVER"],
   port: ENV["CAPISTRANO_PORT"],
   roles: [:web, :app, :db],
@@ -27,7 +25,7 @@ set :puma_worker_timeout, nil
 set :puma_init_active_record, true
 
 set :linked_dirs, %w(
-  bin log tmp/pids tmp/cache
+  log tmp/pids tmp/cache
   tmp/sockets vendor/bundle public/system
   public/cards solr/default solr/pids
 )
@@ -88,5 +86,20 @@ namespace :bower do
       end
     end
   end
+
+  desc "Copy bower_components"
+  task :copy_from_current_release do
+    on roles(:web) do
+      within release_path do
+        execute :cp, "-r #{current_path}/vendor/assets/bower_components/ \
+          #{release_path}/vendor/assets/"
+      end
+    end
+  end
 end
-before "deploy:compile_assets", "bower:install"
+
+if ENV["COPY_BOWER"]
+  before "deploy:compile_assets", "bower:copy_from_current_release"
+else
+  before "deploy:compile_assets", "bower:install"
+end

@@ -51,6 +51,9 @@ group :development do
   gem "capistrano-rake", require: false
   gem "capistrano-bundler", require: false
   gem "capistrano3-puma", require: false
+  gem "capistrano-faster-assets", require: false
+  gem "capistrano-rails-console", require: false
+  gem "capistrano-pending", require: false
   gem "listen", "~> 3.0.5"
   gem "quiet_assets"
   gem "rubocop", "~> 0.40.0", require: false

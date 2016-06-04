@@ -47,6 +47,7 @@ bundle exec rake db:test:prepare
 # Run tests
 bundle exec cucumber # feature tests
 bundle exec rspec # unit tests
+bundle exec teaspoon # JavaScript unit-ish tests
 
 # Run site
 bundle exec rake sunspot:solr:start # start Solr

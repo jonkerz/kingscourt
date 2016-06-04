@@ -1,0 +1,24 @@
+-unless resource.errors.empty?
+  .alert.alert-danger.alert-block
+    ul
+      -resource.errors.full_messages.each do |message|
+        li=message
+
+.panel.panel-default
+  .panel-heading
+    h4 Change your password
+  .panel-body
+    =form_for(resource, as: resource_name, url: user_password_path, html: { method: :put, role: "form" }) do |f|
+      =f.hidden_field :reset_password_token
+      .form-group
+        =f.label :password, "New password"
+        -if @minimum_password_length
+          span<
+            (
+            =@minimum_password_length
+            |  characters minimum)
+        =f.password_field :password, autofocus: true, autocomplete: "off", class: "form-control"
+      .form-group
+        =f.label :password_confirmation
+        =f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
+      =f.submit "Change my password", class: "btn btn-primary btn-sm"

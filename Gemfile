@@ -72,4 +72,5 @@ end
 group :development, :test do
   gem "rspec-rails"
   gem "pry"
+  gem "teaspoon-jasmine"
 end

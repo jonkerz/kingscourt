@@ -15,5 +15,5 @@ describe "NavbarCtrl", ->
       controller = createController()
       $location.path "builder"
       expect($location.path()).toBe "/builder"
-      expect(scope.isActive("/builder")).toBe true
-      expect(scope.isActive("/generator")).toBe false
+      expect(scope.isActive "/builder").toBe true
+      expect(scope.isActive "/generator").toBe false

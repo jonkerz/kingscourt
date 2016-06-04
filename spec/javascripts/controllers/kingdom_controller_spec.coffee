@@ -1,5 +1,5 @@
-describe "KingdomCtrls:", ->
-  $location = scope = createController = AuthService = null
+describe "KingdomsCtrl", ->
+  $location = scope = createController = Auth = null
 
   mockedCards = [
     {
@@ -33,7 +33,7 @@ describe "KingdomCtrls:", ->
   ]
 
   beforeEach ->
-    module "Dominion.KingdomBrowser"
+    module "KingsCourt"
     module ($provide) ->
       $provide.constant "Cards", mockedCards
 
@@ -41,7 +41,7 @@ describe "KingdomCtrls:", ->
       scope = $rootScope.$new()
 
       createController = ->
-        $controller "KingdomCtrl", "$scope": scope
+        $controller "KingdomsCtrl", "$scope": scope
 
   it "zzzzzzzz..", ->
       controller = createController()

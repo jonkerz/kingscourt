@@ -1,26 +1,25 @@
-describe "auth service:", ->
-  AuthService = null
+describe "Auth", ->
+  Auth = null
   $httpBackend = API_SERVER = $localStorage = null
 
   beforeEach ->
-    module "Dominion.Auth"
+    module "KingsCourt"
     localStorage.clear()
     module ($provide) ->
       $provide.constant "API_SERVER", "http://API_SERVER/"
 
-    inject (_$httpBackend_, _$localStorage_, _AuthService_) ->
+    inject (_$httpBackend_, _$localStorage_, _Auth_) ->
       $httpBackend = _$httpBackend_
       $localStorage = _$localStorage_
-      AuthService = _AuthService_
+      Auth = _Auth_
       API_SERVER = "http://API_SERVER/"
 
   it "check default values", ->
-    expect(AuthService.loggedIn).toBe false
-    expect(AuthService.username).toBe null
-    expect(angular.isArray AuthService.favoriteKingdoms).toBeTruthy()
-    expect(AuthService.favoriteKingdoms.length).toBe 0
+    expect(Auth.loggedIn).toBe false
+    expect(Auth.username).toBe null
+    expect(angular.isArray Auth.favoriteKingdoms).toBeTruthy()
+    expect(Auth.favoriteKingdoms.length).toBe 0
     expect($localStorage.username).toBe undefined
-
 
   it "should login", ->
     $httpBackend.expectPOST("#{API_SERVER}login/").respond 200,
@@ -29,17 +28,17 @@ describe "auth service:", ->
       token: "e4dfb313f0014a0ed552ecf6f0030832304253e3"
       favorite_kingdoms: [5]
 
-    AuthService.login("doesnt", "matter")
+    Auth.login("doesnt", "matter")
     $httpBackend.flush()
-    expect(AuthService.username).toBe "usernamez"
+    expect(Auth.username).toBe "usernamez"
 
   it "should not log in on with bad credentials", ->
     $httpBackend.expectPOST("#{API_SERVER}login/").respond 400,
       error: "Looks like your username or password is wrong"
 
-    AuthService.login("doesnt", "matter")
+    Auth.login("doesnt", "matter")
     $httpBackend.flush()
-    expect(AuthService.loggedIn).toBe false
+    expect(Auth.loggedIn).toBe false
 
   it "localStorage should remember the login credentials but remove them on logout", ->
     $httpBackend.expectPOST("#{API_SERVER}login/").respond 200,
@@ -48,35 +47,34 @@ describe "auth service:", ->
       token: "e4dfb313f0014a0ed552ecf6f0030832304253e3"
       favorite_kingdoms: [5]
 
-    AuthService.login("doesnt", "matter")
+    Auth.login("doesnt", "matter")
     $httpBackend.flush()
 
     expect($localStorage.username).toBe "usernamez"
 
     $httpBackend.expectPOST("#{API_SERVER}logout/").respond(200, {doesnt: "matter" })
-    AuthService.logout()
+    Auth.logout()
     $httpBackend.flush()
 
     expect($localStorage.username).toBe undefined
 
-
-  it "should get user\"s favorites and add new, but no dups", ->
+  it "should get user's favorites and add new, but no dups", ->
     $httpBackend.expectPOST("#{API_SERVER}login/").respond 200,
       username: "usernamez"
       favoriteexpansions: []
       token: "e4dfb313f0014a0ed552ecf6f0030832304253e3"
       favorite_kingdoms: [5]
 
-    AuthService.login("doesnt", "matter")
+    Auth.login("doesnt", "matter")
     $httpBackend.flush()
 
-    expect(AuthService.favoriteKingdoms).toEqual [5]
-    AuthService.addToFavoriteKingdomsList 10
-    expect(AuthService.favoriteKingdoms).toEqual [5, 10]
-    AuthService.addToFavoriteKingdomsList 10
-    expect(AuthService.favoriteKingdoms).toEqual [5, 10]
-    AuthService.removeFromFavoriteKingdomsList 5
-    expect(AuthService.favoriteKingdoms).toEqual [10]
+    expect(Auth.favoriteKingdoms).toEqual [5]
+    Auth.addToFavoriteKingdomsList 10
+    expect(Auth.favoriteKingdoms).toEqual [5, 10]
+    Auth.addToFavoriteKingdomsList 10
+    expect(Auth.favoriteKingdoms).toEqual [5, 10]
+    Auth.removeFromFavoriteKingdomsList 5
+    expect(Auth.favoriteKingdoms).toEqual [10]
 
     expect($localStorage.favoriteKingdoms).toEqual [10]
 

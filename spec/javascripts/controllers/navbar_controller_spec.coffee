@@ -1,8 +1,8 @@
-describe "Navbar:", ->
-  $location = scope = createController = AuthService = null
+describe "NavbarCtrl", ->
+  $location = scope = createController = Auth = null
 
   beforeEach ->
-    module "Dominion.Navbar"
+    module "KingsCourt"
     inject ($rootScope, $controller, _$location_) ->
       scope = $rootScope.$new()
       $location = _$location_

@@ -1,4 +1,4 @@
-describe "Card controller:", ->
+describe "CardCtrl", ->
   $location = scope = createController = null
 
   mockedCards = [
@@ -33,7 +33,7 @@ describe "Card controller:", ->
   ]
 
   beforeEach ->
-    module "Dominion.CardBrowser"
+    module "KingsCourt"
     module ($provide) ->
       $provide.constant "Cards", mockedCards
 
@@ -42,7 +42,7 @@ describe "Card controller:", ->
       $location = _$location_
 
       createController = ->
-        $controller "CardBroswerCtrl", "$scope": scope
+        $controller "CardCtrl", "$scope": scope
 
   it "isActive should work...", ->
     controller = createController()

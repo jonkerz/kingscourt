@@ -2,7 +2,7 @@ describe "Filters", ->
   $filter = null
 
   beforeEach ->
-    module "Dominion.Filters"
+    module "KingsCourt"
     inject (_$filter_) ->
       $filter = _$filter_
 

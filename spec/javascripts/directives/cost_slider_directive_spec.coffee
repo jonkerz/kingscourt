@@ -1,5 +1,5 @@
 describe "testing sliderDir", ->
-  beforeEach angular.mock.module("Dominion.Builder")
+  beforeEach angular.mock.module("KingsCourt")
   element = undefined
   $scope = undefined
 

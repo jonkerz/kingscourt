@@ -1,5 +1,5 @@
-describe "cards:", ->
-  mockedCards = Cards = CardService = null
+describe "Card", ->
+  mockedCards = Cards = Card = null
 
   mockedCards = [
     {
@@ -33,15 +33,15 @@ describe "cards:", ->
   ]
 
   beforeEach ->
-    module "Dominion.CardResource"
+    module "KingsCourt"
     module ($provide) ->
       $provide.constant "Cards", mockedCards
 
-    inject (_CardService_) ->
-      CardService = _CardService_
+    inject (_Card_) ->
+      Card = _Card_
 
   it "card with id "2" should have the name "Chapel"", ->
-    expect(CardService.getCardById(2).name).toEqual "Chapel"
+    expect(Card.getCardById(2).name).toEqual "Chapel"
 
   it "card with name "Cellar" should have id "1"", ->
-    expect(CardService.getCardByName("Cellar").id).toEqual 1
+    expect(Card.getCardByName("Cellar").id).toEqual 1

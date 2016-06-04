@@ -1,5 +1,5 @@
-describe "Deck:", ->
-  mockedCards = Cards = DeckService = null
+describe "Deck", ->
+  mockedCards = Cards = Deck = null
 
   mockedCards = [
     {
@@ -33,28 +33,28 @@ describe "Deck:", ->
   ]
 
   beforeEach ->
-    module "Dominion.Builder"
+    module "KingsCourt"
     module ($provide) ->
       $provide.constant "Cards", mockedCards
 
-    inject (_DeckService_) ->
-      DeckService = _DeckService_
+    inject (_Deck_) ->
+      Deck = _Deck_
 
   it "decksize should equal 2", ->
-    expect(DeckService.deckSize()).toEqual 2
+    expect(Deck.deckSize()).toEqual 2
 
   it "decksize should equal after removing a card (by id)", ->
-    expect(DeckService.deckSize()).toEqual 2
-    DeckService.removeCardById(1)
-    expect(DeckService.deckSize()).toEqual 1
+    expect(Deck.deckSize()).toEqual 2
+    Deck.removeCardById(1)
+    expect(Deck.deckSize()).toEqual 1
 
   it "should be possible to reset the deck (after removing a card by reference)", ->
-    expect(DeckService.deckSize()).toEqual 2
+    expect(Deck.deckSize()).toEqual 2
     card = mockedCards[0]
-    DeckService.removeCard(card)
-    expect(DeckService.deckSize()).toEqual 1
+    Deck.removeCard(card)
+    expect(Deck.deckSize()).toEqual 1
 
   it "randomizing a card should decrease decksize by 1", ->
-    deckSize = DeckService.deckSize()
-    DeckService.getRandomCard()
-    expect(DeckService.deckSize()).toEqual deckSize - 1
+    deckSize = Deck.deckSize()
+    Deck.getRandomCard()
+    expect(Deck.deckSize()).toEqual deckSize - 1

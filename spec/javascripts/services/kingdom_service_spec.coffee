@@ -1,5 +1,5 @@
-describe "Kingdom:", ->
-  mockedCards = Cards = KingdomService = CardService = AlertsService = builder = null
+describe "Kingdom", ->
+  mockedCards = Cards = Kingdom = Card = Alerts = builder = null
 
   mockedCards = [
     {
@@ -33,18 +33,18 @@ describe "Kingdom:", ->
   ]
 
   beforeEach ->
-    module "Dominion.Builder"
+    module "KingsCourt"
     module ($provide) ->
       $provide.constant "Cards", mockedCards
 
-    inject (_KingdomService_, _CardService_, _AlertsService_) ->
-      KingdomService = _KingdomService_
-      CardService = _CardService_
-      AlertsService = _AlertsService_
+    inject (_Kingdom_, _Card_, _Alerts_) ->
+      Kingdom = _Kingdom_
+      Card = _Card_
+      Alerts = _Alerts_
 
   it "should add and remove cards", ->
-    expect(KingdomService.instances).toEqual []
-    builder = KingdomService.getOrCreate("builder")
+    expect(Kingdom.instances).toEqual []
+    builder = Kingdom.getOrCreate("builder")
 
     expect(builder.getAllCardIds()).toEqual []
     expect(builder.idIsAdded(1)).toEqual false
@@ -57,7 +57,7 @@ describe "Kingdom:", ->
     expect(builder.getAllCardIds()).toEqual []
 
   it "should not be possible to add banned cards.........", ->
-    builder = KingdomService.getOrCreate("builder")
+    builder = Kingdom.getOrCreate("builder")
 
     builder.banCard(mockedCards[1]) #blalblablalblba,
-    #builder.addCard(mockedCards[1]) #AlertsService is not defined, works in production
+    #builder.addCard(mockedCards[1]) #Alerts is not defined, works in production

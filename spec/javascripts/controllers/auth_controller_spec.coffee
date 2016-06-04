@@ -1,8 +1,8 @@
-describe "AuthCtrl:", ->
-  $location = scope = createController = AuthService = null
+describe "AuthCtrl", ->
+  $location = scope = createController = Auth = null
 
   beforeEach ->
-    module "Dominion.Auth"
+    module "KingsCourt"
     inject ($rootScope, $controller) ->
       scope = $rootScope.$new()
 

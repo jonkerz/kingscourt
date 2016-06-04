@@ -6,6 +6,6 @@ angular.module "KingsCourt"
     title: "@"
     collapsed: "@"
   transclude: true
-  templateUrl: "directives/panel-collapse.tpl.html"
+  templateUrl: "directives/panel_collapse.tpl.html"
   link: (scope, element, attrs) ->
     scope.panelId = _.uniqueId "panel"

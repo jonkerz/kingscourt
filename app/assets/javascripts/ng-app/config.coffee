@@ -7,7 +7,7 @@ angular.module "KingsCourt"
   "KINGDOM_SIZE": 10
 
 .config (paginationTemplateProvider) ->
-  paginationTemplateProvider.setPath "directives/dir-pagination.tpl.html"
+  paginationTemplateProvider.setPath "directives/dir_pagination.tpl.html"
 
 .config ($httpProvider) ->
   $httpProvider.interceptors.push "AuthInterceptor", "LoadingInterceptor"

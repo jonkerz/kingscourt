@@ -4,7 +4,7 @@ angular.module "KingsCourt"
   restrict: "E"
   replace: true
   scope: true
-  templateUrl: "directives/attribute-radio.tpl.html"
+  templateUrl: "directives/attribute_radio.tpl.html"
 
   link: (scope, element, attrs) ->
     scope.displayName = attrs.displayName

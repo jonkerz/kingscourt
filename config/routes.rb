@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  root 'angular#index'
+  root "application#index"
 
   devise_for :users, path: "the_court"
   scope "the_court" do
-    get "/", to: 'court#index', as: "the_court"
+    get "/", to: "court#index", as: "the_court"
     scope "admin" do
       ActiveAdmin.routes(self)
-      get "/", to: 'admin/dashboard#index'
+      get "/", to: "admin/dashboard#index"
     end
   end
 

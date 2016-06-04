@@ -7,6 +7,9 @@ class ApplicationController < ActionController::Base
 
   serialization_scope :view_context
 
+  def index
+  end
+
   def after_sign_in_path_for _resource
     if current_user.admin?
       dashboard_path

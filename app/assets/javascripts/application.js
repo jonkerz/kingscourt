@@ -1,13 +1,8 @@
-// Weird filename "kings_angular" and not the usual "application"
-// to make it clear that this is used only by the Angular app,
-// and "angular.js" would be a very bad name.
-
 //= require jquery
-//= require jquery_ujs
 //= require angular/angular
-//= require angular-route/angular-route
 //= require angular-rails-templates
 
+//= require angular-route/angular-route
 //= require angular-ui-bootstrap-bower/ui-bootstrap-tpls
 //= require angular-resource/angular-resource
 //= require bootstrap/dist/js/bootstrap
@@ -17,13 +12,8 @@
 //= require lodash/lodash
 //= require angular-sanitize/angular-sanitize
 //= require ngstorage/ngStorage
-
 //= require angular-cookie/angular-cookie
 //= require ng-token-auth/dist/ng-token-auth
-
-//= require angular-ui-bootstrap-bower/ui-bootstrap-tpls.js
-//= require angular-utils-pagination/dirPagination
-
 //= require angular-lazy-img/release/angular-lazy-img
 //= require angular-bootstrap-confirm/dist/angular-bootstrap-confirm
 

@@ -24,10 +24,14 @@ set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true
 
+# For capistrano-db-tasks
+set :assets_dir, %w(public/assets)
+set :local_assets_dir, %w(public/assets)
+
 set :linked_dirs, %w(
   log tmp/pids tmp/cache
   tmp/sockets vendor/bundle public/system
-  public/cards solr/default solr/pids
+  public/cards solr
 )
 
 namespace :puma do

@@ -10,6 +10,8 @@
 
 # Generated
 public/assets/**
+/db/*.sql
+/db/*.sql.bz2
 
 ## Bower
 /vendor/assets/bower_components

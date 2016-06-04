@@ -81,8 +81,8 @@ deploy$ ssh-keygen -t rsa
 
 # Initial deploy
 local$ cap production deploy
-local$ cap production invoke:task TASK=sunspot:solr:start
-local$ cap production invoke:task TASK=sunspot:solr:reindex
+local$ cap production invoke:rake TASK=sunspot:solr:start
+local$ cap production invoke:rake TASK=sunspot:solr:reindex
 
 # Symlink nginx
 deploy$ sudo rm /etc/nginx/sites-enabled/default

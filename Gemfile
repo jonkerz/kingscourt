@@ -54,6 +54,7 @@ group :development do
   gem "capistrano-faster-assets", require: false
   gem "capistrano-rails-console", require: false
   gem "capistrano-pending", require: false
+  gem "capistrano-db-tasks", require: false
   gem "listen", "~> 3.0.5"
   gem "quiet_assets"
   gem "rubocop", "~> 0.40.0", require: false

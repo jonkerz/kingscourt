@@ -18,7 +18,7 @@ angular.module "KingsCourt"
 
     removeCard: (card) -> @removeCardById card.id
 
-    getRandomCard: ->
+    popRandomCard: ->
       if @deckSize() is 0
         Alerts.add "No card found."
         return false

@@ -4,6 +4,4 @@ angular.module "KingsCourt"
   new class Card
     constructor: -> @cards = Cards
 
-    getCardByName: (name) -> _.find @cards, name: name
-
-    getCardById: (id) -> _.find @cards, id: parseInt(id, 10)
+    getById: (id) -> _.find @cards, id: parseInt(id, 10)

@@ -28,7 +28,7 @@ angular.module "KingsCourt"
     Deck.excludeByExpansion ExpansionSelector.unselected()
     Deck.excludeByCost Randomizer.costsNot()
     Deck.excludeByAttributes Randomizer.cardAttributesYes, Randomizer.cardAttributesNo
-    card = Deck.getRandomCard()
+    card = Deck.popRandomCard()
     if card
       $scope.kingdom.addCard card
 

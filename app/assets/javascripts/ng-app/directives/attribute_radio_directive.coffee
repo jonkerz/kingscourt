@@ -16,5 +16,4 @@ angular.module "KingsCourt"
       $scope.active = option
       $event.stopPropagation?()
 
-    $scope.isActive = (option) ->
-      option is $scope.active
+    $scope.isActive = (option) -> option is $scope.active

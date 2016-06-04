@@ -5,6 +5,7 @@ angular.module "KingsCourt"
   scope:
     config: "=config"
     price: "=model"
+
   link: (scope, element, attrs) ->
     setModel = (value) -> scope.model = value
 

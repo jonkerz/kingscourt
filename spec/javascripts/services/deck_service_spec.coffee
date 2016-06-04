@@ -20,8 +20,8 @@ describe "Deck", ->
     it "return the size", ->
       expect(Deck.deckSize()).toEqual 2
 
-  describe "#getRandomCard", ->
-    it "return a random card", ->
-      card = Deck.getRandomCard()
+  describe "#popRandomCard", ->
+    it "return a random card, and removed it from the deck", ->
+      card = Deck.popRandomCard()
       expect(card.cost_in_coins).toEqual 2
       expect(Deck.deckSize()).toEqual 1

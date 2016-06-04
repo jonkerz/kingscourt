@@ -2,6 +2,7 @@ angular.module "KingsCourt"
 
 .directive "costSlider", (Randomizer) ->
   restrict: "A"
+
   link: (scope, element, attrs) ->
     element.slider
       range: true

@@ -5,15 +5,26 @@ describe "Alerts", ->
     module "KingsCourt"
     inject (_Alerts_) -> Alerts = _Alerts_
 
-  it "alerts...", ->
+  beforeEach ->
     expect(Alerts.alerts).toEqual []
 
-    Alerts.add "Important alert"
-    expect(Alerts.alerts[0].message).toEqual "Important alert"
+  describe "#add", ->
+    it "adds", ->
+      Alerts.add "Important alert"
+      expect(Alerts.alerts[0].message).toEqual "Important alert"
 
-    Alerts.add "Another alert"
-    expect(Alerts.alerts[1].message).toEqual "Another alert"
+      Alerts.add "Another alert"
+      expect(Alerts.alerts[1].message).toEqual "Another alert"
 
-    Alerts.add "Yet another alert"
-    Alerts.closeAlert 2
-    expect(Alerts.alerts.length).toEqual 2
+      expect(Alerts.alerts.length).toEqual 2
+
+  describe "#remove", ->
+    it "removes by index", ->
+      Alerts.add "Important alert"
+      Alerts.add "Another alert"
+      Alerts.add "Yet another alert"
+
+      expect(Alerts.alerts.length).toEqual 3
+
+      Alerts.remove 2
+      expect(Alerts.alerts.length).toEqual 2

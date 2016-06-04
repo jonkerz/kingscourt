@@ -28,6 +28,6 @@ angular.module "KingsCourt"
     for [1..10]
       Deck.reset $scope.kingdom.cards
       Deck.excludeByExpansion ExpansionSelector.unselected()
-      card = Deck.getRandomCard()
+      card = Deck.popRandomCard()
       if card
         $scope.kingdom.addCard card

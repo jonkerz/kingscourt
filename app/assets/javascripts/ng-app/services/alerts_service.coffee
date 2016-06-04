@@ -6,4 +6,4 @@ angular.module "KingsCourt"
 
     add: (message) -> @alerts.push message: message
 
-    closeAlert: (index) -> @alerts.splice index, 1
+    remove: (index) -> @alerts.splice index, 1

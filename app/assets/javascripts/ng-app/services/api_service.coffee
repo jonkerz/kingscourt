@@ -2,7 +2,7 @@ angular.module "KingsCourt"
 
 .factory "API", ($resource, $http, $q, Card) ->
   new class API
-    deserializeCards = (cards) -> _.map cards, (id) -> Card.getCardById id
+    deserializeCards = (cards) -> _.map cards, (id) -> Card.getById id
 
     deserializeKingdom = (data, _header) ->
       transformedData = angular.fromJson(data)["kingdom"]

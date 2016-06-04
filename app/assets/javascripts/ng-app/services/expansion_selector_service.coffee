@@ -4,7 +4,7 @@ angular.module "KingsCourt"
   new class ExpansionSelector
     constructor: ->
       @selected = [1..11]
-      @all = [1..11]
+      @_all = [1..11]
       @expansions = [
         { id: 1, text: "Dominion" }
         { id: 2, text: "Intrigue" }
@@ -19,15 +19,15 @@ angular.module "KingsCourt"
         { id: 10, text: "Promo" }
       ]
 
-    unselected: -> _.difference @all, @selected
+    unselected: -> _.difference @_all, @selected
 
     isSelected: (id) -> _.includes @selected, id
 
-    checkAll: -> @selected = @all.slice 0
+    checkAll: -> @selected = @_all.slice 0
 
     uncheckAll: -> @selected = []
 
-    _areAllSelected:  -> _.isEqual @selected, @all
+    _areAllSelected: -> _.isEqual @selected, @_all
 
     setParams: ->
       expansions = if @_areAllSelected() then null else @selected.join(",")

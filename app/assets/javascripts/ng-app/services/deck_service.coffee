@@ -8,7 +8,7 @@ angular.module "KingsCourt"
         card.card_attributes = _.map card.card_attributes, "name"
       @deck = angular.copy @cards
 
-    deckSize: -> @deck.length
+    size: -> @deck.length
 
     reset: (cardsInKingdom) ->
       @deck = @cards.slice()
@@ -19,7 +19,7 @@ angular.module "KingsCourt"
     removeCard: (card) -> @removeCardById card.id
 
     popRandomCard: ->
-      if @deckSize() is 0
+      if @size() is 0
         Alerts.add "No card found."
         return false
       card = _.sample @deck

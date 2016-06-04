@@ -23,4 +23,4 @@ Feature: Kingdom generator
     When I follow "My First Kingdom"
     Then I should see "My First Kingdom"
     And I should see "Description: Advanced stuff"
-    And I should see "Creator: Joffre"
+    And I should see "Added by: Joffre"

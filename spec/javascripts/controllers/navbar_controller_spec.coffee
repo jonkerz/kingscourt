@@ -10,9 +10,10 @@ describe "NavbarCtrl", ->
       createController = ->
         $controller "NavbarCtrl", "$scope": scope
 
-  it "#isActive", ->
-    controller = createController()
-    $location.path "builder"
-    expect($location.path()).toBe "/builder"
-    expect(scope.isActive("/builder")).toBe true
-    expect(scope.isActive("/generator")).toBe false
+  describe "#isActive", ->
+    it "checks if a route is active", ->
+      controller = createController()
+      $location.path "builder"
+      expect($location.path()).toBe "/builder"
+      expect(scope.isActive("/builder")).toBe true
+      expect(scope.isActive("/generator")).toBe false

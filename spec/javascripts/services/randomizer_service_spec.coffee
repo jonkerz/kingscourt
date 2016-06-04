@@ -3,24 +3,17 @@ describe "Randomizer", ->
 
   beforeEach ->
     module "KingsCourt"
+    inject (_Randomizer_) -> Randomizer = _Randomizer_
 
-    inject (_Randomizer_) ->
-      Randomizer = _Randomizer_
+  describe "#cost and #costsNot", ->
+    it "calculates costs...", ->
+      Randomizer.minCost = 2
+      Randomizer.maxCost = 2
+      expect(Randomizer.cost()).toEqual 2
 
-  it "member fields", ->
-    expect(Randomizer.minCost).toBeDefined()
-    expect(Randomizer.maxCost).toBeDefined()
-    expect(Randomizer.cardAttributesYes).toBeDefined()
-    expect(Randomizer.cardAttributesNo).toBeDefined()
+      Randomizer.maxCost = 6
+      expect(Randomizer.costsNot()).toEqual [0, 1, 7, 8]
 
-  it "should calculate costs...", ->
-    Randomizer.minCost = 2
-    Randomizer.maxCost = 2
-    expect(Randomizer.cost()).toEqual 2
-
-    Randomizer.maxCost = 6
-    expect(Randomizer.costsNot()).toEqual [0,1,7,8]
-
-    Randomizer.minCost = 0
-    Randomizer.maxCost = 8
-    expect(Randomizer.costsNot()).toEqual []
+      Randomizer.minCost = 0
+      Randomizer.maxCost = 8
+      expect(Randomizer.costsNot()).toEqual []

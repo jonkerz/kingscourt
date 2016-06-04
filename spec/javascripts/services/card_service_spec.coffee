@@ -1,5 +1,5 @@
 describe "Card", ->
-  mockedCards = Cards = Card = null
+  Card = null
 
   mockedCards = [
     {
@@ -30,14 +30,13 @@ describe "Card", ->
 
   beforeEach ->
     module "KingsCourt"
-    module ($provide) ->
-      $provide.constant "Cards", mockedCards
+    module ($provide) -> $provide.constant "Cards", mockedCards
+    inject (_Card_) -> Card = _Card_
 
-    inject (_Card_) ->
-      Card = _Card_
+  describe "#getCardById", ->
+    it "returns the card", ->
+      expect(Card.getCardById(2).name).toEqual "Chapel"
 
-  it "card with id '2' should have the name 'Chapel'", ->
-    expect(Card.getCardById(2).name).toEqual "Chapel"
-
-  it "card with name 'Cellar' should have id '1'", ->
-    expect(Card.getCardByName("Cellar").id).toEqual 1
+  describe "#getCardByName", ->
+    it "returns the card", ->
+      expect(Card.getCardByName("Cellar").id).toEqual 1

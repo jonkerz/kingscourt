@@ -1,5 +1,5 @@
 describe "Kingdom", ->
-  mockedCards = Cards = Kingdom = Card = Alerts = builder = null
+  Kingdom = null
 
   mockedCards = [
     {
@@ -30,15 +30,10 @@ describe "Kingdom", ->
 
   beforeEach ->
     module "KingsCourt"
-    module ($provide) ->
-      $provide.constant "Cards", mockedCards
+    module ($provide) -> $provide.constant "Cards", mockedCards
+    inject (_Kingdom_) -> Kingdom = _Kingdom_
 
-    inject (_Kingdom_, _Card_, _Alerts_) ->
-      Kingdom = _Kingdom_
-      Card = _Card_
-      Alerts = _Alerts_
-
-  it "should add and remove cards", ->
+  it "adds and removes cards...", ->
     expect(Kingdom.instances).toEqual []
     builder = Kingdom.getOrCreate("builder")
 

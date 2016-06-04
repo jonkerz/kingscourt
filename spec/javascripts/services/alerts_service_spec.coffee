@@ -3,8 +3,7 @@ describe "Alerts", ->
 
   beforeEach ->
     module "KingsCourt"
-    inject (_Alerts_) ->
-      Alerts = _Alerts_
+    inject (_Alerts_) -> Alerts = _Alerts_
 
   it "alerts...", ->
     expect(Alerts.alerts).toEqual []

@@ -1,5 +1,5 @@
 describe "Deck", ->
-  mockedCards = Cards = Deck = null
+  Deck = null
 
   mockedCards = [
     {
@@ -30,27 +30,29 @@ describe "Deck", ->
 
   beforeEach ->
     module "KingsCourt"
-    module ($provide) ->
-      $provide.constant "Cards", mockedCards
+    module ($provide) -> $provide.constant "Cards", mockedCards
+    inject (_Deck_) -> Deck = _Deck_
 
-    inject (_Deck_) ->
-      Deck = _Deck_
+  describe "#deckSize", ->
+    it "return the size", ->
+      expect(Deck.deckSize()).toEqual 2
 
-  it "decksize should equal 2", ->
-    expect(Deck.deckSize()).toEqual 2
+  describe "#removeCardById", ->
+    it "removes the card", ->
+      expect(Deck.deckSize()).toEqual 2
+      Deck.removeCardById(1)
+      expect(Deck.deckSize()).toEqual 1
 
-  it "decksize should equal after removing a card (by id)", ->
-    expect(Deck.deckSize()).toEqual 2
-    Deck.removeCardById(1)
-    expect(Deck.deckSize()).toEqual 1
+  describe "#removeCard", ->
+    it "removes the card", ->
+      expect(Deck.deckSize()).toEqual 2
+      card = mockedCards[0]
+      Deck.removeCard(card)
+      expect(Deck.deckSize()).toEqual 1
 
-  it "should be possible to reset the deck (after removing a card by reference)", ->
-    expect(Deck.deckSize()).toEqual 2
-    card = mockedCards[0]
-    Deck.removeCard(card)
-    expect(Deck.deckSize()).toEqual 1
-
-  it "randomizing a card should decrease decksize by 1", ->
-    deckSize = Deck.deckSize()
-    Deck.getRandomCard()
-    expect(Deck.deckSize()).toEqual deckSize - 1
+  describe "#getRandomCard", ->
+    it "return a random card", ->
+      deckSize = Deck.deckSize()
+      card = Deck.getRandomCard()
+      expect(card.cost_in_coins).toEqual 2
+      expect(Deck.deckSize()).toEqual deckSize - 1

@@ -1,5 +1,5 @@
 .expansion-selector
-  label.btn.btn-primary.btn-sm ng-repeat="expansion in expansionSelector.names" ng-class="{'active': expansionSelector.isChecked(expansion.id)}"
+  label.btn.btn-primary.btn-sm ng-repeat="expansion in expansionSelector.expansions" ng-class="{'active': expansionSelector.isSelected(expansion.id)}"
     input type="checkbox" checklist-model="expansionSelector.selected" checklist-value="expansion.id"  {{expansion.text}}
     span< ng-if="expansionFacets[expansion.id]" ({{expansionFacets[expansion.id]}})
   button.btn.btn-default.btn-sm ng-click="expansionSelector.checkAll()" All

@@ -3,9 +3,10 @@ angular.module "KingsCourt"
 .controller "KingdomCtrl", ($rootScope, $scope, $location, $routeParams, Alerts, Kingdom, API) ->
   id = $routeParams.id
 
-  API.kingdoms.get id: id, (data) ->
-    $rootScope.title = $rootScope.title.replace "###", data.name
-    kingdom = data
+  setTitle = (name) ->
+    $rootScope.title = $rootScope.title.replace /^A kingdom/, name
+
+  setupKingdom = (kingdom) ->
     $scope.kingdom = Kingdom.getOrCreate "detail"
 
     $scope.kingdom.id = kingdom.id
@@ -15,10 +16,17 @@ angular.module "KingsCourt"
     $scope.kingdom.username = kingdom.username
     $scope.kingdom.created_at = kingdom.created_at
 
+  setupDisqus = (kingdom) ->
     $scope.disqusConfig =
       disqus_shortname: "kingscourt"
-      disqus_identifier: "kingdoms/#{$scope.kingdom.id}"
-      disqus_url: "http://kingscourt.io/#!/kingdoms/#{$scope.kingdom.id}"
+      disqus_identifier: "kingdoms/#{kingdom.id}"
+      disqus_url: "http://kingscourt.io/#!/kingdoms/#{kingdom.id}"
+
+  API.kingdoms.get id: id, (data) ->
+    kingdom = data
+    setTitle kingdom.name
+    setupKingdom kingdom
+    setupDisqus kingdom
 
   $scope.deleteKingdom = (id) ->
     API.kingdoms.delete id: id, (data) ->

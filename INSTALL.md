@@ -39,6 +39,7 @@ sudo apt-get install curl git-core nginx -y
 ##### Install locally
 ```bash
 bundle install # install gems
+bundle exec rake bower:install # install Bower components
 
 # Database. Make sure you have edited .env
 bundle exec rake db:create && rake db:schema:load

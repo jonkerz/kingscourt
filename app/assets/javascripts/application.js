@@ -1,22 +1,24 @@
 //= require jquery
+//= require lodash/lodash
+//= require bootstrap/dist/js/bootstrap
+
+// Angular
 //= require angular/angular
 //= require angular-rails-templates
-
-//= require angular-route/angular-route
-//= require angular-ui-bootstrap-bower/ui-bootstrap-tpls
+//
+//= require angular-bootstrap-confirm/dist/angular-bootstrap-confirm
+//= require angular-cookie/angular-cookie
+//= require angular-lazy-img/release/angular-lazy-img
 //= require angular-resource/angular-resource
-//= require bootstrap/dist/js/bootstrap
+//= require angular-route/angular-route
+//= require angular-sanitize/angular-sanitize
+//= require angular-ui-bootstrap-bower/ui-bootstrap-tpls
+//= require angular-utils-disqus/dirDisqus
 //= require angular-utils-pagination/dirPagination
 //= require autofill-event/src/autofill-event
 //= require checklist-model/checklist-model
-//= require lodash/lodash
-//= require angular-sanitize/angular-sanitize
-//= require ngstorage/ngStorage
-//= require angular-cookie/angular-cookie
 //= require ng-token-auth/dist/ng-token-auth
-//= require angular-lazy-img/release/angular-lazy-img
-//= require angular-bootstrap-confirm/dist/angular-bootstrap-confirm
-//= require angular-utils-disqus/dirDisqus
+//= require ngstorage/ngStorage
 
 //= require_tree ./ng-app
 

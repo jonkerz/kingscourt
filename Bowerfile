@@ -1,21 +1,27 @@
-asset "angular", "1.5.5"
-asset "angular-route", "1.5.5"
-asset "angular-ui-bootstrap-bower", "1.3.2"
-asset "angular-resource", "1.5.5"
+# CSS
 asset "bootstrap-sass", "3.3.6"
 asset "bootswatch", "3.3.6+1"
+
+# The Big Guns
+asset "angular", "1.5.5"
+asset "jquery-ui", "1.11.4"
+asset "lodash", "4.12.0"
+
+# Angular
+asset "angular-bootstrap-confirm", "2.1.0"
+asset "angular-lazy-img", "1.1.0"
+asset "angular-resource", "1.5.5"
+asset "angular-route", "1.5.5"
+asset "angular-sanitize", "1.5.5"
+asset "angular-ui-bootstrap-bower", "1.3.2"
+asset "angular-utils-disqus", "1.0.0"
 asset "angular-utils-pagination", "0.11.1"
 asset "autofill-event", "1.0.0"
 asset "checklist-model", "0.9.0"
-asset "lodash", "4.12.0"
-asset "angular-sanitize", "1.5.5"
-asset "ngstorage", "0.3.10"
 asset "ng-token-auth", "0.0.29"
-asset "jquery-ui", "1.11.4"
-asset "angular-lazy-img", "1.1.0"
-asset "angular-bootstrap-confirm", "2.1.0"
-asset "angular-utils-disqus", "1.0.0"
+asset "ngstorage", "0.3.10"
 
+# Spec
 asset "angular-mocks", "1.5.5"
 
 resolution "angular", "1.5.5"

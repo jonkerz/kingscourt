@@ -18,10 +18,10 @@ describe "ExpansionSelector", ->
       ExpansionSelector.checkAll()
       expect(ExpansionSelector.selected).toEqual [1..11]
 
-  describe "#isChecked", ->
+  describe "#isSelected", ->
     it "tells if an expansions is currently selected", ->
-      expect(ExpansionSelector.isChecked 5).toBe true
-      expect(ExpansionSelector.isChecked 8).toBe false
+      expect(ExpansionSelector.isSelected 5).toBe true
+      expect(ExpansionSelector.isSelected 8).toBe false
 
   describe "#unselected", ->
     it "returns a list of expansions that are currently *not* selected", ->

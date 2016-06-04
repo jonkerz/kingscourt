@@ -5,6 +5,11 @@ angular.module "KingsCourt"
 
   $scope.range = (n) -> new Array n
 
+  resetGeneratorKingdom = ->
+    generatorKingdom.cards = []
+    generatorKingdom.name = ""
+    generatorKingdom.description = ""
+
   $scope.openInBuilder = ->
     generatorKingdom = Kingdom.getOrCreate "generator"
     builderKingdom = Kingdom.getOrCreate "builder"
@@ -14,9 +19,7 @@ angular.module "KingsCourt"
     builderKingdom.name = generatorKingdom.name
     builderKingdom.description = generatorKingdom.description
 
-    generatorKingdom.cards = []
-    generatorKingdom.name = ""
-    generatorKingdom.description = ""
+    resetGeneratorKingdom()
 
     $location.path "builder"
 

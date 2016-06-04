@@ -9,7 +9,7 @@ describe "Kingdom", ->
   it "adds and removes cards...", ->
     expect(Kingdom.instances).toEqual []
 
-    builder = Kingdom.getOrCreate("builder")
+    builder = Kingdom.getOrCreate "builder"
     expect(builder.getAllCardIds()).toEqual []
     expect(builder.idIsAdded 1).toBe false
 

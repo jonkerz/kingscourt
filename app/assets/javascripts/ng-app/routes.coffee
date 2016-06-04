@@ -18,7 +18,7 @@ angular.module "KingsCourt"
       templateUrl: "kingdoms/show.html"
       controller: "KingdomCtrl"
     .when "/kingdoms/:id/:string",
-      title: "###"
+      title: "A kingdom"
       templateUrl: "kingdoms/show.html"
       controller: "KingdomCtrl"
 

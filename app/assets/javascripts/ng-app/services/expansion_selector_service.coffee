@@ -5,7 +5,7 @@ angular.module "KingsCourt"
     constructor: ->
       @selected = [1..11]
       @all = [1..11]
-      @names = [
+      @expansions = [
         { id: 1, text: "Dominion" }
         { id: 2, text: "Intrigue" }
         { id: 3, text: "Seaside" }
@@ -21,16 +21,16 @@ angular.module "KingsCourt"
 
     unselected: -> _.difference @all, @selected
 
-    isChecked: (id) -> _.includes @selected, id
-
-    allChecked:  -> _.isEqual @selected, @all
+    isSelected: (id) -> _.includes @selected, id
 
     checkAll: -> @selected = @all.slice 0
 
-    uncheckAll: ->  @selected = []
+    uncheckAll: -> @selected = []
+
+    _areAllSelected:  -> _.isEqual @selected, @all
 
     setParams: ->
-      expansions = if @allChecked() then null else @selected.join(",")
+      expansions = if @_areAllSelected() then null else @selected.join(",")
       $location.search "expansions", expansions
 
     setFromParams: ->

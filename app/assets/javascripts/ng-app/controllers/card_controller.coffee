@@ -13,6 +13,7 @@ angular.module "KingsCourt"
   $scope.orderByField = "name"
   $scope.reverseSort = false
 
+  # TODO: Super dlow and duplicated in BuilderCtrl
   $scope.filterByExpansion = (card) ->
     ExpansionSelector.selected.indexOf(card.expansion_id) isnt -1
 

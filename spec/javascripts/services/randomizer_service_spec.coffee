@@ -1,19 +1,19 @@
-describe 'RandomizerService:', ->
+describe "RandomizerService:", ->
   RandomizerService = null
 
   beforeEach ->
-    module 'Dominion.Builder'
+    module "Dominion.Builder"
 
     inject (_RandomizerService_) ->
       RandomizerService = _RandomizerService_
 
-  it 'member fields', ->
+  it "member fields", ->
     expect(RandomizerService.min_cost).toBeDefined()
     expect(RandomizerService.max_cost).toBeDefined()
     expect(RandomizerService.card_attributes_yes).toBeDefined()
     expect(RandomizerService.card_attributes_no).toBeDefined()
 
-  it 'should calculate costs...', ->
+  it "should calculate costs...", ->
     RandomizerService.min_cost = 2
     RandomizerService.max_cost = 2
     expect(RandomizerService.cost()).toEqual 2

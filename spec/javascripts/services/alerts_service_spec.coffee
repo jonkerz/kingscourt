@@ -1,12 +1,12 @@
-describe 'Alerts:', ->
+describe "Alerts:", ->
   AlertsService = null
 
   beforeEach ->
-    module 'Dominion.Common'
+    module "Dominion.Common"
     inject (_AlertsService_) ->
       AlertsService = _AlertsService_
 
-  it 'alerts...', ->
+  it "alerts...", ->
     expect(AlertsService.alerts).toEqual []
 
     AlertsService.addAlert "Important alert"

@@ -1,5 +1,5 @@
 describe "NavbarCtrl", ->
-  $location = scope = createController = Auth = null
+  $location = scope = createController = null
 
   beforeEach ->
     module "KingsCourt"
@@ -10,13 +10,9 @@ describe "NavbarCtrl", ->
       createController = ->
         $controller "NavbarCtrl", "$scope": scope
 
-  it "isActive should work...", ->
+  it "#isActive", ->
     controller = createController()
     $location.path "builder"
     expect($location.path()).toBe "/builder"
     expect(scope.isActive("/builder")).toBe true
     expect(scope.isActive("/generator")).toBe false
-
-  it "make sure that the authService is on the scope", ->
-    controller = createController()
-    expect(!!scope.authService).toBe true

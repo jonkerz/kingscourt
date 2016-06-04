@@ -5,9 +5,7 @@ describe "Kingdom", ->
     {
       "id": 1
       "name": "Cellar"
-      "type": 0
-      "expansion": 0
-      "cost": "2"
+      "cost_in_text": "2"
       "cost_in_coins": 2
       "text": "+1 Action<br />Discard any number of cards.<br />+1 Card per card discarded."
       "card_attributes": [
@@ -19,15 +17,13 @@ describe "Kingdom", ->
     {
       "id": 2
       "name": "Chapel"
-      "type": 0
-      "expansion": 0
-      "cost": "2"
+      "cost_in_text": "2"
       "cost_in_coins": 2
       "text": "Trash up to 4 cards from your hand."
       "card_attributes": [
-          "isAction"
-          "isTrasher"
-          "isTerminal"
+        "isAction"
+        "trasher"
+        "terminal"
       ]
     }
   ]
@@ -55,9 +51,3 @@ describe "Kingdom", ->
 
     builder.removeCardById(1)
     expect(builder.getAllCardIds()).toEqual []
-
-  it "should not be possible to add banned cards.........", ->
-    builder = Kingdom.getOrCreate("builder")
-
-    builder.banCard(mockedCards[1]) #blalblablalblba,
-    #builder.addCard(mockedCards[1]) #Alerts is not defined, works in production

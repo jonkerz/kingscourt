@@ -10,5 +10,5 @@ describe "testing sliderDir", ->
 
   it "has correct values", ->
     expect($(element).slider("value")).toEqual 0
-    expect($(element).slider( "option", "disabled" )).toBe false
-    expect($(element).slider( "option", "max" )).toEqual 8
+    expect($(element).slider("option", "disabled")).toBe false
+    expect($(element).slider("option", "max")).toEqual 8

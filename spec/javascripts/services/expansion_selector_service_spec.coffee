@@ -23,15 +23,7 @@ describe "ExpansionSelector", ->
     ExpansionSelector.selected = [5, 6]
     expect(ExpansionSelector.unselected()).toEqual [0, 1, 2, 3, 4, 7, 8, 9]
 
-  it "test noExpansionsSelected", ->
-    ExpansionSelector.selected = [5, 6]
-    expect(ExpansionSelector.noExpansionsSelected()).toEqual false
-
-    ExpansionSelector.selected = []
-    expect(ExpansionSelector.noExpansionsSelected()).toEqual true
-
-describe "ExpansionSelector template...:", ->
-
+describe "ExpansionSelector template...", ->
   ExpansionSelector = null
   templateHtml = undefined
   $templateCache = $compile = element = scope = createController = null

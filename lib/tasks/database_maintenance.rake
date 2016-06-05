@@ -52,8 +52,8 @@ namespace :kings do
 
         "givesOneCoin" => "givesCoins",
         "givesTwoCoins" => "givesCoins",
-      }.each do |card_type, impled_card_type|
-        check_card_type card_type, implied: impled_card_type
+      }.each do |card_type, implied_card_type|
+        check_card_type card_type, implied: implied_card_type
       end
     end
 

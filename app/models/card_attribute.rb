@@ -3,7 +3,7 @@
 # other types ("trasher", givesTwoCoins") are just descriptive names.
 #
 # All cards should have their general types added as `CardAttribute`s, so
-# Theif, being an Action-Attack should have both "isAction" and "isAttack".
+# Thief, being an Action-Attack should have both "isAction" and "isAttack".
 # Bridge Troll (an Action-Attack-Duration) should have the same attributes,
 # plus "isDuration". There are no "combination types" such as
 # "Attack-Duration".

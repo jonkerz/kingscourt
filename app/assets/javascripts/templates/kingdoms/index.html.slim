@@ -8,7 +8,7 @@
     .well.clearfix
       h3 {{subtitle}} ({{totalKingdoms}})
       div
-        h4 ng-if="totalKingdoms == 0" No kingdoms :(
+        h4 ng-if="totalKingdoms == 0" Found no kingdoms matching the selected expansions :(
         ul.list-group.kingdom-list
           li.list-group-item.clearfix ang-repeat="kingdom in kingdoms" dir-paginate="kingdom in kingdoms | itemsPerPage: 5" total-items="totalKingdoms" current-page="pagination.current"
             span.badge {{kingdom.favorite_count}}

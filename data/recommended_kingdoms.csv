@@ -1,0 +1,97 @@
+name,cards,from_manual,extra_data
+"First Game","Cellar,Market,Militia,Mine,Moat,Remodel,Smithy,Village,Woodcutter,Workshop","Dominion",
+"Big Money","Adventurer,Bureaucrat,Chancellor,Chapel,Feast,Laboratory,Market,Mine,Moneylender,Throne Room","Dominion",
+"Interaction","Bureaucrat,Chancellor,Council Room,Festival,Library,Militia,Moat,Spy,Thief,Village","Dominion",
+"Size Distortion","Cellar,Chapel,Feast,Gardens,Laboratory,Thief,Village,Witch,Woodcutter,Workshop","Dominion",
+"Village Square","Bureaucrat,Cellar,Festival,Library,Market,Remodel,Smithy,Throne Room,Village,Woodcutter","Dominion",
+"Victory Dance","Bridge,Duke,Great Hall,Harem,Ironworks,Masquerade,Nobles,Pawn,Scout,Upgrade","Intrigue",
+"Secret Schemes","Conspirator,Harem,Ironworks,Pawn,Saboteur,Shanty Town,Steward,Swindler,Trading Post,Tribute","Intrigue",
+"Best Wishes","Coppersmith,Courtyard,Masquerade,Scout,Shanty Town,Steward,Torturer,Trading Post,Upgrade,Wishing Well","Intrigue",
+"Deconstruction","Bridge,Mining Village,Remodel,Saboteur,Secret Chamber,Spy,Swindler,Thief,Throne Room,Torturer","Intrigue",
+"Hand Madness","Bureaucrat,Chancellor,Council Room,Courtyard,Mine,Militia,Minion,Nobles,Steward,Torturer","Intrigue",
+"Underlings","Baron,Cellar,Festival,Library,Masquerade,Minion,Nobles,Pawn,Steward,Witch","Intrigue",
+"High Seas","Bazaar,Caravan,Embargo,Explorer,Haven,Island,Lookout,Pirate Ship,Smugglers,Wharf","Seaside",
+"Buried Treasure","Ambassador,Cutpurse,Fishing Village,Lighthouse,Outpost,Pearl Diver,Tactician,Treasure Map,Warehouse,Wharf","Seaside",
+"Shipwrecks","Ghost Ship,Merchant Ship,Native Village,Navigator,Pearl Diver,Salvager,Sea Hag,Smugglers,Treasury,Warehouse","Seaside",
+"Reach for Tomorrow","Lookout,Sea Hag,Ghost Ship,Treasure Map,Cutpurse,Cellar,Spy,Council Room,Village,Adventurer","Seaside",
+"Repetition","Pearl Diver,Pirate Ship,Treasury,Caravan,Explorer,Outpost,Workshop,Chancellor,Militia,Festival","Seaside",
+"Give and Take","Fishing Village,Salvager,Smugglers,Haven,Island,Ambassador,Market,Moneylender,Witch,Library","Seaside",
+"Forbidden Arts","Apprentice,Familiar,Possession,University,Cellar,Council Room,Gardens,Laboratory,Thief,Throne Room","Alchemy",
+"Potion Mixers","Alchemist,Apothecary,Golem,Herbalist,Transmute,Cellar,Chancellor,Festival,Militia,Smithy","Alchemy",
+"Chemistry Lesson","Alchemist,Golem,Philosopher's Stone,University,Bureaucrat,Market,Moat,Remodel,Witch,Woodcutter","Alchemy",
+"Servants","Golem,Possession,Scrying Pool,Transmute,Vineyard,Conspirator,Great Hall,Minion,Pawn,Steward","Alchemy",
+"Secret Research","Familiar,Herbalist,Philosopher's Stone,University,Bridge,Masquerade,Minion,Nobles,Shanty Town,Torturer","Alchemy",
+"Pools, Tools, and Fools","Apothecary,Apprentice,Golem,Scrying Pool,Baron,Coppersmith,Ironworks,Nobles,Trading Post,Wishing Well","Alchemy",
+"Beginners","Bank,Counting House,Expand,Goons,Monument,Rabble,Royal Seal,Venture,Watchtower,Worker's Village","Prosperity",
+"Friendly Interactive","Bishop,City,Contraband,Forge,Hoard,Peddler,Royal Seal,Trade Route,Vault,Worker's Village","Prosperity",
+"Big Actions","City,Expand,Grand Market,King's Court,Loan,Mint,Quarry,Rabble,Talisman,Vault","Prosperity",
+"Biggest Money","Bank,Grand Market,Mint,Royal Seal,Venture,Adventurer,Laboratory,Mine,Moneylender,Spy","Prosperity",
+"The King's Army","Expand,Goons,King's Court,Rabble,Vault,Bureaucrat,Council Room,Moat,Spy,Village","Prosperity",
+"The Good Life","Contraband,Counting House,Hoard,Monument,Mountebank,Bureaucrat,Cellar,Chancellor,Gardens,Village","Prosperity",
+"Paths to Victory","Bishop,Counting House,Goons,Monument,Peddler,Baron,Harem,Pawn,Shanty Town,Upgrade","Prosperity",
+"All Along the Watchtower","Hoard,Talisman,Trade Route,Vault,Watchtower,Bridge,Great Hall,Mining Village,Pawn,Torturer","Prosperity",
+"Lucky Seven","Bank,Expand,Forge,King's Court,Vault,Bridge,Coppersmith,Swindler,Tribute,Wishing Well","Prosperity",
+"Bounty of the Hunt","Harvest,Horn of Plenty,Hunting Party,Menagerie,Tournament,Cellar,Festival,Militia,Moneylender,Smithy","Cornucopia",
+"Bad Omens","Fortune Teller,Hamlet,Horn of Plenty,Jester,Remake,Adventurer,Bureaucrat,Laboratory,Spy,Throne Room","Cornucopia",
+"The Jester's Workshop","Fairgrounds,Farming Village,Horse Traders,Jester,Young Witch,Feast,Laboratory,Market,Remodel,Workshop","Cornucopia","{'bane':'Chancellor'}"
+"Last Laughs","Farming Village,Harvest,Horse Traders,Hunting Party,Jester,Minion,Nobles,Pawn,Steward,Swindler","Cornucopia",
+"The Spice of Life","Fairgrounds,Horn of Plenty,Remake,Tournament,Young Witch,Coppersmith,Courtyard,Great Hall,Mining Village,Tribute","Cornucopia","{'bane':'Wishing Well'}"
+"Small Victories","Fortune Teller,Hamlet,Hunting Party,Remake,Tournament,Conspirator,Duke,Great Hall,Harem,Pawn","Cornucopia",
+"Introduction","Cache,Crossroads,Develop,Haggler,Jack of all Trades,Margrave,Nomad Camp,Oasis,Spice Merchant,Stables","Hinterlands",
+"Fair Trades","Border Village,Cartographer,Develop,Duchess,Farmland,Ill-Gotten Gains,Noble Brigand,Silk Road,Stables,Trader","Hinterlands",
+"Bargains","Border Village,Cache,Duchess,Fool's Gold,Haggler,Highway,Nomad Camp,Scheme,Spice Merchant,Trader","Hinterlands",
+"Gambits","Cartographer,Crossroads,Embassy,Inn,Jack of all Trades,Mandarin,Nomad Camp,Oasis,Oracle,Tunnel","Hinterlands",
+"Highway Robbery","Cellar,Library,Moneylender,Throne Room,Workshop,Highway,inn,Margrave,Noble Brigand,Oasis","Hinterlands",
+"Adventures Abroad","Adventurer,Chancellor,Festival,Laboratory,Remodel,Crossroads,Farmland,Fool's Gold,Oracle,Spice Merchant","Hinterlands",
+"Money for Nothing","Coppersmith,Great Hall,Pawn,Shanty Town,Torturer,Cache,Cartographer,Jack of all Trades,Silk Road,Tunnel","Hinterlands",
+"The Duke's Ball","Conspirator,Duke,Harem,Masquerade,Upgrade,Duchess,Haggler,Inn,Noble Brigand,Scheme","Hinterlands",
+"Travelers","Cutpurse,Island,Lookout,Merchant Ship,Warehouse,Cartographer,Crossroads,Farmland,Silk Road,Stables","Hinterlands",
+"Diplomacy","Ambassador,Bazaar,Caravan,Embargo,Smugglers,Embassy,Farmland,Ill-Gotten Gains,Noble Brigand,Trader","Hinterlands",
+"Schemes and Dreams","Apothecary,Apprentice,Herbalist,Philosopher's Stone,Transmute,Duchess,Fool's Gold,Ill-Gotten Gains,Jack of all Trades,Scheme","Hinterlands",
+"Wine Country","Apprentice,Familiar,Golem,University,Vineyard,Crossroads,Farmland,Haggler,Highway,Nomad Camp","Hinterlands",
+"Instant Gratification","Bishop,Expand,Hoard,Mint,Watchtower,Farmland,Haggler,Ill-Gotten Gains,Noble Brigand,Trader","Hinterlands",
+"Treasure Trove","Bank,Monument,Royal Seal,Trade Route,Venture,Cache,Develop,Fool's Gold,Ill-Gotten Gains,Mandarin","Hinterlands",
+"Blue Harvest","Hamlet,Horn of Plenty,Horse Traders,Jester,Tournament,Fool's Gold,Mandarin,Noble Brigand,Trader,Tunnel","Hinterlands",
+"Traveling Circus","Fairgrounds,Farming Village,Hunting Party,Jester,Menagerie,Border Village,Embassy,Fool's Gold,Nomad Camp,Oasis","Hinterlands",
+"Grim Parade","Armory,Band of Misfits,Catacombs,Cultist,Forager,Fortress,Hunting Grounds,Knights,Market Square,Procession","Dark Ages",
+"Chess With Death","Bandit Camp,Graverobber,Junk Dealer,Mystic,Pillage,Rats,Sage,Scavenger,Storeroom,Vagrant","Dark Ages",
+"High and Low","Hermit,Hunting Grounds,Mystic,Poor House,Wandering Minstrel,Cellar,Moneylender,Throne Room,Witch,Workshop","Dark Ages",
+"Chivalry and Revelry","Altar,Knights,Rats,Scavenger,Squire,Festival,Gardens,Laboratory,Library,Remodel","Dark Ages",
+"Prophecy","Armory,Ironmonger,Mystic,Rebuild,Vagrant,Baron,Conspirator,Great Hall,Nobles,Wishing Well","Dark Ages",
+"Invasion","Beggar,Marauder,Rogue,Squire,Urchin,Harem,Mining Village,Swindler,Torturer,Upgrade","Dark Ages",
+"Watery Graves","Count,Graverobber,Hermit,Scavenger,Urchin,Native Village,Pirate Ship,Salvager,Treasure Map,Treasury","Dark Ages",
+"Peasants","Death Cart,Feodum,Poor House,Urchin,Vagrant,Fishing Village,Haven,Island,Lookout,Warehouse","Dark Ages",
+"Infestations","Armory,Cultist,Feodum,Market Square,Rats,Wandering Minstrel,Apprentice,Scrying Pool,Transmute,Vineyard","Dark Ages",
+"Lamentations","Beggar,Catacombs,Counterfeit,Forager,Ironmonger,Pillage,Apothecary,Golem,Herbalist,University","Dark Ages",
+"One Man's Trash","Counterfeit,Forager,Graverobber,Market Square,Rogue,City,Grand Market,Monument,Talisman,Venture","Dark Ages",
+"Honor Among Thieves","Bandit Camp,Procession,Rebuild,Rogue,Squire,Forge,Hoard,Peddler,Quarry,Watchtower","Dark Ages",
+"Dark Carnival","Band of Misfits,Cultist,Fortress,Hermit,Junk Dealer,Knights,Fairgrounds,Hamlet,Horn of Plenty,Menagerie","Dark Ages",
+"To the Victor","Bandit Camp,Counterfeit,Death Cart,Marauder,Pillage,Sage,Harvest,Hunting Party,Remake,Tournament","Dark Ages",
+"Far From Home","Beggar,Count,Feodum,Marauder,Wandering Minstrel,Cartographer,Develop,Embassy,Fool's Gold,Haggler","Dark Ages",
+"Expeditions","Altar,Catacombs,Ironmonger,Poor House,Storeroom,Crossroads,Farmland,Highway,Spice Merchant,Tunnel","Dark Ages",
+"Arts and Crafts","Stonemason,Advisor,Baker,Journeyman,Merchant Guild,Laboratory,Cellar,Workshop,Festival,Moneylender","Guilds",
+"Clean Living","Butcher,Baker,Candlestick Maker,Doctor,Soothsayer,Militia,Thief,Moneylender,Gardens,Village","Guilds",
+"Gilding the Lily","Plaza,Masterpiece,Candlestick Maker,Taxman,Herald,Library,Remodel,Adventurer,Market,Chancellor","Guilds",
+"Name That Card","Baker,Doctor,Plaza,Advisor,Masterpiece,Courtyard,Wishing Well,Harem,Tribute,Nobles","Guilds",
+"Tricks of the Trade","Stonemason,Herald,Soothsayer,Journeyman,Butcher,Great Hall,Nobles,Conspirator,Masquerade,Coppersmith","Guilds",
+"Decisions, Decisions","Merchant Guild,Candlestick Maker,Masterpiece,Taxman,Butcher,Bridge,Pawn,Mining Village,Upgrade,Duke","Guilds",
+"Gentle Intro","Amulet,Distant Lands,Dungeon,Duplicate,Giant,Hireling,Port,Ranger,Ratcatcher,Treasure Trove","Adventures","{'event1':'Scouting Party'}"
+"Expert Intro","Caravan Guard,Coin of the Realm,Haunted Woods,Lost City,Magpie,Peasant,Raze,Swamp Hag,Transmogrify,Wine Merchant","Adventures","{'event1':'Mission','event2':'Plan'}"
+"Level Up","Dungeon,Gear,Guide,Lost City,Miser,Market,Militia,Spy,Throne Room,Workshop","Adventures","{'event1':'Training'}"
+"Son of Size Distortion","Amulet,Duplicate,Giant,Messenger,Treasure Trove,Bureaucrat,Gardens,Moneylender,Thief,Witch","Adventures","{'event1':'Bonfire','event2':'Raid'}"
+"Royalty Factory","Bridge Troll,Duplicate,Page,Raze,Royal Carriage,Conspirator,Harem,Nobles,Secret Chamber,Swindler","Adventures","{'event1':'Pilgrimage'}"
+"Masters of Finance","Artificer,Distant Lands,Gear,Transmogrify,Wine Merchant,Bridge,Pawn,Shanty Town,Steward,Upgrade","Adventures","{'event1':'Ball','event2':'Borrow'}"
+"Prince of Orange","Amulet,Dungeon,Haunted Woods,Page,Swamp Hag,Caravan,Fishing Village,Merchant Ship,Tactician,Treasure Map","Adventures","{'event1':'Mission'}"
+"Gifts and Mathoms","Bridge Troll,Caravan Guard,Hireling,Lost City,Messenger,Ambassador,Embargo,Haven,Salvager,Smugglers","Adventures","{'event1':'Expedition','event2':'Quest'}"
+"Haste Potion","Magpie,Messenger,Port,Royal Carriage,Treasure Trove,Apprentice,Scrying Pool,Transmute,University,Vineyard","Adventures","{'event1':'Plan','comment':'found in errata'}"
+"Cursecatchers","Amulet,Bridge Troll,Caravan Guard,Peasant,Ratcatcher,Apothecary,Familiar,Golem,Herbalist,Philosopher's Stone","Adventures","{'event1':'Save','event2':'Trade','comment':'found in errata'}"
+"Last Will and Monument","Coin of the Realm,Dungeon,Messenger,Relic,Treasure Trove,Bishop,Counting House,Monument,Rabble,Vault","Adventures","{'event1':'Inheritance','platinum_and_colonies':'yes'}"
+"Think Big","Distant Lands,Giant,Hireling,Miser,Storyteller,Contraband,Expand,Hoard,King's Court,Peddler","Adventures","{'event1':'Ball','event2':'Ferry','platinum_and_colonies':'yes'}"
+"The Hero's Return","Artificer,Miser,Page,Ranger,Relic,Fairgrounds,Farming Village,Horse Traders,Jester,Menagerie","Adventures","{'event1':'Travelling Fair'}"
+"Seacraft and Witchcraft","Peasant,Storyteller,Swamp Hag,Transmogrify,Wine Merchant,Fortune Teller,Hamlet,Horn of Plenty,Tournament,Young Witch","Adventures","{'bane':'Guide','event1':'Ferry','event2':'Seaway'}"
+"Traders and Raiders","Haunted Woods,Lost City,Page,Port,Wine Merchant,Develop,Farmland,Haggler,Spice Merchant,Trader","Adventures","{'event1':'Raid'}"
+"Journeys","Bridge Troll,Distant Lands,Giant,Guide,Ranger,Cartographer,Crossroads,Highway,Inn,Silk Road","Adventures","{'event1':'Expedition','event2':'Inheritance'}"
+"Cemetery Polka","Amulet,Caravan Guard,Hireling,Peasant,Relic,Graverobber,Marauder,Procession,Rogue,Wandering Minstrel","Adventures","{'event1':'Alms,shelters=yes'}"
+"Groovy Decay","Dungeon,Haunted Woods,Ratcatcher,Raze,Transmogrify,Cultist,Death Cart,Fortress,Knights,Rats","Adventures","{'event1':'Lost Arts','event2':'Pathfinding','use_shelters':'yes'}"
+"Spendthrift","Artificer,Gear,Magpie,Miser,Storyteller,Doctor,Masterpiece,Merchant Guild,Soothsayer,Stonemason","Adventures","{'event1':'Lost Arts'}"
+"Queen of Tan","Coin of the Realm,Duplicate,Guide,Ratcatcher,Royal Carriage,Advisor,Butcher,Candlestick Maker,Herald,Journeyman","Adventures","{'event1':'Pathfinding','event2':'Save'}"

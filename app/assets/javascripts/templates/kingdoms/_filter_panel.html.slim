@@ -6,5 +6,9 @@ ng-include src="'shared/_expansion_selector.html'"
 label.btn.btn-default.btn-sm
   input> type="checkbox" ng-model="expansionSelector.matchAllExpansions"
   Match all expansions?
+div ng-show="expansionSelector.matchAllExpansions"
+  Only showing kingdoms containing cards from *all* selected expansions.
+  span ng-show="expansionSelector.selected.length > 10"
+    Eurhmmmm, this doesn't make any sense. This filter will never match, because there are no kingdoms with 11 cards. Maybe uncheck "Match all expansions"?
 
 span ng-show="!expansionSelector.selected.length" Please select at least one expansion.

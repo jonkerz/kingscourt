@@ -1,7 +1,7 @@
 .row
   .col-md-3.hidden-md.hidden-lg
     ng-include src="'shared/_alerts.html'"
-    .well.clearfix
+    .clearfix
       ng-include src="'kingdoms/_filter_panel.html'"
 
   .col-md-9
@@ -24,9 +24,9 @@
         dir-pagination-controls on-page-change="pageChanged(newPageNumber)"
 
   .col-md-3.hidden-xs.hidden-sm
-    .transparent-well.clearfix
-      ng-include src="'shared/_alerts.html'"
-    .well.clearfix
-      ng-include src="'kingdoms/_filter_panel.html'"
-      button.btn.btn-success.btn-sm> ng-click="displayMode='image'" ng-hide="displayMode=='image'" Show Images
-      button.btn.btn-success.btn-sm ng-click="displayMode='text'"  ng-hide="displayMode=='text'" Show Text Only
+
+    ng-include src="'shared/_alerts.html'"
+
+    ng-include src="'kingdoms/_filter_panel.html'"
+    button.btn.btn-success.btn-sm> ng-click="displayMode='image'" ng-hide="displayMode=='image'" Show Images
+    button.btn.btn-success.btn-sm ng-click="displayMode='text'"  ng-hide="displayMode=='text'" Show Text Only

@@ -110,7 +110,7 @@ Feature: Kingdom browser
     And I should see "by Joffre"
     When I follow "Joffre's Dominion Kingdom"
     Then I should see 10 face up cards
-    And I should see "Description:"
+    And I should see "Added by Joffre"
 
   @search
   Scenario: Browsing a user's kingdoms

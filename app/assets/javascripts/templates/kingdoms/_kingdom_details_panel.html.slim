@@ -1,9 +1,8 @@
-.well.clearfix
-  h4 {{kingdom.name}}
-  p style="word-wrap: break-word" Description: {{kingdom.description || 'None'}}
-  p
-    Added by:
-    a ng-href="#!/{{kingdom.username}}/kingdoms" {{kingdom.username}}
-  p Created: {{kingdom.created_at | date:'dd MMMM yyyy'}}
-  button.btn.btn-success.btn-md> ng-click="openInBuilder()" Open in Builder
-  button.btn.btn-danger.btn-md[ng-if="user.username == kingdom.username" mwl-confirm title="Are you sure?" message="Are you sure you want to delete this kingdom?" on-confirm="deleteKingdom(kingdom.id)" type="button"] Delete
+h4 {{kingdom.name}}
+p style="word-wrap: break-word" {{kingdom.description}}
+p
+  Added by
+  a ng-href="#!/{{kingdom.username}}/kingdoms" {{kingdom.username}}
+p Created: {{kingdom.created_at | date:'dd MMMM yyyy'}}
+button.btn.btn-success.btn-md> ng-click="openInBuilder()" Open in Builder
+button.btn.btn-danger.btn-md[ng-if="user.username == kingdom.username" mwl-confirm title="Are you sure?" message="Are you sure you want to delete this kingdom?" on-confirm="deleteKingdom(kingdom.id)" type="button"] Delete

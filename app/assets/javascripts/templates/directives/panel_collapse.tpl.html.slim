@@ -1,6 +1,6 @@
 .panel-group id="{{panelId}}"
   .panel.panel-default
-    .panel-heading ng-class="{true: 'collapsed'}[collapsed]"  data-parent="\#{{panelId}}" data-toggle="collapse" href="\#{{panelId}}-1"
+    .panel-heading ng-class="{true: 'collapsed'}[collapsed]" data-parent="\#{{panelId}}" data-toggle="collapse" href="\#{{panelId}}-1"
       h4.panel-title
         a {{title}}
     .panel-collapse.collapse ng-class="{false: 'in', undefined: 'in'}[collapsed]" id="{{panelId}}-1"

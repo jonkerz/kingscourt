@@ -14,13 +14,15 @@ Feature: Kingdom generator
 
   Scenario: Saving a generated kingdom
     Given I am logged in
+
     When I press "Generate!"
+    And I open the "Save Kingdom" panel
     And I fill in "kingdom-name" with "My First Kingdom"
     And I fill in "kingdom-description" with "Advanced stuff"
     And I press "Save Kingdom"
-    And I should see "Successfully saved My First Kingdom"
+    Then I should see "Successfully saved My First Kingdom"
 
     When I follow "My First Kingdom"
     Then I should see "My First Kingdom"
-    And I should see "Description: Advanced stuff"
-    And I should see "Added by: Joffre"
+    And I should see "Advanced stuff"
+    And I should see "Added by Joffre"

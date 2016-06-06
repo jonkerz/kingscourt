@@ -9,15 +9,16 @@ Feature: Editing
   @search
   Scenario: Updating a kingdom
     When I follow "Joffre's Dominion Kingdom"
-    Then I should see "Description: Very dangerous kingdom."
+    Then I should see "Very dangerous kingdom."
 
     When I press "Open in Builder"
+    And I open the "Save Kingdom" panel
     And I fill in "kingdom-description" with "not very dangerous.."
     And I press "Update Kingdom"
     Then I should see "Successfully updated Joffre's Dominion Kingdom"
 
     When I follow "Joffre's Dominion Kingdom"
-    Then I should see "Description: not very dangerous.."
+    Then I should see "not very dangerous.."
 
   @search
   Scenario: Deleting a kingdom

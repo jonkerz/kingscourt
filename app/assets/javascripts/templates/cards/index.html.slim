@@ -15,25 +15,24 @@
           p ng-show="!expansionSelector.selected.length" Please select at least one expansion.
 
   .col-md-3
-    .well
-      ng-include src="'shared/_expansion_selector.html'"
-    .well
-      h4 Display
-      div
-        button.btn.btn-success.btn-sm> ng-click="displayMode='image'" Images
-        button.btn.btn-success.btn-sm> ng-click="displayMode='label'" Labels
-        button.btn.btn-success.btn-sm> ng-click="displayMode='text'" Text
-      div ng-show="displayMode=='image'"
-        Display size: {{cardDisplaySize}}
-        .slider[slider config="cardDisplaySizeSliderConfig" model="cardDisplaySize"]
-      Cards per page: {{cardsPerPage}}
-      .slider[slider config="cardsPerPageSliderConfig" model="cardsPerPage"]
-      h4
-        Sort
-        small
-          ({{orderByField}}
-          span ng-show="reverseSort" reversed
-          )
-      button.btn.btn-success.btn-sm> href="" ng-click="orderByField='expansion'; reverseSort = !reverseSort" Expansion
-      button.btn.btn-success.btn-sm> href="" ng-click="orderByField='name'; reverseSort = !reverseSort" Name
-      button.btn.btn-success.btn-sm> href="" ng-click="orderByField='cost_in_coins'; reverseSort = !reverseSort" Cost
+    ng-include src="'shared/_expansion_selector.html'"
+
+    h4 style="margin-top: 2rem" Display
+    div
+      button.btn.btn-success.btn-sm> ng-click="displayMode='image'" Images
+      button.btn.btn-success.btn-sm> ng-click="displayMode='label'" Labels
+      button.btn.btn-success.btn-sm> ng-click="displayMode='text'" Text
+    div ng-show="displayMode=='image'"
+      Display size: {{cardDisplaySize}}
+      .slider[slider config="cardDisplaySizeSliderConfig" model="cardDisplaySize"]
+    Cards per page: {{cardsPerPage}}
+    .slider[slider config="cardsPerPageSliderConfig" model="cardsPerPage"]
+    h4
+      Sort
+      small
+        ({{orderByField}}
+        span ng-show="reverseSort" reversed
+        )
+    button.btn.btn-success.btn-sm> href="" ng-click="orderByField='expansion'; reverseSort = !reverseSort" Expansion
+    button.btn.btn-success.btn-sm> href="" ng-click="orderByField='name'; reverseSort = !reverseSort" Name
+    button.btn.btn-success.btn-sm> href="" ng-click="orderByField='cost_in_coins'; reverseSort = !reverseSort" Cost

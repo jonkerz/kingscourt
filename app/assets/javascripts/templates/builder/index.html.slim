@@ -1,8 +1,8 @@
 .row[ng-cloak]
   .col-md-3.hidden-md.hidden-lg
-    .transparent-well.clearfix
+    .clearfix
       ng-include src="'shared/_alerts.html'"
-    .well.clearfix ng-show="tab=='randomizer-tab'"
+    .clearfix ng-show="tab=='randomizer-tab'"
       ng-include src="'builder/_randomize_panel.html'"
 
   .col-md-9.sm-12
@@ -26,10 +26,10 @@
           ng-include src="'builder/tabs/_by_name.html'"
 
   .col-md-3
-    .transparent-well.clearfix.hidden-xs.hidden-sm
+    .clearfix.hidden-xs.hidden-sm
       ng-include src="'shared/_alerts.html'"
 
-    .well.clearfix.hidden-xs.hidden-sm
+    .clearfix.hidden-xs.hidden-sm
       ng-include src="'builder/_randomize_panel.html'"
       button.btn.btn-success.btn-sm> ng-click="displayMode='image'" ng-hide="displayMode=='image'" Show Images
       button.btn.btn-success.btn-sm ng-click="displayMode='text'"  ng-hide="displayMode=='text'" Show Text Only

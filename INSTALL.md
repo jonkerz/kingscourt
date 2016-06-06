@@ -125,3 +125,13 @@ deploy$ echo "drop database kingscourt;" | mysql -u root -p
 deploy$ echo "create database kingscourt;" | mysql -u root -p
 deploy$ mysql -u root -p kingscourt < kingscourt.sql
 ```
+
+###### Rake tasks
+See `rake -T kings` for 100% custom Rake tasks, and remember to check out `cap -T` for all Capistrano tasks. Some stuff:
+
+```bash
+cap rails:console # remote console, very neat
+cap db:pull # sync db, destructive
+cap db:push # ditto
+cap invoke:rake TASK=notes # run Rake tasks on the server
+```

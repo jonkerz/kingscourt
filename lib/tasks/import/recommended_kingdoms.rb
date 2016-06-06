@@ -1,21 +1,17 @@
-require "csv"
-require "json"
-
-namespace :kings do
-  namespace :import do
-
-    desc "recommended kingdoms from the official manuals"
-    task recommended_kingdoms: :environment do
-      user = User.find_by(username: "RecommendedKingdoms")
-
-      recommended_kingdoms_csv do |name, cards_string, from_manual, extra_data|
-        kingdom = Kingdom.new name: name
-        kingdom.user = user
-        kingdom.cards = parse_cards(cards_string)
-        kingdom.description = build_description(from_manual, extra_data)
-        kingdom.save
-      end
-    end
+module Import
+  module RecommendedKingdoms
+    RELEASE_DATES = {
+      "Dominion" => "October 2008",
+      "Intrigue" => "July 2009",
+      "Seaside" => "October 2009",
+      "Alchemy" => "May 2010",
+      "Prosperity" => "October 2010",
+      "Cornucopia" => "June 2011",
+      "Hinterlands" => "October 2011",
+      "Dark Ages" => "August 2012",
+      "Guilds" => "June 2013",
+      "Adventures"  => "April 2015"
+    }.transform_values { |date| Date.parse date }
 
     def recommended_kingdoms_csv
       file = File.read "data/recommended_kingdoms.csv"
@@ -55,6 +51,5 @@ namespace :kings do
       end
       string
     end
-
   end
 end

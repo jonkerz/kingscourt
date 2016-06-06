@@ -6,14 +6,14 @@ describe Card do
     let!(:attack) { create :card }
     let!(:victory) { create :card, randomizable: false }
 
-    describe ".randomizers" do
+    describe ".randomizable" do
       it "return randomizable cards only" do
-        expect(Card.randomizers).to eq [action, attack]
+        expect(Card.randomizable).to eq [action, attack]
       end
     end
-    describe ".non_randomizers" do
+    describe ".non_randomizable" do
       it "return non-randomizable cards only" do
-        expect(Card.non_randomizers).to eq [victory]
+        expect(Card.non_randomizable).to eq [victory]
       end
     end
   end

@@ -1,10 +1,10 @@
 module Api::V1
   class CardsController < ApiController
     def index
-      cards = if params[:randomizers_only]
-                Card.include_card_attributes.randomizers
-              elsif params[:non_randomizers_only]
-                Card.include_card_attributes.non_randomizers
+      cards = if params[:randomizable] == "true"
+                Card.include_card_attributes.randomizable
+              elsif params[:randomizable] == "false"
+                Card.include_card_attributes.non_randomizable
               else
                 Card.include_card_attributes.all
               end

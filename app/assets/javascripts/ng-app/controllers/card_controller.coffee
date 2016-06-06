@@ -4,7 +4,7 @@ angular.module "KingsCourt"
   $scope.allCards = Card.cards
 
   # TODO: Caching breaks dir-paginate
-  $http.get("/api/v1/cards?non_randomizers_only=true").then (response) ->
+  $http.get("/api/v1/cards?randomizable=false").then (response) ->
     $scope.allCards = $scope.allCards.concat response.data
 
   $scope.currentPage = 1
@@ -13,7 +13,7 @@ angular.module "KingsCourt"
   $scope.orderByField = "name"
   $scope.reverseSort = false
 
-  # TODO: Super dlow and duplicated in BuilderCtrl
+  # TODO: Super slow and duplicated in BuilderCtrl
   $scope.filterByExpansion = (card) ->
     ExpansionSelector.selected.indexOf(card.expansion_id) isnt -1
 

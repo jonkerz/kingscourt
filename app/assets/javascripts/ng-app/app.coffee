@@ -3,7 +3,7 @@ angular.element(document).ready ->
   initInjector = angular.injector ["ng"]
   $http = initInjector.get "$http"
 
-  $http.get("/api/v1/cards?randomizers_only=true").then (response) ->
+  $http.get("/api/v1/cards?randomizable=true").then (response) ->
     KingsCourt.constant "Cards", response.data
     angular.bootstrap document, ["KingsCourt"]
 

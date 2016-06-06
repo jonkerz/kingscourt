@@ -13,8 +13,8 @@ class Card < ApplicationRecord
   validates :expansion_id, presence: true
 
   scope :include_card_attributes, -> { includes(:card_attributes) }
-  scope :randomizers, -> { where(randomizable: true) }
-  scope :non_randomizers, -> { where(randomizable: false) }
+  scope :randomizable, -> { where(randomizable: true) }
+  scope :non_randomizable, -> { where(randomizable: false) }
 
   def image
     base_filename = self.name.tr(" ", "_").delete("'")

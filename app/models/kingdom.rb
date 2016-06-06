@@ -57,7 +57,7 @@ class Kingdom < ApplicationRecord
       unless cards.all?(&:randomizable?)
         errors.add :cards, <<-MSG.squish
           can only contain randomizable cards (remove
-          #{cards.non_randomizers.pluck(:name).to_sentence})
+          #{cards.non_randomizable.pluck(:name).to_sentence})
         MSG
       end
     end

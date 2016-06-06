@@ -3,15 +3,13 @@
 ##### Checkout repo
 ```bash
 git clone https://github.com/jonkerz/kingscourt
-cp .env.example .env # Edit database credentials here
+cp .env.example .env # edit database credentials here
 ```
 
 ##### Dependencies (server and local)
 ```bash
 sudo apt-get update
-
-# git
-sudo apt-get git
+sudo apt-get git # git
 
 # MySQL
 sudo apt-get install mysql-server libmysqlclient-dev
@@ -53,12 +51,10 @@ bundle exec teaspoon # JavaScript unit-ish tests
 # Run site
 bundle exec rake sunspot:solr:start # start Solr
 bundle exec rake sunspot:solr:reindex # reindex Solr
-bundle exec rails s # start the app
-
-# Visit http://localhost:3000/
+bundle exec rails s # start the app, visit http://localhost:3000/
 ```
 
-##### Install on server (not 100% complete, use Google)
+##### Install on server
 ###### Initial deploy
 ```bash
 # Login to server
@@ -102,7 +98,6 @@ deploy$ sudo invoke-rc.d iptables-persistent save # Make persist iptables
 deploy$ gem install backup -v '~> 4.0' # not in Gemfile because reasons, also, takes forever to install
 deploy$ gem install whenever
 # Setup Dropbox app at https://www.dropbox.com/developers/apps
-
 deploy$ mkdir -p ~/Backup/models # yes, capital B
 deploy$ ln -s ~/apps/kingscourt/current/config/backup/config.rb ~/Backup/config.rb
 deploy$ ln -s ~/apps/kingscourt/current/config/backup/models/kingscourt_db_backup.rb ~/Backup/models/kingscourt_db_backup.rb
@@ -112,7 +107,7 @@ deploy$ whenever --update-crontab
 ##### Deploying new changes
 ```bash
 local$ git push origin master
-local$ cap production deploy
+local$ cap production deploy # append COPY_BOWER=true to reuse bower_components from the previous deploy
 ```
 
 #### Stuff

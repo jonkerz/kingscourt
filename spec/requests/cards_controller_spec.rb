@@ -17,7 +17,7 @@ describe "CardsController" do
       end
     end
 
-    describe "/api/v1/cards?randomizers_only=true" do
+    describe "/api/v1/cards?randomizable=true" do
       it "returns randomizable cards only" do
         expect(response).to be_success
         expect(json.size).to eq 2
@@ -25,7 +25,7 @@ describe "CardsController" do
       end
     end
 
-    describe "/api/v1/cards?non_randomizers_only=true" do
+    describe "/api/v1/cards?randomizable=false" do
       it "returns non-randomizable cards only" do
         expect(response).to be_success
         expect(json.size).to eq 1

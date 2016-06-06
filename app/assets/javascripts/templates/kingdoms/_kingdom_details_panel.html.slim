@@ -1,6 +1,6 @@
 .well.clearfix
   h4 {{kingdom.name}}
-  p Description: {{kingdom.description || 'None'}}
+  p style="word-wrap: break-word" Description: {{kingdom.description || 'None'}}
   p
     Added by:
     a ng-href="#!/{{kingdom.username}}/kingdoms" {{kingdom.username}}

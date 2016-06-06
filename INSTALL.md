@@ -97,6 +97,16 @@ deploy$ sudo iptables -A INPUT -p tcp -s localhost --dport 8983 -j ACCEPT
 deploy$ sudo iptables -A INPUT -p tcp --dport 8983 -j DROP
 deploy$ sudo apt-get install iptables-persistent
 deploy$ sudo invoke-rc.d iptables-persistent save # Make persist iptables
+
+# Enable automatic database backups to Dropbox (optional)
+deploy$ gem install backup -v '~> 4.0' # not in Gemfile because reasons, also, takes forever to install
+deploy$ gem install whenever
+# Setup Dropbox app at https://www.dropbox.com/developers/apps
+
+deploy$ mkdir -p ~/Backup/models # yes, capital B
+deploy$ ln -s ~/apps/kingscourt/current/config/backup/config.rb ~/Backup/config.rb
+deploy$ ln -s ~/apps/kingscourt/current/config/backup/models/kingscourt_db_backup.rb ~/Backup/models/kingscourt_db_backup.rb
+deploy$ whenever --update-crontab
 ```
 
 ##### Deploying new changes
@@ -133,5 +143,7 @@ See `rake -T kings` for 100% custom Rake tasks, and remember to check out `cap -
 cap rails:console # remote console, very neat
 cap db:pull # sync db, destructive
 cap db:push # ditto
+cap deploy:pending # commits since last deploy
+cap deploy:pending:diff
 cap invoke:rake TASK=notes # run Rake tasks on the server
 ```

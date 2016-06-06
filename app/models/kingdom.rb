@@ -9,7 +9,7 @@ class Kingdom < ApplicationRecord
     source: :user, dependent: :destroy
 
   validates :user, presence: true
-  validates :name, presence: true
+  validates :name, presence: true, length: 5..50
   validate :validate_cards
 
   searchable do

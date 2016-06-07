@@ -94,6 +94,9 @@ deploy$ sudo iptables -A INPUT -p tcp --dport 8983 -j DROP
 deploy$ sudo apt-get install iptables-persistent
 deploy$ sudo invoke-rc.d iptables-persistent save # Make persist iptables
 
+# Redirect www to no-www
+# Add a new 'www @' DNS A record (use Google)
+
 # Enable automatic database backups to Dropbox (optional)
 deploy$ gem install backup -v '~> 4.0' # not in Gemfile because reasons, also, takes forever to install
 deploy$ gem install whenever

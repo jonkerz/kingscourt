@@ -19,6 +19,7 @@ class Kingdom < ApplicationRecord
     integer :favorited_by_user_ids, multiple: true do
       favoriters.map(&:id)
     end
+    time :created_at
   end
 
   def expansions

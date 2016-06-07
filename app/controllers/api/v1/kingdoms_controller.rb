@@ -94,6 +94,8 @@ module Api::V1
             end
           end
 
+          order_by :created_at, :desc
+
           # Facets
           facet :expansion_ids
           facet :expansion_ids_string

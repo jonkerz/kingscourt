@@ -20,13 +20,6 @@ angular.module "KingsCourt"
   $scope.cardDisplaySize = 110
   $scope.cardDisplaySizeSliderConfig =
     min: 50
-    max: 500
+    max: 400
     step: 1
     initial: 110
-
-  $scope.cardsPerPage = 25
-  $scope.cardsPerPageSliderConfig =
-    min: 1
-    max: 100
-    step: 1
-    initial: 25

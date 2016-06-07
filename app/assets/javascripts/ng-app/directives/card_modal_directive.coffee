@@ -7,4 +7,4 @@ angular.module "KingsCourt"
   link: (scope, element, attrs) ->
     element.bind "click", ->
       card = angular.element(element).data "card"
-      scope.openCard card
+      scope.openCard card if card

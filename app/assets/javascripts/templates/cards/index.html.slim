@@ -9,7 +9,7 @@
 
       .row
         .col-md-12
-          div dir-paginate="card in allCards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: cardsPerPage" current-page="currentPage" pagination-id="allCards" ng-class="{'col-xs-12 col-sm-6 col-md-4': displayMode=='label'}"
+          div dir-paginate="card in allCards | orderBy:orderByField:reverseSort | filter:q | filter:filterByExpansion | itemsPerPage: 25" current-page="currentPage" pagination-id="allCards" ng-class="{'col-xs-12 col-sm-6 col-md-4': displayMode=='label'}"
             ng-include src="'cards/card_' + displayMode + '.tpl.html'"
 
           p ng-show="!expansionSelector.selected.length" Please select at least one expansion.
@@ -25,8 +25,6 @@
     div ng-show="displayMode=='image'"
       Display size: {{cardDisplaySize}}
       .slider[slider config="cardDisplaySizeSliderConfig" model="cardDisplaySize"]
-    Cards per page: {{cardsPerPage}}
-    .slider[slider config="cardsPerPageSliderConfig" model="cardsPerPage"]
     h4
       Sort
       small

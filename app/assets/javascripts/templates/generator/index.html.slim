@@ -11,7 +11,7 @@
         img.rounded-card.fix-stacking-hack[ng-src="cards/{{::card.image}}" card-modal data-card="{{card}}"]
       div ng-show="kingdom.cards.length < 10"
         .responsive-card ng-repeat="a in range(10 - kingdom.cards.length) track by $index"
-          img.fix-stacking-hack.rounded-card ng-src="randomizer.jpg"
+          img.fix-stacking-hack.rounded-card.randomizer ng-src="randomizer.jpg"
 
   .col-md-3
     .clearfix.hidden-xs.hidden-sm

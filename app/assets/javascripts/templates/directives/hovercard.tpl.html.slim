@@ -1,5 +1,5 @@
 .hovercard[card-modal data-card="{{card}}"]
-  img.rounded-card.hovercard.fix-stacking-hack ng-show="displayMode == 'image'" ng-src="cards/small/{{::card.image || 'randomizer.jpg'}}" ng-mouseenter="showCard = true" ng-mouseleave="showCard = false"
+  img.rounded-card.hovercard.fix-stacking-hack ng-show="displayMode == 'image'" ng-src="cards/small/{{::card.image || 'randomizer.jpg'}}" ng-mouseenter="showCard = true" ng-class="{false: 'randomizer', undefined: 'randomizer'}[collapsed]" ng-mouseleave="showCard = false"
 
   span ng-show="displayMode == 'text'" ng-mouseenter="showCard = true" ng-mouseleave="showCard = false"
     span ng-hide="card" ???

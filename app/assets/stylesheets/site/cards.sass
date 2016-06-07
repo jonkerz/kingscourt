@@ -8,11 +8,17 @@
 .card-browser-card
   float: left
   margin: 5px
+  &:hover
+    cursor: pointer
+    cursor: hand
 
 .responsive-card
   float: left
   padding: 2px
   width: 50%
+  &:hover
+    cursor: pointer
+    cursor: hand
 
   @media (min-width: 768px)
     width: 33%
@@ -22,6 +28,10 @@
 
   &.tiny
     width: 10%
+
+.randomizer
+  &:hover
+    cursor: auto
 
 .card-title
   font-variant: small-caps

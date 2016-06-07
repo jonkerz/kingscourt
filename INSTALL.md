@@ -101,7 +101,7 @@ deploy$ gem install whenever
 deploy$ mkdir -p ~/Backup/models # yes, capital B
 deploy$ ln -s ~/apps/kingscourt/current/config/backup/config.rb ~/Backup/config.rb
 deploy$ ln -s ~/apps/kingscourt/current/config/backup/models/kingscourt_db_backup.rb ~/Backup/models/kingscourt_db_backup.rb
-deploy$ whenever --update-crontab
+deploy$ whenever --update -f ~/apps/kingscourt/current/config/backup/schedule.rb
 ```
 
 ##### Deploying new changes

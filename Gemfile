@@ -52,7 +52,7 @@ group :development do
   gem "capistrano-rails-console", require: false
   gem "capistrano-pending", require: false
   gem "capistrano-db-tasks", require: false
-  gem "listen", "~> 3.0.7"
+  gem "listen"
   gem "quiet_assets"
   gem "rubocop", "~> 0.40.0", require: false
 end
@@ -70,7 +70,7 @@ group :test do
 end
 
 group :development, :test do
-  gem "rspec-rails"
+  gem "rspec-rails", "3.5.0.beta4"
   gem "pry"
   gem "teaspoon-jasmine"
 end

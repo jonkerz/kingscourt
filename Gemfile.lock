@@ -440,7 +440,7 @@ DEPENDENCIES
   pry
   puma
   quiet_assets
-  rails (>= 5.0.0.beta4, < 5.1)
+  rails (>= 5.0.0.rc1, < 5.1)
   rspec-rails
   rubocop (~> 0.40.0)
   sass-rails

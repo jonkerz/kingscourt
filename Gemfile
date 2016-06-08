@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 ruby "2.2.2"
 
-gem "rails", ">= 5.0.0.beta4", "< 5.1"
+gem "rails", ">= 5.0.0.rc1", "< 5.1"
 
 gem "coffee-rails"
 gem "execjs"

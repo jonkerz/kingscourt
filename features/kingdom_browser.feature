@@ -122,7 +122,7 @@ Feature: Kingdom browser
     And I should see "Joffre's Dominion Kingdom"
     And I should see 1 kingdom
 
-  @search
+  @search @travis
   Scenario: Browsing my kingdoms
     Given I am logged in
     And I wait

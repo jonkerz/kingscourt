@@ -84,6 +84,7 @@ Metrics/MethodLength:
 AllCops:
   Exclude:
     - 'db/**/*'
+    - 'vendor/**/*'
     - 'bin/**/*'
     - 'script/**/*'
     - 'config/environments/**/*'

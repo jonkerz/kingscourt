@@ -22,7 +22,6 @@ Capybara.javascript_driver = :webkit
 if ENV["DRIVER"] == "selenium" || ENV["SEL"] || ENV["SSS"] || ENV["SSP"]
   # "Single Step Selenium"
   # "Single Step Pry"
-  puts "Enabling selenium driver..."
   Capybara.javascript_driver = :selenium
 end
 

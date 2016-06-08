@@ -23,4 +23,18 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  # Super ugly, tests only.
+  if Rails.env.test?
+    scope :cards do
+      cards_used_in_tests = %w(cellar chapel moat chancellor village
+        woodcutter workshop bureaucrat feast gardens
+        courtyard pawn secret_chamber great_hall masquerade
+        shanty_town steward swindler wishing_well baron)
+      cards_used_in_tests.each do |card|
+        get "#{card}.jpg", to: "application#card_image_not_found"
+        get "small/#{card}.jpg", to: "application#card_image_not_found"
+      end
+    end
+  end
 end

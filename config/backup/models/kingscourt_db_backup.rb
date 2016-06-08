@@ -20,7 +20,8 @@ Model.new(:kingscourt_db_backup, "Backups the database only") do
     db.cache_path  = ".cache"
     db.access_type = :app_folder
     db.keep        = 25
-    # db.keep        = Time.now - 2592000 # Remove all backups older than 1 month.
+    # Remove all backups older than 1 month.
+    # db.keep      = Time.now - 2592000
   end
 
   compress_with Gzip

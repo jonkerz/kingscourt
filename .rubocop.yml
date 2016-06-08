@@ -1,8 +1,43 @@
 AllCops:
   TargetRubyVersion: 2.2
 
+# Rails
 Rails:
   Enabled: true
+
+Rails/Validation:
+  Enabled: false
+
+# Style
+Style/AlignArray:
+  Enabled: false
+
+Style/AlignHash:
+  Enabled: false
+
+Style/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/ClosingParenthesisIndentation:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/DotPosition:
+  EnforcedStyle: leading
+
+Style/DoubleNegation:
+  Enabled: false
+
+Style/EmptyLinesAroundAccessModifier:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
 
 Style/IndentationConsistency:
   EnforcedStyle: rails
@@ -10,77 +45,46 @@ Style/IndentationConsistency:
 Style/MethodDefParentheses:
   EnforcedStyle: require_no_parentheses
 
+Style/MultilineMethodCallIndentation:
+  Enabled: false
+
+Style/NestedParenthesizedCalls:
+  Enabled: false
+
+Style/OptionHash:
+  Enabled: true
+
+# Disable, known to break things
+Style/RedundantSelf:
+  Enabled: false
+
+Style/SpaceInsideBrackets:
+  Enabled: false
+
 Style/StringLiterals:
   EnforcedStyle: double_quotes
 
-Style/AlignParameters:
-  EnforcedStyle: with_fixed_indentation
+Style/WordArray:
+  Enabled: false
 
+# Lint
 Lint/AmbiguousOperator:
   Enabled: false
 
 Lint/AmbiguousRegexpLiteral:
   Enabled: false
 
-Style/AlignArray:
-  Enabled: false
-
-Style/MultilineMethodCallIndentation:
-  Enabled: false
-
-Style/GuardClause:
-  Enabled: false
-
-Style/SpaceInsideBrackets:
-  Enabled: false
-
-Rails/Validation:
-  Enabled: false
-
-Lint/Debugger:
-  Exclude:
-    - features/**/*
-
-Style/DotPosition:
-  EnforcedStyle: leading
-
-# Disable, known to break things
-Style/RedundantSelf:
-  Enabled: false
-
-Style/OptionHash:
-  Enabled: true
-
-Style/WordArray:
-  Enabled: false
-
-Style/NestedParenthesizedCalls:
-  Enabled: false
-
 Lint/UnusedBlockArgument:
   Enabled: false
 
-Style/Documentation:
-  Enabled: false
-
-Style/ClassAndModuleChildren:
-  Enabled: false
-
-Style/DoubleNegation:
-  Enabled: false
-
-Style/AlignHash:
-  Enabled: false
-
+# Metrics
 Metrics/AbcSize:
-  Enabled: false
-
-Style/ClosingParenthesisIndentation:
   Enabled: false
 
 Metrics/MethodLength:
   Max: 15
 
+# Exclude
 AllCops:
   Exclude:
     - 'db/**/*'
@@ -91,18 +95,22 @@ AllCops:
     - 'lib/tasks/cucumber.rake'
     - 'config/deploy.rb'
 
-Style/RescueModifier:
+Style/CommentIndentation:
   Exclude:
-    - 'spec/**/*'
+    - 'Gemfile'
+
+Lint/Debugger:
+  Exclude:
+    - features/**/*
 
 Rails/Output:
   Exclude:
     - 'app/models/concerns/by_name_or_id.rb'
     - 'config/deploy.rb'
 
-Style/CommentIndentation:
+Style/RescueModifier:
   Exclude:
-    - 'Gemfile'
+    - 'spec/**/*'
 
 Style/SymbolProc:
   Exclude:

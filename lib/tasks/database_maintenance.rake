@@ -19,12 +19,11 @@ namespace :kings do
     desc "eg that Action-Attack cards have 'isAction' and 'isAttack'"
     task general_card_types: :environment do
       Card.find_each do |card|
-        should_have_types = card.card_type.name.split("-").map { |type| "is#{type}"}
+        should_have_types = card.card_type.name.split("-")
+          .map { |type| "is#{type}"}
 
         should_have_types.each do |type|
-          if card.card_attributes.pluck(:name).include? type
-            puts "#{card.name} already has type #{type}".green  if ENV["VERBOSE"]
-          else
+          unless card.card_attributes.pluck(:name).include? type
             puts "#{card.name} is missing #{type}".red
             # card.card_attributes << CardAttribute[type] # Uncomment to add.
           end
@@ -38,8 +37,6 @@ namespace :kings do
         CardAttribute[card_type].cards.each do |card|
           unless card.card_attributes.include? CardAttribute[implied]
             puts "plz add #{implied} to #{card.name}".red
-          else
-            puts "is ok (has #{implied})".green if ENV["VERBOSE"]
           end
         end
       end
@@ -51,7 +48,7 @@ namespace :kings do
         "givesTwoCards" => "givesCards",
 
         "givesOneCoin" => "givesCoins",
-        "givesTwoCoins" => "givesCoins",
+        "givesTwoCoins" => "givesCoins"
       }.each do |card_type, implied_card_type|
         check_card_type card_type, implied: implied_card_type
       end
@@ -60,8 +57,9 @@ namespace :kings do
     desc "cannot be both terminal and give actions, and must be either"
     task terminals: :environment do
       CardAttribute["isAction"].cards.each do |card|
-        gives_actions = !!card.card_attributes.include?(CardAttribute["givesActions"])
-        terminal = !!card.card_attributes.include?(CardAttribute["terminal"])
+        attributes = card.card_attributes
+        gives_actions = attributes.include? CardAttribute["givesActions"]
+        terminal = attributes.include? CardAttribute["terminal"]
 
         if gives_actions && terminal
           puts "#{card.name} gives actions and is terminal".red

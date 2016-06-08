@@ -10,7 +10,7 @@ module Import
       "Hinterlands" => "October 2011",
       "Dark Ages" => "August 2012",
       "Guilds" => "June 2013",
-      "Adventures"  => "April 2015"
+      "Adventures" => "April 2015"
     }.transform_values { |date| Date.parse date }
 
     def recommended_kingdoms_csv

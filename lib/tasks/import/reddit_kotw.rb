@@ -86,7 +86,7 @@ module Import
         ["Young Witch (Sage as Bane)", "Young Witch"], # <-- Manually fix
         ["Young Witch (Bane: Menagerie)", "Young Witch"], # <-- Manually fix
         ["Watch Tower", "Watchtower"],
-        ["Stewart", "Steward"],
+        ["Stewart", "Steward"]
       ]
 
       cards.map do |card_name|
@@ -108,17 +108,16 @@ module Import
       DateTime.parse chunk[time_regex, 1]
     end
 
-    # TODO include url here
     def build_description rest, url
       # Remove expansions, "[Dominion,  Seaside,  Hinterlands]"
       rest.gsub!(/\[.*?\]/, "") if rest
 
       # Still not empty, let's use this for the description.
       description = if rest.present?
-                    rest.strip.gsub("  ", " ").gsub(/ ?,$/, "")
-                  else
-                    ""
-                  end
+                      rest.strip.gsub("  ", " ").gsub(/ ?,$/, "")
+                    else
+                      ""
+                    end
 
       description << ". From #{url}."
     end

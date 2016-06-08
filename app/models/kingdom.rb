@@ -52,7 +52,6 @@ class Kingdom < ApplicationRecord
   end
 
   private
-
     def validate_cards
       errors.add :cards, "must contain 10 cards" unless cards.size == 10
       unless cards.all?(&:randomizable?)

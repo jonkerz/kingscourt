@@ -56,7 +56,6 @@ module Api::V1
     end
 
     private
-
       def set_kingdom
         @kingdom = Kingdom.find params[:id]
       end

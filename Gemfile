@@ -26,9 +26,7 @@ gem "bower-rails"
 gem "ngannotate-rails"
 
 # API
-gem "active_model_serializers",
-  github: "rails-api/active_model_serializers"
-  # http://stackoverflow.com/questions/34507596/undefined-method-config-for-activemodelserializer
+gem "active_model_serializers"
 gem "devise_token_auth",
   github: "lynndylanhurley/devise_token_auth",
   branch: "master"

@@ -26,15 +26,6 @@ GIT
       devise (> 3.5.2, < 4.1)
       rails (< 6)
 
-GIT
-  remote: git://github.com/rails-api/active_model_serializers.git
-  revision: 2b4989935130732d59d7cc1b6228d4a447dd5071
-  specs:
-    active_model_serializers (0.10.0.rc5)
-      actionpack (>= 4.0)
-      activemodel (>= 4.0)
-      railties (>= 4.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -61,6 +52,10 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_model_serializers (0.10.0)
+      actionpack (>= 4.0)
+      activemodel (>= 4.0)
+      railties (>= 4.0)
     activejob (5.0.0.rc1)
       activesupport (= 5.0.0.rc1)
       globalid (>= 0.3.6)
@@ -407,7 +402,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_model_serializers!
+  active_model_serializers
   activeadmin!
   angular-rails-templates
   autoprefixer-rails

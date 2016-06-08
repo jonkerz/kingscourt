@@ -26,6 +26,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # Ugly, test only
+  if Rails.env.test?
+    def card_image_not_found
+      send_file "public/randomizer.jpg",
+        type: "image/jpg", disposition: "inline"
+    end
+  end
+
   protected
 
     def configure_permitted_parameters

@@ -4,11 +4,20 @@ Before "@responsive" do
   resize_window_to_device :large
 end
 
-# Debug hooks.
 After "@responsive" do
   resize_window_to_device :large
 end
 
+# Fix windows size on Travis CI (xvfb + selenium = too small)
+Before "@travis" do
+  resize_window_to_device :large
+end
+
+After "@travis" do
+  resize_window_to_device :large
+end
+
+# Debug hooks.
 Before "@slow_motion" do
   @slow_motion = true
 end

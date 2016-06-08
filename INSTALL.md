@@ -49,8 +49,8 @@ bundle exec rspec # unit tests
 bundle exec teaspoon # JavaScript unit-ish tests
 
 # Run site
-bundle exec rake sunspot:solr:start # start Solr
-bundle exec rake sunspot:solr:reindex # reindex Solr
+bundle exec rake sunspot:solr:start
+bundle exec rake sunspot:solr:reindex
 bundle exec rails s # start the app, visit http://localhost:3000/
 ```
 
@@ -77,8 +77,8 @@ deploy$ ssh-keygen -t rsa
 
 # Initial deploy
 local$ cap production deploy
-local$ cap production invoke:rake TASK=sunspot:solr:start
-local$ cap production invoke:rake TASK=sunspot:solr:reindex
+local$ cap production solr:start
+local$ cap production solr:reindex
 
 # Symlink nginx
 deploy$ sudo rm /etc/nginx/sites-enabled/default

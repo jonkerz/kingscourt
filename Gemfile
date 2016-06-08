@@ -34,8 +34,8 @@ gem "devise_token_auth",
   branch: "master"
   # https://github.com/lynndylanhurley/devise_token_auth/issues/500
 gem "slugify"
-gem "sunspot_rails", "2.2.0"
-gem "sunspot_solr", "2.2.0"
+gem "sunspot_rails"
+gem "sunspot_solr"
 
 # Admin backend
 gem "activeadmin", github: "activeadmin"

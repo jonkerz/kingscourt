@@ -18,15 +18,6 @@ GIT
       sprockets (< 4)
 
 GIT
-  remote: git://github.com/amatsuda/kaminari.git
-  revision: ac3ff9594a378b6d811e726f952603d800925289
-  branch: 0-17-stable
-  specs:
-    kaminari (0.17.0.alpha)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
-
-GIT
   remote: git://github.com/lynndylanhurley/devise_token_auth.git
   revision: 10863b31270b31cec72a07e1a195aa21686ede2b
   branch: master
@@ -34,15 +25,6 @@ GIT
     devise_token_auth (0.1.37)
       devise (> 3.5.2, < 4.1)
       rails (< 6)
-
-GIT
-  remote: git://github.com/rails-api/active_model_serializers.git
-  revision: 2b4989935130732d59d7cc1b6228d4a447dd5071
-  specs:
-    active_model_serializers (0.10.0.rc5)
-      actionpack (>= 4.0)
-      activemodel (>= 4.0)
-      railties (>= 4.0)
 
 GEM
   remote: https://rubygems.org/
@@ -70,6 +52,10 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_model_serializers (0.10.0)
+      actionpack (>= 4.0)
+      activemodel (>= 4.0)
+      railties (>= 4.0)
     activejob (5.0.0.rc1)
       activesupport (= 5.0.0.rc1)
       globalid (>= 0.3.6)
@@ -95,7 +81,7 @@ GEM
       activesupport (>= 3.0.0)
     arel (7.0.0)
     ast (2.2.0)
-    autoprefixer-rails (6.3.6.1)
+    autoprefixer-rails (6.3.6.2)
       execjs
     bcrypt (3.1.11)
     bourbon (4.2.7)
@@ -139,7 +125,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    capybara-screenshot (1.0.12)
+    capybara-screenshot (1.0.13)
       capybara (>= 1.0, < 3)
       launchy
     capybara-webkit (1.11.1)
@@ -175,7 +161,6 @@ GEM
       railties (>= 3, < 5)
     cucumber-wire (0.0.1)
     database_cleaner (1.5.3)
-    debug_inspector (0.0.2)
     devise (4.0.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -188,7 +173,7 @@ GEM
       dotenv (= 2.1.1)
       railties (>= 4.0, < 5.1)
     erubis (2.7.0)
-    execjs (2.6.0)
+    execjs (2.7.0)
     factory_girl (4.7.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.7.0)
@@ -211,7 +196,7 @@ GEM
       has_scope (~> 0.6.0.rc)
       railties (>= 3.2, < 5)
       responders
-    jbuilder (2.4.1)
+    jbuilder (2.5.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
     jquery-rails (4.1.1)
@@ -221,12 +206,16 @@ GEM
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
     json (1.8.3)
+    kaminari (0.17.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
     libv8 (3.16.14.15)
-    listen (3.0.7)
-      rb-fsevent (>= 0.9.3)
-      rb-inotify (>= 0.9.7)
+    listen (3.1.5)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
+      ruby_dep (~> 1.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -235,9 +224,9 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
-    mini_portile2 (2.0.0)
+    mini_portile2 (2.1.0)
     minitest (5.9.0)
-    multi_json (1.12.0)
+    multi_json (1.12.1)
     multi_test (0.1.2)
     mysql2 (0.4.4)
     net-scp (1.2.1)
@@ -247,15 +236,17 @@ GEM
       execjs
       rails (>= 3.1)
     nio4r (1.2.1)
-    nokogiri (1.6.7.2)
-      mini_portile2 (~> 2.0.0.rc2)
+    nokogiri (1.6.8)
+      mini_portile2 (~> 2.1.0)
+      pkg-config (~> 1.1.7)
     orm_adapter (0.5.0)
-    paper_trail (5.0.1)
+    paper_trail (5.1.1)
       activerecord (>= 3.0, < 6.0)
       activesupport (>= 3.0, < 6.0)
       request_store (~> 1.1)
     parser (2.3.1.0)
       ast (~> 2.2)
+    pkg-config (1.1.7)
     polyamorous (1.3.0)
       activerecord (>= 3.0)
     powerpack (0.1.1)
@@ -314,22 +305,23 @@ GEM
       railties (>= 4.2.0, < 5.1)
     rsolr (1.0.13)
       builder (>= 2.1.2)
-    rspec-core (3.1.7)
-      rspec-support (~> 3.1.0)
-    rspec-expectations (3.1.2)
+    rspec-core (3.5.0.beta4)
+      rspec-support (= 3.5.0.beta4)
+    rspec-expectations (3.5.0.beta4)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.1.0)
-    rspec-mocks (3.1.3)
-      rspec-support (~> 3.1.0)
-    rspec-rails (3.1.0)
+      rspec-support (= 3.5.0.beta4)
+    rspec-mocks (3.5.0.beta4)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (= 3.5.0.beta4)
+    rspec-rails (3.5.0.beta4)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
-      rspec-core (~> 3.1.0)
-      rspec-expectations (~> 3.1.0)
-      rspec-mocks (~> 3.1.0)
-      rspec-support (~> 3.1.0)
-    rspec-support (3.1.2)
+      rspec-core (= 3.5.0.beta4)
+      rspec-expectations (= 3.5.0.beta4)
+      rspec-mocks (= 3.5.0.beta4)
+      rspec-support (= 3.5.0.beta4)
+    rspec-support (3.5.0.beta4)
     rubocop (0.40.0)
       parser (>= 2.3.1.0, < 3.0)
       powerpack (~> 0.1)
@@ -337,6 +329,7 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.8.1)
+    ruby_dep (1.3.1)
     rubyzip (1.2.0)
     sass (3.4.22)
     sass-rails (5.0.4)
@@ -351,14 +344,12 @@ GEM
       websocket (~> 1.0)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
-    slim (3.0.6)
-      temple (~> 0.7.3)
+    slim (3.0.7)
+      temple (~> 0.7.6)
       tilt (>= 1.3.3, < 2.1)
-    slim-rails (3.0.1)
-      actionmailer (>= 3.1, < 5.0)
-      actionpack (>= 3.1, < 5.0)
-      activesupport (>= 3.1, < 5.0)
-      railties (>= 3.1, < 5.0)
+    slim-rails (3.1.0)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
       slim (~> 3.0)
     slop (3.6.0)
     slugify (1.0.7)
@@ -386,13 +377,13 @@ GEM
       railties (>= 3.2.5, < 6)
     teaspoon-jasmine (2.3.4)
       teaspoon (>= 1.0.0)
-    temple (0.7.6)
+    temple (0.7.7)
     therubyracer (0.12.2)
       libv8 (~> 3.16.14.0)
       ref
     thor (0.19.1)
     thread_safe (0.3.5)
-    tilt (2.0.2)
+    tilt (2.0.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.0)
@@ -400,10 +391,6 @@ GEM
     unicode-display_width (1.0.5)
     warden (1.2.6)
       rack (>= 1.0)
-    web-console (3.1.1)
-      activemodel (>= 4.2)
-      debug_inspector
-      railties (>= 4.2)
     websocket (1.2.3)
     websocket-driver (0.6.4)
       websocket-extensions (>= 0.1.0)
@@ -415,11 +402,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_model_serializers!
+  active_model_serializers
   activeadmin!
   angular-rails-templates
   autoprefixer-rails
-  bower-rails (~> 0.10.0)
+  bower-rails
   capistrano
   capistrano-bundler
   capistrano-db-tasks
@@ -432,7 +419,7 @@ DEPENDENCIES
   capistrano3-puma
   capybara-screenshot
   capybara-webkit
-  coffee-rails (~> 4.1.0)
+  coffee-rails
   colorize
   cucumber-rails
   database_cleaner
@@ -441,34 +428,33 @@ DEPENDENCIES
   execjs
   factory_girl_rails
   headless
-  jbuilder (~> 2.0)
+  jbuilder
   jquery-rails
-  kaminari!
-  listen (~> 3.0.5)
+  kaminari
+  listen
   mysql2
   ngannotate-rails
   paper_trail
   pry
-  puma (~> 3.0)
+  puma
   quiet_assets
-  rails (>= 5.0.0.beta4, < 5.1)
-  rspec-rails
+  rails (>= 5.0.0.rc1, < 5.1)
+  rspec-rails (= 3.5.0.beta4)
   rubocop (~> 0.40.0)
-  sass-rails (~> 5.0)
+  sass-rails
   selenium-webdriver
   shoulda-matchers
   slim-rails
   slugify
-  sunspot_rails
-  sunspot_solr
+  sunspot_rails (= 2.2.0)
+  sunspot_solr (= 2.2.0)
   sunspot_test
   teaspoon-jasmine
   therubyracer
-  uglifier (>= 1.3.0)
-  web-console
+  uglifier
 
 RUBY VERSION
    ruby 2.2.2p95
 
 BUNDLED WITH
-   1.12.2
+   1.12.5

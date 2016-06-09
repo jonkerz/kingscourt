@@ -1,18 +1,18 @@
 source "https://rubygems.org"
-ruby "2.2.2"
+ruby "2.3.1"
 
-gem "rails", ">= 5.0.0.beta4", "< 5.1"
+gem "rails", ">= 5.0.0.rc1", "< 5.1"
 
-gem "coffee-rails", "~> 4.1.0"
+gem "coffee-rails"
 gem "execjs"
-gem "jbuilder", "~> 2.0"
+gem "jbuilder"
 gem "jquery-rails"
 gem "mysql2"
-gem "puma", "~> 3.0"
-gem "sass-rails", "~> 5.0"
+gem "puma"
+gem "sass-rails"
 gem "slim-rails"
 gem "therubyracer"
-gem "uglifier", ">= 1.3.0"
+gem "uglifier"
 
 # Misc.
 gem "colorize"
@@ -22,27 +22,22 @@ gem "paper_trail"
 # Angular
 gem "angular-rails-templates"
 gem "autoprefixer-rails"
-gem "bower-rails", "~> 0.10.0"
+gem "bower-rails"
 gem "ngannotate-rails"
 
 # API
-gem "active_model_serializers",
-  github: "rails-api/active_model_serializers"
-  # http://stackoverflow.com/questions/34507596/undefined-method-config-for-activemodelserializer
+gem "active_model_serializers"
 gem "devise_token_auth",
   github: "lynndylanhurley/devise_token_auth",
   branch: "master"
   # https://github.com/lynndylanhurley/devise_token_auth/issues/500
 gem "slugify"
-gem "sunspot_rails"
-gem "sunspot_solr"
+gem "sunspot_rails", "2.2.0"
+gem "sunspot_solr", "2.2.0"
 
 # Admin backend
 gem "activeadmin", github: "activeadmin"
-gem "kaminari",
-  github: "amatsuda/kaminari",
-  branch: "0-17-stable"
-  # https://github.com/sferik/rails_admin/issues/2628
+gem "kaminari"
 
 group :development do
   gem "capistrano", require: false
@@ -55,10 +50,9 @@ group :development do
   gem "capistrano-rails-console", require: false
   gem "capistrano-pending", require: false
   gem "capistrano-db-tasks", require: false
-  gem "listen", "~> 3.0.5"
+  gem "listen"
   gem "quiet_assets"
   gem "rubocop", "~> 0.40.0", require: false
-  gem "web-console"
 end
 
 group :test do
@@ -74,7 +68,7 @@ group :test do
 end
 
 group :development, :test do
-  gem "rspec-rails"
+  gem "rspec-rails", "3.5.0.beta4"
   gem "pry"
   gem "teaspoon-jasmine"
 end

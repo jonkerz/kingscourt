@@ -16,6 +16,9 @@
 ### King's Court
 Generate, build, and browse kingdoms of the card game [Dominion](https://en.wikipedia.org/wiki/Dominion_(card_game)). Live at [kingscourt.io](http://kingscourt.io/).
 
+### Stack
+**Front-end**: AngularJS 1.5 (in CoffeeScript), Bootstrap 3 (Sass), Bower-Rails, some jQuery-UI, Lodash. **Backend**: Rails 5, ActiveModelSerializers (API), Sunspot/Solr (API), DeviseTokenAuth (API), ActiveAdmin (manage database), Capistrano 3 (deployment). **Backup**: Backup (gem) + Whenever (for uploading db dumps to Dropbox), PaperTrail. **Server** (on DigitalOcean): nginx, Puma, MySQL. **Testing**: Cucumber (with Capybara Webkit), RSpec, Teaspoon + Jasmine (JavaScript unit-ish tests), Travis CI (for continuous integration), RuboCop (style/linting).
+
 ### Installation
 See [INSTALL.md](INSTALL.md).
 

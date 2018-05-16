@@ -6,6 +6,8 @@ angular.module "KingsCourt"
   $scope.range = (n) -> new Array n
 
   resetGeneratorKingdom = ->
+    generatorKingdom = Kingdom.getOrCreate "generator"
+
     generatorKingdom.cards = []
     generatorKingdom.name = ""
     generatorKingdom.description = ""

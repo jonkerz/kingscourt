@@ -18,6 +18,7 @@ DatabaseCleaner.strategy = :transaction
 Cucumber::Rails::Database.javascript_strategy = :truncation
 Capybara.default_driver = :webkit
 
+# TODO: Revisit everything related to Selenium.
 Capybara.javascript_driver = :webkit
 if ENV["DRIVER"] == "selenium" || ENV["SEL"] || ENV["SSS"] || ENV["SSP"]
   # "Single Step Selenium"

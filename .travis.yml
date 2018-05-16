@@ -21,5 +21,5 @@ script:
   - RAILS_ENV=test bundle exec rake db:create
   - bundle exec rake bower:install
   - bundle exec rspec
-  - bundle exec cucumber DRIVER=selenium
-  - RAILS_ENV=test DRIVER=selenium bundle exec teaspoon
+  - bundle exec cucumber
+  - RAILS_ENV=test bundle exec teaspoon

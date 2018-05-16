@@ -8,6 +8,11 @@ Given /^I (?:am on|go to) "([^"]*)"$/ do |url|
   visit url
 end
 
+Then(/^(?:|I )should be on "([^"]*)"$/) do |path|
+  current_path = URI.parse(current_url).fragment
+  expect(current_path).to eq path
+end
+
 Then /^I should see "([^"]*)"$/ do |text|
   expect(page).to have_content(text)
 end

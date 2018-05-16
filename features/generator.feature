@@ -4,13 +4,16 @@ Feature: Kingdom generator
     Given there are some Dominion cards
     And I am on the home page
 
-  Scenario: Generating a kingdom
+  Scenario: Generating a kingdom and opening it in the builder
     Then I should see 10 face down cards
     And I should see 0 face up cards
 
     When I press "Generate!"
     Then I should see 10 face up cards
     And I should see 0 face down cards
+
+    When I press "Open in Builder"
+    Then I should be on "!/builder"
 
   Scenario: Saving a generated kingdom
     Given I am logged in

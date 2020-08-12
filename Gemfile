@@ -5,32 +5,33 @@ gem "rails", "5.0.0.rc1"
 
 gem "coffee-rails", "4.1.1"
 gem "execjs"
-gem "jbuilder"
+gem "jbuilder", "2.5.0"
 gem "jquery-rails"
 gem "jquery-ui-rails", "5.0.5"
-gem "mysql2"
+gem "mysql2", "0.4.4"
 gem "puma"
 gem "sass-rails"
-gem "slim-rails"
-gem "therubyracer"
-gem "uglifier"
+gem "slim-rails", "3.1.0"
+gem "therubyracer", "0.12.2"
+gem "uglifier", "3.0.0"
 
 # Misc.
 gem "colorize"
-gem "dotenv-rails"
-gem "paper_trail"
+gem "dotenv-rails", "2.1.1"
+gem "paper_trail", "5.1.1"
 
 # Angular
 gem "angular-rails-templates"
-gem "autoprefixer-rails"
-gem "bower-rails"
+gem "autoprefixer-rails", "6.3.6.2"
+gem "bower-rails", "0.10.0"
 gem "ngannotate-rails"
 
 # API
-gem "active_model_serializers"
+gem "active_model_serializers", "0.10.0"
+gem "devise", "4.0.2"
 gem "devise_token_auth",
   github: "lynndylanhurley/devise_token_auth",
-  branch: "master"
+  ref: "10863b31270b31cec72a07e1a195aa21686ede2b"
   # https://github.com/lynndylanhurley/devise_token_auth/issues/500
 gem "slugify"
 gem "sunspot_rails", "2.2.0"
@@ -41,17 +42,17 @@ gem "activeadmin", "1.4.3"
 gem "kaminari"
 
 group :development do
-  gem "capistrano", require: false
-  gem "capistrano-rvm", require: false
-  gem "capistrano-rails", require: false
-  gem "capistrano-rake", require: false
-  gem "capistrano-bundler", require: false
-  gem "capistrano3-puma", require: false
-  gem "capistrano-faster-assets", require: false
-  gem "capistrano-rails-console", require: false
-  gem "capistrano-pending", require: false
-  gem "capistrano-db-tasks", require: false
-  gem "listen"
+  gem "capistrano", "3.5.0", require: false
+  gem "capistrano-rvm", "0.1.2", require: false
+  gem "capistrano-rails", "1.1.6", require: false
+  gem "capistrano-rake", "0.1.0", require: false
+  gem "capistrano-bundler", "1.1.4", require: false
+  gem "capistrano3-puma", "1.2.1", require: false
+  gem "capistrano-faster-assets", "1.0.2", require: false
+  gem "capistrano-rails-console", "1.0.2", require: false
+  gem "capistrano-pending", "0.1.1", require: false
+  gem "capistrano-db-tasks", "0.4", require: false
+  gem "listen", "3.1.5"
   gem "quiet_assets"
   gem "rubocop", "~> 0.40.0", require: false
 end
@@ -66,7 +67,7 @@ group :test do
   gem "headless"
   gem "selenium-webdriver"
   gem "shoulda-matchers"
-  gem "sunspot_test"
+  gem "sunspot_test", "0.4.0"
 end
 
 group :development, :test do

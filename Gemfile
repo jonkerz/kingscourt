@@ -57,6 +57,7 @@ group :development do
 end
 
 group :test do
+  gem "capybara", "2.18.0"
   gem "capybara-screenshot"
   gem "capybara-webkit"
   gem "cucumber-rails", "< 2.1.0", require: false # TODO: Locked due to Cucumber 4.

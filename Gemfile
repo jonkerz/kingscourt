@@ -59,7 +59,7 @@ end
 group :test do
   gem "capybara-screenshot"
   gem "capybara-webkit"
-  gem "cucumber-rails", require: false
+  gem "cucumber-rails", "< 2.1.0", require: false # TODO: Locked due to Cucumber 4.
   gem "database_cleaner"
   gem "factory_girl_rails"
   gem "headless"

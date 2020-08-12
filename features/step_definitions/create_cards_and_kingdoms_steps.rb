@@ -25,7 +25,7 @@ Given /^there are (\d+) kingdoms?$/ do |number|
   standard = Expansion.find_by!(name: "Dominion")
   cards = standard.cards.take(10)
 
-  number.times do |n|
+  number.to_i.times do |n|
     build(:kingdom, name: "Kingdom #{n}", cards: cards).save!
   end
 end

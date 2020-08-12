@@ -26,11 +26,6 @@ After "@slow_motion" do
   @slow_motion = false
 end
 
-Transform /.*/ do |match|
-  sleep 1.5 if @slow_motion
-  match
-end
-
 AfterStep "@single_step" do
   single_step
 end

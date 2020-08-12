@@ -1,12 +1,13 @@
 source "https://rubygems.org"
 ruby "2.3.1"
 
-gem "rails", ">= 5.0.0.rc1", "< 5.1"
+gem "rails", "5.0.0.rc1"
 
-gem "coffee-rails"
+gem "coffee-rails", "4.1.1"
 gem "execjs"
 gem "jbuilder"
 gem "jquery-rails"
+gem "jquery-ui-rails", "5.0.5"
 gem "mysql2"
 gem "puma"
 gem "sass-rails"
@@ -36,7 +37,7 @@ gem "sunspot_rails", "2.2.0"
 gem "sunspot_solr", "2.2.0"
 
 # Admin backend
-gem "activeadmin", github: "activeadmin"
+gem "activeadmin", "1.4.3"
 gem "kaminari"
 
 group :development do
@@ -68,7 +69,7 @@ group :test do
 end
 
 group :development, :test do
-  gem "rspec-rails", "3.5.0.beta4"
+  gem "rspec-rails"
   gem "pry"
   gem "teaspoon-jasmine"
 end

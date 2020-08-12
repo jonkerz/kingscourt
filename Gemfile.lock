@@ -255,7 +255,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    puma (3.4.0)
+    puma (3.12.6)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (2.0.0.rc1)
@@ -454,7 +454,7 @@ DEPENDENCIES
   uglifier
 
 RUBY VERSION
-   ruby 2.2.2p95
+   ruby 2.3.1p112
 
 BUNDLED WITH
-   1.12.5
+   1.16.2

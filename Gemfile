@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 ruby "2.3.1"
 
-gem "rails", "5.0.0.rc1"
+gem "rails", "5.0.7.2"
 
 gem "coffee-rails", "4.1.1"
 gem "execjs"
@@ -53,7 +53,6 @@ group :development do
   gem "capistrano-pending", "0.1.1", require: false
   gem "capistrano-db-tasks", "0.4", require: false
   gem "listen", "3.1.5"
-  gem "quiet_assets"
   gem "rubocop", "~> 0.40.0", require: false
 end
 

@@ -38,7 +38,7 @@ gem "sunspot_solr", "2.2.0"
 
 # Admin backend
 gem "activeadmin", "1.4.3"
-gem "kaminari", "0.17.0"
+gem "kaminari"
 
 group :development do
   gem "capistrano", require: false

@@ -1,5 +1,5 @@
 Then /^I should see (\d+) kingdoms?$/ do |number|
-  expect(page).to have_selector(".kingdom-list > li", count: number)
+  expect(page).to have_selector(".kingdom-list > li", count: number.to_i)
 end
 
 When /^I press Filter$/ do

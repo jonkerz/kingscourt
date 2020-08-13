@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 ruby "2.3.1"
 
-gem "rails", "5.0.7.2"
+gem "rails", "5.1.7"
 
 gem "coffee-rails"
 gem "execjs"
@@ -11,7 +11,6 @@ gem "mysql2"
 gem "puma"
 gem "sass-rails"
 gem "slim-rails"
-gem "therubyracer"
 gem "uglifier"
 
 # Misc.

@@ -7,16 +7,11 @@ module Api::V1
     def index
       kingdoms = FilterKingdoms.new(params, current_user: current_user).call
 
-      expansion_facets = {}
-      kingdoms.facet(:expansion_ids).rows.each do |row|
-        expansion_facets[row.value] = row.count
-      end
-
       render json: kingdoms.results,
         root: "kingdoms",
         meta: {
           count: kingdoms.total,
-          expansion_facets: expansion_facets
+          expansion_facets: expansion_facets(kingdoms)
         }
     end
 
@@ -70,6 +65,14 @@ module Api::V1
 
       def kingdom_params
         params.permit :name, :card_ids, :description, :name
+      end
+
+      def expansion_facets kingdoms
+        facets = {}
+        kingdoms.facet(:expansion_ids).rows.each do |row|
+          facets[row.value] = row.count
+        end
+        facets
       end
   end
 end

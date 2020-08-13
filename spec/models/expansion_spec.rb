@@ -2,8 +2,8 @@ require "rails_helper"
 
 describe Expansion do
   describe "validations" do
-    it { should validate_presence_of(:name) }
-    it { should validate_uniqueness_of(:name) }
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_uniqueness_of(:name) }
   end
 
   describe "card attributes" do
@@ -31,6 +31,7 @@ describe Expansion do
 
     describe ".all_card_attributes" do
       let!(:dark_ages) { create :expansion, name: "Dark Ages", id: 8 }
+
       before do
         create :card,
           name: "Urchin",

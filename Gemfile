@@ -27,7 +27,7 @@ gem "ngannotate-rails"
 
 # API
 gem "active_model_serializers"
-gem "devise", "4.0.2"
+gem "devise"
 gem "devise_token_auth"
 gem "slugify"
 gem "sunspot_rails", "2.2.0"

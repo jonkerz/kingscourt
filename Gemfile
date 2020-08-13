@@ -12,7 +12,7 @@ gem "puma"
 gem "sass-rails"
 gem "slim-rails"
 gem "therubyracer", "0.12.2"
-gem "uglifier", "3.0.0"
+gem "uglifier"
 
 # Misc.
 gem "colorize"

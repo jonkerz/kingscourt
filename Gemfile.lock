@@ -394,7 +394,7 @@ GEM
     tilt (2.0.10)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
-    uglifier (3.0.0)
+    uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.7.0)
     warden (1.2.8)
@@ -459,7 +459,7 @@ DEPENDENCIES
   sunspot_test (= 0.4.0)
   teaspoon-jasmine
   therubyracer (= 0.12.2)
-  uglifier (= 3.0.0)
+  uglifier
 
 RUBY VERSION
    ruby 2.3.1p112

@@ -13,6 +13,7 @@ module Api::V1
       end
 
       render json: kingdoms.results,
+        root: "kingdoms",
         meta: {
           count: kingdoms.total,
           expansion_facets: expansion_facets

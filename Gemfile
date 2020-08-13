@@ -26,7 +26,7 @@ gem "bower-rails", "0.10.0"
 gem "ngannotate-rails"
 
 # API
-gem "active_model_serializers", "0.10.0"
+gem "active_model_serializers"
 gem "devise", "4.0.2"
 gem "devise_token_auth",
   github: "lynndylanhurley/devise_token_auth",

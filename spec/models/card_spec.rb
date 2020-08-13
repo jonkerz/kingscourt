@@ -8,28 +8,29 @@ describe Card do
 
     describe ".randomizable" do
       it "return randomizable cards only" do
-        expect(Card.randomizable).to eq [action, attack]
+        expect(described_class.randomizable).to eq [action, attack]
       end
     end
+
     describe ".non_randomizable" do
       it "return non-randomizable cards only" do
-        expect(Card.non_randomizable).to eq [victory]
+        expect(described_class.non_randomizable).to eq [victory]
       end
     end
   end
 
   describe "validations" do
-    it { should validate_presence_of(:name) }
-    it { should validate_uniqueness_of(:name) }
-    it { should validate_presence_of(:expansion_id) }
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_uniqueness_of(:name) }
+    it { is_expected.to validate_presence_of(:expansion_id) }
 
     describe "card_attributes" do
       let(:card) { create :card }
       let(:is_duplicate) { create :card_attribute, name: "isDuplicate" }
 
-      it "should not allow duplicates" do
-        expect { card.card_attributes << is_duplicate << is_duplicate }
-          .to raise_error ActiveRecord::RecordNotUnique
+      it "cannot have duplicated card attributes" do
+        expect { card.card_attributes << is_duplicate << is_duplicate }.
+          to raise_error ActiveRecord::RecordNotUnique
       end
     end
   end

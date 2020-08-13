@@ -2,11 +2,11 @@ require "rails_helper"
 
 describe Kingdom do
   describe "validations" do
-    it { should validate_presence_of(:name) }
-    it { should validate_length_of(:name).is_at_least(5).is_at_most(50) }
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_length_of(:name).is_at_least(5).is_at_most(50) }
 
-    describe "cards" do
-      it "should not allow duplicates" do
+    describe "card validations" do
+      it "cannot have duplicated cards" do
         kingdom = build :kingdom
         8.times { kingdom.cards << create(:card) }
 
@@ -17,7 +17,7 @@ describe Kingdom do
       end
 
       it "must be 10 cards" do
-        kingdom = Kingdom.new
+        kingdom = described_class.new
         kingdom.save
         expect(kingdom.errors[:cards]).to eq ["must contain 10 cards"]
       end
@@ -43,8 +43,8 @@ describe Kingdom do
       let!(:kingdom) { create_kindom_with_cards }
 
       it "deletes all kingdom cards (join table)" do
-        expect { kingdom.destroy }
-          .to change { KingdomCard.count }.from(10).to(0)
+        expect { kingdom.destroy }.
+          to change { KingdomCard.count }.from(10).to(0)
       end
 
       it "doesn't delete the cards" do

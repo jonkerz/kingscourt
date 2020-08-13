@@ -2,8 +2,8 @@ require "rails_helper"
 
 describe CardType do
   describe "validations" do
-    it { should validate_presence_of(:name) }
-    it { should validate_uniqueness_of(:name) }
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_uniqueness_of(:name) }
   end
 
   describe "database cleanups" do
@@ -16,7 +16,7 @@ describe CardType do
       end
 
       it "doesn't delete the card type" do
-        expect { action.destroy rescue nil }.not_to change { CardType.count }
+        expect { action.destroy rescue nil }.not_to change { described_class.count }
       end
     end
   end

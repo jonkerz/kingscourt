@@ -1,5 +1,5 @@
 namespace :solr do
-  %w(start stop).each do |command|
+  %w[start stop].each do |command|
     desc "#{command} solr"
     task command do
       on roles(:app) do

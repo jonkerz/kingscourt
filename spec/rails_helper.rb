@@ -5,7 +5,7 @@ require "rspec/rails"
 require "paper_trail/frameworks/rspec"
 require "sunspot_test/rspec"
 
-Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
+Dir[Rails.root.join("spec/support/**/*.rb")].sort.each { |f| require f }
 
 ActiveRecord::Migration.maintain_test_schema!
 

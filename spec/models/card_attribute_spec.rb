@@ -2,8 +2,8 @@ require "rails_helper"
 
 describe CardAttribute do
   describe "validations" do
-    it { should validate_presence_of(:name) }
-    it { should validate_uniqueness_of(:name) }
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_uniqueness_of(:name) }
   end
 
   describe "database cleanups" do
@@ -17,8 +17,8 @@ describe CardAttribute do
       end
 
       it "removed itself from cards" do
-        expect { is_action.destroy }
-          .to change { card.card_attributes.count }.from(2).to(1)
+        expect { is_action.destroy }.
+          to change { card.card_attributes.count }.from(2).to(1)
       end
     end
   end

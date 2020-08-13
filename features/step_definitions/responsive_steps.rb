@@ -24,19 +24,19 @@ def resize_window_to_device device
   if Capybara.current_driver == :webkit
     return resize_window size.first + 100, size.second
   end
-  resize_window *size
+  resize_window(*size)
 end
 
 # From http://railsware.com/blog/2015/02/11/responsive-layout-tests-with-capybara-and-rspec/
 def resize_window width, height
   case Capybara.current_driver
   when :selenium
-    Capybara.current_session.driver.browser.manage.window
-      .resize_to(width, height)
+    Capybara.current_session.driver.browser.manage.window.
+      resize_to(width, height)
   when :webkit
     handle = Capybara.current_session.driver.current_window_handle
-    Capybara.current_session.driver
-      .resize_window_to(handle, width, height)
+    Capybara.current_session.driver.
+      resize_window_to(handle, width, height)
   else
     raise NotImplementedError,
       "resize_window is not supported for #{Capybara.current_driver} driver"

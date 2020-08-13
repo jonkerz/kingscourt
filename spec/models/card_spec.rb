@@ -28,8 +28,8 @@ describe Card do
       let(:is_duplicate) { create :card_attribute, name: "isDuplicate" }
 
       it "should not allow duplicates" do
-        expect { card.card_attributes << is_duplicate << is_duplicate }
-          .to raise_error ActiveRecord::RecordNotUnique
+        expect { card.card_attributes << is_duplicate << is_duplicate }.
+          to raise_error ActiveRecord::RecordNotUnique
       end
     end
   end

@@ -17,8 +17,8 @@ describe CardAttribute do
       end
 
       it "removed itself from cards" do
-        expect { is_action.destroy }
-          .to change { card.card_attributes.count }.from(2).to(1)
+        expect { is_action.destroy }.
+          to change { card.card_attributes.count }.from(2).to(1)
       end
     end
   end

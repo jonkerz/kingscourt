@@ -43,8 +43,8 @@ describe Kingdom do
       let!(:kingdom) { create_kindom_with_cards }
 
       it "deletes all kingdom cards (join table)" do
-        expect { kingdom.destroy }
-          .to change { KingdomCard.count }.from(10).to(0)
+        expect { kingdom.destroy }.
+          to change { KingdomCard.count }.from(10).to(0)
       end
 
       it "doesn't delete the cards" do

@@ -35,9 +35,8 @@ Layout/BlockAlignment:
 Layout/ClassStructure:
   Enabled: true
 
-# TODO: Change to trailing.
 Layout/DotPosition:
-  EnforcedStyle: leading
+  EnforcedStyle: trailing
 
 Layout/EmptyLineAfterGuardClause:
   Enabled: false

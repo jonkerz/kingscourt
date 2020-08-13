@@ -1,6 +1,6 @@
 AllCops:
-  # TODO: Update to 2.3.
-  TargetRubyVersion: 2.2
+  # TODO: Change to 2.4 after upgrading rubocop.
+  TargetRubyVersion: 2.3
   Exclude:
     - 'db/**/*'
     - 'config/deploy.rb'
@@ -54,6 +54,9 @@ Style/DoubleNegation:
   Enabled: false
 
 Style/EmptyLinesAroundAccessModifier:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
   Enabled: false
 
 Style/GuardClause:

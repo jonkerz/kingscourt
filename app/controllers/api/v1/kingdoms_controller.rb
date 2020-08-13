@@ -5,19 +5,8 @@ module Api::V1
     before_action :authenticate_user!, except: [:index, :show]
 
     def index
-      kingdoms = filter_kingdoms params
-
-      expansion_facets = {}
-      kingdoms.facet(:expansion_ids).rows.each do |row|
-        expansion_facets[row.value] = row.count
-      end
-
-      render json: kingdoms.results,
-        root: "kingdoms",
-        meta: {
-          count: kingdoms.total,
-          expansion_facets: expansion_facets
-        }
+      kingdoms = FilterKingdoms.new(params, current_user: current_user).call
+      render json: serialized_filtered_kingdoms(kingdoms)
     end
 
     def show
@@ -25,7 +14,7 @@ module Api::V1
     end
 
     def create
-      kingdom = Kingdom.new kingdom_params
+      kingdom = Kingdom.new(kingdom_params)
       kingdom.user = current_user
       kingdom.card_ids = params[:card_ids]
 
@@ -39,7 +28,8 @@ module Api::V1
 
     def update
       @kingdom.card_ids = params[:card_ids]
-      if @kingdom.update kingdom_params
+
+      if @kingdom.update(kingdom_params)
         render json: @kingdom, status: :ok
       else
         json = { errors: @kingdom.errors.full_messages.join(", ") }
@@ -57,8 +47,9 @@ module Api::V1
     end
 
     private
+
       def set_kingdom
-        @kingdom = Kingdom.find params[:id]
+        @kingdom = Kingdom.find(params[:id])
       end
 
       def check_can_be_edited_by
@@ -68,45 +59,12 @@ module Api::V1
         end
       end
 
-      def filter_kingdoms params
-        Sunspot.search(Kingdom) do
-          # Filter by kingdom creator, favorites
-          if params[:my_kingdoms]
-            with :user_id, current_user.id
-          elsif params[:username]
-            user = User.find_by(username: params[:username])
-            with :user_id, user.id
-          elsif params[:favoriter]
-            user = User.find_by(username: params[:favoriter])
-            with :favorited_by_user_ids, user.id
-          elsif params[:my_favorites]
-            with :favorited_by_user_ids, current_user.id
-          end
-
-          # Filter by expansions
-          if params[:expansions].present?
-            expansions = params[:expansions].split(",").map(&:to_i)
-            if params[:match_all_expansions] == "true"
-              with :expansion_ids_string, expansions.sort.to_s
-            else
-              without_expansion = (Set.new(1..11) ^ expansions).to_a
-              without :expansion_ids, without_expansion
-            end
-          end
-
-          order_by :created_at, :desc
-
-          # Facets
-          facet :expansion_ids
-          facet :expansion_ids_string
-
-          # Paginate
-          paginate page: (params[:page] || 1), per_page: 5
-        end
+      def kingdom_params
+        params.permit(:name, :card_ids, :description, :name)
       end
 
-      def kingdom_params
-        params.permit :name, :card_ids, :description, :name
+      def serialized_filtered_kingdoms kingdoms
+        FilteredKingdomsSerializer.new(kingdoms, view_context).as_json
       end
   end
 end

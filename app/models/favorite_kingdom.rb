@@ -8,8 +8,9 @@ class FavoriteKingdom < ApplicationRecord
   after_save :reindex_kingdom
   after_destroy :reindex_kingdom
 
-  # TODO: delayed_job
   private
+
+    # TODO: delayed_job.
     def reindex_kingdom
       Sunspot.index kingdom
     end

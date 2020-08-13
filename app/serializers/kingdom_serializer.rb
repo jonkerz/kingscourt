@@ -4,7 +4,7 @@ class KingdomSerializer < ActiveModel::Serializer
     :favorite_count, :favorite
 
   def cards
-    object.cards.pluck :id
+    object.cards.pluck(:id)
   end
 
   def username

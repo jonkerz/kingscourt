@@ -10,10 +10,10 @@ namespace :kings do
     desc "Reddit 'Kingdom of the Week' kingdoms"
     task reddit_kotw: :environment do
       include Import::RedditKotW
-      user = User.find_by username: "Reddit-KotW-Mirror"
+      user = User.find_by(username: "Reddit-KotW-Mirror")
 
       chunks(html_contents) do |name, cards, description, created_at|
-        kingdom = Kingdom.new name: name
+        kingdom = Kingdom.new(name: name)
         kingdom.user = user
         kingdom.cards = cards
         kingdom.description = description

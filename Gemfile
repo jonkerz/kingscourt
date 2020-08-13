@@ -17,7 +17,7 @@ gem "uglifier"
 # Misc.
 gem "colorize"
 gem "dotenv-rails"
-gem "paper_trail", "5.1.1"
+gem "paper_trail", "10.3.1"
 
 # Angular
 gem "angular-rails-templates"

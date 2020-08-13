@@ -9,7 +9,7 @@ When /^I favorite "([^"]*)"$/ do |kingdom_name|
 end
 
 Given /^Batiatus has favorited his own kingdom$/ do
-  user = User.find_by username: "Batiatus"
+  user = User.find_by(username: "Batiatus")
   create :favorite_kingdom, user: user,
     kingdom: user.kingdoms.first
 end

@@ -14,7 +14,7 @@ module Api::V1
     end
 
     def create
-      kingdom = Kingdom.new kingdom_params
+      kingdom = Kingdom.new(kingdom_params)
       kingdom.user = current_user
       kingdom.card_ids = params[:card_ids]
 
@@ -28,7 +28,8 @@ module Api::V1
 
     def update
       @kingdom.card_ids = params[:card_ids]
-      if @kingdom.update kingdom_params
+
+      if @kingdom.update(kingdom_params)
         render json: @kingdom, status: :ok
       else
         json = { errors: @kingdom.errors.full_messages.join(", ") }
@@ -46,8 +47,9 @@ module Api::V1
     end
 
     private
+
       def set_kingdom
-        @kingdom = Kingdom.find params[:id]
+        @kingdom = Kingdom.find(params[:id])
       end
 
       def check_can_be_edited_by
@@ -58,7 +60,7 @@ module Api::V1
       end
 
       def kingdom_params
-        params.permit :name, :card_ids, :description, :name
+        params.permit(:name, :card_ids, :description, :name)
       end
 
       def serialized_filtered_kingdoms kingdoms

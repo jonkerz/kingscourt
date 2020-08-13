@@ -7,7 +7,7 @@ namespace :kings do
     desc "recommended kingdoms from the official manuals"
     task recommended_kingdoms: :environment do
       include Import::RecommendedKingdoms
-      user = User.find_by username: "RecommendedKingdoms"
+      user = User.find_by(username: "RecommendedKingdoms")
 
       recommended_kingdoms_csv do |name, cards_string, from_manual, extra_data|
         kingdom = Kingdom.new name: name

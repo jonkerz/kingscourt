@@ -6,7 +6,7 @@ FactoryBot.define do
       card_attributes { nil }
     end
 
-    initialize_with { Card.find_or_create_by name: name }
+    initialize_with { Card.find_or_create_by(name: name) }
 
     sequence(:name) { |n| "Chapel #{n}" }
     randomizable { true }
@@ -34,7 +34,7 @@ FactoryBot.define do
   factory :card_type
 
   factory :expansion do
-    initialize_with { Expansion.find_or_create_by name: name }
+    initialize_with { Expansion.find_or_create_by(name: name) }
 
     name { "Dominion" }
     id { 1 }
@@ -62,7 +62,7 @@ FactoryBot.define do
   end
 
   factory :user do
-    initialize_with { User.find_or_create_by username: username }
+    initialize_with { User.find_or_create_by(username: username) }
 
     username { "Joffre" }
     email { "#{username.downcase}@example.com" }

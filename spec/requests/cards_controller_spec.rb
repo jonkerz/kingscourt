@@ -11,7 +11,7 @@ describe "CardsController" do
 
     describe "/api/v1/cards" do
       it "returns all cards" do
-        expect(response).to be_success
+        expect(response).to have_http_status :success
         expect(json.size).to eq 3
         expect(card_names).to eq ["Cellar", "Chapel", "Estate"]
       end
@@ -19,7 +19,7 @@ describe "CardsController" do
 
     describe "/api/v1/cards?randomizable=true" do
       it "returns randomizable cards only" do
-        expect(response).to be_success
+        expect(response).to have_http_status :success
         expect(json.size).to eq 2
         expect(card_names).to eq ["Cellar", "Chapel"]
       end
@@ -27,7 +27,7 @@ describe "CardsController" do
 
     describe "/api/v1/cards?randomizable=false" do
       it "returns non-randomizable cards only" do
-        expect(response).to be_success
+        expect(response).to have_http_status :success
         expect(json.size).to eq 1
         expect(card_names).to eq ["Estate"]
       end

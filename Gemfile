@@ -22,7 +22,7 @@ gem "paper_trail", "5.1.1"
 # Angular
 gem "angular-rails-templates"
 gem "autoprefixer-rails", "8.6.5"
-gem "bower-rails", "0.10.0"
+gem "bower-rails"
 gem "ngannotate-rails"
 
 # API

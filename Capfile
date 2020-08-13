@@ -7,8 +7,15 @@ require "capistrano/deploy"
 require "capistrano/rails"
 require "capistrano/rake"
 require "capistrano/bundler"
+
+require "capistrano/scm/git"
+install_plugin Capistrano::SCM::Git
+
 require "capistrano/rvm"
+
 require "capistrano/puma"
+install_plugin Capistrano::Puma
+
 require "capistrano/rails/assets"
 require "capistrano/faster_assets"
 require "capistrano/rails/console"

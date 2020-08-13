@@ -11,7 +11,7 @@ gem "mysql2"
 gem "puma", "3.12.6"
 gem "sass-rails"
 gem "slim-rails"
-gem "therubyracer", "0.12.2"
+gem "therubyracer"
 gem "uglifier"
 
 # Misc.

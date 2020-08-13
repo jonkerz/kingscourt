@@ -121,9 +121,8 @@ Lint/DeprecatedOpenSSLConstant:
 Lint/HeredocMethodCallPosition:
   Enabled: true
 
-# TODO: Investigate.
 Lint/MissingSuper:
-  Enabled: false
+  Enabled: true
 
 Lint/OutOfRangeRegexpRef:
   Enabled: true
@@ -233,16 +232,14 @@ Style/Documentation:
 Style/EmptyMethod:
   EnforcedStyle: expanded
 
-# TODO: Investigate.
 Style/ExpandPathArguments:
   Enabled: false
 
 Style/ExponentialNotation:
   Enabled: true
 
-# TODO: Investigate.
 Style/ExplicitBlockArgument:
-  Enabled: false
+  Enabled: true
 
 # TODO: Enable.
 Style/FrozenStringLiteralComment:

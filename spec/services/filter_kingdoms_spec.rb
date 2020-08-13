@@ -1,23 +1,23 @@
 require "rails_helper"
 
-describe Api::V1::KingdomsController, search: true do
-  describe "#filter_kingdoms" do
-    before :all do
-      create_dominion_cards
-      create_dominion_kingdom
+describe FilterKingdoms, search: true do
+  before :all do
+    create_dominion_cards
+    create_dominion_kingdom
 
-      create_intrigue_cards
-      create_intrigue_kingdom
+    create_intrigue_cards
+    create_intrigue_kingdom
 
-      create_mixed_dominion_intrigue_kingdom
+    create_mixed_dominion_intrigue_kingdom
 
-      Sunspot.commit
-    end
+    Sunspot.commit
+  end
 
-    after :all do
-      DatabaseCleaner.clean_with :truncation
-    end
+  after :all do
+    DatabaseCleaner.clean_with :truncation
+  end
 
+  describe "#call" do
     tests = [
       [
         "all kingdoms",
@@ -56,9 +56,10 @@ describe Api::V1::KingdomsController, search: true do
     ]
 
     # Multiple test due to the expensive setup.
+    # TODO: Split into multiple examples.
     tests.each do |description, params, total, kingdom_names|
       it "returns #{description}" do
-        filtered = controller.send :filter_kingdoms, params
+        filtered = described_class.new(params, current_user: nil).call
 
         expect(filtered.total).to eq total
         expect(filtered.results.map(&:name).sort).to eq kingdom_names.sort

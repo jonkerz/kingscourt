@@ -5,7 +5,7 @@ module Api::V1
     before_action :authenticate_user!, except: [:index, :show]
 
     def index
-      kingdoms = filter_kingdoms params
+      kingdoms = FilterKingdoms.new(params, current_user: current_user).call
 
       expansion_facets = {}
       kingdoms.facet(:expansion_ids).rows.each do |row|
@@ -65,43 +65,6 @@ module Api::V1
         unless @kingdom.can_be_edited_by? current_user
           render json: :forbidden
           return
-        end
-      end
-
-      def filter_kingdoms params
-        Sunspot.search(Kingdom) do
-          # Filter by kingdom creator, favorites
-          if params[:my_kingdoms]
-            with :user_id, current_user.id
-          elsif params[:username]
-            user = User.find_by(username: params[:username])
-            with :user_id, user.id
-          elsif params[:favoriter]
-            user = User.find_by(username: params[:favoriter])
-            with :favorited_by_user_ids, user.id
-          elsif params[:my_favorites]
-            with :favorited_by_user_ids, current_user.id
-          end
-
-          # Filter by expansions
-          if params[:expansions].present?
-            expansions = params[:expansions].split(",").map(&:to_i)
-            if params[:match_all_expansions] == "true"
-              with :expansion_ids_string, expansions.sort.to_s
-            else
-              without_expansion = (Set.new(1..11) ^ expansions).to_a
-              without :expansion_ids, without_expansion
-            end
-          end
-
-          order_by :created_at, :desc
-
-          # Facets
-          facet :expansion_ids
-          facet :expansion_ids_string
-
-          # Paginate
-          paginate page: (params[:page] || 1), per_page: 5
         end
       end
 

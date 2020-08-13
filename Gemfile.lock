@@ -103,13 +103,13 @@ GEM
       capistrano (~> 3.7)
       capistrano-bundler
       puma (~> 4.0)
-    capybara (3.15.1)
+    capybara (3.32.2)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
       rack (>= 1.6.0)
       rack-test (>= 0.6.3)
-      regexp_parser (~> 1.2)
+      regexp_parser (~> 1.5)
       xpath (~> 3.2)
     capybara-screenshot (1.0.24)
       capybara (>= 1.0, < 4)
@@ -192,11 +192,11 @@ GEM
     headless (2.3.1)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
-    inherited_resources (1.10.0)
-      actionpack (>= 5.0, < 6.0)
+    inherited_resources (1.11.0)
+      actionpack (>= 5.0, < 6.1)
       has_scope (~> 0.6)
-      railties (>= 5.0, < 6.0)
-      responders (~> 2.0)
+      railties (>= 5.0, < 6.1)
+      responders (>= 2, < 4)
     jquery-rails (4.4.0)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -217,8 +217,8 @@ GEM
       activerecord
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
-    launchy (2.4.3)
-      addressable (~> 2.3)
+    launchy (2.5.0)
+      addressable (~> 2.7)
     listen (3.2.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -307,9 +307,9 @@ GEM
     regexp_parser (1.7.1)
     request_store (1.5.0)
       rack (>= 1.4)
-    responders (2.4.1)
-      actionpack (>= 4.2.0, < 6.0)
-      railties (>= 4.2.0, < 6.0)
+    responders (3.0.1)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
     rsolr (2.3.0)
       builder (>= 2.1.2)
       faraday (>= 0.9.0)
@@ -337,7 +337,7 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.10.1)
-    rubyzip (1.3.0)
+    rubyzip (2.3.0)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -356,7 +356,7 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    shoulda-matchers (4.0.1)
+    shoulda-matchers (4.3.0)
       activesupport (>= 4.2.0)
     slim (4.1.0)
       temple (>= 0.7.6, < 0.9)
@@ -387,8 +387,8 @@ GEM
     sunspot_solr (2.2.0)
     sunspot_test (0.4.0)
       sunspot_rails (>= 1.2.1)
-    teaspoon (1.1.5)
-      railties (>= 3.2.5, < 6)
+    teaspoon (1.2.0)
+      railties (>= 3.2.5)
     teaspoon-jasmine (2.3.4)
       teaspoon (>= 1.0.0)
     temple (0.8.2)
@@ -463,7 +463,7 @@ DEPENDENCIES
   uglifier
 
 RUBY VERSION
-   ruby 2.3.1p112
+   ruby 2.4.5p335
 
 BUNDLED WITH
-   1.16.2
+   1.16.6

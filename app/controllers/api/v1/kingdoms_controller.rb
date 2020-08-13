@@ -62,29 +62,7 @@ module Api::V1
       end
 
       def serialized_filtered_kingdoms kingdoms
-        {
-          kingdoms: serialized_kingdoms(kingdoms).as_json,
-          meta: {
-            count: kingdoms.total,
-            expansion_facets: expansion_facets(kingdoms)
-          }
-        }
-      end
-
-      def serialized_kingdoms kingdoms
-        ActiveModel::Serializer::CollectionSerializer.new(
-          kingdoms.results,
-          each_serializer: KingdomSerializer,
-          scope: view_context
-        )
-      end
-
-      def expansion_facets kingdoms
-        facets = {}
-        kingdoms.facet(:expansion_ids).rows.each do |row|
-          facets[row.value] = row.count
-        end
-        facets
+        FilteredKingdomsSerializer.new(kingdoms, view_context).as_json
       end
   end
 end

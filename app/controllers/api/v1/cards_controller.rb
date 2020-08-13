@@ -11,12 +11,15 @@ module Api::V1
       end
 
       def cards
-        if params[:randomizable] == "true"
-          Card.include_card_attributes.randomizable
-        elsif params[:randomizable] == "false"
-          Card.include_card_attributes.non_randomizable
+        query = Card.include_card_attributes
+
+        case params[:randomizable]
+        when "true"
+          query.randomizable
+        when "false"
+          query.non_randomizable
         else
-          Card.include_card_attributes.all
+          query.all
         end
       end
   end

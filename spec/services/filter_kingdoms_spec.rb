@@ -18,51 +18,53 @@ describe FilterKingdoms, search: true do
   end
 
   describe "#call" do
-    tests = [
-      [
-        "all kingdoms",
-        {},
-        3,
-        ["Dominion", "Intrigue", "Dominion and Intrigue"]
-      ],
+    context "without filters" do
+      let(:params) { {} }
 
-      [
-        "Dominon-kingdoms only",
-        { expansions: "1" },
-        1,
-        ["Dominion"]
-      ],
-
-      [
-        "Intrigue-kingdoms only",
-        { expansions: "2" },
-        1,
-        ["Intrigue"]
-      ],
-
-      [
-        "Dominion, Intrigue and mixed Dominion/Intrigue kingdoms",
-        { expansions: "1,2" },
-        3,
-        ["Dominion", "Intrigue", "Dominion and Intrigue"]
-      ],
-
-      [
-        "kingdoms containing Dominion *and* Intrigue cards",
-        { expansions: "1,2", match_all_expansions: "true" },
-        1,
-        ["Dominion and Intrigue"]
-      ]
-    ]
-
-    # Multiple test due to the expensive setup.
-    # TODO: Split into multiple examples.
-    tests.each do |description, params, total, kingdom_names|
-      it "returns #{description}" do
+      it "returns all kingdoms" do
         filtered = described_class.new(params, current_user: nil).call
 
-        expect(filtered.total).to eq total
-        expect(filtered.results.map(&:name).sort).to eq kingdom_names.sort
+        expect(filtered.results.map(&:name)).to match_array ["Dominion", "Intrigue", "Dominion and Intrigue"]
+      end
+    end
+
+    context "with filters for Dominon-kingdoms only" do
+      let(:params) { { expansions: "1" } }
+
+      specify do
+        filtered = described_class.new(params, current_user: nil).call
+
+        expect(filtered.results.map(&:name)).to match_array ["Dominion"]
+      end
+    end
+
+    context "with filters for Intrigue-kingdoms only" do
+      let(:params) { { expansions: "2" } }
+
+      specify do
+        filtered = described_class.new(params, current_user: nil).call
+
+        expect(filtered.results.map(&:name)).to match_array ["Intrigue"]
+      end
+    end
+
+    context "with filters for Dominion, Intrigue and mixed Dominion/Intrigue kingdoms" do
+      let(:params) { { expansions: "1,2" } }
+
+      specify do
+        filtered = described_class.new(params, current_user: nil).call
+
+        expect(filtered.results.map(&:name)).to match_array ["Dominion", "Intrigue", "Dominion and Intrigue"]
+      end
+    end
+
+    context "with filters for kingdoms containing Dominion *and* Intrigue cards" do
+      let(:params) { { expansions: "1,2", match_all_expansions: "true" } }
+
+      specify do
+        filtered = described_class.new(params, current_user: nil).call
+
+        expect(filtered.results.map(&:name)).to match_array ["Dominion and Intrigue"]
       end
     end
   end

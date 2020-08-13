@@ -6,13 +6,7 @@ module Api::V1
 
     def index
       kingdoms = FilterKingdoms.new(params, current_user: current_user).call
-
-      render json: kingdoms.results,
-        root: "kingdoms",
-        meta: {
-          count: kingdoms.total,
-          expansion_facets: expansion_facets(kingdoms)
-        }
+      render json: serialized_filtered_kingdoms(kingdoms)
     end
 
     def show
@@ -65,6 +59,24 @@ module Api::V1
 
       def kingdom_params
         params.permit :name, :card_ids, :description, :name
+      end
+
+      def serialized_filtered_kingdoms kingdoms
+        {
+          kingdoms: serialized_kingdoms(kingdoms).as_json,
+          meta: {
+            count: kingdoms.total,
+            expansion_facets: expansion_facets(kingdoms)
+          }
+        }
+      end
+
+      def serialized_kingdoms kingdoms
+        ActiveModel::Serializer::CollectionSerializer.new(
+          kingdoms.results,
+          each_serializer: KingdomSerializer,
+          scope: view_context
+        )
       end
 
       def expansion_facets kingdoms

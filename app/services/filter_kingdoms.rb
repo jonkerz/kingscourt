@@ -1,6 +1,8 @@
 # TODO: Improve.
 
 class FilterKingdoms
+  PER_PAGE = 5
+
   def initialize params, current_user:
     @params = params
     @current_user = current_user
@@ -47,7 +49,7 @@ class FilterKingdoms
         facet :expansion_ids_string
 
         # Paginate
-        paginate page: (params[:page] || 1), per_page: 5
+        paginate page: (params[:page] || 1), per_page: PER_PAGE
       end
     end
 end

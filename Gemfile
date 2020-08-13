@@ -48,6 +48,9 @@ group :development do
   gem "capistrano-rvm", require: false
   gem "listen"
   gem "rubocop", "~> 0.89.1", require: false
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
+  gem 'rubocop-rspec'
 end
 
 group :test do

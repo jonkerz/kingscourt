@@ -1,3 +1,8 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
 AllCops:
   TargetRubyVersion: 2.6
   Exclude:
@@ -19,6 +24,11 @@ AllCops:
     - 'config/puma.rb'
     - 'db/schema.rb'
     - 'script/cucumber'
+
+### FactoryBot.
+
+FactoryBot/CreateList:
+  EnforcedStyle: n_times
 
 ### Layout.
 
@@ -186,6 +196,147 @@ Naming/PredicateName:
 Naming/VariableNumber:
   Exclude:
     - 'spec/**/*'
+
+## Performance.
+
+Performance/AncestorsInclude:
+  Enabled: true
+
+Performance/BigDecimalWithNumericArgument:
+  Enabled: true
+
+Performance/DeletePrefix:
+  Enabled: true
+
+Performance/DeleteSuffix:
+  Enabled: true
+
+Performance/RedundantSortBlock:
+  Enabled: true
+
+Performance/RedundantStringChars:
+  Enabled: true
+
+Performance/ReverseFirst:
+  Enabled: true
+
+Performance/SortReverse:
+  Enabled: true
+
+Performance/StartWith:
+  Enabled: true
+
+Performance/Squeeze:
+  Enabled: true
+
+Performance/StringInclude:
+  Enabled: true
+
+### Rails.
+
+Rails:
+  Enabled: true
+
+Rails/ActiveRecordCallbacksOrder:
+  Enabled: true
+
+Rails/BulkChangeTable:
+  Enabled: false
+
+Rails/ContentTag:
+  Enabled: true
+
+Rails/Delegate:
+  Enabled: false
+
+Rails/FindById:
+  Enabled: true
+
+Rails/Inquiry:
+  Enabled: true
+
+Rails/InverseOf:
+  Enabled: false
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+Rails/MailerName:
+  Enabled: true
+
+Rails/MatchRoute:
+  Enabled: true
+
+Rails/NegateInclude:
+  Enabled: true
+
+Rails/Pluck:
+  Enabled: true
+
+# TODO: Investigate.
+Rails/PluckId:
+  Enabled: false
+
+Rails/PluckInWhere:
+  Enabled: true
+
+Rails/OutputSafety:
+  Enabled: false
+
+Rails/RakeEnvironment:
+  Enabled: false
+
+Rails/RenderInline:
+  Enabled: true
+
+Rails/RenderPlainText:
+  Enabled: true
+
+Rails/SkipsModelValidations:
+  Exclude:
+    - 'spec/**/*'
+
+Rails/ShortI18n:
+  Enabled: true
+
+Rails/Validation:
+  Enabled: false
+
+# TODO: Investigate.
+Rails/WhereExists:
+  Enabled: false
+
+# Indexes are not case sensitive in MySQL. Revisit if we ever migrate to Postgres.
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
+
+## RSpec.
+RSpec/BeforeAfterAll:
+  Enabled: false
+
+RSpec/EmptyExampleGroup:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/ExpectChange:
+  EnforcedStyle: block
+
+RSpec/LetSetup:
+  Enabled: false
+
+RSpec/MessageSpies:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 6
+
+RSpec/NotToNot:
+  Enabled: false
 
 ### Style.
 

@@ -17,7 +17,7 @@ describe Kingdom do
       end
 
       it "must be 10 cards" do
-        kingdom = Kingdom.new
+        kingdom = described_class.new
         kingdom.save
         expect(kingdom.errors[:cards]).to eq ["must contain 10 cards"]
       end

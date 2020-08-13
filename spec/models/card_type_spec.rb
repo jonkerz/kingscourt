@@ -16,7 +16,7 @@ describe CardType do
       end
 
       it "doesn't delete the card type" do
-        expect { action.destroy rescue nil }.not_to change { CardType.count }
+        expect { action.destroy rescue nil }.not_to change { described_class.count }
       end
     end
   end

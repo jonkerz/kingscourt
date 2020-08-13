@@ -8,13 +8,13 @@ describe Card do
 
     describe ".randomizable" do
       it "return randomizable cards only" do
-        expect(Card.randomizable).to eq [action, attack]
+        expect(described_class.randomizable).to eq [action, attack]
       end
     end
 
     describe ".non_randomizable" do
       it "return non-randomizable cards only" do
-        expect(Card.non_randomizable).to eq [victory]
+        expect(described_class.non_randomizable).to eq [victory]
       end
     end
   end

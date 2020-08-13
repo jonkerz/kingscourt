@@ -44,8 +44,7 @@ describe Expansion do
           intrigue.id => ["isAction", "isAttack"],
           dark_ages.id => ["isAttack"]
         }
-        expect(Expansion.all_card_attributes).
-          to eq expected
+        expect(described_class.all_card_attributes).to eq expected
       end
     end
   end
@@ -62,7 +61,7 @@ describe Expansion do
 
       it "doesn't delete the expansion" do
         expect { expansion.destroy rescue nil }.
-          not_to change { Expansion.count }
+          not_to change { described_class.count }
       end
     end
   end

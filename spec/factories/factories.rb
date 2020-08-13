@@ -1,3 +1,5 @@
+# TODO: Split into files per factory.
+
 FactoryBot.define do
   factory :card do
     transient do
@@ -22,7 +24,11 @@ FactoryBot.define do
   end
 
   factory :card_attribute do
-    name { "isAction" }
+    is_action
+
+    trait :is_action do
+      name { "isAction" }
+    end
   end
 
   factory :card_type
@@ -41,6 +47,10 @@ FactoryBot.define do
 
     name { "Ancient Kingdom" }
     user
+
+    trait :without_cards do
+      to_create { |instance| instance.save(validate: false) }
+    end
 
     after :build do |kingdom, evaluator|
       if evaluator.cards.present?

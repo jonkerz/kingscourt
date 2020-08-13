@@ -70,12 +70,12 @@ describe Kingdom do
       it { is_expected.to be_versioned }
     end
   end
-end
 
-def create_kindom_with_cards
-  kingdom = build :kingdom
-  10.times { kingdom.cards << create(:card) }
-  Sunspot.commit
-  kingdom.save
-  kingdom
+  def create_kindom_with_cards
+    kingdom = build :kingdom
+    10.times { kingdom.cards << create(:card) }
+    Sunspot.commit
+    kingdom.save
+    kingdom
+  end
 end

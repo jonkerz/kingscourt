@@ -1,14 +1,14 @@
 require "rails_helper"
 
-describe "CardsController" do
-  describe "#index" do
+describe Api::V1::CardsController do
+  describe "GET /api/v1/cards" do
     before do
       create :card, name: "Cellar"
       create :card, name: "Chapel"
       create :card, name: "Estate", randomizable: false
     end
 
-    describe "GET /api/v1/cards" do
+    context "without params" do
       it "returns all cards" do
         get "/api/v1/cards"
 
@@ -18,7 +18,7 @@ describe "CardsController" do
       end
     end
 
-    describe "GET /api/v1/cards?randomizable=true" do
+    context "with param `randomizable=true`" do
       it "returns randomizable cards only" do
         get "/api/v1/cards?randomizable=true"
 
@@ -28,7 +28,7 @@ describe "CardsController" do
       end
     end
 
-    describe "GET /api/v1/cards?randomizable=false" do
+    context "with param `randomizable=false`" do
       it "returns non-randomizable cards only" do
         get "/api/v1/cards?randomizable=false"
 

@@ -48,7 +48,7 @@ group :development do
   gem "capistrano-rails-console", "1.0.2", require: false
   gem "capistrano-pending", "0.1.1", require: false
   gem "capistrano-db-tasks", "0.4", require: false
-  gem "listen", "3.1.5"
+  gem "listen"
   gem "rubocop", "~> 0.40.0", require: false
 end
 

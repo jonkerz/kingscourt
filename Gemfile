@@ -3,7 +3,7 @@ ruby "2.3.1"
 
 gem "rails", "5.0.7.2"
 
-gem "coffee-rails", "4.1.1"
+gem "coffee-rails"
 gem "execjs"
 gem "jquery-rails"
 gem "jquery-ui-rails", "5.0.5"

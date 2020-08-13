@@ -1,6 +1,5 @@
 namespace :kings do
   namespace :check do
-
     desc "all"
     task all: :environment do
       puts "Checking general card types...".blue
@@ -19,8 +18,7 @@ namespace :kings do
     desc "eg that Action-Attack cards have 'isAction' and 'isAttack'"
     task general_card_types: :environment do
       Card.find_each do |card|
-        should_have_types = card.card_type.name.split("-")
-          .map { |type| "is#{type}"}
+        should_have_types = card.card_type.name.split("-").map { |type| "is#{type}" }
 
         should_have_types.each do |type|
           unless card.card_attributes.pluck(:name).include? type
@@ -41,7 +39,8 @@ namespace :kings do
         end
       end
 
-      { "givesOneAction" => "givesActions",
+      {
+        "givesOneAction" => "givesActions",
         "givesTwoActions" => "givesActions",
 
         "givesOneCard" => "givesCards",
@@ -85,6 +84,5 @@ namespace :kings do
         end
       end
     end
-
   end
 end

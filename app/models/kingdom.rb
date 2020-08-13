@@ -13,12 +13,10 @@ class Kingdom < ApplicationRecord
   validate :validate_cards
 
   searchable do
-    integer :expansion_ids, multiple: true do expansions end
-    string :expansion_ids_string do expansions.to_s end
+    integer(:expansion_ids, multiple: true) { expansions }
+    string(:expansion_ids_string) { expansions.to_s }
     integer :user_id
-    integer :favorited_by_user_ids, multiple: true do
-      favoriters.map(&:id)
-    end
+    integer(:favorited_by_user_ids, multiple: true) { favoriters.map(&:id) }
     time :created_at
   end
 

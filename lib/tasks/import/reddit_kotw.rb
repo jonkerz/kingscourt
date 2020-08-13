@@ -53,15 +53,14 @@ module Import
         "Kingdom of the Future 4/13",
         "Kingdom of the Future 4/5"
       ]
-      return false if false_positives.any? { |item| title.include?(item)
-      }
+      return false if false_positives.any? { |item| title.include?(item) }
 
       # After taking care of the false positives/negatives, all titles
       # that contains "KotW" are assumed to be the real deal.
       return false if title["KotW"]
 
       puts "skipping title: #{title}".blue
-      return true
+      true
     end
 
     def extract_name_and_rest title

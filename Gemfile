@@ -5,7 +5,6 @@ gem "rails", "5.0.7.2"
 
 gem "coffee-rails", "4.1.1"
 gem "execjs"
-gem "jbuilder", "2.5.0"
 gem "jquery-rails"
 gem "jquery-ui-rails", "5.0.5"
 gem "mysql2", "0.4.4"

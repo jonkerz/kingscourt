@@ -3,31 +3,30 @@ ruby "2.3.1"
 
 gem "rails", "5.0.7.2"
 
-gem "coffee-rails", "4.1.1"
+gem "coffee-rails"
 gem "execjs"
-gem "jbuilder", "2.5.0"
 gem "jquery-rails"
 gem "jquery-ui-rails", "5.0.5"
-gem "mysql2", "0.4.4"
+gem "mysql2"
 gem "puma"
 gem "sass-rails"
-gem "slim-rails", "3.1.0"
+gem "slim-rails"
 gem "therubyracer", "0.12.2"
-gem "uglifier", "3.0.0"
+gem "uglifier"
 
 # Misc.
 gem "colorize"
-gem "dotenv-rails", "2.1.1"
+gem "dotenv-rails"
 gem "paper_trail", "5.1.1"
 
 # Angular
 gem "angular-rails-templates"
-gem "autoprefixer-rails", "6.3.6.2"
-gem "bower-rails", "0.10.0"
+gem "autoprefixer-rails", "8.6.5"
+gem "bower-rails"
 gem "ngannotate-rails"
 
 # API
-gem "active_model_serializers", "0.10.0"
+gem "active_model_serializers"
 gem "devise", "4.0.2"
 gem "devise_token_auth",
   github: "lynndylanhurley/devise_token_auth",

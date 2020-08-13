@@ -81,7 +81,7 @@ module Import
       [cards, rest]
     end
 
-    def parse_cards cards
+    def parse_cards cards # rubocop:disable Metrics/MethodLength
       bad_card_names = [
         [/^Candlestick$/, "Candlestick Maker"],
         ["Young Witch (Sage as Bane)", "Young Witch"], # <-- Manually fix

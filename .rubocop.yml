@@ -16,7 +16,6 @@ AllCops:
     - 'config/initializers/content_security_policy.rb'
     - 'config/initializers/new_framework_defaults*'
     - 'db/schema.rb'
-    - 'lib/tasks/cucumber.rake'
     - 'script/cucumber'
 
 # Rails

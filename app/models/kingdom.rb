@@ -40,15 +40,6 @@ class Kingdom < ApplicationRecord
     self.user == user
   end
 
-  # Slow and naive method used only when importing.
-  def find_duplicates!
-    Kingdom.find_each do |kingdom|
-      if kingdom.card_ids.sort == card_ids.sort
-        errors.add :base, "'#{name}' looks like a duplicate '#{kingdom.name}'"
-      end
-    end
-  end
-
   private
 
     def validate_cards

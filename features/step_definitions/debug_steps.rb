@@ -3,7 +3,7 @@ And /^(?:I screenshot|SCREEN|SHOT)$/ do
 end
 
 And /^(?:I pry|PRY)/ do
-  binding.pry
+  binding.pry # rubocop:disable Lint/Debugger
 end
 
 And /^(?:I pause|PAUSE)$/ do

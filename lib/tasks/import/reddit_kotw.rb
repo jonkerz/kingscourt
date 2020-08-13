@@ -1,4 +1,5 @@
 module Import
+  # rubocop:disable Rails/Output
   module RedditKotW
     def html_contents
       content = ""
@@ -105,7 +106,7 @@ module Import
 
     def extract_time chunk
       time_regex = /datetime="(.*?)">/
-      DateTime.parse chunk[time_regex, 1]
+      DateTime.parse(chunk[time_regex, 1]) # rubocop:disable Rails/TimeZone
     end
 
     def build_description rest, url
@@ -127,4 +128,5 @@ module Import
       chunk[url_regex, 1]
     end
   end
+  # rubocop:enable Rails/Output
 end

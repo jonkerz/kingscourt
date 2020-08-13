@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 ruby "2.3.1"
 
-gem "rails", "5.1.7"
+gem "rails", "5.2.4.3"
 
 gem "coffee-rails"
 gem "execjs"
@@ -20,7 +20,6 @@ gem "paper_trail", "10.3.1"
 
 # Angular
 gem "angular-rails-templates"
-gem "autoprefixer-rails"
 gem "bower-rails"
 gem "ngannotate-rails"
 

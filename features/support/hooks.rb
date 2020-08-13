@@ -35,7 +35,7 @@ end
 if ENV["SS"] || ENV["SSS"] || ENV["SSP"]
   AfterStep do
     if ENV["SSP"]
-      binding.pry
+      binding.pry # rubocop:disable Lint/Debugger
     else
       single_step
     end

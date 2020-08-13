@@ -1,5 +1,23 @@
 AllCops:
+  # TODO: Update to 2.3.
   TargetRubyVersion: 2.2
+  Exclude:
+    - 'db/**/*'
+    - 'config/deploy.rb'
+    - 'node_modules/**/*'
+    - 'solr/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+
+    # Offenses belonging to Rails and friends!
+    - 'bin/**/*'
+    - 'config/boot.rb'
+    - 'config/environments/**/*'
+    - 'config/initializers/content_security_policy.rb'
+    - 'config/initializers/new_framework_defaults*'
+    - 'db/schema.rb'
+    - 'lib/tasks/cucumber.rake'
+    - 'script/cucumber'
 
 # Rails
 Rails:
@@ -19,6 +37,9 @@ Style/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 
 Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/CommandLiteral:
   Enabled: false
 
 Style/ClosingParenthesisIndentation:
@@ -48,6 +69,9 @@ Style/MethodDefParentheses:
 Style/MultilineMethodCallIndentation:
   Enabled: false
 
+Style/MutableConstant:
+  Enabled: false
+
 Style/NestedParenthesizedCalls:
   Enabled: false
 
@@ -58,11 +82,18 @@ Style/OptionHash:
 Style/RedundantSelf:
   Enabled: false
 
+Style/RegexpLiteral:
+  Enabled: false
+
+Style/RescueModifier:
+  Exclude:
+    - 'spec/**/*'
+
 Style/SpaceInsideBrackets:
   Enabled: false
 
 Style/StringLiterals:
-  EnforcedStyle: double_quotes
+  Enabled: false
 
 Style/WordArray:
   Enabled: false
@@ -81,37 +112,14 @@ Lint/UnusedBlockArgument:
 Metrics/AbcSize:
   Enabled: false
 
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 150
+
 Metrics/MethodLength:
   Max: 15
 
-# Exclude
-AllCops:
-  Exclude:
-    - 'db/**/*'
-    - 'vendor/**/*'
-    - 'bin/**/*'
-    - 'script/**/*'
-    - 'config/environments/**/*'
-    - 'lib/tasks/cucumber.rake'
-    - 'config/deploy.rb'
-
-Style/CommentIndentation:
-  Exclude:
-    - 'Gemfile'
-
-Lint/Debugger:
-  Exclude:
-    - features/**/*
-
-Rails/Output:
-  Exclude:
-    - 'app/models/concerns/by_name_or_id.rb'
-    - 'config/deploy.rb'
-
-Style/RescueModifier:
-  Exclude:
-    - 'spec/**/*'
-
-Style/SymbolProc:
-  Exclude:
-    - 'features/step_definitions/shared_then_steps.rb'
+Metrics/PerceivedComplexity:
+  Enabled: false

@@ -1,4 +1,5 @@
 module Import
+  # rubocop:disable Rails/Output
   module RedditKotW
     def html_contents
       content = ""
@@ -52,15 +53,14 @@ module Import
         "Kingdom of the Future 4/13",
         "Kingdom of the Future 4/5"
       ]
-      return false if false_positives.any? { |item| title.include?(item)
-      }
+      return false if false_positives.any? { |item| title.include?(item) }
 
       # After taking care of the false positives/negatives, all titles
       # that contains "KotW" are assumed to be the real deal.
       return false if title["KotW"]
 
       puts "skipping title: #{title}".blue
-      return true
+      true
     end
 
     def extract_name_and_rest title
@@ -80,7 +80,7 @@ module Import
       [cards, rest]
     end
 
-    def parse_cards cards
+    def parse_cards cards # rubocop:disable Metrics/MethodLength
       bad_card_names = [
         [/^Candlestick$/, "Candlestick Maker"],
         ["Young Witch (Sage as Bane)", "Young Witch"], # <-- Manually fix
@@ -105,7 +105,7 @@ module Import
 
     def extract_time chunk
       time_regex = /datetime="(.*?)">/
-      DateTime.parse chunk[time_regex, 1]
+      DateTime.parse(chunk[time_regex, 1]) # rubocop:disable Rails/TimeZone
     end
 
     def build_description rest, url
@@ -127,4 +127,5 @@ module Import
       chunk[url_regex, 1]
     end
   end
+  # rubocop:enable Rails/Output
 end

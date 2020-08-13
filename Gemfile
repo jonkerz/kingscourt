@@ -10,7 +10,7 @@ gem "jquery-ui-rails", "5.0.5"
 gem "mysql2"
 gem "puma"
 gem "sass-rails"
-gem "slim-rails", "3.1.0"
+gem "slim-rails"
 gem "therubyracer", "0.12.2"
 gem "uglifier", "3.0.0"
 

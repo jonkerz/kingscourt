@@ -38,16 +38,16 @@ gem "activeadmin", "1.4.3"
 gem "kaminari"
 
 group :development do
-  gem "capistrano", "3.5.0", require: false
-  gem "capistrano-rvm", "0.1.2", require: false
-  gem "capistrano-rails", "1.1.6", require: false
-  gem "capistrano-rake", "0.1.0", require: false
-  gem "capistrano-bundler", "1.1.4", require: false
-  gem "capistrano3-puma", "1.2.1", require: false
-  gem "capistrano-faster-assets", "1.0.2", require: false
-  gem "capistrano-rails-console", "1.0.2", require: false
-  gem "capistrano-pending", "0.1.1", require: false
-  gem "capistrano-db-tasks", "0.4", require: false
+  gem "capistrano", require: false
+  gem "capistrano-rvm", require: false
+  gem "capistrano-rails", require: false
+  gem "capistrano-rake", require: false
+  gem "capistrano-bundler", require: false
+  gem "capistrano3-puma", require: false
+  gem "capistrano-faster-assets", require: false
+  gem "capistrano-rails-console", require: false
+  gem "capistrano-pending", require: false
+  gem "capistrano-db-tasks", require: false
   gem "listen"
   gem "rubocop", "~> 0.40.0", require: false
 end

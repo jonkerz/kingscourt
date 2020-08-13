@@ -1,5 +1,5 @@
 AllCops:
-  # TODO: Change to 2.4 after upgrading rubocop.
+  # TODO: Change to 2.5 after upgrading rubocop.
   TargetRubyVersion: 2.3
   Exclude:
     - 'db/**/*'

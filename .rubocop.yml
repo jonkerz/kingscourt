@@ -361,10 +361,6 @@ Style/BisectedAttrAccessor:
 Style/CaseLikeIf:
   Enabled: false
 
-# TODO: Enable.
-Style/ClassAndModuleChildren:
-  Enabled: false
-
 Style/ClassCheck:
   EnforcedStyle: is_a?
 

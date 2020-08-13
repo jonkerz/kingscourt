@@ -1,5 +1,7 @@
-module Api::V1
-  class ApiController < ApplicationController
-    include DeviseTokenAuth::Concerns::SetUserByToken
+module Api
+  module V1
+    class ApiController < ApplicationController
+      include DeviseTokenAuth::Concerns::SetUserByToken
+    end
   end
 end

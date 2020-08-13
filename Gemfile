@@ -37,15 +37,15 @@ gem "kaminari"
 
 group :development do
   gem "capistrano", require: false
-  gem "capistrano-rvm", require: false
-  gem "capistrano-rails", require: false
-  gem "capistrano-rake", require: false
-  gem "capistrano-bundler", require: false
   gem "capistrano3-puma", require: false
-  gem "capistrano-faster-assets", require: false
-  gem "capistrano-rails-console", require: false
-  gem "capistrano-pending", require: false
+  gem "capistrano-bundler", require: false
   gem "capistrano-db-tasks", require: false
+  gem "capistrano-faster-assets", require: false
+  gem "capistrano-pending", require: false
+  gem "capistrano-rails", require: false
+  gem "capistrano-rails-console", require: false
+  gem "capistrano-rake", require: false
+  gem "capistrano-rvm", require: false
   gem "listen"
   gem "rubocop", "~> 0.89.1", require: false
 end
@@ -64,7 +64,7 @@ group :test do
 end
 
 group :development, :test do
-  gem "rspec-rails"
   gem "pry"
+  gem "rspec-rails"
   gem "teaspoon-jasmine"
 end

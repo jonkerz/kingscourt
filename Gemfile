@@ -21,7 +21,7 @@ gem "paper_trail", "10.3.1"
 
 # Angular
 gem "angular-rails-templates"
-gem "autoprefixer-rails", "8.6.5"
+gem "autoprefixer-rails"
 gem "bower-rails"
 gem "ngannotate-rails"
 

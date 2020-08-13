@@ -28,10 +28,7 @@ gem "ngannotate-rails"
 # API
 gem "active_model_serializers"
 gem "devise", "4.0.2"
-gem "devise_token_auth",
-  github: "lynndylanhurley/devise_token_auth",
-  ref: "10863b31270b31cec72a07e1a195aa21686ede2b"
-  # https://github.com/lynndylanhurley/devise_token_auth/issues/500
+gem "devise_token_auth"
 gem "slugify"
 gem "sunspot_rails", "2.2.0"
 gem "sunspot_solr", "2.2.0"

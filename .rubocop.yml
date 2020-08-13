@@ -219,9 +219,8 @@ Style/ClassAndModuleChildren:
 Style/ClassCheck:
   EnforcedStyle: is_a?
 
-# TODO: Enable.
 Style/CollectionMethods:
-  Enabled: false
+  Enabled: true
 
 Style/CommandLiteral:
   Enabled: false

@@ -299,9 +299,8 @@ Style/OptionalBooleanParameter:
 Style/OptionHash:
   Enabled: true
 
-# TODO: Enable.
 Style/PercentLiteralDelimiters:
-  Enabled: false
+  Enabled: true
 
 Style/RedundantAssignment:
   Enabled: false

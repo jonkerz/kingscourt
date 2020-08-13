@@ -3,8 +3,8 @@
 def create_dominion_cards
   standard = create :expansion, name: "Dominion", id: 1
 
-  %w(Cellar Chapel Moat Chancellor Village
-    Woodcutter Workshop Bureaucrat Feast Gardens).each do |name|
+  %w[Cellar Chapel Moat Chancellor Village
+    Woodcutter Workshop Bureaucrat Feast Gardens].each do |name|
     create :card, name: name, expansion: standard
   end
 end
@@ -12,8 +12,8 @@ end
 def create_intrigue_cards
   intrigue = create :expansion, name: "Intrigue", id: 2
 
-  %w(Courtyard Pawn Secret\ Chamber Great\ Hall Masquerade
-    Shanty\ Town Steward Swindler Wishing\ Well Baron).each do |name|
+  %w[Courtyard Pawn Secret\ Chamber Great\ Hall Masquerade
+    Shanty\ Town Steward Swindler Wishing\ Well Baron].each do |name|
     create :card, name: name, expansion: intrigue
   end
 end

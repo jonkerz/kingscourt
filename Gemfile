@@ -30,7 +30,7 @@ gem "active_model_serializers"
 gem "devise"
 gem "devise_token_auth"
 gem "slugify"
-gem "sunspot_rails", "2.2.0"
+gem "sunspot_rails"
 gem "sunspot_solr", "2.2.0"
 
 # Admin backend

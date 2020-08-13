@@ -93,4 +93,41 @@ Rails.application.configure do
     authentication: "plain",
     enable_starttls_auto: true
   }
+
+  # #############################################################################
+  #           ___________         __
+  #           \_   _____/__  ____/  |_____________
+  #            |    __)_\  \/  /\   __\_  __ \__  \
+  #            |        \>    <  |  |  |  | \// __ \_
+  #           /_______  /__/\_ \ |__|  |__|  (____  /
+  #       _________   \/      \/   __             \/  __
+  #       \_   ___ \  ____   _____/  |_  ____   _____/  |_
+  #       /    \  \/ /  _ \ /    \   __\/ __ \ /    \   __\
+  #       \     \___(  <_> )   |  \  | \  ___/|   |  \  |
+  #        \______  /\____/|___|  /__|  \___  >___|  /__|
+  #               \/            \/          \/     \/
+  # #############################################################################
+  # # Simulate production locally for debugging/profiling
+  # #############################################################################
+  #
+  #   RAILS_ENV=production rake assets:precompile
+  #   SIMULATE_PRODUCTION=y rails s -e production
+  #   tail -f log/production.log
+  #
+  #   rake assets:clobber # Cleanup assets once done testing.
+
+  if ENV['SIMULATE_PRODUCTION']
+    config.cache_classes = false
+    config.public_file_server.enabled = true
+    config.assets.debug = false
+    config.log_level = :debug
+    config.force_ssl = false
+    config.action_mailer.perform_deliveries = false
+
+    ActiveRecord::Base.logger = Logger.new(STDOUT)
+  end
+
+  #
+  #   To enable `gem 'rack-mini-profiler'` in "production":
+  #   Add `before_action { Rack::MiniProfiler.authorize_request }` to ApplicationController.
 end

@@ -18,8 +18,11 @@ namespace :kings do
         kingdom.cards = cards
         kingdom.description = description
         kingdom.created_at = created_at
-        kingdom.find_duplicates!
+
+        Import::FindKingdomWithIdenticalCards.new(kingdom).call # Adds errors to duplicates.
+
         kingdom.save! unless kingdom.errors.present?
+
         puts kingdom.valid? ? "Valid!!!".green : "not valid".red
       end
     end

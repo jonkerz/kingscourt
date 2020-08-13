@@ -55,7 +55,6 @@ module Api::V1
       def check_can_be_edited_by
         unless @kingdom.can_be_edited_by? current_user
           render json: :forbidden
-          return
         end
       end
 

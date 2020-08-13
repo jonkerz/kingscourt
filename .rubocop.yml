@@ -1,9 +1,9 @@
 AllCops:
-  # TODO: Change to 2.6 after upgrading rubocop.
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.6
   Exclude:
-    - 'db/**/*'
     - 'config/deploy.rb'
+    - 'db/**/*'
+    - 'lib/tasks/import/**/*'
     - 'node_modules/**/*'
     - 'solr/**/*'
     - 'tmp/**/*'
@@ -13,62 +13,276 @@ AllCops:
     - 'bin/**/*'
     - 'config/boot.rb'
     - 'config/environments/**/*'
+    - 'config/initializers/assets.rb'
     - 'config/initializers/content_security_policy.rb'
     - 'config/initializers/new_framework_defaults*'
+    - 'config/puma.rb'
     - 'db/schema.rb'
     - 'script/cucumber'
 
-# Rails
-Rails:
+### Layout.
+
+Layout/ArgumentAlignment:
+  Enabled: false
+
+# TODO: Enable.
+Layout/ArrayAlignment:
+  Enabled: false
+
+Layout/BlockAlignment:
+  Enabled: false
+
+Layout/ClassStructure:
   Enabled: true
 
-Rails/Validation:
+# TODO: Change to trailing.
+Layout/DotPosition:
+  EnforcedStyle: leading
+
+Layout/EmptyLineAfterGuardClause:
   Enabled: false
 
-# Style
-Style/AlignArray:
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+
+# TODO: Investigate.
+Layout/FirstArrayElementLineBreak:
   Enabled: false
 
-Style/AlignHash:
+Layout/FirstHashElementLineBreak:
+  Enabled: true
+
+# TODO: Enable.
+Layout/FirstMethodArgumentLineBreak:
   Enabled: false
 
-Style/AlignParameters:
-  EnforcedStyle: with_fixed_indentation
+Layout/FirstMethodParameterLineBreak:
+  Enabled: true
 
+Layout/HashAlignment:
+  Enabled: false
+
+Layout/HeredocArgumentClosingParenthesis:
+  Enabled: true
+
+Layout/IndentationConsistency:
+  EnforcedStyle: indented_internal_methods
+
+Layout/LineLength:
+  Max: 150
+
+Layout/MultilineHashKeyLineBreaks:
+  Enabled: true
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Layout/ParameterAlignment:
+  Enabled: true
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+### Lint.
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/**/*'
+
+Lint/AmbiguousRegexpLiteral:
+  Enabled: true
+  Exclude:
+    - 'features/step_definitions/**/*'
+    - 'spec/**/*'
+
+Lint/BinaryOperatorWithIdenticalOperands:
+  Enabled: true
+
+Lint/DuplicateElsifCondition:
+  Enabled: true
+
+Lint/DuplicateRescueException:
+  Enabled: true
+
+Lint/EmptyConditionalBody:
+  Enabled: true
+
+Lint/FloatComparison:
+  Enabled: true
+
+Lint/MixedRegexpCaptureTypes:
+  Enabled: true
+
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+
+Lint/HeredocMethodCallPosition:
+  Enabled: true
+
+# TODO: Investigate.
+Lint/MissingSuper:
+  Enabled: false
+
+Lint/OutOfRangeRegexpRef:
+  Enabled: true
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/SelfAssignment:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+
+Lint/TopLevelReturnWithArgument:
+  Enabled: true
+
+Lint/UnreachableLoop:
+  Enabled: true
+
+Lint/UselessAccessModifier:
+  MethodCreatingMethods:
+    - delegate
+
+# Metrics.
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'app/admin/**/*'
+    - 'config/environments/**/*'
+    - 'config/routes.rb'
+    - 'lib/tasks/**/*'
+    - 'spec/**/*'
+
+Metrics/ClassLength:
+  Max: 100
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Max: 15
+
+Metrics/MethodLength:
+  Max: 15
+
+### Naming.
+
+Naming/AccessorMethodName:
+  Enabled: true
+
+Naming/MemoizedInstanceVariableName:
+  EnforcedStyleForLeadingUnderscores: required
+
+Naming/PredicateName:
+  Enabled: false
+
+Naming/VariableNumber:
+  Exclude:
+    - 'spec/**/*'
+
+### Style.
+
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+
+Style/AccessorGrouping:
+  Enabled: false
+
+Style/ArrayCoercion:
+  Enabled: true
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/AutoResourceCleanup:
+  Enabled: true
+
+Style/BisectedAttrAccessor:
+  Enabled: false
+
+Style/CaseLikeIf:
+  Enabled: false
+
+# TODO: Enable.
 Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/ClassCheck:
+  EnforcedStyle: is_a?
+
+# TODO: Enable.
+Style/CollectionMethods:
   Enabled: false
 
 Style/CommandLiteral:
   Enabled: false
 
-Style/ClosingParenthesisIndentation:
-  Enabled: false
+Style/DateTime:
+  Enabled: true
 
 Style/Documentation:
   Enabled: false
 
-Style/DotPosition:
-  EnforcedStyle: leading
+Style/EmptyMethod:
+  EnforcedStyle: expanded
 
-Style/DoubleNegation:
+# TODO: Investigate.
+Style/ExpandPathArguments:
   Enabled: false
 
-Style/EmptyLinesAroundAccessModifier:
+Style/ExponentialNotation:
+  Enabled: true
+
+# TODO: Investigate.
+Style/ExplicitBlockArgument:
   Enabled: false
 
+# TODO: Enable.
 Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/GlobalStdStream:
   Enabled: false
 
 Style/GuardClause:
   Enabled: false
 
-Style/IndentationConsistency:
-  EnforcedStyle: rails
+# TODO: Investigate.
+Style/HashAsLastArrayItem:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: true
+
+# TODO: Investigate.
+Style/HashLikeCase:
+  Enabled: false
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/Lambda:
+  Enabled: false
 
 Style/MethodDefParentheses:
-  EnforcedStyle: require_no_parentheses
+  EnforcedStyle: require_no_parentheses_except_multiline
 
-Style/MultilineMethodCallIndentation:
+Style/MultilineBlockChain:
   Enabled: false
 
 Style/MutableConstant:
@@ -77,51 +291,68 @@ Style/MutableConstant:
 Style/NestedParenthesizedCalls:
   Enabled: false
 
+Style/NumericLiterals:
+  Enabled: false
+
+Style/OptionalBooleanParameter:
+  Enabled: true
+
 Style/OptionHash:
   Enabled: true
 
-# Disable, known to break things
+# TODO: Enable.
+Style/PercentLiteralDelimiters:
+  Enabled: false
+
+Style/RedundantAssignment:
+  Enabled: false
+
+Style/RedundantFetchBlock:
+  Enabled: true
+
+Style/RedundantFileExtensionInRequire:
+  Enabled: true
+
+Style/RedundantRegexpCharacterClass:
+  Enabled: true
+
 Style/RedundantSelf:
   Enabled: false
 
 Style/RegexpLiteral:
   Enabled: false
 
+Style/RedundantRegexpEscape:
+  Enabled: true
+
 Style/RescueModifier:
   Exclude:
     - 'spec/**/*'
 
-Style/SpaceInsideBrackets:
+Style/ReturnNil:
+  Enabled: true
+
+# TODO: Investigate.
+Style/SafeNavigation:
+  Enabled: false
+
+Style/Send:
+  Enabled: true
+
+Style/SingleArgumentDig:
+  Enabled: false
+
+Style/SlicingWithRange:
+  Enabled: true
+
+Style/StringConcatenation:
   Enabled: false
 
 Style/StringLiterals:
   Enabled: false
 
+Style/SymbolArray:
+  Enabled: false
+
 Style/WordArray:
-  Enabled: false
-
-# Lint
-Lint/AmbiguousOperator:
-  Enabled: false
-
-Lint/AmbiguousRegexpLiteral:
-  Enabled: false
-
-Lint/UnusedBlockArgument:
-  Enabled: false
-
-# Metrics
-Metrics/AbcSize:
-  Enabled: false
-
-Metrics/CyclomaticComplexity:
-  Enabled: false
-
-Metrics/LineLength:
-  Max: 150
-
-Metrics/MethodLength:
-  Max: 15
-
-Metrics/PerceivedComplexity:
   Enabled: false

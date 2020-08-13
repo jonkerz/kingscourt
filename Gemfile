@@ -47,7 +47,7 @@ group :development do
   gem "capistrano-pending", require: false
   gem "capistrano-db-tasks", require: false
   gem "listen"
-  gem "rubocop", "~> 0.40.0", require: false
+  gem "rubocop", "~> 0.89.1", require: false
 end
 
 group :test do

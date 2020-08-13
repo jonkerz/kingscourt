@@ -24,6 +24,8 @@ Feature: Favorites
   @search
   Scenario: Browsing my favorites
     When I favorite "Joffre's Dominion Kingdom"
+    # TODO: Use waiting matcher.
+    And WAIT
     And I click on my username in the navbar
     And I follow "Favorites"
     Then I should see "Browsing my favorite kingdoms"

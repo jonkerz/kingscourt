@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160606114008) do
+ActiveRecord::Schema.define(version: 20200812215718) do
 
   create_table "card_attribute_links", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "card_id"
@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(version: 20160606114008) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin",                                default: false
+    t.boolean  "allow_password_change",                default: false,   null: false
     t.index ["email"], name: "index_users_on_email", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree

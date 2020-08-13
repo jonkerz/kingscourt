@@ -11,29 +11,26 @@ gem "mysql2"
 gem "puma"
 gem "sass-rails"
 gem "slim-rails"
-gem "therubyracer", "0.12.2"
+gem "therubyracer"
 gem "uglifier"
 
 # Misc.
 gem "colorize"
 gem "dotenv-rails"
-gem "paper_trail", "5.1.1"
+gem "paper_trail", "10.3.1"
 
 # Angular
 gem "angular-rails-templates"
-gem "autoprefixer-rails", "8.6.5"
+gem "autoprefixer-rails"
 gem "bower-rails"
 gem "ngannotate-rails"
 
 # API
 gem "active_model_serializers"
-gem "devise", "4.0.2"
-gem "devise_token_auth",
-  github: "lynndylanhurley/devise_token_auth",
-  ref: "10863b31270b31cec72a07e1a195aa21686ede2b"
-  # https://github.com/lynndylanhurley/devise_token_auth/issues/500
+gem "devise"
+gem "devise_token_auth"
 gem "slugify"
-gem "sunspot_rails", "2.2.0"
+gem "sunspot_rails"
 gem "sunspot_solr", "2.2.0"
 
 # Admin backend
@@ -51,17 +48,17 @@ group :development do
   gem "capistrano-rails-console", "1.0.2", require: false
   gem "capistrano-pending", "0.1.1", require: false
   gem "capistrano-db-tasks", "0.4", require: false
-  gem "listen", "3.1.5"
+  gem "listen"
   gem "rubocop", "~> 0.40.0", require: false
 end
 
 group :test do
-  gem "capybara", "2.18.0"
+  gem "capybara"
   gem "capybara-screenshot"
   gem "capybara-webkit"
   gem "cucumber-rails", "< 2.1.0", require: false # TODO: Locked due to Cucumber 4.
   gem "database_cleaner"
-  gem "factory_girl_rails"
+  gem "factory_bot_rails"
   gem "headless"
   gem "selenium-webdriver"
   gem "shoulda-matchers"

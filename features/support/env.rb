@@ -31,4 +31,4 @@ Capybara::Screenshot.webkit_options = { width: 1024, height: 768 }
 
 Capybara::Webkit.configure(&:block_unknown_urls)
 
-World FactoryGirl::Syntax::Methods
+World FactoryBot::Syntax::Methods
